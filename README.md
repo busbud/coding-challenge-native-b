@@ -1,14 +1,16 @@
+![igloofest](https://cloud.githubusercontent.com/assets/1574577/11387762/0ba89cb6-92fc-11e5-9fb1-3d1e6747cc88.png)
+
 Hey! 
 
-It's getting cold in Montréal and the Igloofest will take place very soon (http://igloofest.ca/en/). 
-The challenge is to build a promotional app that allows a user from NYC to look for one-way trip schedules to come for the opening night of the festival.
+It's getting cold in Montreal and the [Igloofest](http://igloofest.ca/en/) is kicking in high gear! 
+Your challenge is to build a promotional app that allows a traveler from NYC to find one-way departure schedules for the festival's closing weekend.
 
 ### Requirements
 
 Write a native Busbud app that:
 
 - Has a simple onboarding screen that will open the search
-- Lists all the departures for a given origin city (**New York - geohash: dr5reg**) and a given destination city (**Montréal - geohash: f25dvk**) for a given day (**the 14 of January 2016**) for **1** adult. 
+- Lists all the departures for a given origin city (**New York - geohash: dr5reg**) and a given destination city (**Montréal - geohash: f25dvk**) for a given day (**the 5th of February 2016**) for **1** adult. 
 For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
 
 ### Non-functional requirements
