@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		881C8F311C6EF63C0066D961 /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F301C6EF63C0066D961 /* NSDate+Comparable.swift */; };
+		881C8F331C6EF92C0066D961 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F321C6EF92C0066D961 /* Operator.swift */; };
 		88777A0E1C6E7272009768B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88777A0D1C6E7272009768B2 /* AppDelegate.swift */; };
 		88777A101C6E7272009768B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88777A0F1C6E7272009768B2 /* ViewController.swift */; };
 		88777A131C6E7272009768B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88777A111C6E7272009768B2 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		480813ACC58C6F21921A4236 /* Pods-Busbud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Busbud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Busbud/Pods-Busbud.debug.xcconfig"; sourceTree = "<group>"; };
 		881C8F301C6EF63C0066D961 /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
+		881C8F321C6EF92C0066D961 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		88777A0A1C6E7272009768B2 /* Busbud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Busbud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88777A0D1C6E7272009768B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88777A0F1C6E7272009768B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				88777A301C6E797C009768B2 /* City.swift */,
 				88777A341C6E7CE3009768B2 /* Location.swift */,
 				88777A361C6E7E0E009768B2 /* Departure.swift */,
+				881C8F321C6EF92C0066D961 /* Operator.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				88777A371C6E7E0E009768B2 /* Departure.swift in Sources */,
 				88777A311C6E797C009768B2 /* City.swift in Sources */,
 				88777A351C6E7CE3009768B2 /* Location.swift in Sources */,
+				881C8F331C6EF92C0066D961 /* Operator.swift in Sources */,
 				88777A2E1C6E7385009768B2 /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

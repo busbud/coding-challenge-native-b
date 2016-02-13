@@ -26,10 +26,10 @@ public class Client: NSObject {
     
     static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate = NSDate(), adults: Int, children: Int = 0, seniors: Int = 0, currency: String = "USD", success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
         
-        searchDepartures(origin: origin, destination: destination, outboundDate: outboundDate, adults: adults, children: children, seniors: seniors, currency: currency, poll: false, locationsJSON: [], departuresJSON: [], success: success, failure: failure)
+        searchDepartures(origin: origin, destination: destination, outboundDate: outboundDate, adults: adults, children: children, seniors: seniors, currency: currency, poll: false, locationsJSON: [], operatorsJSON: [], departuresJSON: [], success: success, failure: failure)
     }
     
-    private static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate, adults: Int, children: Int, seniors: Int, currency: String, poll: Bool, var locationsJSON: [JSON], var departuresJSON :[JSON], success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
+    private static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate, adults: Int, children: Int, seniors: Int, currency: String, poll: Bool, var locationsJSON: [JSON], var operatorsJSON: [JSON], var departuresJSON: [JSON], success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
         
         let URL = NSURL(string: "x-departures/\(origin)/\(destination)/\(dateFormatter.stringFromDate(outboundDate))\(poll ? "/poll" : "")", relativeToURL: baseURL)!
         
@@ -57,6 +57,12 @@ public class Client: NSObject {
                 }
             }
             
+            if let operators = json["operators"].array {
+                for op in operators {
+                    operatorsJSON.append(op)
+                }
+            }
+            
             if let departures = json["departures"].array {
                 for departure in departures {
                     departuresJSON.append(departure)
@@ -78,10 +84,19 @@ public class Client: NSObject {
                     }
                 }
                 
+                var operators: [Operator] = []
+                for operatorJSON in operatorsJSON {
+                    do {
+                        operators.append(try Operator(json: operatorJSON))
+                    } catch {
+                        print(error as NSError)
+                    }
+                }
+                
                 var departures: [Departure] = []
                 for departureJSON in departuresJSON {
                     do {
-                        departures.append(try Departure(json: departureJSON, locations: locations))
+                        departures.append(try Departure(json: departureJSON, locations: locations, operators: operators))
                     } catch {
                         print(error as NSError)
                     }
@@ -94,7 +109,7 @@ public class Client: NSObject {
                 success(departures: departures)
             } else {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
-                    Client.searchDepartures(origin: origin, destination: destination, outboundDate: outboundDate, adults: adults, children: children, seniors: seniors, currency: currency, poll: true, locationsJSON: locationsJSON, departuresJSON: departuresJSON, success: success, failure: failure)
+                    Client.searchDepartures(origin: origin, destination: destination, outboundDate: outboundDate, adults: adults, children: children, seniors: seniors, currency: currency, poll: true, locationsJSON: locationsJSON, operatorsJSON: operatorsJSON, departuresJSON: departuresJSON, success: success, failure: failure)
                 })
             }
         }

@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             success: { departures in
                 
                 for departure in departures {
-                    print(" - \(dateFormatter.stringFromDate(departure.departureTime)) -> \(dateFormatter.stringFromDate(departure.arrivalTime)) | \(departure.origin.name) -> \(departure.destination.name): $\(Double(departure.price) / 100.0)")
+                    print(" - \(dateFormatter.stringFromDate(departure.departureTime)) -> \(dateFormatter.stringFromDate(departure.arrivalTime)) | \(departure.origin.name) -> \(departure.destination.name): $\(Double(departure.price) / 100.0) (\(departure.op.name))")
                 }
                 
             }, failure: { error in

@@ -17,6 +17,7 @@ public struct BusbudError {
         case MissingResponseItems = 6001
         case InvalidLocationID = 6002
         case InvalidDateString = 6003
+        case InvalidOperatorID = 6004
     }
     
     static func errorWithCode(code: Code, failureReason: String) -> NSError {

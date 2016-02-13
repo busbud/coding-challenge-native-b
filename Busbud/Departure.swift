@@ -17,8 +17,9 @@ class Departure: NSObject {
     let price: Int
     let departureTime: NSDate
     let arrivalTime: NSDate
+    let op: Operator
     
-    init(ID: String, origin: Location, destination: Location, price: Int, departureTime: NSDate, arrivalTime: NSDate) {
+    init(ID: String, origin: Location, destination: Location, price: Int, departureTime: NSDate, arrivalTime: NSDate, op: Operator) {
         
         self.ID = ID
         self.origin = origin
@@ -26,9 +27,10 @@ class Departure: NSObject {
         self.price = price
         self.departureTime = departureTime
         self.arrivalTime = arrivalTime
+        self.op = op
     }
     
-    convenience init(json: JSON, locations: [Location]) throws {
+    convenience init(json: JSON, locations: [Location], operators: [Operator]) throws {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -38,7 +40,8 @@ class Departure: NSObject {
             let destinationLocationID = json["destination_location_id"].int,
             let price = json["prices"]["total"].int,
             let departureTimeString = json["departure_time"].string,
-            let arrivalTimeString = json["arrival_time"].string else {
+            let arrivalTimeString = json["arrival_time"].string,
+            let operatorID = json["operator_id"].string else {
                 throw BusbudError.errorWithCode(.MissingResponseItems, failureReason: "Missing items in Departure init.")
         }
         
@@ -64,6 +67,13 @@ class Departure: NSObject {
             throw BusbudError.errorWithCode(.InvalidDateString, failureReason: "Invalid date string '\(arrivalTimeString)'")
         }
         
-        self.init(ID: ID, origin: origin, destination: destination, price: price, departureTime: departureTime, arrivalTime: arrivalTime)
+        let operators = operators.filter { (op) -> Bool in
+            return op.ID == operatorID
+        }
+        guard let op = operators.first else {
+            throw BusbudError.errorWithCode(.InvalidOperatorID, failureReason: "Ivalid operator ID \(operatorID)")
+        }
+        
+        self.init(ID: ID, origin: origin, destination: destination, price: price, departureTime: departureTime, arrivalTime: arrivalTime, op: op)
     }
 }
