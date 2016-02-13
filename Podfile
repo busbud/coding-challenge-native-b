@@ -6,6 +6,7 @@ use_frameworks!
 target 'Busbud' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
+    pod 'MBProgressHUD'
 end
 
 target 'BusbudTests' do

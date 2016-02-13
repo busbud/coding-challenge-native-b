@@ -11,25 +11,6 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     var departures: [Departure] = []
-    let dateFormatter = BusbudFomatter.timeFormatter
-    
-    @IBAction func search() {
-        
-        Client.searchDepartures(origin: "dr5reg", destination: "f25dvk", outboundDate: NSDate(timeIntervalSince1970: 1469786400), adults: 1, currency: "USD",
-            success: { departures in
-                
-                for departure in departures {
-                    print(" - \(self.dateFormatter.stringFromDate(departure.departureTime)) -> \(self.dateFormatter.stringFromDate(departure.arrivalTime)) | \(departure.origin.name) -> \(departure.destination.name): $\(Double(departure.price) / 100.0) (\(departure.op.name))")
-                }
-                
-                self.departures = departures
-                self.tableView.reloadData()
-                
-            }, failure: { error in
-                print(error.localizedDescription)
-            }
-        )
-    }
     
     // MARK - Table view data source
     
@@ -48,10 +29,5 @@ class SearchResultsTableViewController: UITableViewController {
         cell.departure = departures[indexPath.row]
         
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-//        let cell = cell as! DepartureCell
     }
 }

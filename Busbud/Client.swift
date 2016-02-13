@@ -16,13 +16,7 @@ private let headers = ["Accept": "application/json"]
 
 public class Client: NSObject {
     
-    static var dateFormatter: NSDateFormatter {
-        get {
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            return formatter
-        }
-    }
+    static let dateFormatter = BusbudFomatter.departureDateFormatter
     
     static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate = NSDate(), adults: Int, children: Int = 0, seniors: Int = 0, currency: String = "USD", success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
         
