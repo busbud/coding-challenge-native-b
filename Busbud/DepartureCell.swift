@@ -21,8 +21,11 @@ class DepartureCell: UITableViewCell {
     let timeFormatter = BusbudFormatter.timeFormatter
     let priceFormatter = BusbudFormatter.priceFormatter
     
+    var currency: Currency = .USD
+    
     var departure: Departure! {
         didSet {
+            priceFormatter.currencySymbol = self.currency.symbol
             priceLabel.text = priceFormatter.stringFromNumber(Double(departure.price) / 100.00)
             operatorLabel.text = departure.op.name
             departureTimeLabel.text = timeFormatter.stringFromDate(departure.departureTime)

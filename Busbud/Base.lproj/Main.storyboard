@@ -78,8 +78,15 @@
                             <constraint firstItem="N4Y-qx-7DB" firstAttribute="centerX" secondItem="eXC-gV-Rlx" secondAttribute="centerX" id="g9Y-7L-Vaw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Osheaga" id="6UH-hW-rqy"/>
+                    <navigationItem key="navigationItem" title="Osheaga" id="6UH-hW-rqy">
+                        <barButtonItem key="rightBarButtonItem" title="USD" id="4pZ-Ht-Ea5">
+                            <connections>
+                                <action selector="showCurrencyPicker:" destination="U5X-zl-Dqy" id="kBY-17-8jn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="currencyButton" destination="4pZ-Ht-Ea5" id="mp5-zQ-MAD"/>
                         <outlet property="dateTextField" destination="JZw-YQ-xdI" id="136-X6-CHr"/>
                         <segue destination="fcX-v7-Uoh" kind="show" identifier="ShowSearchResults" id="Jwj-f7-5tn"/>
                     </connections>
@@ -101,20 +108,20 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aps-xV-DhM" id="N6Z-YR-1k7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="81.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXT-wu-N14" userLabel="Left view">
-                                            <rect key="frame" x="0.0" y="0.0" width="140" height="81.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="82"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greyhound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8S-iC-wm0">
-                                                    <rect key="frame" x="39" y="50.5" width="62.5" height="14.5"/>
+                                                    <rect key="frame" x="39" y="51" width="63" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igJ-Ce-MpM">
-                                                    <rect key="frame" x="33.5" y="16" width="73.5" height="26.5"/>
+                                                    <rect key="frame" x="34" y="16" width="73" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -130,7 +137,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giT-p7-0cH">
-                                            <rect key="frame" x="141" y="0.0" width="459" height="81.5"/>
+                                            <rect key="frame" x="141" y="0.0" width="459" height="82"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wX-a9-5kG">
                                                     <rect key="frame" x="134" y="29" width="78" height="24"/>
@@ -151,13 +158,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temporary Transbay Terminal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-V1-f90">
-                                                    <rect key="frame" x="145.5" y="8.5" width="167.5" height="14.5"/>
+                                                    <rect key="frame" x="146" y="9" width="167" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack London Square" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-zi-qsl">
-                                                    <rect key="frame" x="172" y="59" width="115" height="14.5"/>
+                                                    <rect key="frame" x="172" y="59" width="115" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

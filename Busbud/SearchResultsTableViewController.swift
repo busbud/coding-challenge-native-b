@@ -11,6 +11,7 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     var departures: [Departure] = []
+    var currency: Currency = .USD
     
     // MARK - Table view data source
     
@@ -26,6 +27,7 @@ class SearchResultsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("DepartureCell", forIndexPath: indexPath) as! DepartureCell
         
+        cell.currency = self.currency
         cell.departure = departures[indexPath.row]
         
         return cell

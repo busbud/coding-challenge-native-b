@@ -18,16 +18,16 @@ public class Client: NSObject {
     
     static let dateFormatter = BusbudFormatter.APIDateFormatter
     
-    static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate = NSDate(), adults: Int, children: Int = 0, seniors: Int = 0, currency: String = "USD", success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
+    static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate = NSDate(), adults: Int, children: Int = 0, seniors: Int = 0, currency: Currency = .USD, success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
         
         searchDepartures(origin: origin, destination: destination, outboundDate: outboundDate, adults: adults, children: children, seniors: seniors, currency: currency, poll: false, locationsJSON: [], operatorsJSON: [], departuresJSON: [], success: success, failure: failure)
     }
     
-    private static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate, adults: Int, children: Int, seniors: Int, currency: String, poll: Bool, var locationsJSON: [JSON], var operatorsJSON: [JSON], var departuresJSON: [JSON], success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
+    private static func searchDepartures(origin origin: String, destination: String, outboundDate: NSDate, adults: Int, children: Int, seniors: Int, currency: Currency, poll: Bool, var locationsJSON: [JSON], var operatorsJSON: [JSON], var departuresJSON: [JSON], success: (departures: [Departure]) -> (), failure: (error: NSError) -> ()) {
         
         let URL = NSURL(string: "x-departures/\(origin)/\(destination)/\(dateFormatter.stringFromDate(outboundDate))\(poll ? "/poll" : "")", relativeToURL: baseURL)!
         
-        let parameters: [String: AnyObject] = ["adult": adults, "child": children, "senior": seniors, "currency": currency]
+        let parameters: [String: AnyObject] = ["adult": adults, "child": children, "senior": seniors, "currency": currency.rawValue]
         
         Alamofire.request(.GET, URL, parameters: parameters, headers: headers).validate().responseJSON { (response) -> Void in
             
