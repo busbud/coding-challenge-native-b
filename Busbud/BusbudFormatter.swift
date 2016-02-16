@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BusbudFomatter {
+struct BusbudFormatter {
     
     static var timeFormatter: NSDateFormatter {
         let formatter = NSDateFormatter()

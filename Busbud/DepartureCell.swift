@@ -18,8 +18,8 @@ class DepartureCell: UITableViewCell {
     @IBOutlet private weak var destinationLabel: UILabel!
     
     
-    let timeFormatter = BusbudFomatter.timeFormatter
-    let priceFormatter = BusbudFomatter.priceFormatter
+    let timeFormatter = BusbudFormatter.timeFormatter
+    let priceFormatter = BusbudFormatter.priceFormatter
     
     var departure: Departure! {
         didSet {

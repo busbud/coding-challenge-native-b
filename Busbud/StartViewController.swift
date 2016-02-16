@@ -13,7 +13,7 @@ class StartViewController: UIViewController {
 
     private var departures: [Departure] = []
     @IBOutlet private weak var dateTextField: UITextField!
-    private var departureDate = NSDate()
+    private var departureDate = NSDate(timeIntervalSince1970: 1469786400)
     
     override func viewDidLoad() {
         
@@ -34,7 +34,7 @@ class StartViewController: UIViewController {
     
     func datePickerDidChange(sender: UIDatePicker) {
         
-        let dateFormatter = BusbudFomatter.departureDateFormatter
+        let dateFormatter = BusbudFormatter.departureDateFormatter
         dateTextField.text = dateFormatter.stringFromDate(sender.date)
         departureDate = sender.date
     }
@@ -47,7 +47,7 @@ class StartViewController: UIViewController {
             success: { departures in
                 
                 hud.hide(true)
-                let dateFormatter = BusbudFomatter.timeFormatter
+                let dateFormatter = BusbudFormatter.timeFormatter
                 
                 for departure in departures {
                     print(" - \(dateFormatter.stringFromDate(departure.departureTime)) -> \(dateFormatter.stringFromDate(departure.arrivalTime)) | \(departure.origin.name) -> \(departure.destination.name): $\(Double(departure.price) / 100.0) (\(departure.op.name))")

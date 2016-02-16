@@ -13,6 +13,7 @@
 		881C8F381C6F0B400066D961 /* DepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F371C6F0B400066D961 /* DepartureCell.swift */; };
 		881C8F3A1C6F0CCD0066D961 /* BusbudFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F391C6F0CCD0066D961 /* BusbudFormatter.swift */; };
 		881C8F3C1C6F179F0066D961 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F3B1C6F179F0066D961 /* StartViewController.swift */; };
+		881C8F3E1C73B5EB0066D961 /* BusbudFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881C8F3D1C73B5EB0066D961 /* BusbudFormatterTests.swift */; };
 		88777A0E1C6E7272009768B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88777A0D1C6E7272009768B2 /* AppDelegate.swift */; };
 		88777A131C6E7272009768B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88777A111C6E7272009768B2 /* Main.storyboard */; };
 		88777A151C6E7272009768B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88777A141C6E7272009768B2 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		881C8F371C6F0B400066D961 /* DepartureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureCell.swift; sourceTree = "<group>"; };
 		881C8F391C6F0CCD0066D961 /* BusbudFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusbudFormatter.swift; sourceTree = "<group>"; };
 		881C8F3B1C6F179F0066D961 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		881C8F3D1C73B5EB0066D961 /* BusbudFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusbudFormatterTests.swift; sourceTree = "<group>"; };
 		88777A0A1C6E7272009768B2 /* Busbud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Busbud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88777A0D1C6E7272009768B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88777A121C6E7272009768B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				88777A221C6E7272009768B2 /* BusbudTests.swift */,
+				881C8F3D1C73B5EB0066D961 /* BusbudFormatterTests.swift */,
 				88777A241C6E7272009768B2 /* Info.plist */,
 			);
 			path = BusbudTests;
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88777A231C6E7272009768B2 /* BusbudTests.swift in Sources */,
+				881C8F3E1C73B5EB0066D961 /* BusbudFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
