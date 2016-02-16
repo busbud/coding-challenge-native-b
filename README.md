@@ -1,9 +1,11 @@
 ##Solution
 
-###Third party libraries used:
+###Third party libraries
 - Alamofire
 - SwiftyJSON
 - MBProgressHUD
+
+These libraries are to be imported using Cocoapods. Run `pod install` before opening the project.
 
 ###Features
 
@@ -14,11 +16,11 @@ Once the user taps the 'Search' button, the app displays a spinner to indicate t
 
 The `Client` class contains everything that's needed to communicate with the API. All of the funcionality is achieved using static functions and constants, so there is no need to create an instance of `Client`.
 
-The major issue I ran into was the API's unusual polling mechanism. In order to acommodate this, the `searchDepartures` function calls itself recursively, passing the already parsed content as function parameters. After it parses the last JSON payload, it calls the `success` closure. If something goes sideways at any point, it calls the `failure` closure instead, and passes the relevant NSError as a parameter.
+The major issue I ran into was the API's unusual polling mechanism. In order to acommodate this, the `searchDepartures` function calls itself recursively, passing the already parsed content as function parameters. After it parses the last JSON payload, it calls the `success` closure. If something goes sideways at any point, it calls the `failure` closure instead, and passes the relevant `NSError` as a parameter.
 
 I created model classes for `City`, `Location`, `Departure`, and `Operator`. I didn't implement all their properties, only those I needed. These model classes can be instantiated from JSON using `SwiftyJSON`.	
 
-For the UI, I decided to use a storyboard. I like how it provides a preview of how the app flows. There are 2 view controllers: `StartViewController` and `SearchResultsViewController`. The app transitions between them using a standard UINavigationController. In `StartViewController`, I used a UIStackView to achieve a clean and versatile layout. To display the results, I created a custom UITableViewCell subclass that handles the formatting. All the layouts are defined using Autolayout constraints, so they display properly on all iPhone screen sizes.
+For the UI, I decided to use a storyboard. I like how it provides a preview of how the app flows. There are 2 view controllers: `StartViewController` and `SearchResultsViewController`. The app transitions between them using a standard `UINavigationController`. In `StartViewController`, I used a `UIStackView` to achieve a clean and versatile layout. To display the results, I created a custom `UITableViewCell` subclass that handles the formatting. All the layouts are defined using Autolayout constraints, so they display properly on all iPhone screen sizes.
 
 A few more things I did:
 
