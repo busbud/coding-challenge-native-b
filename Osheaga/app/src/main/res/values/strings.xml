@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Osheaga</string>
+
+
+    <string name="schedule_departure">%1$s - %2$s</string>
+    <string name="from_location"> <![CDATA[<font color=\'#000000\'><b>From</b></font> %1$s ]]></string>
+    <string name="to_location"> <![CDATA[<font color=\'#000000\'><b>to</b></font> %1$s ]]></string>
+    <string name="title_search">Search</string>
+    <string name="message_no_bus">Sorry there are no buses available for your desired time arrived</string>
+
+    <string name="default_error_message">Sorry, you need internet to use the application  :( . Internet is not available </string>
+    <string name="error_message_serveur_prob">The server is unavailable</string>
+    <string name="retry_connection">Retry</string>
+    <string name="title">Bus Ticket from New York !</string>
+    <string name="message_view_information"> Don\'t miss Osheaga even if you are in New York City, here is all bus to come to Montreal</string>
+    <string name="choose_time">Choose arrival time</string>
+    <string name="done">Done</string>
+    <string name="operator_desc">image of the operator</string>
+
+
+</resources>

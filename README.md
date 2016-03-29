@@ -12,9 +12,28 @@ Your challenge is to build a promotional app that allows a traveler from NYC to 
 Write a native Busbud app that:
 
 - Has a simple onboarding screen that will open the search
+	- *For this requirement I have decided to bring the context of the application when downloading the list of bus.* 
+	![](https://40.media.tumblr.com/e75dfa744d646a0a0162a2afbcacd3b1/tumblr_o4rpw2B1Kk1tsy5wyo1_540.png)
 - Lists all the departures for a given origin city (**New York - geohash: dr5reg**) and a given destination city (**Montréal - geohash: f25dvk**) for a given day (**the 29th of July 2016**) for **1** adult. 
 For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
-
+	- *For this requirement I used a simple AppCompatActivity, with coordinator layout that use RecyclerView to show informations. I use also a CardView as a container to present departure informations. I didn't use fragment because it's was not necessary in that case but habitually I put my logic in a Fragment class and use an Activity class as a container, because I reuse the fragment for a tablet format. The currency and the language that are use for the api call are the default of the devic. In an other version, it should be better to let user choose in which language or currency they want see in results.*
+![](https://36.media.tumblr.com/dc34c1766d16aeca0a0f7029f529ba0c/tumblr_o4s39t5jxa1tsy5wyo1_540.png)
+	- *I used Robospice Library to call web service, it's a spring android library that allow to add cache between call.* [Robospice documentation](https://github.com/stephanenicolas/robospice). 
+		- *Calls are made in the class DepartureAPI and use the services classes DataRequestJson to build the request( the Accept Header "application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/"  is in this class) , MyDownloadManager to execute the call and MySpringAndroidService to create the RestTemplate with the good mapping ( I can specify other mappings than Json in this class).* 
+	- *I also use Jackson annotation to do the mapping between Json object and Java object. With Jackson if a name in Json change it's super easy to modify the annotation without affecting the rest of the code.*
+	-  *I have a DataManager class that is an singleton that conserve base information for the application, like the URL API, the SpiceManager instance ( it's use for the web services calls), the lang and currency of the user.*
+	-  *I created a reusable class MessageView to show an error message if there is a network error. This class, is reusable in any other projet or activity and let user retry the call when they have internet connection.*
+	![](https://40.media.tumblr.com/6508d40e21ffa5bf23871833d3397219/tumblr_o4s4jxlphy1tsy5wyo1_540.png)
+	
+	- *For fun I added an option that allows the user to look for a bus according to the time that he desires arrived at the festival.*
+	-  *My application is separated in thoses packages*:
+		-  *api : All api call for the projet*
+		-  *model : All the model classes ( like XDeparture and Operator classes)*
+		-  *service*
+		-  *ui*
+		-  *utils : All the classes and functions that will be reuse or can be in other projets, like the function to have the good money formatting with the currency is in this class*
+		
+---
 ### Non-functional requirements
 
 - The code should be hosted on github, and the repo should be shared with Busbud and submitted as a pull request

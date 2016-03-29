@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.ldev.osheaga"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        def SERVER = "SERVER"
+        debug {
+            buildConfigField "String", SERVER, '"https://napi.busbud.com"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", SERVER, '"https://napi.busbud.com"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    //Robospice a library use for call api ( with cache :https://github.com/stephanenicolas/robospice)
+    // base on Spring Android too.
+
+    //Jackson library to automatically map object from json
+    compile('org.apache.httpcomponents:httpcore:4.2.4') {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+    compile('org.apache.httpcomponents:httpmime:4.3') {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+
+
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:cardview-v7:23.2.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    compile 'com.octo.android.robospice:robospice-spring-android:1.4.12'
+    compile 'com.octo.android.robospice:robospice:1.4.12'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.3'
+    compile 'com.android.support:support-v4:23.2.1'
+}
