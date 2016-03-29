@@ -2,6 +2,7 @@ package com.ldev.osheaga.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,7 @@ import com.ldev.osheaga.model.Operator;
 import com.ldev.osheaga.model.XDeparture;
 import com.ldev.osheaga.utils.Utils;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-
-import butterknife.Bind;
 
 
 public class DepartureAdapter extends RecyclerView.Adapter<DepartureAdapter.ViewHolder> {
@@ -36,18 +33,25 @@ public class DepartureAdapter extends RecyclerView.Adapter<DepartureAdapter.View
 
 
         public TextView tvSchedule;
-        public TextView tvLocation;
+        public TextView tvLocationOrigin;
+        public TextView tvLocationArrival;
         public TextView tvPrice;
         public ImageView ivDeparture;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvSchedule = (TextView) itemView.findViewById(R.id.tvSchedule);
-            tvLocation = (TextView) itemView.findViewById(R.id.tvLocation);
+            tvLocationOrigin = (TextView) itemView.findViewById(R.id.tvLocationOrigin);
+            tvLocationArrival = (TextView) itemView.findViewById(R.id.tvLocationArrival);
             tvPrice = (TextView) itemView.findViewById(R.id.tvPrice);
             ivDeparture = (ImageView) itemView.findViewById(R.id.ivDeparture);
 
         }
+    }
+
+    public void setDepartures(ArrayList<XDeparture> departures){
+        this.departures = departures;
+        notifyDataSetChanged();
     }
 
     public DepartureAdapter(Context context, Departure departure) {
@@ -69,7 +73,11 @@ public class DepartureAdapter extends RecyclerView.Adapter<DepartureAdapter.View
         String departureTime = Utils.getTimeFromDate(xdeparture.getDepartureTime());
         String arrivalTime = Utils.getTimeFromDate(xdeparture.getArrivalTime());
         holder.tvSchedule.setText(context.getResources().getString(R.string.schedule_departure, departureTime, arrivalTime));
-        holder.tvLocation.setText(getLocationName(xdeparture.getOriginLocationId()));
+
+        String locationOrigin  = getLocationName(xdeparture.getOriginLocationId());
+        holder.tvLocationOrigin.setText(Html.fromHtml(context.getResources().getString(R.string.from_location, locationOrigin)));
+        String locationArrival = getLocationName(xdeparture.getDestinationId());
+        holder.tvLocationArrival.setText(Html.fromHtml(context.getResources().getString(R.string.to_location, locationArrival)));
         String total = Utils.formatTotalWithCurrency(xdeparture.getPrices().getTotal(), DataManager.getInstance().getCurrency());
         holder.tvPrice.setText(total);
 

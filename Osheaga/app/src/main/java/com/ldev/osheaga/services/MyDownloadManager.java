@@ -22,9 +22,7 @@ public class MyDownloadManager {
 
         RestTemplate restTemplate = spiceServiceClass.createRestTemplate();
         request.setRestTemplate(restTemplate);
-        // ASYNCHRONOUS CALL
-        //    if (listener == null) {
-        // Create empty listener
+
         RequestListener<Object> listenerwrapper= new RequestListener<Object>() {
             @Override
             public void onRequestFailure(SpiceException arg0) {
@@ -38,7 +36,6 @@ public class MyDownloadManager {
                 listener.onRequestSuccess(arg0);
             }
         };
-        //    }
 
         try {
             timestamp = System.currentTimeMillis();

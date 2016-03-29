@@ -1,66 +1,21 @@
 <resources>
     <string name="app_name">Osheaga</string>
-    <string name="action_settings">Settings</string>
 
 
     <string name="schedule_departure">%1$s - %2$s</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="from_location"> <![CDATA[<font color=\'#000000\'><b>From</b></font> %1$s ]]></string>
+    <string name="to_location"> <![CDATA[<font color=\'#000000\'><b>to</b></font> %1$s ]]></string>
+    <string name="title_search">Search</string>
+    <string name="message_no_bus">Sorry there are no buses available for your desired time arrived</string>
 
-    <!-- Strings related to Settings -->
+    <string name="default_error_message">Sorry, you need internet to use the application  :( . Internet is not available </string>
+    <string name="error_message_serveur_prob">The server is unavailable</string>
+    <string name="retry_connection">Retry</string>
+    <string name="title">Bus Ticket from New York !</string>
+    <string name="message_view_information"> Don\'t miss Osheaga even if you are in New York City, here is all bus to come to Montreal</string>
+    <string name="choose_time">Choose arrival time</string>
+    <string name="done">Done</string>
+    <string name="operator_desc">image of the operator</string>
 
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
 </resources>

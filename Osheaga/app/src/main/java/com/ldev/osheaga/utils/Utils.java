@@ -2,6 +2,7 @@ package com.ldev.osheaga.utils;
 
 
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,25 +21,55 @@ import java.util.Locale;
 
 public class Utils {
 
+    /**
+     * Format money with the  Currency
+     * @param total
+     * @param currency
+     * @return
+     */
     public static String formatTotalWithCurrency(int total, Currency currency) {
 
         int fractionDigits = currency.getDefaultFractionDigits();
-        Log.v("Utils", "fractionDigits="+fractionDigits);
         NumberFormat nf = NumberFormat.getInstance();
         nf.setMinimumFractionDigits(fractionDigits);
-
-
         double totalFloat = (total / (10 * fractionDigits));
-        Log.v("Utils", "double total="+totalFloat);
-
-
-        return nf.format(totalFloat)+""+currency.getSymbol();
+        return nf.format(totalFloat) + "" + currency.getSymbol();
 
     }
 
+    /**
+     * Methode that verify if the time in string is before the hour and min that is in parameter.
+     * @param dateTime
+     * @param hour
+     * @param min
+     * @return
+     */
+    public static boolean ifTimeBefore(@NonNull String dateTime, int hour, int min) {
+        String timeString = getTimeFromDate(dateTime);
+        try {
+            String[] times = timeString.split(":");
+            int hour1 = Integer.parseInt(times[0]);
+            int min1 = Integer.parseInt(times[1]);
+            if (hour1 <= hour) {
+                if (hour1 == hour) {
+                    return min1 <= min;
+                }
+                return true;
+            }
+        }catch (Exception e){
+            return false;
+        }
+        return false;
+    }
+
+    /**
+     * Return the time in HH:mm from the String date
+     * @param dateStr
+     * @return
+     */
     public static String getTimeFromDate(String dateStr) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+        SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm", Locale.getDefault());
         try {
             Date date = sdf.parse(dateStr);
             return sdfTime.format(date);

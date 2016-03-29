@@ -164,12 +164,7 @@ public class DataRequestJson<T> extends SpringAndroidSpiceRequest<T> {
 //        }
     }
 
-    /**
-     * Update token property of the request
-     */
-    public void updateSessionToken() {
 
-    }
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // //

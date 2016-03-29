@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/blueBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="30dp"
+        android:background="@color/transparent">
+
+        <ProgressBar
+            android:id="@+id/pgLoading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pgLoading"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:maxWidth="200dp"
+            android:visibility="invisible"
+            tools:text="Active"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="50dp"
+        android:text="@string/default_error_message"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <Button
+        android:id="@+id/btRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@color/colorAccent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="invisible"
+        android:text="@string/retry_connection" />
+
+</RelativeLayout>

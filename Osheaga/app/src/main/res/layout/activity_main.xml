@@ -26,10 +26,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bus Ticket from New York !"
+                android:text="@string/title"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
 
@@ -47,8 +47,10 @@
         android:id="@+id/rvDepartures"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimary"/>
+
+
 
 
     <android.support.design.widget.FloatingActionButton
@@ -60,4 +62,9 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
 
+
+    <com.ldev.osheaga.ui.MessageView
+        android:id="@+id/messageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </android.support.design.widget.CoordinatorLayout>

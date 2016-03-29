@@ -1,17 +1,15 @@
 package com.ldev.osheaga.ui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.ldev.osheaga.R;
 import com.ldev.osheaga.api.DepartureAPI;
@@ -21,20 +19,24 @@ import com.ldev.osheaga.model.Operator;
 import com.ldev.osheaga.model.PollDeparture;
 import com.ldev.osheaga.model.XDeparture;
 import com.ldev.osheaga.ui.adapter.DepartureAdapter;
+import com.ldev.osheaga.utils.Utils;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import butterknife.Bind;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements MessageView.MessageViewInterface{
 
     private static String TAG = MainActivity.class.getName();
 
+    private static int REQUEST_CODE = 1;
+
     public RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private DepartureAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private  MessageView messageView;
+
 
     private Departure departure;
 
@@ -47,15 +49,20 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.rvDepartures);
         recyclerView.setHasFixedSize(true);
-        layoutManager =  new LinearLayoutManager(this);
+
+        messageView = (MessageView) findViewById(R.id.messageView);
+        messageView.setMessageViewInterface(this);
+        messageView.setMessageInformation(getString(R.string.message_view_information));
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = SearchActivity.newIntent(MainActivity.this);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 
@@ -63,37 +70,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void updateView(){
-        if( departure !=null){
-            Log.i(TAG, "updateView: departurelist="+departure.getDepartures().size());
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                int hour = data.getIntExtra(SearchActivity.EXTRA_HOUR, 0);
+                int min = data.getIntExtra(SearchActivity.EXTRA_MIN, 0);
+                ArrayList<XDeparture> XDepartures =  (ArrayList<XDeparture> )DataManager.getInstance().getDeparture().getDepartures().clone();
+                removeDepartureUnderXtime(hour, min, XDepartures);
+                adapter.setDepartures(XDepartures);
+            }
+        }
+    }
+
+    private void updateView() {
+        if (departure != null) {
+            Log.i(TAG, "updateView: departurelist=" + departure.getDepartures().size());
             adapter = new DepartureAdapter(this, departure);
             recyclerView.setAdapter(adapter);
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent intent = SettingsActivity.newIntent(this);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onStart() {
@@ -108,12 +106,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void downloadDeparture() {
+        messageView.showProgressBar();
         DepartureAPI.getDepartures(this, DataManager.getInstance().getSpiceManager(), requestListener, 1, 0, 0, DataManager.getInstance().getLang(), DataManager.getInstance().getCurrencyString());
     }
 
-    private void pollDeparture(int index){
-        Log.i(TAG, "pollDeparture: index="+index);
-        DepartureAPI.getDeparturesPool(this,DataManager.getInstance().getSpiceManager(), requestListenerPollDeparture, 1, 0, 0, DataManager.getInstance().getLang(), DataManager.getInstance().getCurrencyString(), index);
+    private void pollDeparture(int index) {
+        Log.i(TAG, "pollDeparture: index=" + index);
+        DepartureAPI.getDeparturesPool(this, DataManager.getInstance().getSpiceManager(), requestListenerPollDeparture, 1, 0, 0, DataManager.getInstance().getLang(), DataManager.getInstance().getCurrencyString(), index);
     }
 
 
@@ -121,19 +120,21 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onRequestFailure(SpiceException spiceException) {
             Log.e(TAG, "onRequestFailure: spiceException=", spiceException);
+            messageView.setMessageError(getString(R.string.default_error_message));
         }
 
         @Override
         public void onRequestSuccess(Departure departureResult) {
             Log.i(TAG, "onRequestSuccess: Departure departure=" + departureResult);
             departure = departureResult;
+            DataManager.getInstance().setDeparture(departure);
+            MessageView.hideLoadingView(messageView);
             updateView();
             Log.i(TAG, "onRequestSuccess: Departure isComplete=" + departure.isComplete());
 
-            if(!departure.isComplete()){
-                pollDeparture(departure.getTtl());
+            if (!departure.isComplete()) {
+                pollDeparture(departure.getDepartures().size());
             }
-
 
         }
     };
@@ -141,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
     private RequestListener<PollDeparture> requestListenerPollDeparture = new RequestListener<PollDeparture>() {
         @Override
         public void onRequestFailure(SpiceException spiceException) {
+            messageView.setMessageError(getString(R.string.default_error_message));
             Log.e(TAG, "onRequestFailure: PollDeparture spiceException=", spiceException);
         }
 
@@ -148,21 +150,44 @@ public class MainActivity extends AppCompatActivity {
         public void onRequestSuccess(PollDeparture pollDepartureResult) {
             Log.i(TAG, "onRequestSuccess: PollDeparture=" + pollDepartureResult);
 
-            if(departure !=null){
+            if (departure != null) {
                 ArrayList<XDeparture> departures = departure.getDepartures();
                 ArrayList<Operator> operators = departure.getOperators();
-
                 departures.addAll(pollDepartureResult.getDepartures());
                 operators.addAll(pollDepartureResult.getOperators());
                 departure.setDepartures(departures);
                 departure.setOperators(operators);
+                DataManager.getInstance().setDeparture(departure);
             }
             Log.i(TAG, "onRequestSuccess: PollDeparture isComplete=" + pollDepartureResult.isComplete());
+
             updateView();
 
-            if(!pollDepartureResult.isComplete()){
-                pollDeparture(pollDepartureResult.getTtl());
+            if (!pollDepartureResult.isComplete()) {
+                pollDeparture(departure.getDepartures().size());
             }
         }
     };
+
+    /**
+     * Fonction that remove bus that is after the selected hour and time
+     * @param hour
+     * @param minute
+     * @param xDepartures
+     */
+    private void removeDepartureUnderXtime(int hour, int minute, ArrayList<XDeparture> xDepartures) {
+        Iterator<XDeparture> i = xDepartures.iterator();
+        while (i.hasNext()) {
+            XDeparture xDeparture = i.next();
+            if (!Utils.ifTimeBefore(xDeparture.getArrivalTime(), hour, minute)) {
+                i.remove();
+            }
+        }
+    }
+
+    @Override
+    public void retry() {
+        messageView.setMessageInformation(getString(R.string.message_view_information));
+        downloadDeparture();
+    }
 }

@@ -23,6 +23,9 @@ public class XDeparture {
     @JsonProperty("origin_location_id")
     private int originLocationId;
 
+    @JsonProperty("destination_location_id")
+    private int destinationId;
+
     @JsonProperty("class")
     private String classType;
 
@@ -56,12 +59,13 @@ public class XDeparture {
     public XDeparture() {
     }
 
-    public XDeparture(String id, int sourceId, String checkoutType, String operatorId, int originLocationId, String classType, String className, Amenity amenity, int availableSeats, Prices prices, ArrayList<String> ticketTypes, String departureTimeZone, String arrivalTimeZone, String departureTime, String arrivalTime) {
+    public XDeparture(String id, int sourceId, String checkoutType, String operatorId, int originLocationId, int destinationId, String classType, String className, Amenity amenity, int availableSeats, Prices prices, ArrayList<String> ticketTypes, String departureTimeZone, String arrivalTimeZone, String departureTime, String arrivalTime) {
         this.id = id;
         this.sourceId = sourceId;
         this.checkoutType = checkoutType;
         this.operatorId = operatorId;
         this.originLocationId = originLocationId;
+        this.destinationId = destinationId;
         this.classType = classType;
         this.className = className;
         this.amenity = amenity;
@@ -192,5 +196,13 @@ public class XDeparture {
 
     public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
+    }
+
+    public int getDestinationId() {
+        return destinationId;
+    }
+
+    public void setDestinationId(int destinationId) {
+        this.destinationId = destinationId;
     }
 }
