@@ -21,6 +21,18 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 - The repo should include 3 screenshots under the /screenshots folder to show the app usage.
 - Change the README.md to explain your solution, the issues, the way you solved them...
 
+### Explanation Of Solution
+
+- I open the app with the search parameters shown in labels, since we're hard coding a search: New York to Montreal on July 29th 2017 (I used 2017 even though the instructions say 2016). Tapping the "Search!" button pushes a tableViewController onto the navigation controller and the network call is made in viewDidLoad. Most of the information we need (Departure/Arrival time and price) are in the departures dictionary, so I parsed that. I also saved the origin and destination location IDs, as well as the operator ID, because I parsed dictionaries of locations and operators that I could query with the IDs from "departures". Lastly, I took the operator ID so that I could asynchronously load the logo image in the cell, which formats itself. In the network call, I pass back the value of "complete" to see if the method call should be recursive to handle more than one results page. There's an alertController for when the network call returns an error. All of the views are created in Interface Builder with autolayout to support portrait and landscape mode. I'd love to talk more about it in person!
+
+### Challenges And Issues
+
+- I wasn't sure how you formatted the outbound_date in the path parameter, so I went on Busbud.com and made a booking to see that you did it yyyy-MM-dd.
+- The returned dates were in ISO 8601, which I had to handle so that I could display the date as a readable string in the cell. 
+- The URL for the operator logo was also in a format not compatible with NSURL, so I had to divide the string.
+- The IDs of locations came back as NSNumbers instead of strings, so I just had to reformat those to query against an NSDictionary.
+
+
 ### Supporting API
 
 For all these requests, you MUST change the Accept header to:

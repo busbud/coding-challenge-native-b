@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09AEE2211ADC95EA5C521F3C /* libPods-BusbudCodeChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D59D2E576530A7338E5EF4 /* libPods-BusbudCodeChallenge.a */; };
+		B053AE111EC23E440035184F /* BBResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B053AE101EC23E440035184F /* BBResultsTableViewController.m */; };
+		B053AE141EC23E600035184F /* BBTripTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B053AE131EC23E600035184F /* BBTripTableViewCell.m */; };
+		B053AE171EC2589C0035184F /* BBDateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B053AE161EC2589C0035184F /* BBDateUtility.m */; };
+		B088815B1EC16C8D00DCEE90 /* BBInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B088815A1EC16C8D00DCEE90 /* BBInitialViewController.m */; };
+		B08881611EC1F67100DCEE90 /* BBTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = B08881601EC1F67100DCEE90 /* BBTrip.m */; };
+		B0F790381EC12B720082D4E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F790371EC12B720082D4E4 /* main.m */; };
+		B0F7903B1EC12B720082D4E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F7903A1EC12B720082D4E4 /* AppDelegate.m */; };
+		B0F790411EC12B720082D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F7903F1EC12B720082D4E4 /* Main.storyboard */; };
+		B0F790431EC12B720082D4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F790421EC12B720082D4E4 /* Assets.xcassets */; };
+		B0F790461EC12B720082D4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F790441EC12B720082D4E4 /* LaunchScreen.storyboard */; };
+		B0F7904F1EC14B2E0082D4E4 /* BBAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F7904E1EC14B2E0082D4E4 /* BBAPIClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10D59D2E576530A7338E5EF4 /* libPods-BusbudCodeChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusbudCodeChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C87B4588BEA5E58BA506E0D /* Pods-BusbudCodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusbudCodeChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusbudCodeChallenge/Pods-BusbudCodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		940CA68833809F180B6C51FD /* Pods-BusbudCodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusbudCodeChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusbudCodeChallenge/Pods-BusbudCodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		B053AE0F1EC23E440035184F /* BBResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBResultsTableViewController.h; sourceTree = "<group>"; };
+		B053AE101EC23E440035184F /* BBResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBResultsTableViewController.m; sourceTree = "<group>"; };
+		B053AE121EC23E600035184F /* BBTripTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTripTableViewCell.h; sourceTree = "<group>"; };
+		B053AE131EC23E600035184F /* BBTripTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTripTableViewCell.m; sourceTree = "<group>"; };
+		B053AE151EC2589C0035184F /* BBDateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDateUtility.h; sourceTree = "<group>"; };
+		B053AE161EC2589C0035184F /* BBDateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDateUtility.m; sourceTree = "<group>"; };
+		B08881591EC16C8D00DCEE90 /* BBInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBInitialViewController.h; sourceTree = "<group>"; };
+		B088815A1EC16C8D00DCEE90 /* BBInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBInitialViewController.m; sourceTree = "<group>"; };
+		B088815F1EC1F67100DCEE90 /* BBTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTrip.h; sourceTree = "<group>"; };
+		B08881601EC1F67100DCEE90 /* BBTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTrip.m; sourceTree = "<group>"; };
+		B0F790331EC12B720082D4E4 /* BusbudCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusbudCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0F790371EC12B720082D4E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0F790391EC12B720082D4E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B0F7903A1EC12B720082D4E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B0F790401EC12B720082D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0F790421EC12B720082D4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0F790451EC12B720082D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0F790471EC12B720082D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F7904D1EC14B2E0082D4E4 /* BBAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPIClient.h; sourceTree = "<group>"; };
+		B0F7904E1EC14B2E0082D4E4 /* BBAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPIClient.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0F790301EC12B720082D4E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09AEE2211ADC95EA5C521F3C /* libPods-BusbudCodeChallenge.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		499637EBFB133C15A5D0DC53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C87B4588BEA5E58BA506E0D /* Pods-BusbudCodeChallenge.debug.xcconfig */,
+				940CA68833809F180B6C51FD /* Pods-BusbudCodeChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E9EF4750671B1B02B7B9326 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10D59D2E576530A7338E5EF4 /* libPods-BusbudCodeChallenge.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B053AE181EC25BF80035184F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B053AE151EC2589C0035184F /* BBDateUtility.h */,
+				B053AE161EC2589C0035184F /* BBDateUtility.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		B08881651EC1F6A500DCEE90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B088815F1EC1F67100DCEE90 /* BBTrip.h */,
+				B08881601EC1F67100DCEE90 /* BBTrip.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B08881661EC1F6BE00DCEE90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B053AE121EC23E600035184F /* BBTripTableViewCell.h */,
+				B053AE131EC23E600035184F /* BBTripTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B08881671EC1F6C500DCEE90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B08881591EC16C8D00DCEE90 /* BBInitialViewController.h */,
+				B088815A1EC16C8D00DCEE90 /* BBInitialViewController.m */,
+				B053AE0F1EC23E440035184F /* BBResultsTableViewController.h */,
+				B053AE101EC23E440035184F /* BBResultsTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B08881681EC1F6D000DCEE90 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B0F7904D1EC14B2E0082D4E4 /* BBAPIClient.h */,
+				B0F7904E1EC14B2E0082D4E4 /* BBAPIClient.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		B0F7902A1EC12B720082D4E4 = {
+			isa = PBXGroup;
+			children = (
+				B0F790351EC12B720082D4E4 /* BusbudCodeChallenge */,
+				B0F790341EC12B720082D4E4 /* Products */,
+				499637EBFB133C15A5D0DC53 /* Pods */,
+				4E9EF4750671B1B02B7B9326 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0F790341EC12B720082D4E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0F790331EC12B720082D4E4 /* BusbudCodeChallenge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0F790351EC12B720082D4E4 /* BusbudCodeChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				B0F790391EC12B720082D4E4 /* AppDelegate.h */,
+				B0F7903A1EC12B720082D4E4 /* AppDelegate.m */,
+				B08881651EC1F6A500DCEE90 /* Model */,
+				B08881661EC1F6BE00DCEE90 /* View */,
+				B08881671EC1F6C500DCEE90 /* Controller */,
+				B08881681EC1F6D000DCEE90 /* Networking */,
+				B053AE181EC25BF80035184F /* Utilities */,
+				B0F7903F1EC12B720082D4E4 /* Main.storyboard */,
+				B0F790421EC12B720082D4E4 /* Assets.xcassets */,
+				B0F790441EC12B720082D4E4 /* LaunchScreen.storyboard */,
+				B0F790471EC12B720082D4E4 /* Info.plist */,
+				B0F790361EC12B720082D4E4 /* Supporting Files */,
+			);
+			path = BusbudCodeChallenge;
+			sourceTree = "<group>";
+		};
+		B0F790361EC12B720082D4E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0F790371EC12B720082D4E4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0F790321EC12B720082D4E4 /* BusbudCodeChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F7904A1EC12B720082D4E4 /* Build configuration list for PBXNativeTarget "BusbudCodeChallenge" */;
+			buildPhases = (
+				3282072E62C7AA988D1280BC /* [CP] Check Pods Manifest.lock */,
+				B0F7902F1EC12B720082D4E4 /* Sources */,
+				B0F790301EC12B720082D4E4 /* Frameworks */,
+				B0F790311EC12B720082D4E4 /* Resources */,
+				95DD52AB36F3681950D79933 /* [CP] Embed Pods Frameworks */,
+				45EEA5A19CB50E34E658FA47 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BusbudCodeChallenge;
+			productName = BusbudCodeChallenge;
+			productReference = B0F790331EC12B720082D4E4 /* BusbudCodeChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0F7902B1EC12B720082D4E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ariel Scott-Dicker";
+				TargetAttributes = {
+					B0F790321EC12B720082D4E4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7LA77DS2EA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B0F7902E1EC12B720082D4E4 /* Build configuration list for PBXProject "BusbudCodeChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0F7902A1EC12B720082D4E4;
+			productRefGroup = B0F790341EC12B720082D4E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0F790321EC12B720082D4E4 /* BusbudCodeChallenge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0F790311EC12B720082D4E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F790461EC12B720082D4E4 /* LaunchScreen.storyboard in Resources */,
+				B0F790431EC12B720082D4E4 /* Assets.xcassets in Resources */,
+				B0F790411EC12B720082D4E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3282072E62C7AA988D1280BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45EEA5A19CB50E34E658FA47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BusbudCodeChallenge/Pods-BusbudCodeChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95DD52AB36F3681950D79933 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BusbudCodeChallenge/Pods-BusbudCodeChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0F7902F1EC12B720082D4E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B053AE171EC2589C0035184F /* BBDateUtility.m in Sources */,
+				B053AE141EC23E600035184F /* BBTripTableViewCell.m in Sources */,
+				B053AE111EC23E440035184F /* BBResultsTableViewController.m in Sources */,
+				B0F7903B1EC12B720082D4E4 /* AppDelegate.m in Sources */,
+				B088815B1EC16C8D00DCEE90 /* BBInitialViewController.m in Sources */,
+				B0F790381EC12B720082D4E4 /* main.m in Sources */,
+				B0F7904F1EC14B2E0082D4E4 /* BBAPIClient.m in Sources */,
+				B08881611EC1F67100DCEE90 /* BBTrip.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0F7903F1EC12B720082D4E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F790401EC12B720082D4E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0F790441EC12B720082D4E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F790451EC12B720082D4E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0F790481EC12B720082D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0F790491EC12B720082D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0F7904B1EC12B720082D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C87B4588BEA5E58BA506E0D /* Pods-BusbudCodeChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7LA77DS2EA;
+				INFOPLIST_FILE = BusbudCodeChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.BusbudCodeChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0F7904C1EC12B720082D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 940CA68833809F180B6C51FD /* Pods-BusbudCodeChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7LA77DS2EA;
+				INFOPLIST_FILE = BusbudCodeChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.BusbudCodeChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0F7902E1EC12B720082D4E4 /* Build configuration list for PBXProject "BusbudCodeChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F790481EC12B720082D4E4 /* Debug */,
+				B0F790491EC12B720082D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F7904A1EC12B720082D4E4 /* Build configuration list for PBXNativeTarget "BusbudCodeChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F7904B1EC12B720082D4E4 /* Debug */,
+				B0F7904C1EC12B720082D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0F7902B1EC12B720082D4E4 /* Project object */;
+}
