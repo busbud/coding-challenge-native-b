@@ -12,7 +12,7 @@
 @interface BBAPIClient : NSObject
 
 + (void)getTripsFromIndex:(NSUInteger)index
-                  Success:(void (^) (NSArray *trips, BOOL complete))success
+                  Success:(void (^) (NSArray *trips, NSNumber *complete))success
                   failure:(void (^) (NSError *error))failure;
 
 + (void)showAlertOnErrorInResultsTableViewController:(BBResultsTableViewController *)resultsTableViewController;

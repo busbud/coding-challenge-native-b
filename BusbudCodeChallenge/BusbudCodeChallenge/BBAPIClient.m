@@ -14,7 +14,7 @@
 @implementation BBAPIClient
 
 + (void)getTripsFromIndex:(NSUInteger)index
-                  Success:(void (^)(NSArray *, BOOL))success
+                  Success:(void (^)(NSArray *, NSNumber *))success
                   failure:(void (^)(NSError *))failure {
     NSString *url = [NSString new];
     
@@ -65,8 +65,9 @@
                         [trips addObject:trip];
                     }
                     
-                    success(trips, responseObject[@"complete"]);
+                    success(trips, (NSNumber *)[responseObject valueForKey:@"complete"]);
                 }
+     
                 failure:^(NSURLSessionDataTask *task, NSError *error) {
                     failure(error);
                 }];

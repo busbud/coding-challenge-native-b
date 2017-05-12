@@ -50,12 +50,12 @@
 
 - (void)getAllDepartures {
     [BBAPIClient getTripsFromIndex:self.apiIndex
-                           Success:^(NSArray *trips, BOOL complete) {
+                           Success:^(NSArray *trips, NSNumber *complete) {
                                for (BBTrip *trip in trips) {
                                    [self.trips addObject:trip];
                                }
                                
-                               if (!complete) {
+                               if (![complete boolValue]) {
                                    self.apiIndex += 1;
                                    [self getAllDepartures];
                                }
