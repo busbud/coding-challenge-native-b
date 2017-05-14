@@ -16,5 +16,6 @@
                   failure:(void (^) (NSError *error))failure;
 
 + (void)showAlertOnErrorInResultsTableViewController:(BBResultsTableViewController *)resultsTableViewController;
++ (void)showAlertOnNoResultsInResultsTableViewController:(BBResultsTableViewController *)resultsTableViewController;
 
 @end

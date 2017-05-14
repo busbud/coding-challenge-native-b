@@ -24,9 +24,7 @@
     
     self.trips = [NSMutableArray new];
     self.apiIndex = 0;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
+    
     [self getAllDepartures];
 }
 
@@ -63,6 +61,10 @@
                                dispatch_async(dispatch_get_main_queue(), ^{
                                    [self.tableView reloadData];
                                });
+                               
+                               if (self.trips.count == 0 && [complete boolValue]) {
+                                   [BBAPIClient showAlertOnNoResultsInResultsTableViewController:self];
+                               }
                            }
      
                            failure:^(NSError *error) {

@@ -16,13 +16,13 @@
 + (void)getTripsFromIndex:(NSUInteger)index
                   Success:(void (^)(NSArray *, NSNumber *))success
                   failure:(void (^)(NSError *))failure {
-    NSString *url = [NSString new];
+    NSString *url;
     
     if (index == 0) {
         url = @"https://napi.busbud.com/x-departures/dr5reg/f25dvk/2017-07-29?adult=1";
     
     } else {
-        url = [NSString stringWithFormat:@"https://napi.busbud.com/x-departures/dr5reg/f25dvk/2017-07-29/poll?adult=1&index=%lu",index];
+        url = [NSString stringWithFormat:@"https://napi.busbud.com/x-departures/dr5reg/f25dvk/2017-07-29/poll?adult=1&index=%lu", index];
     }
     
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
@@ -79,6 +79,21 @@
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK!"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    
+    [alertController addAction:okAction];
+    [resultsTableViewController presentViewController:alertController
+                                             animated:YES
+                                           completion:nil];
+}
+
++ (void)showAlertOnNoResultsInResultsTableViewController:(BBResultsTableViewController *)resultsTableViewController {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hmmm..."
+                                                                             message:@"We couldn't find any trips for those days. Try changing your search."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Got It"
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
     

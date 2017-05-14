@@ -32,6 +32,7 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 - The URL for the operator logo was also in a format not compatible with NSURL, so I had to divide the string.
 - The IDs of locations came back as NSNumbers instead of strings, so I just had to reformat those to query against an NSDictionary.
 - Sometimes, the table view wouldn't populate, and after lots of debugging, I found out that it was because I was getting false positives from the 'complete' value. I was trying to send a boolean value back in the response block, and realized that it had to be an NSNumber. Now, the recursion in the API call works!
+- Another issue I found after debugging is that sometimes the search would return 0 departures, after cycling through numerous indexes - I then added an alert to prompt a user to search again, just to handle if a search wouldn't return any results.
 
 ### Supporting API
 
