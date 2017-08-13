@@ -17,7 +17,7 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 
 ### Non-functional requirements
 
-- The code should be hosted on github, and the repo should be shared with Busbud and submitted as a pull request
+- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 - The repo should include 3 screenshots under the /screenshots folder to show the app usage.
 - Change the README.md to explain your solution, the issues, the way you solved them...
 
