@@ -27,6 +27,13 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 For all these requests, you MUST change the Accept header to:
 `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
 
+### Authentication
+
+To get a token, make a `GET` request to:
+`https://napi.busbud.com/auth/guest`
+
+In subsequent requests, use this token as a value for the `x-busbud-token` request header.
+
 ### Init results
 
 To get departure results, search is initialized via the following endpoint:
