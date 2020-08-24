@@ -24,8 +24,8 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 
 ### Supporting API
 
-In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.
-For all requests, you MUST provide the following HTTPS headers:
+In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
+For all requests, you MUST provide the following HTTP headers:
 
 Header | Value
 --- | ---
