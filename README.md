@@ -24,8 +24,13 @@ For each item, we want, at least, to see the **departure time**, the **arrival t
 
 ### Supporting API
 
-For all these requests, you MUST change the Accept header to:
-`application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
+In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
+For all requests, you MUST provide the following HTTP headers:
+
+Header | Value
+--- | ---
+Accept | `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
+X-Busbud-Token | The token provided in the challenge invitation email.
 
 ### Init results
 
