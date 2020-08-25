@@ -1,0 +1,6 @@
+framework module Pods_BusbudOsheaga {
+  umbrella header "Pods-BusbudOsheaga-umbrella.h"
+
+  export *
+  module * { export * }
+}

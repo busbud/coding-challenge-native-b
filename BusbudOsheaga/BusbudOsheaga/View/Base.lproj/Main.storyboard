@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AOY-jW-xVw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="IntroViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="osheaga" translatesAutoresizingMaskIntoConstraints="NO" id="26p-cE-TnE">
+                                <rect key="frame" x="16" y="144" width="382" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="i8o-pZ-uAn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-gQ-DjS">
+                                <rect key="frame" x="32" y="750" width="350" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="xQd-Xj-9JU"/>
+                                </constraints>
+                                <state key="normal" title="Let's find tickets!"/>
+                                <connections>
+                                    <segue destination="MWB-zq-ZQ4" kind="show" id="mJX-D7-yhp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brought to you by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmF-RF-zYZ">
+                                <rect key="frame" x="32" y="288" width="136.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="busbud" translatesAutoresizingMaskIntoConstraints="NO" id="adI-rw-tnc">
+                                <rect key="frame" x="168.5" y="273.5" width="96" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="HQS-cQ-LkC"/>
+                                    <constraint firstAttribute="height" constant="50" id="KaG-Zg-Dvq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jH0-gQ-DjS" secondAttribute="bottom" constant="64" id="2bt-gA-erS"/>
+                            <constraint firstItem="26p-cE-TnE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5cq-9l-4tB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jH0-gQ-DjS" secondAttribute="trailing" constant="32" id="KHP-vy-Enh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26p-cE-TnE" secondAttribute="trailing" constant="16" id="RKS-8I-dfT"/>
+                            <constraint firstItem="LmF-RF-zYZ" firstAttribute="top" secondItem="26p-cE-TnE" secondAttribute="bottom" constant="16" id="ZgF-Lu-iEe"/>
+                            <constraint firstItem="26p-cE-TnE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="abM-10-x77"/>
+                            <constraint firstItem="adI-rw-tnc" firstAttribute="centerY" secondItem="LmF-RF-zYZ" secondAttribute="centerY" id="eSG-RW-mLo"/>
+                            <constraint firstItem="jH0-gQ-DjS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="jAF-Ud-CQl"/>
+                            <constraint firstItem="LmF-RF-zYZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="llm-QU-9Ph"/>
+                            <constraint firstItem="adI-rw-tnc" firstAttribute="leading" secondItem="LmF-RF-zYZ" secondAttribute="trailing" id="p7a-VK-LqV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fja-Nz-7CN"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="TFj-dx-Oyp">
+            <objects>
+                <viewController id="MWB-zq-ZQ4" customClass="SearchViewController" customModule="BusbudOsheaga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EfQ-mV-9Al">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r8X-jd-Wpl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8R2-xf-qvK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tT-WX-ts2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xNg-8x-G56">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="AOY-jW-xVw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T09-c0-cs6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mpT-wz-zht"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwA-Sb-Ks2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="busbud" width="400" height="200"/>
+        <image name="osheaga" width="202" height="59"/>
+        <namedColor name="background">
+            <color red="1" green="0.98799997568130493" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
