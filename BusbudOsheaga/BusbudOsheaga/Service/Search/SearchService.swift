@@ -37,5 +37,21 @@ class SearchService: SearchServiceProtocol {
         let callableAPI = api
         return callableAPI.performGenericRequest(SearchRouter.initSearch(baseUrl: callableAPI.basePath,searchParams: searchParams))
     }
+    
+    func pollSearch(with origin: String, destination: String, date: String ) -> (Promise<SearchResponse>) {
+
+        if origin.isEmpty || destination.isEmpty || date.isEmpty {
+            return Promise<SearchResponse>() { _ in
+                throw APIError.badRequest
+            }
+        }
+
+        var searchParams = SearchParams()
+        searchParams.origin = origin
+        searchParams.destination = destination
+        searchParams.date = date
+        let callableAPI = api
+        return callableAPI.performGenericRequest(SearchRouter.pollSearch(baseUrl: callableAPI.basePath,searchParams: searchParams))
+    }
 
 }

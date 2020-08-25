@@ -16,10 +16,11 @@ enum SearchRouter: Router, URLRequestConvertible {
     }
 
     case initSearch(baseUrl: String, searchParams: SearchParams)
+    case pollSearch(baseUrl: String, searchParams: SearchParams)
     
     internal var httpMethod: HTTPMethod {
         switch self {
-        case .initSearch:
+        case .initSearch, .pollSearch:
             return .get
         }
     }
@@ -28,12 +29,14 @@ enum SearchRouter: Router, URLRequestConvertible {
         switch self {
         case .initSearch( _, let searchParams):
             return "/x-departures/\(searchParams.origin!)/\(searchParams.destination!)/\(searchParams.date!)"
+        case .pollSearch( _, let searchParams):
+        return "/x-departures/\(searchParams.origin!)/\(searchParams.destination!)/\(searchParams.date!)/poll"
         }
     }
 
     internal var baseUrl: String {
         switch self {
-        case .initSearch(let baseUrl, _):
+        case .initSearch(let baseUrl, _), .pollSearch(let baseUrl, _):
             return baseUrl
         }
     }
@@ -42,6 +45,8 @@ enum SearchRouter: Router, URLRequestConvertible {
         switch self {
         case .initSearch:
             return ["adult": 1, "child": 0, "senior": 0, "lang": "en", "currency": "cad"]
+        case .pollSearch:
+            return ["adult": 1, "child": 0, "senior": 0, "lang": "en", "currency": "cad", "index": 0]
         }
     }
     
@@ -51,10 +56,11 @@ enum SearchRouter: Router, URLRequestConvertible {
         let baseURL = URL(string: baseUrl)!
         var urlRequest = URLRequest(url: baseURL.appendingPathComponent(path))
         urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.addValue("no-cache", forHTTPHeaderField: "Cache-Control")
         urlRequest.addValue("application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/", forHTTPHeaderField: "Accept")
         urlRequest.addValue("GUEST_LHfJPbBsTgynDZ2vFXcL0Q", forHTTPHeaderField: "X-Busbud-Token")
         switch self {
-        case .initSearch:
+        case .initSearch, .pollSearch:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         }
         return urlRequest

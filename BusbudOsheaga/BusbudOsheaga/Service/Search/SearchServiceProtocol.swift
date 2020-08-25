@@ -10,4 +10,6 @@ import PromiseKit
 
 protocol SearchServiceProtocol: BusbudService {
     func initSearch(with origin: String, destination: String, date: String) -> (Promise<SearchResponse>)
+    
+    func pollSearch(with origin: String, destination: String, date: String) -> (Promise<SearchResponse>)
 }

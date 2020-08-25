@@ -26,4 +26,9 @@ class SearchInteractor: SearchInteractorProtocol {
         return searchService.initSearch(with: origin, destination: destination, date: date)
     }
     
+    func pollSearch(with origin: String, destination: String, date: String) -> Promise<SearchResponse> {
+        
+        return searchService.pollSearch(with: origin, destination: destination, date: date)
+    }
+    
 }

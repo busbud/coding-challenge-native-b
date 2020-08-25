@@ -26,12 +26,13 @@ struct City: Codable {
         case fullName = "full_name"
         case timezone
         case geohash
+        case region
         case latitude = "lat"
         case longitude = "lon"
     }
     struct Region: Codable {
         
-        var identifier: String?
+        var identifier: Int?
         var locale: String?
         var name: String?
         var countryCode: String?

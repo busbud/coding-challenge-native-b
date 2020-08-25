@@ -10,7 +10,7 @@ import Foundation
 
 struct SearchResponse: Codable {
     var cities: [City]?
-    var location: [Location]?
+    var locations: [Location]?
     var operators: [Operator]?
     var departures: [Departure]?
     var complete: Bool = false

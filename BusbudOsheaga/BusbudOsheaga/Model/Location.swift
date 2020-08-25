@@ -9,7 +9,7 @@
 import Foundation
 
 struct Location: Codable {
-    var identifier: String?
+    var identifier: Int?
     var cityId: String?
     var name: String?
     var address: [String]?
