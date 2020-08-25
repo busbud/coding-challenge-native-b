@@ -18,9 +18,12 @@ struct Departure: Codable {
     var arrivalTimezone: String?
     var departureTime: String?
     var arrivalTime: String?
+    var departureLocationId: Int?
+    var arrivalLocationId: Int?
     
     struct Prices: Codable {
         var total: Double?
+        var currency: String?
     }
     
     enum CodingKeys: String, CodingKey {
@@ -33,6 +36,8 @@ struct Departure: Codable {
         case arrivalTimezone = "arrival_timezone"
         case departureTime = "departure_time"
         case arrivalTime = "arrival_time"
+        case departureLocationId = "origin_location_id"
+        case arrivalLocationId = "destination_location_id"
     }
     
 }

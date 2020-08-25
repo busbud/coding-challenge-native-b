@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C8174613F9EC4324F8D2D9D4 /* Pods_BusbudOsheagaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6EAE1C0C9D31330E4FF8C /* Pods_BusbudOsheagaTests.framework */; };
+		DA56598124F57A5C008A1312 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56598024F57A5C008A1312 /* SearchCollectionViewCell.swift */; };
+		DA56598324F57EF9008A1312 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56598224F57EF9008A1312 /* SearchItem.swift */; };
 		DA5B99B924F458D60024EE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B99B824F458D60024EE24 /* AppDelegate.swift */; };
 		DA5B99BB24F458D60024EE24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B99BA24F458D60024EE24 /* SceneDelegate.swift */; };
 		DA5B99BD24F458D60024EE24 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B99BC24F458D60024EE24 /* IntroViewController.swift */; };
@@ -62,6 +64,8 @@
 		B3F963F6D17FCC3470AE47C1 /* Pods-BusbudOsheaga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusbudOsheaga.debug.xcconfig"; path = "Target Support Files/Pods-BusbudOsheaga/Pods-BusbudOsheaga.debug.xcconfig"; sourceTree = "<group>"; };
 		B53FCFB459B8FC756726FBEB /* Pods-BusbudOsheaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusbudOsheaga.release.xcconfig"; path = "Target Support Files/Pods-BusbudOsheaga/Pods-BusbudOsheaga.release.xcconfig"; sourceTree = "<group>"; };
 		C0730EC0DC844DEBEB90BE0F /* Pods-BusbudOsheagaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusbudOsheagaTests.debug.xcconfig"; path = "Target Support Files/Pods-BusbudOsheagaTests/Pods-BusbudOsheagaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA56598024F57A5C008A1312 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA56598224F57EF9008A1312 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		DA5B99B524F458D60024EE24 /* BusbudOsheaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusbudOsheaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5B99B824F458D60024EE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5B99BA24F458D60024EE24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				DA5B9A2824F4821F0024EE24 /* SearchPresenter.swift */,
 				DA5B9A2724F4821E0024EE24 /* SearchPresenterProtocol.swift */,
 				DA5B99E624F465110024EE24 /* SearchViewController.swift */,
+				DA56598024F57A5C008A1312 /* SearchCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				DA5B9A0724F472400024EE24 /* Departure.swift */,
 				DA5B9A0924F473FF0024EE24 /* SearchResponse.swift */,
 				DA5B9A2524F47F000024EE24 /* SearchParams.swift */,
+				DA56598224F57EF9008A1312 /* SearchItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				DA5B9A1F24F47C660024EE24 /* ServiceFactory.swift in Sources */,
 				DA5B9A2A24F4821F0024EE24 /* SearchPresenter.swift in Sources */,
 				DA5B9A2324F47C7F0024EE24 /* SearchServiceProtocol.swift in Sources */,
+				DA56598324F57EF9008A1312 /* SearchItem.swift in Sources */,
 				DA5B9A1924F47C070024EE24 /* API.swift in Sources */,
 				DA5B99BD24F458D60024EE24 /* IntroViewController.swift in Sources */,
 				DA5B9A0024F468D00024EE24 /* Location.swift in Sources */,
@@ -472,6 +479,7 @@
 				DA5B99B924F458D60024EE24 /* AppDelegate.swift in Sources */,
 				DA5B99E724F465110024EE24 /* SearchViewController.swift in Sources */,
 				DA5B99FC24F4672E0024EE24 /* SearchInteractor.swift in Sources */,
+				DA56598124F57A5C008A1312 /* SearchCollectionViewCell.swift in Sources */,
 				DA5B99BB24F458D60024EE24 /* SceneDelegate.swift in Sources */,
 				DA5B9A1624F47BE20024EE24 /* Router.swift in Sources */,
 				DA5B9A2624F47F000024EE24 /* SearchParams.swift in Sources */,

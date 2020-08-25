@@ -10,8 +10,9 @@ import Foundation
 
 protocol SearchPresenterProtocol: Presenter {
     var searchInteractor: SearchInteractorProtocol { get }
-    var searchItemsChanged: ((SearchResponse) -> Void)? { get set }
+    var searchItemsChanged: (([SearchItem]) -> Void)? { get set }
     var displayAlert: (((title: String, content: String)) -> Void)? { get set }
     var isLoadingResults: ((Bool) -> Void)? { get set }
+    var headerChanged: ((String) -> Void)? { get set }
     func userStartedSearch()
 }
