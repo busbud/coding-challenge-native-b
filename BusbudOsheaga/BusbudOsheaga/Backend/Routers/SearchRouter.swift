@@ -63,6 +63,7 @@ enum SearchRouter: Router, URLRequestConvertible {
         case .initSearch, .pollSearch:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         }
+        print("Request made")
         return urlRequest
     }
 }

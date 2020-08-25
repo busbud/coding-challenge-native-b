@@ -17,6 +17,10 @@ struct SearchPresenter: SearchPresenterProtocol {
     var headerChanged: ((String) -> Void)?
     var displayAlert: (((title: String, content: String)) -> Void)?
     var isLoadingResults: ((Bool) -> Void)?
+    
+    let origin = "dr5reg"
+    let destination = "f25dvk"
+    let date = "2021-07-29"
 
     internal var searchInteractor: SearchInteractorProtocol
 
@@ -26,9 +30,6 @@ struct SearchPresenter: SearchPresenterProtocol {
 
     func userStartedSearch() {
         isLoadingResults?(true)
-        let origin = "f244m6"
-        let destination = "f25dvk"
-        let date = "2020-08-28"
         searchInteractor.initSearch(with: origin , destination: destination, date: date).done {(response) in
             
             self.searchItemsChanged?(self.mapResponseToSearchItems(with: response))
@@ -40,21 +41,21 @@ struct SearchPresenter: SearchPresenterProtocol {
             if !response.complete {
                 let timeToLeave = Double(response.ttl!)
                 let timestampToBackoff = Date().timeIntervalSince1970 + timeToLeave
-                after(.seconds(2)).done{ _ in self.poll(seconds: 2, task: self.searchInteractor.pollSearch(with: origin, destination: destination, date: date), ttl: timestampToBackoff).catch(self.onError(error:))}
+                after(.seconds(2)).done{ _ in self.pollSearch(seconds: 2, ttl: timestampToBackoff).catch(self.onError(error:))}
             } else {
                 self.isLoadingResults?(false)
             }
         }.catch (self.onError(error:))
     }
     
-    func poll(seconds time: Int, task: Promise<SearchResponse>, ttl: TimeInterval) -> Promise<Void> {
-        return task.done { response in
+    func pollSearch(seconds time: Int, ttl: TimeInterval) -> Promise<Void> {
+        return self.searchInteractor.pollSearch(with: origin, destination: destination, date: date).done { response in
             self.searchItemsChanged?(self.mapResponseToSearchItems(with: response))
             if response.complete || Date().timeIntervalSince1970 > ttl {
                 self.isLoadingResults?(false)
             } else {
                 after(.seconds(time)).done {
-                    return self.poll(seconds: time, task: task, ttl: ttl).catch(self.onError(error:))
+                    return self.pollSearch(seconds: time, ttl: ttl).catch(self.onError(error:))
                 }
             }
         }

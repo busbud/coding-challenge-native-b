@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, View {
     var items = [SearchItem]()
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var loadingView: UIView?
+    @IBOutlet var noTicketsView: UIView?
     @IBOutlet var lblHeader: UILabel?
     
     override func viewDidLoad() {
@@ -32,6 +33,9 @@ class SearchViewController: UIViewController, View {
         
         presenter.isLoadingResults = { [weak self] isLoading in
             self?.loadingView?.isHidden = !isLoading
+            if let itemsCount = self?.items.count {
+                self?.noTicketsView?.isHidden = isLoading || itemsCount > 0
+            }
         }
         
         presenter.headerChanged = { [weak self] text in
