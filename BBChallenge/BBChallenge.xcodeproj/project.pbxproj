@@ -99,12 +99,11 @@
 		06E2D34F250A60BE0067DA90 /* BBChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				06E2D350250A60BE0067DA90 /* AppDelegate.swift */,
-				06E2D352250A60BE0067DA90 /* SceneDelegate.swift */,
-				06E2D354250A60BE0067DA90 /* ContentView.swift */,
-				06E2D356250A60C30067DA90 /* Assets.xcassets */,
-				06E2D35B250A60C30067DA90 /* LaunchScreen.storyboard */,
-				06E2D35E250A60C30067DA90 /* Info.plist */,
+				06E2D388250A6A2B0067DA90 /* Commons */,
+				06E2D384250A6A080067DA90 /* Utilities */,
+				06E2D383250A69F30067DA90 /* App */,
+				06E2D382250A69E50067DA90 /* AppDelegate */,
+				06E2D381250A69C10067DA90 /* Resources */,
 				06E2D358250A60C30067DA90 /* Preview Content */,
 			);
 			path = BBChallenge;
@@ -134,6 +133,79 @@
 				06E2D374250A60C30067DA90 /* Info.plist */,
 			);
 			path = BBChallengeUITests;
+			sourceTree = "<group>";
+		};
+		06E2D381250A69C10067DA90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D356250A60C30067DA90 /* Assets.xcassets */,
+				06E2D35B250A60C30067DA90 /* LaunchScreen.storyboard */,
+				06E2D35E250A60C30067DA90 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		06E2D382250A69E50067DA90 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D350250A60BE0067DA90 /* AppDelegate.swift */,
+				06E2D352250A60BE0067DA90 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		06E2D383250A69F30067DA90 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D354250A60BE0067DA90 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		06E2D384250A6A080067DA90 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D387250A6A250067DA90 /* UI */,
+				06E2D386250A6A1D0067DA90 /* Formatters */,
+				06E2D385250A6A140067DA90 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		06E2D385250A6A140067DA90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		06E2D386250A6A1D0067DA90 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		06E2D387250A6A250067DA90 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		06E2D388250A6A2B0067DA90 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D389250A6A360067DA90 /* Model */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		06E2D389250A6A360067DA90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,7 +531,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BBChallenge/Preview Content\"";
 				DEVELOPMENT_TEAM = 85BDU67LKK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = BBChallenge/Info.plist;
+				INFOPLIST_FILE = BBChallenge/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +551,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BBChallenge/Preview Content\"";
 				DEVELOPMENT_TEAM = 85BDU67LKK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = BBChallenge/Info.plist;
+				INFOPLIST_FILE = BBChallenge/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
