@@ -8,9 +8,12 @@
 
 import SwiftUI
 
+/**
+ Root view 
+ */
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        PageView(OnboardingPagesFactory.makeOnboardingViews())
     }
 }
 

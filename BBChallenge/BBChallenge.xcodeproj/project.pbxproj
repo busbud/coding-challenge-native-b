@@ -15,6 +15,13 @@
 		06E2D35D250A60C30067DA90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06E2D35B250A60C30067DA90 /* LaunchScreen.storyboard */; };
 		06E2D368250A60C30067DA90 /* BBChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D367250A60C30067DA90 /* BBChallengeTests.swift */; };
 		06E2D373250A60C30067DA90 /* BBChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D372250A60C30067DA90 /* BBChallengeUITests.swift */; };
+		06E2D38E250A6B860067DA90 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D38B250A6B860067DA90 /* PageView.swift */; };
+		06E2D38F250A6B860067DA90 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D38C250A6B860067DA90 /* PageViewController.swift */; };
+		06E2D390250A6B860067DA90 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D38D250A6B860067DA90 /* PageControl.swift */; };
+		06E2D394250A6FCD0067DA90 /* OnboardingPagesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D392250A6FCD0067DA90 /* OnboardingPagesFactory.swift */; };
+		06E2D395250A6FCD0067DA90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D393250A6FCD0067DA90 /* OnboardingView.swift */; };
+		06E2D398250A702D0067DA90 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D397250A702D0067DA90 /* ColorManager.swift */; };
+		06E2D39A250A70EE0067DA90 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D399250A70EE0067DA90 /* OnboardingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		06E2D36E250A60C30067DA90 /* BBChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E2D372250A60C30067DA90 /* BBChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBChallengeUITests.swift; sourceTree = "<group>"; };
 		06E2D374250A60C30067DA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06E2D38B250A6B860067DA90 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		06E2D38C250A6B860067DA90 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		06E2D38D250A6B860067DA90 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		06E2D392250A6FCD0067DA90 /* OnboardingPagesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPagesFactory.swift; sourceTree = "<group>"; };
+		06E2D393250A6FCD0067DA90 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		06E2D397250A702D0067DA90 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		06E2D399250A70EE0067DA90 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +113,8 @@
 		06E2D34F250A60BE0067DA90 /* BBChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				06E2D388250A6A2B0067DA90 /* Commons */,
 				06E2D384250A6A080067DA90 /* Utilities */,
+				06E2D388250A6A2B0067DA90 /* Commons */,
 				06E2D383250A69F30067DA90 /* App */,
 				06E2D382250A69E50067DA90 /* AppDelegate */,
 				06E2D381250A69C10067DA90 /* Resources */,
@@ -157,6 +171,7 @@
 		06E2D383250A69F30067DA90 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				06E2D391250A6FBA0067DA90 /* Onboarding */,
 				06E2D354250A60BE0067DA90 /* ContentView.swift */,
 			);
 			path = App;
@@ -165,9 +180,9 @@
 		06E2D384250A6A080067DA90 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				06E2D387250A6A250067DA90 /* UI */,
-				06E2D386250A6A1D0067DA90 /* Formatters */,
 				06E2D385250A6A140067DA90 /* Extensions */,
+				06E2D386250A6A1D0067DA90 /* Formatters */,
+				06E2D387250A6A250067DA90 /* UI */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -189,6 +204,8 @@
 		06E2D387250A6A250067DA90 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				06E2D396250A70200067DA90 /* Styles */,
+				06E2D38A250A6B770067DA90 /* Pager */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -204,8 +221,36 @@
 		06E2D389250A6A360067DA90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06E2D399250A70EE0067DA90 /* OnboardingModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		06E2D38A250A6B770067DA90 /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D38D250A6B860067DA90 /* PageControl.swift */,
+				06E2D38B250A6B860067DA90 /* PageView.swift */,
+				06E2D38C250A6B860067DA90 /* PageViewController.swift */,
+			);
+			path = Pager;
+			sourceTree = "<group>";
+		};
+		06E2D391250A6FBA0067DA90 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D392250A6FCD0067DA90 /* OnboardingPagesFactory.swift */,
+				06E2D393250A6FCD0067DA90 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		06E2D396250A70200067DA90 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				06E2D397250A702D0067DA90 /* ColorManager.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +406,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				06E2D351250A60BE0067DA90 /* AppDelegate.swift in Sources */,
+				06E2D38F250A6B860067DA90 /* PageViewController.swift in Sources */,
+				06E2D394250A6FCD0067DA90 /* OnboardingPagesFactory.swift in Sources */,
+				06E2D390250A6B860067DA90 /* PageControl.swift in Sources */,
+				06E2D38E250A6B860067DA90 /* PageView.swift in Sources */,
+				06E2D395250A6FCD0067DA90 /* OnboardingView.swift in Sources */,
+				06E2D39A250A70EE0067DA90 /* OnboardingModel.swift in Sources */,
+				06E2D398250A702D0067DA90 /* ColorManager.swift in Sources */,
 				06E2D353250A60BE0067DA90 /* SceneDelegate.swift in Sources */,
 				06E2D355250A60BE0067DA90 /* ContentView.swift in Sources */,
 			);
