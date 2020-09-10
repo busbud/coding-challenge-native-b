@@ -11,7 +11,7 @@ import SwiftUI
 /**
  Root view 
  */
-struct ContentView: View {
+struct ContentRootView: View {
     var body: some View {
         PageView(OnboardingPagesFactory.makeOnboardingViews())
     }
@@ -19,6 +19,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentRootView()
     }
 }
