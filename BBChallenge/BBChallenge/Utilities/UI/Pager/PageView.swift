@@ -46,7 +46,7 @@ private extension PageView {
         //Access the scene layour
         GeometryReader { proxy in
             // Transition to an emptyView until it exists the  next view
-            NavigationLink(destination: EmptyView()) {
+            NavigationLink(destination: HomeSearchView(viewModel: HomeSearchViewModel())) {
                 Text("Start")
                     .font(.headline)
                     .bold()

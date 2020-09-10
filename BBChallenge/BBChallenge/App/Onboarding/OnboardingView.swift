@@ -1,3 +1,11 @@
+//
+//  OnboardingView.swift
+//  BBChallenge
+//
+//  Created by Luis Alfonso Marquez Lecona on 2020-09-10.
+//  Copyright © 2020 Busbud. All rights reserved.
+//
+
 import SwiftUI
 
 /**
@@ -49,11 +57,13 @@ struct OnboardingView : View {
 
 // Simple preview
 struct OnboardingView_Previews : PreviewProvider {
-  static var previews: some View {
-    OnboardingView(
-      model: OnboardingModel(
-        image: Image("OnboardingEnd"),
-        title: Text(verbatim: "Title"),
-        description: Text(verbatim: "Content")))
-  }
+    static var previews: some View {
+        OnboardingView(
+            model: OnboardingModel(
+                image: Image("OnboardingEnd"),
+                title: Text(verbatim: "Title"),
+                description: Text(verbatim: "Content")
+            )
+        )
+    }
 }
