@@ -31,6 +31,9 @@ class DeparturesViewModel: ObservableObject {
     /// Set of suscriptions for cleaning
     private var disposables = Set<AnyCancellable>()
 
+    /// Custom queue to search departures
+    private var scheduler: DispatchQueue?
+    
     /// Inject departureCriteria, Busbud API Fetcher and a custom queue to search departures
     init(criteria departureCriteria: DeparturesCriteria, apiFetcher bbAPIFetcher: BBAPIFetchable?,
          scheduler: DispatchQueue = DispatchQueue(label: "DeparturesViewModel", qos: .userInitiated)
@@ -39,12 +42,14 @@ class DeparturesViewModel: ObservableObject {
         completed = false
         self.bbAPIFetcher = bbAPIFetcher
         self.departureCriteria = departureCriteria
-        scheduler.async { self.fetchDepartures() }
+        self.scheduler = scheduler
+        self.fetchDepartures()
     }
     
     /// Search departures
     func fetchDepartures() {
-        self.bbAPIFetcher?.departures()
+        self.scheduler?.async {
+            self.bbAPIFetcher?.departures(withCriteria: self.departureCriteria)
             .receive(on: DispatchQueue.main)
             .sink(
             // on complete clean flags
@@ -60,11 +65,12 @@ class DeparturesViewModel: ObservableObject {
                 self.completed = true
             },
             // on value received update departures data source
-            receiveValue: { [weak self] forecast in
+            receiveValue: { [weak self] departures in
                 guard let self = self else { return }
-                self.departuresDataSource = forecast
+                self.departuresDataSource = departures
                 self.loading = true
-            }).store(in: &disposables)
+            }).store(in: &self.disposables)
+        }
     }
     
 }

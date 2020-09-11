@@ -14,23 +14,14 @@
 		065E5FCE250AB9440025331C /* BBAPIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FCB250AB9440025331C /* BBAPIFetcher.swift */; };
 		065E5FCF250AB9440025331C /* BBAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FCC250AB9440025331C /* BBAPIEndpoint.swift */; };
 		065E5FD0250AB9440025331C /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FCD250AB9440025331C /* APIKeys.swift */; };
-		065E5FE1250ABA100025331C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD1250ABA0E0025331C /* Country.swift */; };
-		065E5FE2250ABA100025331C /* Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD2250ABA0E0025331C /* Prices.swift */; };
-		065E5FE3250ABA100025331C /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD3250ABA0E0025331C /* Departure.swift */; };
-		065E5FE4250ABA100025331C /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD4250ABA0E0025331C /* Operator.swift */; };
-		065E5FE5250ABA100025331C /* OperatorAmenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD5250ABA0E0025331C /* OperatorAmenities.swift */; };
-		065E5FE6250ABA100025331C /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD6250ABA0E0025331C /* Terms.swift */; };
-		065E5FE7250ABA100025331C /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD7250ABA0F0025331C /* JSONSchemaSupport.swift */; };
-		065E5FE8250ABA100025331C /* EconomyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD8250ABA0F0025331C /* EconomyClass.swift */; };
-		065E5FE9250ABA100025331C /* SellTicketsCutoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FD9250ABA0F0025331C /* SellTicketsCutoff.swift */; };
-		065E5FEA250ABA100025331C /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDA250ABA0F0025331C /* Region.swift */; };
-		065E5FEB250ABA100025331C /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDB250ABA0F0025331C /* Classes.swift */; };
-		065E5FEC250ABA100025331C /* BusbudDeparturesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDC250ABA0F0025331C /* BusbudDeparturesJSON.swift */; };
-		065E5FED250ABA100025331C /* Breakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDD250ABA100025331C /* Breakdown.swift */; };
-		065E5FEE250ABA100025331C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDE250ABA100025331C /* Location.swift */; };
-		065E5FEF250ABA100025331C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FDF250ABA100025331C /* City.swift */; };
-		065E5FF0250ABA100025331C /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FE0250ABA100025331C /* Categories.swift */; };
 		065E5FF2250ABDA10025331C /* DeparturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E5FF1250ABDA10025331C /* DeparturesViewModel.swift */; };
+		065E602B250B06520025331C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6024250B06510025331C /* Country.swift */; };
+		065E602C250B06520025331C /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6025250B06510025331C /* JSONSchemaSupport.swift */; };
+		065E602D250B06520025331C /* BusbudDeparturesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6026250B06510025331C /* BusbudDeparturesJSON.swift */; };
+		065E602E250B06520025331C /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6027250B06510025331C /* TypeEnum.swift */; };
+		065E602F250B06520025331C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6028250B06510025331C /* Location.swift */; };
+		065E6030250B06520025331C /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6029250B06520025331C /* Region.swift */; };
+		065E6031250B06520025331C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E602A250B06520025331C /* City.swift */; };
 		06E2D351250A60BE0067DA90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D350250A60BE0067DA90 /* AppDelegate.swift */; };
 		06E2D353250A60BE0067DA90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D352250A60BE0067DA90 /* SceneDelegate.swift */; };
 		06E2D355250A60BE0067DA90 /* ContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E2D354250A60BE0067DA90 /* ContentRootView.swift */; };
@@ -82,23 +73,14 @@
 		065E5FCB250AB9440025331C /* BBAPIFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAPIFetcher.swift; sourceTree = "<group>"; };
 		065E5FCC250AB9440025331C /* BBAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAPIEndpoint.swift; sourceTree = "<group>"; };
 		065E5FCD250AB9440025331C /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
-		065E5FD1250ABA0E0025331C /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		065E5FD2250ABA0E0025331C /* Prices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prices.swift; sourceTree = "<group>"; };
-		065E5FD3250ABA0E0025331C /* Departure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
-		065E5FD4250ABA0E0025331C /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		065E5FD5250ABA0E0025331C /* OperatorAmenities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorAmenities.swift; sourceTree = "<group>"; };
-		065E5FD6250ABA0E0025331C /* Terms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
-		065E5FD7250ABA0F0025331C /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
-		065E5FD8250ABA0F0025331C /* EconomyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyClass.swift; sourceTree = "<group>"; };
-		065E5FD9250ABA0F0025331C /* SellTicketsCutoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellTicketsCutoff.swift; sourceTree = "<group>"; };
-		065E5FDA250ABA0F0025331C /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
-		065E5FDB250ABA0F0025331C /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
-		065E5FDC250ABA0F0025331C /* BusbudDeparturesJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusbudDeparturesJSON.swift; sourceTree = "<group>"; };
-		065E5FDD250ABA100025331C /* Breakdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breakdown.swift; sourceTree = "<group>"; };
-		065E5FDE250ABA100025331C /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		065E5FDF250ABA100025331C /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		065E5FE0250ABA100025331C /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		065E5FF1250ABDA10025331C /* DeparturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesViewModel.swift; sourceTree = "<group>"; };
+		065E6024250B06510025331C /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		065E6025250B06510025331C /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		065E6026250B06510025331C /* BusbudDeparturesJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusbudDeparturesJSON.swift; sourceTree = "<group>"; };
+		065E6027250B06510025331C /* TypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		065E6028250B06510025331C /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		065E6029250B06520025331C /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		065E602A250B06520025331C /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		06E2D34D250A60BE0067DA90 /* BBChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E2D350250A60BE0067DA90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06E2D352250A60BE0067DA90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +165,20 @@
 				065E5FCB250AB9440025331C /* BBAPIFetcher.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		065E5FF5250AD8A30025331C /* DeparturesResponse */ = {
+			isa = PBXGroup;
+			children = (
+				065E602A250B06520025331C /* City.swift */,
+				065E6024250B06510025331C /* Country.swift */,
+				065E6025250B06510025331C /* JSONSchemaSupport.swift */,
+				065E6028250B06510025331C /* Location.swift */,
+				065E6029250B06520025331C /* Region.swift */,
+				065E6027250B06510025331C /* TypeEnum.swift */,
+				065E6026250B06510025331C /* BusbudDeparturesJSON.swift */,
+			);
+			path = DeparturesResponse;
 			sourceTree = "<group>";
 		};
 		06E2D344250A60BE0067DA90 = {
@@ -321,6 +317,7 @@
 		06E2D389250A6A360067DA90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				065E5FF5250AD8A30025331C /* DeparturesResponse */,
 				06E2D3AE250A8AA90067DA90 /* API */,
 				06E2D3A3250A81DA0067DA90 /* CurrencyISOModel.swift */,
 				06E2D3A0250A81DA0067DA90 /* DepartureModel.swift */,
@@ -371,22 +368,6 @@
 		06E2D3AE250A8AA90067DA90 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				065E5FDD250ABA100025331C /* Breakdown.swift */,
-				065E5FDC250ABA0F0025331C /* BusbudDeparturesJSON.swift */,
-				065E5FE0250ABA100025331C /* Categories.swift */,
-				065E5FDF250ABA100025331C /* City.swift */,
-				065E5FDB250ABA0F0025331C /* Classes.swift */,
-				065E5FD1250ABA0E0025331C /* Country.swift */,
-				065E5FD3250ABA0E0025331C /* Departure.swift */,
-				065E5FD8250ABA0F0025331C /* EconomyClass.swift */,
-				065E5FD7250ABA0F0025331C /* JSONSchemaSupport.swift */,
-				065E5FDE250ABA100025331C /* Location.swift */,
-				065E5FD4250ABA0E0025331C /* Operator.swift */,
-				065E5FD5250ABA0E0025331C /* OperatorAmenities.swift */,
-				065E5FD2250ABA0E0025331C /* Prices.swift */,
-				065E5FDA250ABA0F0025331C /* Region.swift */,
-				065E5FD9250ABA0F0025331C /* SellTicketsCutoff.swift */,
-				065E5FD6250ABA0E0025331C /* Terms.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -552,47 +533,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065E602B250B06520025331C /* Country.swift in Sources */,
 				065E5FC8250AB6030025331C /* CombineAPI.swift in Sources */,
-				065E5FE8250ABA100025331C /* EconomyClass.swift in Sources */,
-				065E5FEE250ABA100025331C /* Location.swift in Sources */,
+				065E602F250B06520025331C /* Location.swift in Sources */,
 				06E2D39F250A81CC0067DA90 /* HomeSearchViewModel.swift in Sources */,
 				065E5FF2250ABDA10025331C /* DeparturesViewModel.swift in Sources */,
 				065E5FD0250AB9440025331C /* APIKeys.swift in Sources */,
 				065E5FCF250AB9440025331C /* BBAPIEndpoint.swift in Sources */,
 				06E2D351250A60BE0067DA90 /* AppDelegate.swift in Sources */,
 				06E2D3A7250A81DA0067DA90 /* CurrencyISOModel.swift in Sources */,
-				065E5FE3250ABA100025331C /* Departure.swift in Sources */,
-				065E5FE4250ABA100025331C /* Operator.swift in Sources */,
 				06E2D39D250A81A20067DA90 /* HomeSearchView.swift in Sources */,
-				065E5FE5250ABA100025331C /* OperatorAmenities.swift in Sources */,
 				06E2D3A5250A81DA0067DA90 /* LanguageISOModel.swift in Sources */,
+				065E602C250B06520025331C /* JSONSchemaSupport.swift in Sources */,
 				06E2D38F250A6B860067DA90 /* PageViewController.swift in Sources */,
 				06E2D3A9250A82BF0067DA90 /* DeparturesCriteria.swift in Sources */,
-				065E5FE1250ABA100025331C /* Country.swift in Sources */,
 				06E2D394250A6FCD0067DA90 /* OnboardingPagesFactory.swift in Sources */,
 				06E2D390250A6B860067DA90 /* PageControl.swift in Sources */,
-				065E5FEC250ABA100025331C /* BusbudDeparturesJSON.swift in Sources */,
-				065E5FE2250ABA100025331C /* Prices.swift in Sources */,
-				065E5FE6250ABA100025331C /* Terms.swift in Sources */,
 				06E2D38E250A6B860067DA90 /* PageView.swift in Sources */,
+				065E602D250B06520025331C /* BusbudDeparturesJSON.swift in Sources */,
+				065E6030250B06520025331C /* Region.swift in Sources */,
 				065E5FCE250AB9440025331C /* BBAPIFetcher.swift in Sources */,
-				065E5FEF250ABA100025331C /* City.swift in Sources */,
-				065E5FED250ABA100025331C /* Breakdown.swift in Sources */,
 				065E5FC9250AB6030025331C /* APIError.swift in Sources */,
+				065E602E250B06520025331C /* TypeEnum.swift in Sources */,
 				06E2D3AD250A85690067DA90 /* HomeSearchBuilder.swift in Sources */,
 				06E2D395250A6FCD0067DA90 /* OnboardingView.swift in Sources */,
 				06E2D39A250A70EE0067DA90 /* OnboardingModel.swift in Sources */,
-				065E5FF0250ABA100025331C /* Categories.swift in Sources */,
 				06E2D3AB250A84A70067DA90 /* Formatters.swift in Sources */,
+				065E6031250B06520025331C /* City.swift in Sources */,
 				065E5FC2250AB3250025331C /* Endpoint.swift in Sources */,
-				065E5FEA250ABA100025331C /* Region.swift in Sources */,
 				06E2D3B1250A8C6D0067DA90 /* DeparturesView.swift in Sources */,
-				065E5FE7250ABA100025331C /* JSONSchemaSupport.swift in Sources */,
 				06E2D398250A702D0067DA90 /* ColorManager.swift in Sources */,
 				06E2D353250A60BE0067DA90 /* SceneDelegate.swift in Sources */,
-				065E5FE9250ABA100025331C /* SellTicketsCutoff.swift in Sources */,
 				06E2D3A4250A81DA0067DA90 /* DepartureModel.swift in Sources */,
-				065E5FEB250ABA100025331C /* Classes.swift in Sources */,
 				06E2D355250A60BE0067DA90 /* ContentRootView.swift in Sources */,
 				065E5FC7250AB6030025331C /* Parser.swift in Sources */,
 			);

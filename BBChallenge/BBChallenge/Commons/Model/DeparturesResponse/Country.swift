@@ -7,14 +7,17 @@ import Foundation
 
 // MARK: - Country
 struct Country: Codable {
-    let code2, locale, code3, name: String
+    let code2, code3, name, shortName: String
     let continent, defaultLocale, defaultCurrency: String
     let population: Int
+    let locale: String
 
     enum CodingKeys: String, CodingKey {
-        case code2, locale, code3, name, continent
+        case code2, code3, name
+        case shortName = "short_name"
+        case continent
         case defaultLocale = "default_locale"
         case defaultCurrency = "default_currency"
-        case population
+        case population, locale
     }
 }
