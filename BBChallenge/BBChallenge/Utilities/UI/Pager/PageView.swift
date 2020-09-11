@@ -53,7 +53,7 @@ private extension PageView {
                     .foregroundColor(.white)
             }
             .buttonStyle(PlainButtonStyle())
-            .frame(width:proxy.size.width - 64, height: 100)
+            .frame(width:proxy.size.width - 64, height: 48)
             .background(LinearGradient(gradient:
                 .init(colors: [Color.green,Color.blue]),
                                        startPoint: .bottomLeading,

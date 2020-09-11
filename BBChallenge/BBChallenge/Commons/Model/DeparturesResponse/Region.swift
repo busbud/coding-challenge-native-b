@@ -8,12 +8,16 @@ import Foundation
 // MARK: - Region
 struct Region: Codable {
     let id: Int
-    let locale, countryCode2, name: String
+    let regionCode, countryCode2, name, shortName: String
+    let locale: String
     let country: Country
 
     enum CodingKeys: String, CodingKey {
-        case id, locale
+        case id
+        case regionCode = "region_code"
         case countryCode2 = "country_code2"
-        case name, country
+        case name
+        case shortName = "short_name"
+        case locale, country
     }
 }

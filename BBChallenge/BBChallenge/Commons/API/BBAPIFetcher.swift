@@ -11,7 +11,8 @@ import Combine
 
 /// Network API to search departures.
 protocol BBAPIFetchable {
-    func departures() -> AnyPublisher<BusbudDeparturesJSON, Error>
+    func departures(withCriteria criteria: DeparturesCriteria)
+        -> AnyPublisher<BusbudDeparturesJSON, Error>
 
 }
 
@@ -30,20 +31,27 @@ class BBAPIFetcher: CombineAPI {
     }
     
     /// Old data task request without publisher, used only for testing and debugging
-    func fetchAPI<T>( with request: URLRequest) ->
+    func fetchAPI<T>( with request: URLRequest, decodingType: T.Type) ->
         AnyPublisher<T, Error> where T: Decodable {
-            
             let semaphore = DispatchSemaphore(value: 0)
             var decoded: AnyPublisher<T, Error>?
             var errorMessage: String = ""
-            
+
             dataTask = session.dataTask(with: request) { [weak self] data, response, error in
                 if let error = error {
                     errorMessage = error.localizedDescription
                 } else if let data = data, let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
+                    do {
+                        _ = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    } catch {
+                        _ = error.localizedDescription
+                    }
+
                     decoded = decode(data)
                     semaphore.signal()
+                } else {
+                    // no data or response != 200
                 }
                 self?.dataTask = nil
             }
@@ -57,11 +65,28 @@ class BBAPIFetcher: CombineAPI {
 }
 
 extension BBAPIFetcher: BBAPIFetchable {
-    func departures() -> AnyPublisher<BusbudDeparturesJSON, Error> {
-        guard let request = BBAPIEndpoint.departures.getRequest() else {
+    func departures(withCriteria criteria: DeparturesCriteria)
+        -> AnyPublisher<BusbudDeparturesJSON, Error> {
+        let pathParameters = [
+            criteria.initialDestination,
+            criteria.finalDestination,
+            criteria.departureDate
+        ]
+        let queryParameters = [
+            "adult": "\(criteria.adults)",
+            "child": "\(criteria.children)",
+            "senior":"\(criteria.seniors)",
+            "lang": criteria.language.uppercased(),
+            "currency": criteria.currency
+        ]
+        guard let request = BBAPIEndpoint.departures.getRequest(
+            path: pathParameters,
+            with: queryParameters
+            ) else {
             let error = APIError.network(description: "Couldn't create URL")
             return Fail(error: error).eraseToAnyPublisher()
         }
+
         return execute(request, decodingType: BusbudDeparturesJSON.self, retries: 2)
     }
 }

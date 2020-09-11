@@ -40,6 +40,10 @@ extension Endpoint {
         guard let url = getUrl(path: pathParameters, with: parameters)?.url else {
             return nil
         }
-        return URLRequest(url: url)
+        var request = URLRequest(url: url)
+        headers?.forEach { (key, value) in
+            request.addValue(value, forHTTPHeaderField: key)
+        }
+        return request
     }
 }

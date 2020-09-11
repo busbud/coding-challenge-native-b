@@ -10,9 +10,9 @@ struct Location: Codable {
     let id: Int
     let cityID, name: String
     let address: [String]
-    let type: String
-    let lat, lon: Double
-    let geohash: String
+    let type: TypeEnum
+    let lat, lon: Double?
+    let geohash: String?
 
     enum CodingKeys: String, CodingKey {
         case id
