@@ -10,8 +10,9 @@ struct BusbudDeparturesJSON: Codable {
     let originCityID, destinationCityID: String
     let cities: [City]
     let locations: [Location]
-    let operators, departures: [JSONAny]
-    let searchRequestIDS: [String]
+    let departures: [Departure]
+    let operators: [Operator]
+    let searchRequestIDS: [JSONAny]
     let complete: Bool
     let ttl: Int
     let isValidRoute: Bool

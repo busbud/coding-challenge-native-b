@@ -38,25 +38,22 @@ extension OnboardingPages {
     var page: OnboardingView {
         switch self {
         case .intro:
-            // TODO: replace image with screenshots of the app at the end
-            return OnboardingView(model: OnboardingModel( image: Image("OnboardingEnd"),
+            return OnboardingView(model: OnboardingModel( image: Image("Onboarding1"),
                 title: Text(verbatim: "Busbud Osheaga Experience"),
                 description: Text(verbatim: """
                 It will be hot this summer in Montreal with the Osheaga festival!
                 """)))
         case .detail:
-            // TODO: replace image with screenshots of the app at the end
             return OnboardingView(model: OnboardingModel(
-                image: Image("OnboardingEnd"),
+                image: Image("Onboarding2"),
                 title: Text(verbatim: "New York City \nto Montreal"),
                 description: Text(verbatim: """
                 Find the best one-way departure from New York to Montreal!
                 """)))
         case .end:
-            // TODO: replace image with screenshots of the app at the end
             return OnboardingView(
               model: OnboardingModel(
-                image: Image("OnboardingEnd"),
+                image: Image("OnboardingInit"),
                 title: Text(verbatim: "Let's go!"),
                 description: Text(verbatim: """
                 Click the button to start this amazing adventure!.
