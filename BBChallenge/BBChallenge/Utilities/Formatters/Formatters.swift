@@ -14,3 +14,9 @@ public let shortDateFormatter: DateFormatter = {
   formatter.dateFormat = "yyyy-MM-dd"
   return formatter
 }()
+
+public let displayDateFormatter: DateFormatter = {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "MMM d,\nh:mm a"
+  return formatter
+}()
