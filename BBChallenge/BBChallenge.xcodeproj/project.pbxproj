@@ -358,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				065E5FF5250AD8A30025331C /* DeparturesResponse */,
-				06E2D3AE250A8AA90067DA90 /* API */,
 				06E2D3A3250A81DA0067DA90 /* CurrencyISOModel.swift */,
 				06E2D3A0250A81DA0067DA90 /* DepartureModel.swift */,
 				06E2D3A1250A81DA0067DA90 /* LanguageISOModel.swift */,
@@ -403,13 +402,6 @@
 				06E2D3AC250A85690067DA90 /* HomeSearchBuilder.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		06E2D3AE250A8AA90067DA90 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		06E2D3AF250A8C3F0067DA90 /* Departures */ = {

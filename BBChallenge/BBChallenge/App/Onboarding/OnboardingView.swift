@@ -60,7 +60,7 @@ struct OnboardingView_Previews : PreviewProvider {
     static var previews: some View {
         OnboardingView(
             model: OnboardingModel(
-                image: Image("OnboardingEnd"),
+                image: Image("Onboarding1"),
                 title: Text(verbatim: "Title"),
                 description: Text(verbatim: "Content")
             )
