@@ -16,11 +16,14 @@ class MainTabBar_VC: UITabBarController {
         
     }
     
-
     func setTabBarItems(){
         
+        self.tabBar.items?[0].title = ""
+        self.tabBar.items?[1].title = ""
+        self.tabBar.items?[2].title = ""
+        self.tabBar.items?[3].title = ""
 
-        
     }
+    
 
 }

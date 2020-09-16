@@ -35,13 +35,7 @@ class Welcom_VC: UIViewController {
         signInBtn.round(5)
     }
     
-    ///it will look like the navigation bar has disappeared.
-    func cleanNavigationBar(){
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-    }
+
     
     
 

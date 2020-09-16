@@ -13,6 +13,7 @@ class Support_VC: UIViewController {
         super.viewDidLoad()
 
       
+        cleanNavigationBar()
         setNavigationTitleLogo()
     }
     

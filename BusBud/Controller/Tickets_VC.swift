@@ -12,6 +12,7 @@ class Tickets_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cleanNavigationBar()
         setNavigationTitleLogo()
     }
     
