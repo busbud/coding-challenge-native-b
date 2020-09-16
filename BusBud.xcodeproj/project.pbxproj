@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5F37D13225123C2900F58CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D13125123C2900F58CD5 /* AppDelegate.swift */; };
 		5F37D13425123C2900F58CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D13325123C2900F58CD5 /* SceneDelegate.swift */; };
-		5F37D13625123C2900F58CD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D13525123C2900F58CD5 /* ViewController.swift */; };
 		5F37D13925123C2900F58CD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F37D13725123C2900F58CD5 /* Main.storyboard */; };
 		5F37D13B25123C2A00F58CD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F37D13A25123C2A00F58CD5 /* Assets.xcassets */; };
 		5F37D13E25123C2A00F58CD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F37D13C25123C2A00F58CD5 /* LaunchScreen.storyboard */; };
 		5F37D14925123C2A00F58CD5 /* BusBudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D14825123C2A00F58CD5 /* BusBudTests.swift */; };
 		5F37D15425123C2A00F58CD5 /* BusBudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D15325123C2A00F58CD5 /* BusBudUITests.swift */; };
+		E9C558C66B6AD9A7DDEC2AF5 /* Pods_BusBud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		5F37D12E25123C2900F58CD5 /* BusBud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusBud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F37D13125123C2900F58CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F37D13325123C2900F58CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F37D13525123C2900F58CD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F37D13825123C2900F58CD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F37D13A25123C2A00F58CD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F37D13D25123C2A00F58CD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,9 @@
 		5F37D14F25123C2A00F58CD5 /* BusBudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusBudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F37D15325123C2A00F58CD5 /* BusBudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusBudUITests.swift; sourceTree = "<group>"; };
 		5F37D15525123C2A00F58CD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.release.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.release.xcconfig"; sourceTree = "<group>"; };
+		9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.debug.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.debug.xcconfig"; sourceTree = "<group>"; };
+		BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusBud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C558C66B6AD9A7DDEC2AF5 /* Pods_BusBud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,8 @@
 				5F37D14725123C2A00F58CD5 /* BusBudTests */,
 				5F37D15225123C2A00F58CD5 /* BusBudUITests */,
 				5F37D12F25123C2900F58CD5 /* Products */,
+				6EF835973C1DAF21AE0A4318 /* Pods */,
+				840E69F246579ED98E6123C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +104,13 @@
 		5F37D13025123C2900F58CD5 /* BusBud */ = {
 			isa = PBXGroup;
 			children = (
+				5F5D473F25123EB1002C8D8D /* Resources */,
+				5F5D473E25123EA7002C8D8D /* Network */,
+				5F5D473D25123E91002C8D8D /* Model */,
+				5F5D473C25123E88002C8D8D /* View */,
+				5F5D473B25123E7C002C8D8D /* Controller */,
 				5F37D13125123C2900F58CD5 /* AppDelegate.swift */,
 				5F37D13325123C2900F58CD5 /* SceneDelegate.swift */,
-				5F37D13525123C2900F58CD5 /* ViewController.swift */,
-				5F37D13725123C2900F58CD5 /* Main.storyboard */,
-				5F37D13A25123C2A00F58CD5 /* Assets.xcassets */,
-				5F37D13C25123C2A00F58CD5 /* LaunchScreen.storyboard */,
 				5F37D13F25123C2A00F58CD5 /* Info.plist */,
 			);
 			path = BusBud;
@@ -128,6 +134,61 @@
 			path = BusBudUITests;
 			sourceTree = "<group>";
 		};
+		5F5D473B25123E7C002C8D8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5F5D473C25123E88002C8D8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F37D13725123C2900F58CD5 /* Main.storyboard */,
+				5F37D13C25123C2A00F58CD5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F5D473D25123E91002C8D8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F5D473E25123EA7002C8D8D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5F5D473F25123EB1002C8D8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F37D13A25123C2A00F58CD5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EF835973C1DAF21AE0A4318 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */,
+				880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		840E69F246579ED98E6123C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F37D15825123C2A00F58CD5 /* Build configuration list for PBXNativeTarget "BusBud" */;
 			buildPhases = (
+				150A7F4858C3F14B3CFE1137 /* [CP] Check Pods Manifest.lock */,
 				5F37D12A25123C2900F58CD5 /* Sources */,
 				5F37D12B25123C2900F58CD5 /* Frameworks */,
 				5F37D12C25123C2900F58CD5 /* Resources */,
+				5533A8DDEA5B67671CA22F5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,12 +316,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		150A7F4858C3F14B3CFE1137 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusBud-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5533A8DDEA5B67671CA22F5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusBud/Pods-BusBud-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusBud/Pods-BusBud-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusBud/Pods-BusBud-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F37D12A25123C2900F58CD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F37D13625123C2900F58CD5 /* ViewController.swift in Sources */,
 				5F37D13225123C2900F58CD5 /* AppDelegate.swift in Sources */,
 				5F37D13425123C2900F58CD5 /* SceneDelegate.swift in Sources */,
 			);
@@ -433,6 +537,7 @@
 		};
 		5F37D15925123C2A00F58CD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sajjadsarkoobi.BusBud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -452,6 +558,7 @@
 		};
 		5F37D15A25123C2A00F58CD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sajjadsarkoobi.BusBud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
