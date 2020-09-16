@@ -21,6 +21,14 @@
 		5F5D476125124CB7002C8D8D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5D475D25124CB7002C8D8D /* Nunito-Bold.ttf */; };
 		5F5D476625124F6D002C8D8D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D476525124F6D002C8D8D /* AppColors.swift */; };
 		5F5D476C251250E7002C8D8D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */; };
+		5F5D4771251258AE002C8D8D /* UserInfo_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D4770251258AE002C8D8D /* UserInfo_VC.swift */; };
+		5F5D477625125A62002C8D8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D477525125A62002C8D8D /* UIViewController+Extension.swift */; };
+		5F5D47832512616E002C8D8D /* MainTabBar_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D47822512616E002C8D8D /* MainTabBar_VC.swift */; };
+		5F5D47882512704B002C8D8D /* Search_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D47872512704B002C8D8D /* Search_VC.swift */; };
+		5F5D478D251270E1002C8D8D /* Tickets_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D478C251270E1002C8D8D /* Tickets_VC.swift */; };
+		5F5D4792251270F6002C8D8D /* Support_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D4791251270F6002C8D8D /* Support_VC.swift */; };
+		5F5D47972512710C002C8D8D /* Profile_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D47962512710C002C8D8D /* Profile_VC.swift */; };
+		5F5D479C25127160002C8D8D /* Global_Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D479B25127160002C8D8D /* Global_Variables.swift */; };
 		E9C558C66B6AD9A7DDEC2AF5 /* Pods_BusBud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +70,14 @@
 		5F5D475D25124CB7002C8D8D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		5F5D476525124F6D002C8D8D /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		5F5D4770251258AE002C8D8D /* UserInfo_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo_VC.swift; sourceTree = "<group>"; };
+		5F5D477525125A62002C8D8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		5F5D47822512616E002C8D8D /* MainTabBar_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar_VC.swift; sourceTree = "<group>"; };
+		5F5D47872512704B002C8D8D /* Search_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search_VC.swift; sourceTree = "<group>"; };
+		5F5D478C251270E1002C8D8D /* Tickets_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets_VC.swift; sourceTree = "<group>"; };
+		5F5D4791251270F6002C8D8D /* Support_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support_VC.swift; sourceTree = "<group>"; };
+		5F5D47962512710C002C8D8D /* Profile_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile_VC.swift; sourceTree = "<group>"; };
+		5F5D479B25127160002C8D8D /* Global_Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global_Variables.swift; sourceTree = "<group>"; };
 		880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.release.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.release.xcconfig"; sourceTree = "<group>"; };
 		9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.debug.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusBud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +169,12 @@
 			isa = PBXGroup;
 			children = (
 				5F5D474C2512456A002C8D8D /* Welcom_VC.swift */,
+				5F5D4770251258AE002C8D8D /* UserInfo_VC.swift */,
+				5F5D47822512616E002C8D8D /* MainTabBar_VC.swift */,
+				5F5D47872512704B002C8D8D /* Search_VC.swift */,
+				5F5D478C251270E1002C8D8D /* Tickets_VC.swift */,
+				5F5D4791251270F6002C8D8D /* Support_VC.swift */,
+				5F5D47962512710C002C8D8D /* Profile_VC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 				5F5D475925124CAB002C8D8D /* Fonts */,
 				5F37D13A25123C2A00F58CD5 /* Assets.xcassets */,
 				5F5D476525124F6D002C8D8D /* AppColors.swift */,
+				5F5D479B25127160002C8D8D /* Global_Variables.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -205,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */,
+				5F5D477525125A62002C8D8D /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,11 +428,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5D478D251270E1002C8D8D /* Tickets_VC.swift in Sources */,
 				5F37D13225123C2900F58CD5 /* AppDelegate.swift in Sources */,
+				5F5D4792251270F6002C8D8D /* Support_VC.swift in Sources */,
 				5F5D476625124F6D002C8D8D /* AppColors.swift in Sources */,
 				5F5D476C251250E7002C8D8D /* UIView+Extensions.swift in Sources */,
+				5F5D4771251258AE002C8D8D /* UserInfo_VC.swift in Sources */,
+				5F5D47882512704B002C8D8D /* Search_VC.swift in Sources */,
+				5F5D477625125A62002C8D8D /* UIViewController+Extension.swift in Sources */,
+				5F5D47972512710C002C8D8D /* Profile_VC.swift in Sources */,
+				5F5D479C25127160002C8D8D /* Global_Variables.swift in Sources */,
 				5F5D474D2512456A002C8D8D /* Welcom_VC.swift in Sources */,
 				5F37D13425123C2900F58CD5 /* SceneDelegate.swift in Sources */,
+				5F5D47832512616E002C8D8D /* MainTabBar_VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

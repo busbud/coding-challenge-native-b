@@ -12,7 +12,7 @@ class Welcom_VC: UIViewController {
     //IBOutlet & IBAction:
     @IBOutlet weak var signInBtn: UIButton!
     @IBAction func signInBtnAction(_ sender: UIButton) {
-        
+        openNextPage()
     }
     
     
@@ -30,7 +30,7 @@ class Welcom_VC: UIViewController {
     
     
     func setView(){
-        signInBtn.backgroundColor = AppColors.defult.yellowColor
+        signInBtn.backgroundColor = AppColors.defult.mainBlueColor
         signInBtn.setTitleColor(.white, for: .normal)
         signInBtn.round(5)
     }
@@ -44,17 +44,22 @@ class Welcom_VC: UIViewController {
     }
     
     
-    func setNavigationTitleLogo(){
-        var titleImgView: UIImageView {
-            let view = UIImageView()
-            view.image = UIImage(named: "busbudLogo_Small_tr")
-            view.contentMode = .scaleAspectFill
-            view.clipsToBounds = true
-            return view
+
+    
+    
+    func openNextPage(){
+        
+        guard let controller = self.storyboard?.instantiateViewController(identifier: "UserInfo_VCId") as? UserInfo_VC else {
+            return
         }
         
-        self.navigationItem.titleView = titleImgView
+        self.navigationController?.pushViewController(controller, animated: true)
         
+    }
+    
+    
+    deinit {
+        print("[deinit] Welcom_VC")
     }
 
 }
