@@ -14,6 +14,13 @@
 		5F37D13E25123C2A00F58CD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F37D13C25123C2A00F58CD5 /* LaunchScreen.storyboard */; };
 		5F37D14925123C2A00F58CD5 /* BusBudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D14825123C2A00F58CD5 /* BusBudTests.swift */; };
 		5F37D15425123C2A00F58CD5 /* BusBudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37D15325123C2A00F58CD5 /* BusBudUITests.swift */; };
+		5F5D474D2512456A002C8D8D /* Welcom_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D474C2512456A002C8D8D /* Welcom_VC.swift */; };
+		5F5D475E25124CB7002C8D8D /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5D475A25124CB7002C8D8D /* Nunito-Light.ttf */; };
+		5F5D475F25124CB7002C8D8D /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5D475B25124CB7002C8D8D /* Nunito-SemiBold.ttf */; };
+		5F5D476025124CB7002C8D8D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5D475C25124CB7002C8D8D /* Nunito-Regular.ttf */; };
+		5F5D476125124CB7002C8D8D /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5D475D25124CB7002C8D8D /* Nunito-Bold.ttf */; };
+		5F5D476625124F6D002C8D8D /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D476525124F6D002C8D8D /* AppColors.swift */; };
+		5F5D476C251250E7002C8D8D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */; };
 		E9C558C66B6AD9A7DDEC2AF5 /* Pods_BusBud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +55,13 @@
 		5F37D14F25123C2A00F58CD5 /* BusBudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusBudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F37D15325123C2A00F58CD5 /* BusBudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusBudUITests.swift; sourceTree = "<group>"; };
 		5F37D15525123C2A00F58CD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5D474C2512456A002C8D8D /* Welcom_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcom_VC.swift; sourceTree = "<group>"; };
+		5F5D475A25124CB7002C8D8D /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		5F5D475B25124CB7002C8D8D /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		5F5D475C25124CB7002C8D8D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		5F5D475D25124CB7002C8D8D /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		5F5D476525124F6D002C8D8D /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.release.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.release.xcconfig"; sourceTree = "<group>"; };
 		9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.debug.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusBud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +118,7 @@
 		5F37D13025123C2900F58CD5 /* BusBud */ = {
 			isa = PBXGroup;
 			children = (
+				5F5D476A251250BB002C8D8D /* Extensions */,
 				5F5D473F25123EB1002C8D8D /* Resources */,
 				5F5D473E25123EA7002C8D8D /* Network */,
 				5F5D473D25123E91002C8D8D /* Model */,
@@ -137,6 +152,7 @@
 		5F5D473B25123E7C002C8D8D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5F5D474C2512456A002C8D8D /* Welcom_VC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,9 +183,30 @@
 		5F5D473F25123EB1002C8D8D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F5D475925124CAB002C8D8D /* Fonts */,
 				5F37D13A25123C2A00F58CD5 /* Assets.xcassets */,
+				5F5D476525124F6D002C8D8D /* AppColors.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F5D475925124CAB002C8D8D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5F5D475D25124CB7002C8D8D /* Nunito-Bold.ttf */,
+				5F5D475A25124CB7002C8D8D /* Nunito-Light.ttf */,
+				5F5D475C25124CB7002C8D8D /* Nunito-Regular.ttf */,
+				5F5D475B25124CB7002C8D8D /* Nunito-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5F5D476A251250BB002C8D8D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F5D476B251250E7002C8D8D /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6EF835973C1DAF21AE0A4318 /* Pods */ = {
@@ -294,9 +331,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5D476125124CB7002C8D8D /* Nunito-Bold.ttf in Resources */,
+				5F5D476025124CB7002C8D8D /* Nunito-Regular.ttf in Resources */,
 				5F37D13E25123C2A00F58CD5 /* LaunchScreen.storyboard in Resources */,
 				5F37D13B25123C2A00F58CD5 /* Assets.xcassets in Resources */,
+				5F5D475E25124CB7002C8D8D /* Nunito-Light.ttf in Resources */,
 				5F37D13925123C2900F58CD5 /* Main.storyboard in Resources */,
+				5F5D475F25124CB7002C8D8D /* Nunito-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F37D13225123C2900F58CD5 /* AppDelegate.swift in Sources */,
+				5F5D476625124F6D002C8D8D /* AppColors.swift in Sources */,
+				5F5D476C251250E7002C8D8D /* UIView+Extensions.swift in Sources */,
+				5F5D474D2512456A002C8D8D /* Welcom_VC.swift in Sources */,
 				5F37D13425123C2900F58CD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
