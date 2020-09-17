@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Title_View" customModule="BusBud" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-9d-EIb">
+                    <rect key="frame" x="0.0" y="1.5" width="89.5" height="21"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrival" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCY-Jg-Phl">
+                    <rect key="frame" x="110.5" y="1.5" width="89.5" height="21"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1wu-B1-IO2">
+                    <rect key="frame" x="91.5" y="7" width="17" height="10"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="0oU-HD-Y96"/>
+                        <constraint firstAttribute="width" constant="17" id="gmT-zi-aMt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-lS-7i4">
+                    <rect key="frame" x="85.5" y="22.5" width="29" height="18"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="13"/>
+                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gCY-Jg-Phl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="2GV-39-ETt"/>
+                <constraint firstItem="1wu-B1-IO2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="6g3-nc-m9f"/>
+                <constraint firstItem="gCY-Jg-Phl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FA9-IM-D0u"/>
+                <constraint firstItem="gCY-Jg-Phl" firstAttribute="leading" secondItem="1wu-B1-IO2" secondAttribute="trailing" constant="2" id="Rrs-SO-WYd"/>
+                <constraint firstItem="1wu-B1-IO2" firstAttribute="leading" secondItem="jIT-9d-EIb" secondAttribute="trailing" constant="2" id="Vl9-u6-1kp"/>
+                <constraint firstItem="xHE-lS-7i4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e7D-hY-BaQ"/>
+                <constraint firstItem="jIT-9d-EIb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eZ0-UW-NM9"/>
+                <constraint firstItem="jIT-9d-EIb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="fB6-9L-YJ6"/>
+                <constraint firstItem="1wu-B1-IO2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jhe-HX-gPS"/>
+                <constraint firstItem="xHE-lS-7i4" firstAttribute="top" secondItem="jIT-9d-EIb" secondAttribute="bottom" id="whP-fd-sKM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrivalLabel" destination="gCY-Jg-Phl" id="XKt-v1-6JY"/>
+                <outlet property="dateLabel" destination="xHE-lS-7i4" id="bcJ-xw-gXo"/>
+                <outlet property="departureLabel" destination="jIT-9d-EIb" id="yBe-hx-fl4"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="69.265367316341838"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

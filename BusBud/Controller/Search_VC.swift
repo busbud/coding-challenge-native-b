@@ -17,7 +17,7 @@ class Search_VC: UIViewController {
     
     @IBOutlet weak var searchBtn: UIButton!
     @IBAction func searchBtnAction(_ sender: UIButton) {
-        
+        openSearch()
     }
     
     
@@ -40,6 +40,16 @@ class Search_VC: UIViewController {
         searchParamsView.round(5)
         
         helloLabel.text = "Hello \(Global_Variables.userName),"
+        
+    }
+    
+    
+    func openSearch(){
+        guard let controller = self.storyboard?.instantiateViewController(identifier: "SearchResult_VCId") as? SearchResult_VC else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
 

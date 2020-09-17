@@ -28,7 +28,10 @@ class UserInfo_VC: UIViewController {
        
         setTapGestureForDismissingKeyboard()
         
-        cleanBackText()
+        cleanNavigationBar()
+        
+        
+
     }
     
 
