@@ -29,9 +29,6 @@ class UserInfo_VC: UIViewController {
         setTapGestureForDismissingKeyboard()
         
         cleanNavigationBar()
-        
-        
-
     }
     
 
@@ -80,6 +77,7 @@ class UserInfo_VC: UIViewController {
         print("[deinit] UserInfo_VC")
     }
 
+    
 }
 
 

@@ -32,10 +32,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-W3-Mp2" userLabel="containerView">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-W3-Mp2" userLabel="containerView">
                         <rect key="frame" x="10" y="5" width="300" height="134"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-Lu-IXR">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-Lu-IXR">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/07/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7H-0U-qcq">
@@ -70,14 +70,14 @@
                                     <constraint firstItem="lZi-L7-Jlh" firstAttribute="centerY" secondItem="kgk-Lu-IXR" secondAttribute="centerY" id="jgz-Y3-3yy"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-hM-APT" userLabel="VLineView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-hM-APT" userLabel="VLineView">
                                 <rect key="frame" x="13" y="53" width="1" height="25"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="657-nZ-iYh"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPo-51-9Wr" userLabel="departureView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPo-51-9Wr" userLabel="departureView">
                                 <rect key="frame" x="0.0" y="33" width="270" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-4e-YTv">
@@ -118,7 +118,7 @@
                                     <constraint firstAttribute="height" constant="20" id="mpo-CF-IrS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlL-PK-DYU" userLabel="arrivalView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlL-PK-DYU" userLabel="arrivalView">
                                 <rect key="frame" x="0.0" y="78" width="270" height="28"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EOr-EL-bFg">
@@ -190,7 +190,7 @@
                                     <constraint firstAttribute="height" constant="15" id="l4f-xE-Ddq"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7A-EX-mjz" userLabel="busDetailsView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7A-EX-mjz" userLabel="busDetailsView">
                                 <rect key="frame" x="5" y="106" width="290" height="28"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lv-aC-a5E" userLabel="HLineView">
@@ -348,6 +348,7 @@
                 <outlet property="arrivalTerminalLabel" destination="Zyc-aY-9Cq" id="aVk-Pj-idm"/>
                 <outlet property="arrivalTimeLabel" destination="d7p-vr-5Lm" id="Ude-up-mUw"/>
                 <outlet property="busCompanynameLabel" destination="YO3-Ac-wRb" id="mgz-Xi-z42"/>
+                <outlet property="containerView" destination="AhS-W3-Mp2" id="Qwn-wU-bex"/>
                 <outlet property="dateLabel" destination="n7H-0U-qcq" id="xjs-Yx-YZZ"/>
                 <outlet property="departureTerminalLabel" destination="6wd-zN-qgO" id="tNv-8b-li7"/>
                 <outlet property="departureTimeLabel" destination="um9-Bv-sHG" id="695-ND-ODa"/>

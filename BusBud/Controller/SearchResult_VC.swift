@@ -8,7 +8,10 @@
 import UIKit
 
 class SearchResult_VC: UIViewController {
-
+   
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     // it has to be define as Lazy, other than that view will NOT de initialize
     lazy var titleView = Bundle.main.loadNibNamed("Title_View", owner:self, options: nil)?.first as? Title_View
     
@@ -18,7 +21,17 @@ class SearchResult_VC: UIViewController {
         setTitleView()
         addRightNavItem()
         
+        registerNibs()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 144
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     
@@ -49,4 +62,30 @@ class SearchResult_VC: UIViewController {
         
     }
 
+}
+
+
+
+extension SearchResult_VC: UITableViewDelegate,UITableViewDataSource {
+    
+    func registerNibs(){
+        tableView.register(SearchResultCell.registerNib(), forCellReuseIdentifier: SearchResultCell.cellIdentifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.cellIdentifier, for: indexPath) as! SearchResultCell
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 144
+    }
+    
 }

@@ -10,7 +10,16 @@ import Foundation
 
 class SearchResultCell: UITableViewCell {
 
-
+    static var cellIdentifier:String {
+            return "searchResultCell"
+    }
+    
+    static func registerNib() -> UINib {
+        return UINib(nibName: "SearchResultCell", bundle: nil)
+    }
+    
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var departureTimeLabel: UILabel!
@@ -30,6 +39,8 @@ class SearchResultCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        containerView.round(10)
      
     }
 
