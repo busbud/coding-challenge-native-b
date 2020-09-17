@@ -26,7 +26,8 @@ enum APIRouter: URLRequestConvertible {
                            child:String,
                            senior:String,
                            lang:String,
-                           currency:String)
+                           currency:String,
+                           index:String)
 
     
     
@@ -49,20 +50,27 @@ enum APIRouter: URLRequestConvertible {
         case .getInitSearchData(let origin,let destination, let date, _,_,_,_,_):
             return "x-departures/\(origin)/\(destination)/\(date)"
             
-        case .getMoreSearchData(let origin,let destination, let date, _,_,_,_,_):
+        case .getMoreSearchData(let origin,let destination, let date, _,_,_,_,_,_):
             return "x-departures/\(origin)/\(destination)/\(date)/poll"
         }
     }
     
     private var parameters: Parameters? {
         switch self {
-        case .getInitSearchData(_ ,_ , _, let adult, let child, let senior, let lang, let currency) ,
-             .getMoreSearchData(_ ,_ , _, let adult, let child, let senior, let lang, let currency):
+        case .getInitSearchData(_ ,_ , _, let adult, let child, let senior, let lang, let currency):
             return [APIParameterKey.x_departures.adult:adult,
                     APIParameterKey.x_departures.child:child,
                     APIParameterKey.x_departures.senior:senior,
                     APIParameterKey.x_departures.lang:lang,
                     APIParameterKey.x_departures.currency:currency]
+            
+        case .getMoreSearchData(_ ,_ , _, let adult, let child, let senior, let lang, let currency,let index):
+               return [APIParameterKey.x_departures.adult:adult,
+                       APIParameterKey.x_departures.child:child,
+                       APIParameterKey.x_departures.senior:senior,
+                       APIParameterKey.x_departures.lang:lang,
+                       APIParameterKey.x_departures.currency:currency,
+                       APIParameterKey.x_departures.index: index]
         }
     }
     

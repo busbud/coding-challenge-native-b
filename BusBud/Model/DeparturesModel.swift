@@ -17,7 +17,8 @@ struct DepartureModel: Codable {
     var availableSeats: Int
     var prices: PricesModel?
     var ticketTypes: [String]
-    var departureTimezone, arrivalTimezone, departureTime, arrivalTime: String?
+    var duration: Int
+    var departureTimezone, arrivalTimezone, departureTime, arrivalTime: String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -31,6 +32,7 @@ struct DepartureModel: Codable {
         case availableSeats = "available_seats"
         case prices
         case ticketTypes = "ticket_types"
+        case duration
         case departureTimezone = "departure_timezone"
         case arrivalTimezone = "arrival_timezone"
         case departureTime = "departure_time"
@@ -53,10 +55,24 @@ struct AmenitiesModel: Codable {
         case busAttendant = "bus_attendant"
         case legRoom = "leg_room"
     }
+    
+    init() {
+        displayName = ""
+        wifi = false
+        toilet = false
+        ac = false
+        food = false
+        refreshment = false
+        powerOutlets = false
+        tv = false
+        busAttendant = false
+        legRoom = false
+    }
 }
 
 // MARK: - Prices
 struct PricesModel: Codable {
     var total: Int
+    var currency:String?
     var discounted: Bool?
 }

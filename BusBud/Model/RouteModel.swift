@@ -8,16 +8,19 @@
 import Foundation
 
 // MARK: - Route
+
+
+
 struct RouteModel: Codable {
-    var originCityID, destinationCityID: String
-    var cities: [CityModel]
-    var locations: [LocationModel]
+    var originCityID, destinationCityID: String?
+    var cities: [CityModel]?
+    var locations: [LocationModel]?
     var operators: [OperatorModel]
     var departures: [DepartureModel]
-    var searchRequestIDS: [String]
+    var searchRequestIDS: [String]?
     var complete: Bool
     var ttl: Int
-    var isValidRoute: Bool
+    var isValidRoute: Bool?
 
     enum CodingKeys: String, CodingKey {
         case originCityID = "origin_city_id"

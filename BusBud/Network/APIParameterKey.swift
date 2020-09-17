@@ -17,6 +17,7 @@ struct APIParameterKey {
         static let senior = "senior"
         static let lang = "lang"
         static let currency = "currency"
+        static let index = "index"
     }
     
 }

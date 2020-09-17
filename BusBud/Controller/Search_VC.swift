@@ -20,6 +20,8 @@ class Search_VC: UIViewController {
         openSearch()
     }
     
+    var searchModelData:SearchModel = SearchModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,12 @@ class Search_VC: UIViewController {
         setNavigationTitleLogo()
         
         setView()
+        
     }
     
     
     func setView(){
-        searchBtn.backgroundColor = AppColors.defult.mainBlueColor
+        searchBtn.backgroundColor = AppColors.defult.yellowColor
         searchBtn.setTitleColor(.white, for: .normal)
         searchBtn.round(5)
         
@@ -45,13 +48,29 @@ class Search_VC: UIViewController {
     
     
     func openSearch(){
+        
+        getFakeSearchParams()
+        
         guard let controller = self.storyboard?.instantiateViewController(identifier: "SearchResult_VCId") as? SearchResult_VC else {
             return
         }
         
+        controller.searchModelData = self.searchModelData
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
 
-
+    func getFakeSearchParams() {
+        searchModelData = SearchModel(
+            departureGeoHash: "dr5reg",
+            departureName: "New York",
+            arrivalGeoHash: "drt2yz",
+            arrivalName: "Boston",
+            adult: "1",
+            date: "2021-07-21",
+            child: "",
+            senior: "",
+            lang: "US",
+            currency: "USD")
+    }
 }

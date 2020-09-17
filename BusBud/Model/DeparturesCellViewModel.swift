@@ -10,20 +10,23 @@ import Foundation
 struct DeparturesCellViewModel {
     
     var departureId:String = ""
-    var sotceId:Int = 0
+    var sourceId:Int = 0
     var departureCityName:String = ""
-    var arrivalCityName: String = ""
+    var arrivalCityName:String = ""
     var operatorId:String = ""
     var date:String = ""
     var price:String = ""
-    var hasDiscount = ""
+    var hasDiscount:Bool = false
     var departureTime:String = ""
     var arrivalTime:String = ""
+    var arrivalDate:String = ""
     var departureTerminal:String = ""
     var arrivalTerminal:String = ""
     var busCompanyName:String = ""
     var seatsAvailable:Int = 0
     var durationTime:String = ""
-    var facilities:[String] = []
+    var isNextDay:Bool = false
+    var facilities: AmenitiesModel = AmenitiesModel()
+    
     
 }

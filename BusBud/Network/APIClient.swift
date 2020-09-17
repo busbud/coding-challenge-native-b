@@ -27,8 +27,8 @@ class APIClient {
     
     
     
-    //GET init search
-    static func getInitSearchData(
+    //GET search Data
+    static func getSearchData(
         origin:String,
         destination:String,
         date:String,
@@ -37,25 +37,16 @@ class APIClient {
         senior:String = "",
         lang:String = "",
         currency:String = "",
+        loadMore:Bool,
+        index:Int = 0,
         completion:@escaping (AFResult<RouteModel> ,HTTPURLResponse?,_ resultString:String?)->Void) {
         
-        performRequest(route: APIRouter.getInitSearchData(origin: origin, destination: destination, date: date, adult: adult, child: child, senior: senior, lang: lang, currency: currency), completion: completion)
-    }
-    
-    
-    //GET more search
-    static func getMoreSearchData(
-        origin:String,
-        destination:String,
-        date:String,
-        adult:String = "",
-        child:String = "",
-        senior:String = "",
-        lang:String = "",
-        currency:String = "",
-        completion:@escaping (AFResult<[testModel]> ,HTTPURLResponse?,_ resultString:String?)->Void) {
-        
-        performRequest(route: APIRouter.getMoreSearchData(origin: origin, destination: destination, date: date, adult: adult, child: child, senior: senior, lang: lang, currency: currency), completion: completion)
+        if !loadMore {
+            performRequest(route: APIRouter.getInitSearchData(origin: origin, destination: destination, date: date, adult: adult, child: child, senior: senior, lang: lang, currency: currency), completion: completion)
+        }else{
+            performRequest(route: APIRouter.getMoreSearchData(origin: origin, destination: destination, date: date, adult: adult, child: child, senior: senior, lang: lang, currency: currency,index: "\(index)"), completion: completion)
+
+        }
     }
 
 }

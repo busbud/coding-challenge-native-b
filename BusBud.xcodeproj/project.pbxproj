@@ -37,12 +37,14 @@
 		5F9F57AA251386C200C90215 /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F57A9251386C200C90215 /* RouteModel.swift */; };
 		5F9F57AF2513881B00C90215 /* OperatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F57AE2513881B00C90215 /* OperatorModel.swift */; };
 		5F9F57B42513896400C90215 /* DeparturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F57B32513896400C90215 /* DeparturesModel.swift */; };
+		5F9F57BC2513989400C90215 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F57BB2513989400C90215 /* ModelManager.swift */; };
+		5F9F57C92513E54B00C90215 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F57C82513E54B00C90215 /* SearchModel.swift */; };
 		5FA0FBC925133EB800ACF5AD /* Title_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0FBC825133EB800ACF5AD /* Title_View.swift */; };
 		5FA0FBCE25133ECA00ACF5AD /* Title_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA0FBCD25133ECA00ACF5AD /* Title_View.xib */; };
 		5FA0FBD32513417F00ACF5AD /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0FBD22513417F00ACF5AD /* TitleViewModel.swift */; };
 		5FA0FBD925134AE700ACF5AD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0FBD725134AE700ACF5AD /* SearchResultCell.swift */; };
 		5FA0FBDA25134AE700ACF5AD /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA0FBD825134AE700ACF5AD /* SearchResultCell.xib */; };
-		5FA0FBE3251368C500ACF5AD /* TicketCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0FBE2251368C500ACF5AD /* TicketCellViewModel.swift */; };
+		5FA0FBE3251368C500ACF5AD /* DeparturesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0FBE2251368C500ACF5AD /* DeparturesCellViewModel.swift */; };
 		E9C558C66B6AD9A7DDEC2AF5 /* Pods_BusBud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,12 +102,14 @@
 		5F9F57A9251386C200C90215 /* RouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
 		5F9F57AE2513881B00C90215 /* OperatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorModel.swift; sourceTree = "<group>"; };
 		5F9F57B32513896400C90215 /* DeparturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesModel.swift; sourceTree = "<group>"; };
+		5F9F57BB2513989400C90215 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		5F9F57C82513E54B00C90215 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		5FA0FBC825133EB800ACF5AD /* Title_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title_View.swift; sourceTree = "<group>"; };
 		5FA0FBCD25133ECA00ACF5AD /* Title_View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Title_View.xib; sourceTree = "<group>"; };
 		5FA0FBD22513417F00ACF5AD /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		5FA0FBD725134AE700ACF5AD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		5FA0FBD825134AE700ACF5AD /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
-		5FA0FBE2251368C500ACF5AD /* TicketCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCellViewModel.swift; sourceTree = "<group>"; };
+		5FA0FBE2251368C500ACF5AD /* DeparturesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesCellViewModel.swift; sourceTree = "<group>"; };
 		880CFEC3EA41A1DFBB06D467 /* Pods-BusBud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.release.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.release.xcconfig"; sourceTree = "<group>"; };
 		9B5040644855DEE446CE27DB /* Pods-BusBud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusBud.debug.xcconfig"; path = "Target Support Files/Pods-BusBud/Pods-BusBud.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC235AA796414CD00A19F44 /* Pods_BusBud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusBud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,10 +227,12 @@
 			isa = PBXGroup;
 			children = (
 				5FA0FBD22513417F00ACF5AD /* TitleViewModel.swift */,
-				5FA0FBE2251368C500ACF5AD /* TicketCellViewModel.swift */,
+				5FA0FBE2251368C500ACF5AD /* DeparturesCellViewModel.swift */,
 				5F9F57A9251386C200C90215 /* RouteModel.swift */,
 				5F9F57AE2513881B00C90215 /* OperatorModel.swift */,
 				5F9F57B32513896400C90215 /* DeparturesModel.swift */,
+				5F9F57BB2513989400C90215 /* ModelManager.swift */,
+				5F9F57C82513E54B00C90215 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,15 +506,17 @@
 				5F9F57AA251386C200C90215 /* RouteModel.swift in Sources */,
 				5FA0FBD925134AE700ACF5AD /* SearchResultCell.swift in Sources */,
 				5F5D4771251258AE002C8D8D /* UserInfo_VC.swift in Sources */,
+				5F9F57C92513E54B00C90215 /* SearchModel.swift in Sources */,
 				5F5D47882512704B002C8D8D /* Search_VC.swift in Sources */,
 				5F5D477625125A62002C8D8D /* UIViewController+Extension.swift in Sources */,
 				5F5D47972512710C002C8D8D /* Profile_VC.swift in Sources */,
 				5F9F579E251379FB00C90215 /* APIParameterKey.swift in Sources */,
 				5F5D479C25127160002C8D8D /* Global_Variables.swift in Sources */,
-				5FA0FBE3251368C500ACF5AD /* TicketCellViewModel.swift in Sources */,
+				5FA0FBE3251368C500ACF5AD /* DeparturesCellViewModel.swift in Sources */,
 				5F5D474D2512456A002C8D8D /* Welcom_VC.swift in Sources */,
 				5F9F57AF2513881B00C90215 /* OperatorModel.swift in Sources */,
 				5F37D13425123C2900F58CD5 /* SceneDelegate.swift in Sources */,
+				5F9F57BC2513989400C90215 /* ModelManager.swift in Sources */,
 				5F9F57B42513896400C90215 /* DeparturesModel.swift in Sources */,
 				5FA0FBD32513417F00ACF5AD /* TitleViewModel.swift in Sources */,
 				5F5D47832512616E002C8D8D /* MainTabBar_VC.swift in Sources */,
