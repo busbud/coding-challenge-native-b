@@ -144,6 +144,10 @@ if self.canLoadMore && self.dataSource.count == 0 && data.departures.count == 0 
 }
 ```
 
+# Full responsive Auto layout Challenge:
+
+iphone SE gen2, iphone 7,6s,6
+<img src="https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/master/Screenshots/full%20responsive%20AutoLayout.png" width="300" />
 
 ## To be improved
 - [ ] Test cases
