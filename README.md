@@ -1,58 +1,69 @@
+# Busbud coding challenge
+An app that lists bus travel schedules for a given route and a given date
 
 
-![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
+## App show case
+<p align="center">
+  <img src="https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/busbudShowCase.gif" />
+</p>
 
-Hey! 
 
-It will be hot this summer in Montreal with the [Osheaga festival](http://www.osheaga.com/)! 
-Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!
-Your challenge is to build a promotional app that allows a traveler from NYC to find one-way departure schedules for the festival's opening weekend.
+## Screen shots
 
-### Requirements
+Splash | Welcome | Info
+--- | ---  | ---
+![splash](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/splashScreen.png) | ![Welcome](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/welcom.png) | ![info](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/info.png)
 
-Write a native Busbud app that:
-
-- Has a simple onboarding screen that will open the search
-- Lists all the departures for a given origin city (**New York - geohash: dr5reg**) and a given destination city (**Montréal - geohash: f25dvk**) for a given day (**the 29th of July 2021**) for **1** adult. 
-For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
-
-### Non-functional requirements
-
-- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)).
-- The repo should include 3 screenshots under the /screenshots folder to show the app usage.
-- Change the README.md to explain your solution, the issues, the way you solved them...
-
-### Supporting API
-
-In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
-For all requests, you MUST provide the following HTTP headers:
-
-Header | Value
+ Search | Search Result
 --- | ---
-Accept | `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
-X-Busbud-Token | The token provided in the challenge invitation email.
+![search](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/search.png) | ![searchResult](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/searchResult.png)
 
-### Init results
+If arrive in the next day |
+--- |
+<img src="https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/cellMagnifier.png" width="300" />
 
-To get departure results, search is initialized via the following endpoint:
+
+## UI Characters:
+I used one of the UI designes from `Ayik Four` and change the color of his characters to match Busbud brand.
+
+`https://dribbble.com/ayikfour`
+
+
+## Challenges:
+As described in the requirements, we need to pass search parameters to the endpoint:
 
 `https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date`
 
-PATH PARAMS  
+and then for loading more, we have to send the same search parameters plus `index` and add `poll` at the end of base search path for loading more data.
+so the search requires Model will be like this:
+```
+struct SearchModel {
+    var departureGeoHash:String = ""
+    var departureName:String = ""
+    var arrivalGeoHash:String = ""
+    var arrivalName:String = ""
+    var adult:String = "1"
+    var date:String = ""
+    var child:String = ""
+    var senior:String = ""
+    var lang:String = ""
+    var currency:String = ""
+}
+```
+The developer can use this Model to pass the search request object from the boarding screen and also be manipulated from the Filter screen and ask for loading data again.
 
-`origin` : Origin's geohash
-`destination` : Destination's geohash
-`outbound_date` : Outbound departure date
+For loading data from the server, app is using `Alamofire 5`  with `Result` mode. All the networking logics happening in the Network folder.
 
-QUERY PARAMS:
+Class | Responsibility 
+--- | ---
+APIClient | Requesting data from server with the help of Alamofire.
+APIRouter | Create routes by specifying the path, method, parameters and setting HTTP headers.
+APIParameterKey | Provide parameters for using in APIRouter.
+NetworkConstants | All the constants that needs for requesting data from server.
+ 
+**Loading data:**
 
-`adult` : Number of adults
-`child` : Number of children
-`senior` : Number of seniors
-`lang` : ISO 3166-1 alpha-2 language code
-`currency` : ISO 4217 currency code
-
-The response looks like:
+by calling the initial search endpoint server returns:
 ```
 {
   "origin_city_id": "375dd5879001acbd84a4683dedf9eed1",
@@ -78,171 +89,7 @@ The response looks like:
   "is_valid_route": true
 }
 ```
-
-Where a City is like:
-```
-   {
-      "id": "375dd5879001acbd84a4683deda84183",
-      "locale": "en",
-      "region_id": 6417,
-      "name": "New York",
-      "lat": 40.71427,
-      "lon": -74.00597,
-      "geohash": "dr5reg",
-      "timezone": "America/New_York",
-      "image_url": "/images/promos/city-blocks/new-york.jpg",
-      "legacy_url_form": "NewYork,NewYork,UnitedStates",
-      "full_name": "New York, New York, United States",
-      "region": {
-        "id": 6417,
-        "locale": "en",
-        "country_code2": "US",
-        "name": "New York",
-        "country": {
-          "code2": "US",
-          "locale": "en",
-          "code3": "USA",
-          "name": "United States",
-          "continent": "NA",
-          "default_locale": "en",
-          "default_currency": "USD",
-          "population": 310232863
-        }
-      }
-    }
-```
-Where a Location is like:
-```
-    {
-      "id": 3970,
-      "city_id": "375dd5879001acbd84a4683dedfb933e",
-      "name": "Métro Bonaventure Bus Station",
-      "address": [
-        "997 Rue St-Antoine Ouest",
-        "Montreal, QC H3C 1A6"
-      ],
-      "type": "transit_station",
-      "lat": 45.4988273060484,
-      "lon": -73.5644745826722,
-      "geohash": "f25dvfzcz"
-    }
-```
-Where an Operator is like:
-```
-    {
-      "id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "source_id": 155,
-      "profile_id": 111,
-      "name": "Greyhound",
-      "url": null,
-      "logo_url": "https://busbud-pubweb-assets-staging.global.ssl.fastly.net/images-service/operator-logos/greyhound.png?hash=1{&height,width}",
-      "display_name": "Greyhound",
-      "sellable": true,
-      "fuzzy_prices": false,
-      "sell_tickets_cutoff": {
-        "hours": 1
-      },
-      "amenities": {
-        "classes": {
-          "Normal": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          },
-          "Economy": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          }
-        }
-      },
-      "source": "greyhound_us",
-      "referral_deal": false,
-      "display_url": null,
-      "fraud_check": "iovation",
-      "terms": {
-        "refund": false,
-        "exchange": true,
-        "bag_allowed": true,
-        "piece_of_id": false,
-        "boarding_requirement": "printed_tkt",
-        "extra_bag_policy": true,
-        "use_new_ticket": false,
-        "exchange_cutoff": 24,
-        "nb_checked_bags": 1,
-        "kg_by_bag": 25,
-        "nb_carry_on": 1,
-        "extra_bag_cost": 1500
-      }
-    }
-```
-And an XDeparture is :
-```
-    {
-      "id": "7c5dd26a",
-      "source_id": 155,
-      "checkout_type": "new",
-      "operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "origin_location_id": 1942,
-      "destination_location_id": 1938,
-      "class": "Economy",
-      "class_name": "Economy",
-      "amenities": {
-        "display_name": "Economy",
-        "wifi": true,
-        "toilet": true,
-        "ac": true,
-        "food": false,
-        "refreshment": false,
-        "power_outlets": true,
-        "tv": false,
-        "bus_attendant": false,
-        "leg_room": false
-      },
-      "available_seats": 55,
-      "prices": {
-        "total": 5200,
-        "breakdown": {
-          "base": 5200
-        },
-        "categories": {},
-        "discounted": false
-      },
-      "ticket_types": [
-        "print"
-      ],
-      "departure_timezone": "America/New_York",
-      "arrival_timezone": "America/Montreal",
-      "departure_time": "2016-01-14T00:01:00",
-      "arrival_time": "2016-01-14T07:55:00"
-    }
-```
-
-### Poll results
-
-**While "complete" is false, you need to call** :
-
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date/poll`
-
-With ***all*** the same parameters that the previous endpoint, plus:
-
-`index` : Index from which to return new departures
-
-The response is:
+but when loading more data, we just have:
 ```
 {
   "departures": [
@@ -257,3 +104,52 @@ The response is:
   "ttl": 900
 }
 ```
+
+So we have to do some mapping and extracting data from the objects for presenting data in the table. We won't need all the data that the server sent to us for populating our table view. Also, some of them are just raw data. So we need to change to understandable objects for users.
+
+In those case, we need a Model Manager that can handle all these and prepare a clean Array of DeparturesCellViewModel for our table view.
+
+When we already have the initial search on the next loading data, the Model Manager just adds data to the departures and operators list. This achieved by:
+
+`public func addRouteData`
+
+some of the helper functions in this manager are:
+
+Helper functions |
+--- |
+getDate
+isNextDay
+getTime
+extractLocationName
+extractCompanyName
+getDuration
+toCurrencyFormat
+
+
+For simplicity, app uses a TitleView class to add it as a view for the navigation bar. It shows the  "From - > To"  with the date that the user searched. also, it has a model view for presenting data
+
+**cell:**
+
+shows various essential data:
+Date, Price, departure time, arrival time, duration, where to go on the bus, and where the bus will stop. Company name, up to 4 amenities, the total available seats.
+
+![cell](https://github.com/sajjadsarkoobi/coding-challenge-native-b/blob/main/Screenshots/cells.png)
+
+# Loading More data Challeng:
+Sometimes, the initial search has a response, but it doesn't provide departures, and the `complete` still is false. So with these assumptions, we are loading data again for the poll endpoint.
+```
+if self.canLoadMore && self.dataSource.count == 0 && data.departures.count == 0 {
+    print("Load data again")
+    self.loadData()
+}
+```
+
+
+## To be improved
+- [ ] Test cases
+- [ ] Adding no data lable or view when nothing to present.
+- [ ] Needs to know better server behaiviours for creating robust data presentation.
+- [ ] Model Manager.
+- [ ] Models.
+- [ ] Cell UIView.
+
