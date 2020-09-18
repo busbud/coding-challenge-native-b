@@ -61,16 +61,41 @@ class Search_VC: UIViewController {
     }
 
     func getFakeSearchParams() {
+
+        //New York -> Boston
         searchModelData = SearchModel(
             departureGeoHash: "dr5reg",
             departureName: "New York",
             arrivalGeoHash: "drt2yz",
             arrivalName: "Boston",
             adult: "1",
-            date: "2021-07-21",
+            date: "2021-07-29",
             child: "",
             senior: "",
             lang: "US",
             currency: "USD")
+        
+        
+        
+        /*
+         // Boston -> Washington
+        searchModelData = SearchModel(
+            departureGeoHash: "drt2yz",
+            departureName: "Boston",
+            arrivalGeoHash: "dqcjqb",
+            arrivalName: "Washington",
+            adult: "1",
+            date: "2021-07-29",
+            child: "",
+            senior: "",
+            lang: "US",
+            currency: "USD")
+ 
+         */
     }
+
+    
+    
+    
 }
+

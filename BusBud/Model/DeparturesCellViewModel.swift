@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Data that used for each cell to present results
 struct DeparturesCellViewModel {
     
     var departureId:String = ""

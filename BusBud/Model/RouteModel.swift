@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Route
 
 
-
+//MARK: - Main object
 struct RouteModel: Codable {
     var originCityID, destinationCityID: String?
     var cities: [CityModel]?

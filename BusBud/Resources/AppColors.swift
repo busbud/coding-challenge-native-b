@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+///Colors that used in this app
 class AppColors {
 
     static var defult = AppColors()

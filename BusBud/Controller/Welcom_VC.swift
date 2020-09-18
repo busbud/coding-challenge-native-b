@@ -15,8 +15,6 @@ class Welcom_VC: UIViewController {
         openNextPage()
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,19 +25,13 @@ class Welcom_VC: UIViewController {
         setView()
     }
     
-    
-    
+   
     func setView(){
         signInBtn.backgroundColor = AppColors.defult.mainBlueColor
         signInBtn.setTitleColor(.white, for: .normal)
         signInBtn.round(5)
     }
-    
 
-    
-    
-
-    
     
     func openNextPage(){
         
@@ -50,11 +42,7 @@ class Welcom_VC: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
-    
-    
-    deinit {
-        print("[deinit] Welcom_VC")
-    }
 
 }
 
+ 

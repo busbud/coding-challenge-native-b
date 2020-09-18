@@ -519,17 +519,24 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wxA-8L-AIv">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="secondaryLabelColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uov-zi-NK2"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Ebc-2o-g8J" secondAttribute="bottom" id="Com-jS-fTi"/>
+                            <constraint firstItem="wxA-8L-AIv" firstAttribute="centerY" secondItem="pPH-v6-pl4" secondAttribute="centerY" id="kqm-TP-Oa7"/>
                             <constraint firstItem="Ebc-2o-g8J" firstAttribute="top" secondItem="Uov-zi-NK2" secondAttribute="top" id="lDp-zR-mih"/>
                             <constraint firstItem="Ebc-2o-g8J" firstAttribute="leading" secondItem="Uov-zi-NK2" secondAttribute="leading" id="rml-Du-OFx"/>
+                            <constraint firstItem="wxA-8L-AIv" firstAttribute="centerX" secondItem="pPH-v6-pl4" secondAttribute="centerX" id="v6y-BV-rtx"/>
                             <constraint firstItem="Uov-zi-NK2" firstAttribute="trailing" secondItem="Ebc-2o-g8J" secondAttribute="trailing" id="xht-GX-B69"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="wxA-8L-AIv" id="oUQ-1H-CsZ"/>
                         <outlet property="tableView" destination="Ebc-2o-g8J" id="FfA-QG-Pv5"/>
                     </connections>
                 </viewController>
@@ -685,6 +692,9 @@
         <image name="tag.fill" catalog="system" width="128" height="119"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

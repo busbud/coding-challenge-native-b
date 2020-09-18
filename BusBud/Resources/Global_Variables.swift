@@ -9,7 +9,7 @@ import Foundation
 
 
 struct Global_Variables {
-    
+    /// for later use of name. instead of userdefaults or DB
     static var userName : String = ""
     
 }

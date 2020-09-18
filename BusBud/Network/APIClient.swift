@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 
-
+///Loading data with result type with Alamofire
 class APIClient {
     
     @discardableResult

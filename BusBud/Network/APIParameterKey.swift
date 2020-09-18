@@ -8,7 +8,7 @@
 import Foundation
 
 
-
+/// The parameters that APIs are using
 struct APIParameterKey {
     
     struct x_departures {

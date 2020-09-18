@@ -11,6 +11,7 @@ class SearchResult_VC: UIViewController {
    
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var searchModelData:SearchModel = SearchModel()
     var dataSource: [DeparturesCellViewModel] = []
@@ -39,6 +40,7 @@ class SearchResult_VC: UIViewController {
         
         
         loadData()
+        activityIndicator.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +69,7 @@ class SearchResult_VC: UIViewController {
 
 
     @objc func filterBtnAction(){
-        
+        print("Filter Button Action")
     }
     
 
@@ -88,6 +90,11 @@ class SearchResult_VC: UIViewController {
             loadMore: canLoadMore,
             index:self.dataSource.count) { (result, httpResponse, resultString) in
             
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
+            
             self.isLoadingData = false
             
             switch result {
@@ -95,9 +102,6 @@ class SearchResult_VC: UIViewController {
 
                 
                 self.canLoadMore = !data.complete
-                
-
-                
                 self.dataSource = self.modelManager.addRouteData(route: data)
                 
                 
@@ -109,7 +113,7 @@ class SearchResult_VC: UIViewController {
                 
                 self.reloadTableData()
                 
-                print("data.complete \( data.complete)")
+                print("data.complete \( data.complete) \(self.dataSource.count)")
          
                 
             case .failure(let err):

@@ -8,22 +8,21 @@
 import Foundation
 
 
+/// Model manager create the list of objects of DeparturesCellViewModel for presenting on each row
 class DeparturesModelManagaer {
-    
-    static var shared = DeparturesModelManagaer()
     
     private var searchRoutesData: RouteModel?
     private var departuresListData: [DeparturesCellViewModel] = []
     
 
+    //if Main Route doesn't exist, it will initialize that with the base result,
+    //on the other hand it will update only the departures & operators
     public func addRouteData(route: RouteModel) -> [DeparturesCellViewModel] {
         if let _ = searchRoutesData {
             addDepartures(departures: route.departures)
             addOperators(operators: route.operators)
         }else{
             searchRoutesData = route
-            addDepartures(departures: route.departures)
-            addOperators(operators: route.operators)
         }
         
         let data = extractDeparturesData(departures: route.departures)
@@ -35,6 +34,7 @@ class DeparturesModelManagaer {
         searchRoutesData = nil
         departuresListData.removeAll()
     }
+    
     
     
     private func addDepartures(departures: [DepartureModel]) {
@@ -50,7 +50,7 @@ class DeparturesModelManagaer {
         }
     }
     
-    
+    //Maping data from operators & departures for using in DeparturesCellViewModel
     private func extractDeparturesData(departures: [DepartureModel]) -> [DeparturesCellViewModel] {
 
         var departureCityName:String = ""
@@ -69,7 +69,7 @@ class DeparturesModelManagaer {
                     arrivalCityName: arrivalCityName,
                     operatorId: item.operatorID,
                     date: getDate(inputDate: item.departureTime),
-                    price: ("\(item.prices?.total ?? 0)").toCurrencyFormat(currencyCode: (item.prices?.currency ?? "")),
+                    price: toCurrencyFormat(price: ("\(item.prices?.total ?? 0)"), currencyCode: (item.prices?.currency ?? "") ),
                     hasDiscount: item.prices?.discounted ?? false,
                     departureTime: getTime(inputDate: item.departureTime),
                     arrivalTime: getTime(inputDate: item.arrivalTime),
@@ -88,6 +88,7 @@ class DeparturesModelManagaer {
         return departuresListData
     }
     
+    //MARK: - Get correct date format
     private func getDate(inputDate:String, formatter:String = "dd MMM yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -103,6 +104,7 @@ class DeparturesModelManagaer {
     }
     
     
+    //MARK: is it going for the Next day
     private func isNextDay(arrivalDate:String , departureDate:String) -> Bool{
         
         let arrivalDay = getDate(inputDate: arrivalDate, formatter: "dd")
@@ -112,6 +114,7 @@ class DeparturesModelManagaer {
     }
     
     
+    //MARK: get correct time from Dates
     private func getTime(inputDate:String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -127,6 +130,7 @@ class DeparturesModelManagaer {
     }
     
     
+    //MARK: filtering location name from locations with id
     private func extractLocationName(locationId: Int) -> String {
         var result = ""
     
@@ -138,6 +142,7 @@ class DeparturesModelManagaer {
     }
     
     
+    //MARK: filtering company name from operatorId with ID
     private func extractCompanyName(operatorId: String) -> String {
         var result = ""
     
@@ -149,7 +154,7 @@ class DeparturesModelManagaer {
     }
     
 
-    
+    //MARK: calculating the duration of a trip
     private func getDuration(duration:Int) -> String {
         
         let hours = (duration/60)
@@ -163,25 +168,26 @@ class DeparturesModelManagaer {
         
     }
     
-
-}
-
-
-extension String{
-    func toCurrencyFormat(currencyCode: String) -> String {
-
-        if let intValue = Int(self){
+    
+    //MARK: formatting the price by using the currancyCode
+    private func toCurrencyFormat(price:String, currencyCode: String) -> String {
+        
+        if let intValue = Int(price){
             let myDouble = (Double(intValue)/100)
             let currencyFormatter = NumberFormatter()
             currencyFormatter.usesGroupingSeparator = true
             currencyFormatter.numberStyle = .currency
             currencyFormatter.currencyCode = currencyCode
-
+            
             if let priceString = currencyFormatter.string(from: NSNumber(value: myDouble)) {
                 return priceString
             }
             
-      }
-    return ""
-  }
+        }
+        return ""
+    }
 }
+
+
+
+

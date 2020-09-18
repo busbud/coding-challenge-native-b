@@ -34,6 +34,8 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
+        
+        ///We don't have POST in this app until now
 //        case
 //            return .post
             
@@ -55,6 +57,8 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
+    
+    // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
         case .getInitSearchData(_ ,_ , _, let adult, let child, let senior, let lang, let currency):

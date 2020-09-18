@@ -7,8 +7,10 @@
 
 import Foundation
 
+
+//Model that is using to creating search parameters
+
 struct SearchModel {
-    
     var departureGeoHash:String = ""
     var departureName:String = ""
     var arrivalGeoHash:String = ""
@@ -19,5 +21,4 @@ struct SearchModel {
     var senior:String = ""
     var lang:String = ""
     var currency:String = ""
-
 }

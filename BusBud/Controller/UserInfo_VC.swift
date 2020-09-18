@@ -72,10 +72,6 @@ class UserInfo_VC: UIViewController {
         self.navigationController?.present(controller, animated: true, completion: nil)
         
     }
-    
-    deinit {
-        print("[deinit] UserInfo_VC")
-    }
 
     
 }
