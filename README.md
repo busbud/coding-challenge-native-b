@@ -257,3 +257,98 @@ The response is:
   "ttl": 900
 }
 ```
+
+# Solution Steps
+
+1. ## Questions
+
+    1. Does application support all over world?
+    2. What is target audience for application?
+    3. Do we required scalable application? What extend? (Futures it will support airbuses bookings, hotel bookings etc)
+    4. Does application support multiple languages?
+    5. Do we want dynamic user interface?
+    6. Does travel partner want separate application with change user interface only?
+    7. What are the target audience for Osheaga festival only?
+
+2. ## Research
+
+    | Topic      | link |
+    | ----------- | ----------- |
+    | Osheaga | <https://www.osheaga.com/en> |
+    | Osheaga | <https://en.wikipedia.org/wiki/Osheaga_Festival> |
+    | Promotional app | <https://appsamurai.com/how-to-promote-travel-apps/> |
+    | iOS app version uses | <https://gs.statcounter.com/ios-version-market-share/mobile/united-states-of-america>, <https://gs.statcounter.com/ios-version-market-share/mobile/united-states-of-america> |
+    | Air Canada | <https://apps.apple.com/ca/app/air-canada/id326459697> |
+    | EasyMyTrip | <https://apps.apple.com/tr/app/easemytrip-flight-booking-app/id1053030595> |
+    | ClearTrip | <https://apps.apple.com/in/app/cleartrip/id531324961> |
+    | Goibibo | <https://apps.apple.com/in/app/goibibo-flight-hotel-travel/id631927169> |
+    | Trivago | <https://apps.apple.com/us/app/trivago-compare-hotel-prices/id376888389> |
+    | Treebo | <https://apps.apple.com/in/app/treebo-hotel-booking-app/id1281202038> |
+    | Expedia | <https://apps.apple.com/us/app/expedia-hotels-flights-car/id427916203> |
+    | Redbus | <https://apps.apple.com/in/app/redbus-rpool/id733712604> |
+    | FabHotels | <https://apps.apple.com/in/app/fabhotels-hotel-booking-app/id1434875063> |
+    | MakeMyTrip | <https://apps.apple.com/in/app/makemytrip-flights-hotels/id530488359> |
+    | Booking.com | <https://apps.apple.com/us/app/booking-com-hotels-travel/id367003839> |
+    | Agoda | <https://apps.apple.com/in/app/agoda-best-travel-deals/id440676901> |
+    | AirIndia | <https://apps.apple.com/us/app/air-india/id932302964> |
+    | Greyhound | <https://apps.apple.com/us/app/greyhound-us/id931612822> |
+
+    ## Referance User interface
+
+    <p float="left">
+      <img src="./Reaserch/IMG_2870.png" width="100" />
+      <img src="./Reaserch/IMG_2871.png" width="100" />
+      <img src="./Reaserch/IMG_2872.png" width="100" />
+      <img src="./Reaserch/IMG_2873.png" width="100" />
+      <img src="./Reaserch/IMG_2874.png" width="100" />
+    </p>  
+
+3. ## Finalise
+
+    | Title      | Description |
+    | ----------- | ----------- |
+    | Application flow | We can draw user flow diagram using draw.io |
+    | Home screen | Search travels, offers, quick registeration popup only first time, click on offer auto search and display result |
+    | Detail screen | After search, we will display result on same page(Home page) so user can search again |
+    | Onboarding screen | Quick registeration popup we can trigger before complete booking |
+
+4. ## Applications configuration
+
+   | xcode version | Language      | minimum version | Architecture |
+   | ----------- | ----------- | ----------- | ----------- |
+    | 11.6 | Swift | 13.0 | Main application - VIPER, Services -  Facade patterns |
+
+5. ## Create services frameworks
+
+    1. Structure
+    2. Service integration
+    3. Testcases
+    4. Export framework script
+
+6. ## Application
+
+    1. Structure
+    2. Home screen
+        1. Search
+        2. Promotion
+        3. Service integration
+        4. Testcases
+        5. Automation
+    3. Details screen
+        1. Display list
+        2. Create cell
+        3. Testcases
+        4. Automation
+    4. Onboarding screen
+        1. Ask email or phone
+        2. Testcases
+        3. Automation
+
+7. ## Faced issues
+
+    | Issue      | Solution |
+    | ----------- | ----------- |
+    | View README.md file without commit | <https://code.visualstudio.com/docs/languages/markdown> |
+    |  |  |
+
+8. ## Final Screenshots
