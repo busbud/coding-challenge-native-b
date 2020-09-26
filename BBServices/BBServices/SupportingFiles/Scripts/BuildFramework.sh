@@ -14,7 +14,7 @@ exit 0
 fi
 export RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1
 
-rm -rf "./Services.framework"
+rm -rf "../BusBud/BusBud/Frameworks/BBServices.framework"
 
 source $(pwd)"/BBServices/SupportingFiles/Scripts/Utility.sh"
-createFatLibrary "BBServices" "./BBServices.xcodeproj" "./" "Release"
+createFatLibrary "BBServices" "./BBServices.xcodeproj" "../BusBud/BusBud/Frameworks/" "Release"

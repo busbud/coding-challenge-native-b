@@ -94,6 +94,7 @@ internal class BaseService: NSObject, BaseServiceProtocol {
         return BaseModel()
     }
     
+    //TODO: Need to handle error properly
     internal func isValidResponse(response:Data?, errorObject: inout ServiceError?) -> Bool {
                 
         if let data = response {
