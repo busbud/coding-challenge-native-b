@@ -1,0 +1,10 @@
+/* 
+  Services.strings
+  BBServices
+
+  Created by Nitin kachhadiya on 26/09/20.
+  Copyright © 2020 Nitin kachhadiya. All rights reserved.
+*/
+"ErrorSDKNotInitalize" = "Service SDK is not initalize";
+"ErrorSomthingWentWrong" = "Something went wrong! Please try again later.";
+"ErrorInternetNotAvaialble" = "You are not connected to the internet";

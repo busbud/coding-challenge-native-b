@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  BBServices
+//
+//  Created by Nitin kachhadiya on 26/09/20.
+//  Copyright © 2020 Nitin kachhadiya. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Default.xcconfig"
+
+RUN_CLANG_STATIC_ANALYZER = YES
+BITCODE_GENERATION_MODE = marker
