@@ -1,0 +1,22 @@
+PODS:
+  - PKHUD (5.3.0)
+  - SwiftMessages (8.0.2):
+    - SwiftMessages/App (= 8.0.2)
+  - SwiftMessages/App (8.0.2)
+
+DEPENDENCIES:
+  - PKHUD
+  - SwiftMessages
+
+SPEC REPOS:
+  https://cdn.cocoapods.org/:
+    - PKHUD
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+
+PODFILE CHECKSUM: 1ac51846eb78465031183e79bb47f24cb2137062
+
+COCOAPODS: 1.9.3

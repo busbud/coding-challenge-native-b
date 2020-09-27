@@ -1,4 +1,18 @@
+## Solution 
+Main screen (Departures) is implemented based on MVVM architecture.
+The network layer is implemented based on Operations. And in the future, it allows adding new endpoints very quickly.
+Only utils libraries were used as third-party dependencies.
 
+## Issues
+Issues were related to the empty responses that I was getting for a long time and I cannot test data parsing.
+
+## Deltas
+* Support dark mode;
+* Write unit-tests.
+
+## Requirements
+- iOS 14 or later
+- A Mac with Xcode 12 or later
 
 ![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
 

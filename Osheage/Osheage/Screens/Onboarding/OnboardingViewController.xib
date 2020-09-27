@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Osheage" customModuleProvider="target">
+            <connections>
+                <outlet property="searchButton" destination="Q0x-Dr-bBQ" id="v2s-P3-vFs"/>
+                <outlet property="titleLabel" destination="BsN-2h-56C" id="pWH-eJ-7ID"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bgr" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-Ze-rpS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="THY-5K-DJI">
+                    <rect key="frame" x="32" y="232" width="350" height="192"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="THY-5K-DJI" secondAttribute="height" multiplier="175:96" id="XX0-p2-i1c"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARC JEAN-DRAPEAU, MONTRÉAL, CA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsN-2h-56C">
+                    <rect key="frame" x="12" y="548" width="390" height="21.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0x-Dr-bBQ">
+                    <rect key="frame" x="16" y="802" width="382" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2Fq-Xf-y68"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="LET'S GO">
+                        <color key="titleColor" red="0.6705882352941176" green="0.12941176470588234" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="searchButtonTapped" destination="-1" eventType="touchUpInside" id="eiA-ij-DlK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Yz9-Ze-rpS" secondAttribute="bottom" id="3O1-UV-3Y1"/>
+                <constraint firstItem="Yz9-Ze-rpS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FiR-Bo-Mix"/>
+                <constraint firstItem="Yz9-Ze-rpS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="J0r-7p-v65"/>
+                <constraint firstItem="BsN-2h-56C" firstAttribute="top" secondItem="THY-5K-DJI" secondAttribute="bottom" constant="124" id="LIc-zL-eaJ"/>
+                <constraint firstItem="Q0x-Dr-bBQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O36-70-mRE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q0x-Dr-bBQ" secondAttribute="trailing" constant="16" id="Ojt-Q7-aa0"/>
+                <constraint firstItem="BsN-2h-56C" firstAttribute="centerX" secondItem="THY-5K-DJI" secondAttribute="centerX" id="S0N-MT-TsA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Q0x-Dr-bBQ" secondAttribute="bottom" constant="16" id="Wkz-id-X1p"/>
+                <constraint firstItem="THY-5K-DJI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="eEm-8e-Yvh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yz9-Ze-rpS" secondAttribute="trailing" id="fwb-lj-569"/>
+                <constraint firstItem="BsN-2h-56C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="jTs-uU-fpC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BsN-2h-56C" secondAttribute="trailing" constant="12" id="oWr-oi-F8n"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="THY-5K-DJI" secondAttribute="trailing" constant="32" id="or5-Rl-oMS"/>
+                <constraint firstItem="THY-5K-DJI" firstAttribute="centerY" secondItem="Yz9-Ze-rpS" secondAttribute="centerY" constant="-120" id="p5a-Ix-7fH"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Bgr" width="1840" height="1280"/>
+        <image name="Logo" width="2100" height="1201"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
