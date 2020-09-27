@@ -5,6 +5,7 @@ Only utils libraries were used as third-party dependencies.
 
 ## Issues
 Issues were related to the empty responses that I was getting for a long time and I cannot test data parsing.
+Didn't test pagination as I cannot get enough departures.
 
 ## Deltas
 * Support dark mode;
