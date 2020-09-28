@@ -379,3 +379,4 @@ The response is:
     3. Required to add testcases for each components
     4. Required to add animation between two screen and search and results
     5. Maintain properly localize string
+    6. Search with city, date and passanger screen need to be add
