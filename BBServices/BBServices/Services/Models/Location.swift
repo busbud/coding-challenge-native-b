@@ -18,7 +18,7 @@ public enum TypeEnum: String, Codable {
 }
 
 // MARK: - Location
-public struct Location: Codable {
+public struct Location: Hashable, Codable, Identifiable {
     
     public let id: Int
     public let cityID, name: String

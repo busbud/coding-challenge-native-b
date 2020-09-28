@@ -13,7 +13,13 @@ final class HomeEnvironment: ObservableObject {
 
     let objectWillChange = ObservableObjectPublisher()
 
-    @Published var title = Translation.HomeTitle {
+    @Published var title = Translation.busbud {
+       willSet {
+            self.objectWillChange.send()
+        }
+    }
+    
+    @Published var type = 0 {
        willSet {
             self.objectWillChange.send()
         }

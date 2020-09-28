@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Language : Codable {
+public struct Language : Hashable, Codable, Identifiable  {
     public let id = UUID()
     public let alpha2, alpha3, bibliographic, name: String
 }

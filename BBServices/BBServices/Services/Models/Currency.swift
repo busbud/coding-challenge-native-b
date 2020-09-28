@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Currency: Codable, Identifiable {
+public struct Currency: Hashable, Codable, Identifiable {
     
     public let id = UUID()
     public let code: String

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class JSONNull: Codable, Hashable {
+public class JSONNull: Hashable, Codable, Identifiable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true

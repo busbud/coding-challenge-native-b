@@ -16,16 +16,44 @@ struct HomeView: ViewInterface, View {
     @EnvironmentObject var env: HomeEnvironment
     @ObservedObject var viewModel: HomeViewModel
 
-    var body: some View {
-        NavigationView {
+    @State private var showModal: Bool = false
+    @State var sheetType = 0;
 
-            VStack(alignment: .center) {
-                Spacer()
-                Text("Hello..")
-                Spacer()
-                Spacer()
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
+    init(presenter: HomePresenterViewInterface, viewModel: HomeViewModel) {
+        
+        self.viewModel = viewModel
+        self.presenter = presenter
+        self.presenter.fetchCities()
+
+    }
+    
+    var body: some View {
+                
+        VStack{
+            TitleView(title: Translation.busbud)
+            Divider().shadow(color: Color.black, radius: 2, x: 0, y: 1)
+            List {
+                SearchView(viewModel: self.viewModel).onSearch {
+
+                    self.presenter.fetchTravels(from: "", to: "", date: Date(), passanger: 1)
+                }
+                if self.viewModel.results != nil {
+
+                    DeparturesView(departures: self.viewModel)
+                } else {
+                    PromotionView()
+                }
             }
-            .navigationBarTitle(Text(self.env.title))
+            .onAppear {
+                UITableView.appearance().separatorStyle = .none
+                UITableView.appearance().allowsSelection = false
+            }
         }
     }
 }
@@ -44,3 +72,4 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 #endif
+

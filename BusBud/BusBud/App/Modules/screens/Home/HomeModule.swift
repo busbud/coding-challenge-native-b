@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 import Combine
+import BBServices
 
 // MARK: - router
 
@@ -25,16 +26,21 @@ protocol HomePresenterRouterInterface: PresenterToRouterInterface {
 
 protocol HomePresenterInteractorInterface: PresenterToInteractorInterface {
 
+    func results(_ trvels:DeparturesResponse)
 }
 
 protocol HomePresenterViewInterface: PresenterToViewInterface {
+
+    func fetchCities()
+    
+    func fetchTravels(from:String, to:String, date:Date, passanger: Int)
 
 }
 
 // MARK: - interactor
 
 protocol HomeInteractorPresenterInterface: InteractorToPresenterInterface {
-
+    func fetchTravels(from:String, to:String, date:Date, passanger: Int)
 }
 
 // MARK: - module builder
@@ -53,9 +59,9 @@ final class HomeModule: ModuleInterface {
         let router = Router()
 
         let viewModel = HomeViewModel()
+        presenter.viewModel = viewModel
         let view = View(presenter: presenter, viewModel: viewModel)
             .environmentObject(HomeEnvironment())
-        presenter.viewModel = viewModel
 
         self.assemble(presenter: presenter, router: router, interactor: interactor)
 

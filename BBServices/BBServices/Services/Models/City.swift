@@ -32,3 +32,16 @@ public struct City: Codable {
         case locale, region
     }
 }
+
+//TODO: Remove once we get list from service
+public typealias defaultCities = [City]
+
+extension City {
+     
+    public static let defaultCities: [City] = [
+        
+        City(id:"1",regionID:1,name:"New York",lat:0, lon: 0, geohash:"dr5reg",timezone:"",imageURL:"",heroImageURL:"",legacyURLForm:"",countryCode2:"",fullName:"",shortName:"",locale:"",region:Region(id: 1, regionCode: "1", countryCode2: "1", name: "1", shortName: "1", locale: "1", country: Country(code2: "1", code3: "", name: "", shortName: "", continent: "", defaultLocale: "", defaultCurrency: "", population: 1000, locale: ""))),
+        City(id:"2",regionID:1,name:"Montréal",lat:0, lon: 0, geohash:"f25dvk",timezone:"",imageURL:"",heroImageURL:"",legacyURLForm:"",countryCode2:"",fullName:"",shortName:"",locale:"",region:Region(id: 1, regionCode: "1", countryCode2: "1", name: "1", shortName: "1", locale: "1", country: Country(code2: "1", code3: "", name: "", shortName: "", continent: "", defaultLocale: "", defaultCurrency: "", population: 1000, locale: "")))
+    ]
+}
+

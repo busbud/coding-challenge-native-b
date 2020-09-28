@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Region
-public struct Region: Codable {
+public struct Region: Hashable, Codable, Identifiable  {
     
     public let id: Int
     public let regionCode, countryCode2, name, shortName: String

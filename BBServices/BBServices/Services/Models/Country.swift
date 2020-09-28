@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Country: Codable {
+public struct Country: Hashable, Codable  {
     
     public let code2, code3, name, shortName: String
     public let continent, defaultLocale, defaultCurrency: String

@@ -36,6 +36,12 @@
 		4621C895251F3CF9008F3EAB /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621C894251F3CF9008F3EAB /* Region.swift */; };
 		4621C897251F3D3B008F3EAB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621C896251F3D3B008F3EAB /* Country.swift */; };
 		4621C899251F4153008F3EAB /* JSONSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621C898251F4153008F3EAB /* JSONSchema.swift */; };
+		46466AB125218EBC0017BBC1 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466AB025218EBC0017BBC1 /* Departure.swift */; };
+		46466AB325218ED90017BBC1 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466AB225218ED90017BBC1 /* Amenities.swift */; };
+		46466AB525218F000017BBC1 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466AB425218F000017BBC1 /* Price.swift */; };
+		46466AB7252198090017BBC1 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466AB6252198090017BBC1 /* Operator.swift */; };
+		46466AB9252199820017BBC1 /* Economy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466AB8252199820017BBC1 /* Economy.swift */; };
+		46466ABB252199A30017BBC1 /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46466ABA252199A30017BBC1 /* Terms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +92,12 @@
 		4621C894251F3CF9008F3EAB /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		4621C896251F3D3B008F3EAB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4621C898251F4153008F3EAB /* JSONSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSchema.swift; sourceTree = "<group>"; };
+		46466AB025218EBC0017BBC1 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		46466AB225218ED90017BBC1 /* Amenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
+		46466AB425218F000017BBC1 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		46466AB6252198090017BBC1 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		46466AB8252199820017BBC1 /* Economy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Economy.swift; sourceTree = "<group>"; };
+		46466ABA252199A30017BBC1 /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +252,12 @@
 				4621C894251F3CF9008F3EAB /* Region.swift */,
 				4621C896251F3D3B008F3EAB /* Country.swift */,
 				4621C898251F4153008F3EAB /* JSONSchema.swift */,
+				46466AB025218EBC0017BBC1 /* Departure.swift */,
+				46466AB225218ED90017BBC1 /* Amenities.swift */,
+				46466AB425218F000017BBC1 /* Price.swift */,
+				46466AB6252198090017BBC1 /* Operator.swift */,
+				46466AB8252199820017BBC1 /* Economy.swift */,
+				46466ABA252199A30017BBC1 /* Terms.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,6 +410,7 @@
 				4621C868251F2260008F3EAB /* Reachability.swift in Sources */,
 				4621C882251F27AE008F3EAB /* BaseModel.swift in Sources */,
 				4621C86E251F261E008F3EAB /* ServiceContext.swift in Sources */,
+				46466ABB252199A30017BBC1 /* Terms.swift in Sources */,
 				4621C88F251F355A008F3EAB /* Language.swift in Sources */,
 				4621C891251F3C43008F3EAB /* City.swift in Sources */,
 				4621C895251F3CF9008F3EAB /* Region.swift in Sources */,
@@ -399,8 +418,11 @@
 				4621C897251F3D3B008F3EAB /* Country.swift in Sources */,
 				4621C87A251F2702008F3EAB /* Response.swift in Sources */,
 				4621C870251F262A008F3EAB /* Utilities.swift in Sources */,
+				46466AB9252199820017BBC1 /* Economy.swift in Sources */,
 				4621C87E251F2787008F3EAB /* BaseServiceProtocol.swift in Sources */,
 				4621C880251F27A4008F3EAB /* BaseService.swift in Sources */,
+				46466AB525218F000017BBC1 /* Price.swift in Sources */,
+				46466AB125218EBC0017BBC1 /* Departure.swift in Sources */,
 				4621C899251F4153008F3EAB /* JSONSchema.swift in Sources */,
 				4621C887251F2E3F008F3EAB /* DeparturesService.swift in Sources */,
 				4621C893251F3CD1008F3EAB /* Location.swift in Sources */,
@@ -410,7 +432,9 @@
 				4621C876251F26E6008F3EAB /* Communicator.swift in Sources */,
 				4621C878251F26EF008F3EAB /* Request.swift in Sources */,
 				4621C88B251F2E88008F3EAB /* DeparturesResponse.swift in Sources */,
+				46466AB7252198090017BBC1 /* Operator.swift in Sources */,
 				4621C86C251F2612008F3EAB /* Constants.swift in Sources */,
+				46466AB325218ED90017BBC1 /* Amenities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

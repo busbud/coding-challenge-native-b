@@ -17,7 +17,8 @@ public class DeparturesResponse: Codable {
     public let destinationCityID: String
     public let cities: [City]
     public let locations: [Location]
-    let operators, departures: [JSONAny]
+    public let departures: [Departure]
+    public let operators:[Operator]
     public let searchRequestIDS: [String]
     public let complete: Bool
     public let ttl: Int

@@ -310,7 +310,8 @@ The response is:
     | Application flow | We can draw user flow diagram using draw.io |
     | Home screen | Search travels, offers, quick registeration popup only first time, click on offer auto search and display result |
     | Detail screen | After search, we will display result on same page(Home page) so user can search again |
-    | Onboarding screen | Quick registeration popup we can trigger before complete booking |
+    | Registration screen | Quick registeration popup we can trigger before complete booking |
+    | Onboarding screen | Show quick view of app and benefits |
 
 4. ## Applications configuration
 
@@ -339,16 +340,42 @@ The response is:
         2. Create cell
         3. Testcases
         4. Automation
-    4. Onboarding screen
+    4. Registration screen
         1. Ask email or phone
         2. Testcases
         3. Automation
+    5. Onboarding screen
+        1. Add pager view
 
 7. ## Faced issues
 
     | Issue      | Solution |
     | ----------- | ----------- |
     | View README.md file without commit | <https://code.visualstudio.com/docs/languages/markdown> |
-    |  |  |
+    | Build framework | Solved script issue |
+    | Localize string not dispalay | Due to miss localize table name |
+    | Facing many issue while develop UI using SwiftUI | did R&D and try to sovled problem |
 
 8. ## Final Screenshots
+
+<p float="left">
+      <img src="./Screenshots/SS1.png" width="100" />
+      <img src="./Screenshots/SS2.png" width="100" />
+      <img src="./Screenshots/SS3.png" width="100" />
+      <img src="./Screenshots/SS4.png" width="100" />
+      <img src="./Screenshots/SS5.png" width="100" />
+      <img src="./Screenshots/SS6.png" width="100" />
+    </p>
+
+9. ## Run application
+
+    1. Open BBServices project and build framework
+    2. Open BusBud project and run application
+
+10. ## Next steps
+
+    1. To fix onbarding page top spacing and bottom spacing
+    2. Add comments on code
+    3. Required to add testcases for each components
+    4. Required to add animation between two screen and search and results
+    5. Maintain properly localize string
