@@ -40,17 +40,17 @@ To get departure results, search is initialized via the following endpoint:
 
 PATH PARAMS  
 
-`origin` : Origin's geohash
-`destination` : Destination's geohash
-`outbound_date` : Outbound departure date
+- `origin` : Origin's geohash
+- `destination` : Destination's geohash
+- `outbound_date` : Outbound departure date
 
 QUERY PARAMS:
 
-`adult` : Number of adults
-`child` : Number of children
-`senior` : Number of seniors
-`lang` : ISO 3166-1 alpha-2 language code
-`currency` : ISO 4217 currency code
+- `adult` : Number of adults
+- `child` : Number of children
+- `senior` : Number of seniors
+- `lang` : ISO 3166-1 alpha-2 language code
+- `currency` : ISO 4217 currency code
 
 The response looks like:
 ```
