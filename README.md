@@ -42,7 +42,7 @@ PATH PARAMS
 
 - `origin` : Origin's geohash
 - `destination` : Destination's geohash
-- `outbound_date` : Outbound departure date
+- `outbound_date` : Outbound departure date, ISO 8061 date
 
 QUERY PARAMS:
 
