@@ -10,7 +10,10 @@ import RxCocoa
 import RxSwift
 
 class LanguageSelectionViewModel {
+    
     var selectedLanguageSubject: BehaviorSubject<String>
+    
+    private let disposeBag = DisposeBag()
 
     init(selectedLanguageSubject: BehaviorSubject<String>) {
         self.selectedLanguageSubject = selectedLanguageSubject
@@ -25,11 +28,12 @@ class LanguageSelectionViewModel {
     }
 
     func transform(input: LanguageSelectionViewModelInput) -> LanguageSelectionViewModelOutput {
-        _ = input.selectedIndex
+        input.selectedIndex
             .map { Language.knowCodes[$0].uppercased() }
             .bind(onNext: { [weak self] language in
                 self?.selectedLanguageSubject.onNext(language)
             })
+            .disposed(by: disposeBag)
         let languages = Language.knowCodes.compactMap { return Language(value: $0)?.countryName }
         return LanguageSelectionViewModelOutput(languages: Observable.just(languages))
     }

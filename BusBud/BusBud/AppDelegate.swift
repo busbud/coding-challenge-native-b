@@ -11,16 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var service: OnlineSearchService?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
-//        let path = SearchPathParams(origin: "f2m673", destination: "f25dvk", date: "2021-01-02")
-//        let query = SearchQueryParams(adult: 1, child: 0, senior: 0, lang: "EN", currency: "USD", index: nil)
-//        let searchAPI = SearchAPI(base: "https://napi.busbud.com",
-//                                  pathParams: path,
-//                                  queryParams: query)
-//        service = OnlineSearchService(searchAPI: searchAPI)
-//        service?.search(params: path, query: query)
-
         return true
     }
 

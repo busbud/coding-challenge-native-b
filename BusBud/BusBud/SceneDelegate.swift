@@ -17,14 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
-//            let view = SearchViewController()
-//            let searchAPI = SearchAPI(base: "https://napi.busbud.com")
-//            let service = OnlineSearchService(searchAPI: searchAPI)
-//            let searchRouter = SearchRouter(topViewController: view)
-//
-//            let viewmodel = SearchViewModel(searchService: service)
-//            view.viewModel = viewmodel
-//                window.rootViewController = view
             let onBoarding = OnboardingViewController()
             window.rootViewController = onBoarding
                 self.window = window

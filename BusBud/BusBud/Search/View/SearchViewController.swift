@@ -25,6 +25,8 @@ class SearchViewController: UIViewController {
     @IBOutlet private var loadingActivity: UIActivityIndicatorView!
 
     var viewModel: SearchViewModel?
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +44,21 @@ class SearchViewController: UIViewController {
                                                          selectSenior: seniorStepper.rx.value.map { Int($0) })
 
         let output = viewModel.transform(input: input)
-        _ = output.waitingMode.drive(onNext: {[weak self] waitingMode in
+        output.waitingMode.drive(onNext: {[weak self] waitingMode in
             self?.waitingMode(loading: waitingMode)
-        })
-        _ = output.adult.drive(adultNumberLabel.rx.text)
-        _ = output.child.drive(childNumberLabel.rx.text)
-        _ = output.senior.drive(seniorNumberLabel.rx.text)
-        _ = output.lang.drive(langButton.rx.title(for: .normal))
-        _ = output.currency.drive(currencyButton.rx.title(for: .normal))
-        _ = output.searchResult.bind(to: searchResultTableView.rx.items(cellIdentifier: "cell",
-                                                                        cellType: SearchResultTableViewCell.self)) { _, result, cell in
+        }).disposed(by: disposeBag)
+        output.adult.drive(adultNumberLabel.rx.text).disposed(by: disposeBag)
+        output.child.drive(childNumberLabel.rx.text).disposed(by: disposeBag)
+        output.senior.drive(seniorNumberLabel.rx.text).disposed(by: disposeBag)
+        output.lang.drive(langButton.rx.title(for: .normal)).disposed(by: disposeBag)
+        output.currency.drive(currencyButton.rx.title(for: .normal)).disposed(by: disposeBag)
+        output.searchResult.bind(to: searchResultTableView.rx.items(cellIdentifier: "cell",
+                                                                    cellType: SearchResultTableViewCell.self)) { _, result, cell in
             cell.set(result: result)
-        }
-        _ = output.waitingMode.drive(onNext: {[weak self] waitingMode in
+        }.disposed(by: disposeBag)
+        output.waitingMode.drive(onNext: {[weak self] waitingMode in
             self?.waitingMode(loading: waitingMode)
-        })
+        }).disposed(by: disposeBag)
     }
 
     private func setupTableView() {

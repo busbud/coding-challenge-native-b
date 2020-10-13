@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import RxSwift
 
 class LanguageSelectionViewController: UIViewController {
+    
     @IBOutlet private var languageTableView: UITableView!
+    
     var viewModel: LanguageSelectionViewModel?
-
+    
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -24,10 +29,10 @@ class LanguageSelectionViewController: UIViewController {
             return $0.row
         })
         let output = viewModel.transform(input: input)
-        _ = output.languages.bind(to: languageTableView.rx.items(cellIdentifier: "cell",
-                                                                 cellType: LanguageTableViewCell.self)) { _, lang, cell in
+        output.languages.bind(to: languageTableView.rx.items(cellIdentifier: "cell",
+                                                             cellType: LanguageTableViewCell.self)) { _, lang, cell in
             cell.set(lang: lang)
-        }
+        }.disposed(by: disposeBag)
     }
 
     private func setupTableView() {

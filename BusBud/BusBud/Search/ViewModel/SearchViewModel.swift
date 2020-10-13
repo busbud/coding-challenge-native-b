@@ -63,8 +63,8 @@ class SearchViewModel {
     }
 
     private func search() {
-        _ = searchService.search(pathParams: path,
-                                 query: searchQuery)
+        searchService.search(pathParams: path,
+                             query: searchQuery)
             .subscribe(onNext: { [weak self] result in
                 guard let self = self else { return }
                 let viewData = self.searchResultViewData(from: result)
@@ -77,7 +77,7 @@ class SearchViewModel {
                     self.activeWaitingMode.onNext(false)
                     self.searchResultSubject.onNext(self.searchResults)
                 }
-            })
+            }).disposed(by: disposeBag)
     }
 
     private func resetSearch() {
@@ -107,15 +107,15 @@ class SearchViewModel {
             self.search()
         }).disposed(by: disposeBag)
 
-        _ = input.selectLang.bind(onNext: { [weak self] _ in
+        input.selectLang.bind(onNext: { [weak self] _ in
             guard let self = self else { return }
             self.router?.showlanguageSelection(selectedLanguageSubject: self.langSubject)
-        })
+        }).disposed(by: disposeBag)
 
-        _ = input.selectCurrency.bind(onNext: { [weak self] _ in
+        input.selectCurrency.bind(onNext: { [weak self] _ in
             guard let self = self else { return }
             self.router?.showCurrencySelection(selectedCurrencySubject: self.currencySubject)
-        })
+        }).disposed(by: disposeBag)
 
         let waitingMode = activeWaitingMode.startWith(false).asDriver(onErrorJustReturn: false)
         return SearchViewModelOutput(searchResult: searchResultSubject,

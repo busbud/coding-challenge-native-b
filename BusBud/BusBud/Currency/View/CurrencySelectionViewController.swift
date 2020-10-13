@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class CurrencySelectionViewController: UIViewController {
     @IBOutlet private var currencyTableView: UITableView!
 
     var viewModel: CurrencySelectionViewModel?
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +28,10 @@ class CurrencySelectionViewController: UIViewController {
             return $0.row
         })
         let output = viewModel.transform(input: input)
-        _ = output.currencies.bind(to: currencyTableView.rx.items(cellIdentifier: "cell",
-                                                                  cellType: CurrencyTableViewCell.self)) { _, currency, cell in
+        output.currencies.bind(to: currencyTableView.rx.items(cellIdentifier: "cell",
+                                                              cellType: CurrencyTableViewCell.self)) { _, currency, cell in
             cell.set(currency: currency)
-        }
+        }.disposed(by: disposeBag)
     }
 
     private func setupTableView() {
