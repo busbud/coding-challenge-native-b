@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="BusBud" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="busbud_cover" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-0B-Gj8">
+                    <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3To-li-eGH">
+                    <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="7PU-Ho-sXd"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="startApp:" destination="-1" eventType="touchUpInside" id="qgM-xL-7mf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3To-li-eGH" firstAttribute="top" secondItem="JtM-0B-Gj8" secondAttribute="bottom" id="Eaa-Yz-u4C"/>
+                <constraint firstAttribute="bottom" secondItem="3To-li-eGH" secondAttribute="bottom" id="IG5-vT-Bze"/>
+                <constraint firstItem="3To-li-eGH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ika-iO-xXi"/>
+                <constraint firstItem="JtM-0B-Gj8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Tta-Hm-4Ht"/>
+                <constraint firstItem="3To-li-eGH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hyQ-c6-gqU"/>
+                <constraint firstItem="JtM-0B-Gj8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pUW-Og-Stm"/>
+                <constraint firstItem="JtM-0B-Gj8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="y4S-OF-gyX"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="busbud_cover" width="932" height="490"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

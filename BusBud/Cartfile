@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift"
+github "Swinject/Swinject"
+github "Swinject/SwinjectAutoregistration"
+github "RxSwiftCommunity/RxAlamofire"
