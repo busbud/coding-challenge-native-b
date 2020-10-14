@@ -1,259 +1,40 @@
 
+### Explanation of the approach
+- The approach was to make architect the app in a way that it is extendable, components that are loosely coupled and easily testable. 
+- VIPER architecture pattern is used to achieve loosely coupled objects. 
+- Each VIPER module has a `listener` parameter which is based on the 
+- Protocol oriented programming approach is used as much as possible to make it easy to mock different components while testing. 
+- Dependency injects are used wherever appropriate.
+- Third-party dependencies are used to the minimum, the only two included are just to save time, which can be replaced easily if required i.e. `SearchRoutesDefaultService` can be replaced with a new class where `alamofire` dependency is not used.    
 
-![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
+### The Issues
+No technical challenge was faced as such. 
 
-Hey! 
+1. The API response was missing for the date mentioned in the challenge. Some of the Unit Tests were written while I was not able to get API response to verify the models. 
+2. The use of Index was a bit confusing with the pagination concept in the challenge but on clarification, it is clear now. It is still a untested logic as API is not returning response where App needs to make more API calls. 
 
-It will be hot this summer in Montreal with the [Osheaga festival](http://www.osheaga.com/)! 
-Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!
-Your challenge is to build a promotional app that allows a traveler from Quebec City to find one-way departure schedules for the festival's opening weekend.
+### Suggested Improvements
 
-### Requirements
+The goal was to finish the challenge in 8-9 hours. So a few compromises were made. Here are the improvements which can be made to the app.
 
-Write a native Busbud app that:
+* Overall UI/UX of the app. 
 
-- Has a simple onboarding screen that will open the search
-- Lists all the departures for a given origin city (**Quebec - geohash: f2m673**) and a given destination city (**Montreal - geohash: f25dvk**) for a given day (**the 29th of July 2021**) for **1** adult. 
-For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
+* A Search Screen and be created to take the input from the user, which is not created to save time and focus more on the architecture stuff. 
 
-### Non-functional requirements
+* Dates can be shown on UI in a more human-readable way and in a localized way. For example, the dates of departures or arrival from Monteral could be in Monteral time while presenting on the UI (bascially noty taking into consideration the current device timezone). The main theme of the assignment was to show the architecture of the app, not proper UI/UX.  
 
-- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)).
-- The repo should include 3 screenshots under the /screenshots folder to show the app usage.
-- Change the README.md to explain your solution, the issues, the way you solved them...
+* Proper error handling (Network or other error types) and loading states (i.e. loadingh, empty)  are missing.  
 
-### Supporting API
+* Unit Test coverage can ve increased and [Mockolo ](https://github.com/uber/mockolo) can be used to generate mocks for easy testing.  
 
-In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
-For all requests, you MUST provide the following HTTP headers:
+* Proper localization of the app content as **Busbud** will be a localized app. 
+* Proper frameworks can be created to further modularize the project i.e. `busbudNetwork` framework. 
 
-Header | Value
---- | ---
-Accept | `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
-X-Busbud-Token | The token provided in the challenge invitation email.
+### How to run the project 
+`pod install` on the project root folder and open the new `.xcworkspace` file to run the project in `xcode`
 
-### Init results
+### App Flow
 
-To get departure results, search is initialized via the following endpoint:
-
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date`
-
-PATH PARAMS  
-
-- `origin` : Origin's geohash
-- `destination` : Destination's geohash
-- `outbound_date` : Outbound departure date, ISO 8061 date
-
-QUERY PARAMS:
-
-- `adult` : Number of adults
-- `child` : Number of children
-- `senior` : Number of seniors
-- `lang` : ISO 3166-1 alpha-2 language code
-- `currency` : ISO 4217 currency code
-
-The response looks like:
-```
-{
-  "origin_city_id": "375dd5879001acbd84a4683dedf9eed1",
-  "destination_city_id": "375dd5879001acbd84a4683ded9c875b",
-  "cities": [
-    { City },
-    { City }
-  ],
-  "locations": [
-    { Location }
-    { Location }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "complete": false,
-  "ttl": 900,
-  "is_valid_route": true
-}
-```
-
-Where a City is like:
-```
-   {
-      "id": "375dd5879001acbd84a4683deda84183",
-      "locale": "en",
-      "region_id": 6417,
-      "name": "New York",
-      "lat": 40.71427,
-      "lon": -74.00597,
-      "geohash": "dr5reg",
-      "timezone": "America/New_York",
-      "image_url": "/images/promos/city-blocks/new-york.jpg",
-      "legacy_url_form": "NewYork,NewYork,UnitedStates",
-      "full_name": "New York, New York, United States",
-      "region": {
-        "id": 6417,
-        "locale": "en",
-        "country_code2": "US",
-        "name": "New York",
-        "country": {
-          "code2": "US",
-          "locale": "en",
-          "code3": "USA",
-          "name": "United States",
-          "continent": "NA",
-          "default_locale": "en",
-          "default_currency": "USD",
-          "population": 310232863
-        }
-      }
-    }
-```
-Where a Location is like:
-```
-    {
-      "id": 3970,
-      "city_id": "375dd5879001acbd84a4683dedfb933e",
-      "name": "Métro Bonaventure Bus Station",
-      "address": [
-        "997 Rue St-Antoine Ouest",
-        "Montreal, QC H3C 1A6"
-      ],
-      "type": "transit_station",
-      "lat": 45.4988273060484,
-      "lon": -73.5644745826722,
-      "geohash": "f25dvfzcz"
-    }
-```
-Where an Operator is like:
-```
-    {
-      "id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "source_id": 155,
-      "profile_id": 111,
-      "name": "Greyhound",
-      "url": null,
-      "logo_url": "https://busbud-pubweb-assets-staging.global.ssl.fastly.net/images-service/operator-logos/greyhound.png?hash=1{&height,width}",
-      "display_name": "Greyhound",
-      "sellable": true,
-      "fuzzy_prices": false,
-      "sell_tickets_cutoff": {
-        "hours": 1
-      },
-      "amenities": {
-        "classes": {
-          "Normal": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          },
-          "Economy": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          }
-        }
-      },
-      "source": "greyhound_us",
-      "referral_deal": false,
-      "display_url": null,
-      "fraud_check": "iovation",
-      "terms": {
-        "refund": false,
-        "exchange": true,
-        "bag_allowed": true,
-        "piece_of_id": false,
-        "boarding_requirement": "printed_tkt",
-        "extra_bag_policy": true,
-        "use_new_ticket": false,
-        "exchange_cutoff": 24,
-        "nb_checked_bags": 1,
-        "kg_by_bag": 25,
-        "nb_carry_on": 1,
-        "extra_bag_cost": 1500
-      }
-    }
-```
-And an XDeparture is :
-```
-    {
-      "id": "7c5dd26a",
-      "source_id": 155,
-      "checkout_type": "new",
-      "operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "origin_location_id": 1942,
-      "destination_location_id": 1938,
-      "class": "Economy",
-      "class_name": "Economy",
-      "amenities": {
-        "display_name": "Economy",
-        "wifi": true,
-        "toilet": true,
-        "ac": true,
-        "food": false,
-        "refreshment": false,
-        "power_outlets": true,
-        "tv": false,
-        "bus_attendant": false,
-        "leg_room": false
-      },
-      "available_seats": 55,
-      "prices": {
-        "total": 5200,
-        "breakdown": {
-          "base": 5200
-        },
-        "categories": {},
-        "discounted": false
-      },
-      "ticket_types": [
-        "print"
-      ],
-      "departure_timezone": "America/New_York",
-      "arrival_timezone": "America/Montreal",
-      "departure_time": "2016-01-14T00:01:00",
-      "arrival_time": "2016-01-14T07:55:00"
-    }
-```
-
-### Poll results
-
-**While "complete" is false, you need to call** :
-
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date/poll`
-
-With ***all*** the same parameters that the previous endpoint, plus:
-
-`index` : Index from which to return new departures
-
-The response is:
-```
-{
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "complete": true,
-  "ttl": 900
-}
-```
+| Onboarding Screen | Search Results Screen | 
+| :---:| :---:|
+|  <img src="screenshots/screen-1-onboaridng-screen.png" width=50%>| <img src="screenshots/screen-2-search-results-screen.png" width=50%> |
