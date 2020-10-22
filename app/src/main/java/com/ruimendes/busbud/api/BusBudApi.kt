@@ -33,7 +33,7 @@ interface BusBudApi {
 
     @GET("x-departures/{origin}/{destination}/{outboundDate}/poll")
     @Headers(ACCEPT_HEADER, AUTH_TOKEN)
-    fun pool(
+    fun poll(
         @Path("origin") origin: String,
         @Path("destination") destination: String,
         @Path("outboundDate") outboundDate: String,

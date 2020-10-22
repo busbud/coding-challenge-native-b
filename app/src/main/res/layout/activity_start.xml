@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/osheaga"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/start_title"
+        android:textColor="@color/color_on_primary"
+        android:textSize="28sp"
+        android:padding="@dimen/default_margin"
+        app:layout_constraintBottom_toTopOf="@id/descriptionTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/start_description"
+        android:textColor="@color/color_on_primary"
+        android:textSize="20sp"
+        android:padding="@dimen/default_margin"
+        app:layout_constraintBottom_toTopOf="@id/continueBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTv" />
+
+    <!-- Limitation of MaterialButton don't allow drawableStart/End.
+    But in this case it doesn't make any difference-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueBtn"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_margin="@dimen/default_margin"
+        android:drawableRight="@drawable/ic_bus"
+        android:drawableLeft="@drawable/ic_bus"
+        android:drawablePadding="16dp"
+        android:backgroundTint="@color/primary_color"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
