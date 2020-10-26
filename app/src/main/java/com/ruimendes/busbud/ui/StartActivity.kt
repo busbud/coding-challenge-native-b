@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.ruimendes.busbud.R
-import com.ruimendes.busbud.viewmodel.SearchViewModel
 import com.ruimendes.busbud.viewmodel.StartViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_start.*
@@ -34,5 +33,4 @@ class StartActivity : AppCompatActivity() {
             startActivity(Intent(this, screen.activityClass))
         })
     }
-
 }

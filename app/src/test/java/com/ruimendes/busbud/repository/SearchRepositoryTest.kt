@@ -14,7 +14,6 @@ import org.junit.runners.JUnit4
 import java.lang.Exception
 import java.util.*
 
-
 @RunWith(JUnit4::class)
 class SearchRepositoryTest {
 
@@ -27,6 +26,7 @@ class SearchRepositoryTest {
         val OUTBOUND_DATE = Date(1468180800000)
         const val NUM_ADULTS = 1
         const val CURRENCY = "EUR"
+        const val INDEX = 1
 
         const val EXPECTED_DATE = "2016-07-10"
     }
@@ -70,7 +70,7 @@ class SearchRepositoryTest {
         }
 
         searchRepository
-            .poll(ORIGIN, DESTINATION, OUTBOUND_DATE, NUM_ADULTS, CURRENCY)
+            .poll(ORIGIN, DESTINATION, OUTBOUND_DATE, NUM_ADULTS, CURRENCY, INDEX)
             .test()
             .assertValue(pollResult)
             .assertComplete()
@@ -84,7 +84,7 @@ class SearchRepositoryTest {
         }
 
         searchRepository
-            .poll(ORIGIN, DESTINATION, OUTBOUND_DATE, NUM_ADULTS, CURRENCY)
+            .poll(ORIGIN, DESTINATION, OUTBOUND_DATE, NUM_ADULTS, CURRENCY, INDEX)
             .test()
             .assertError(throwable)
     }
@@ -121,7 +121,7 @@ class SearchRepositoryTest {
         }
 
         private val pollCall by lazy {
-            busBudApi.poll(ORIGIN, DESTINATION, EXPECTED_DATE, NUM_ADULTS, CURRENCY)
+            busBudApi.poll(ORIGIN, DESTINATION, EXPECTED_DATE, NUM_ADULTS, CURRENCY, INDEX)
         }
 
         fun withInitialSearchResponse(searchResult: SearchResult) {

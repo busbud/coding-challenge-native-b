@@ -1,7 +1,10 @@
 package com.ruimendes.busbud.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class SearchResult(
     @Json(name = "origin_city_id")
     val originCityId: String,
@@ -21,4 +24,4 @@ data class SearchResult(
     val ttl: Long,
     @Json(name = "is_valid_route")
     val isValidRoute: Boolean
-)
+): Parcelable

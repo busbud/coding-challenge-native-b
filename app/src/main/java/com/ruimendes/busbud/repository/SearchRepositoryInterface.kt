@@ -20,6 +20,7 @@ interface SearchRepositoryInterface {
         destination: String,
         outboundDate: Date,
         numberOfAdults: Int,
-        currency: String
+        currency: String,
+        index: Int
     ): Single<PollResult>
 }

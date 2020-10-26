@@ -1,10 +1,10 @@
 package com.ruimendes.busbud.repository
 
 import com.ruimendes.busbud.api.BusBudApi
+import com.ruimendes.busbud.extensions.formatToServer
 import com.ruimendes.busbud.model.PollResult
 import com.ruimendes.busbud.model.SearchResult
 import io.reactivex.rxjava3.core.Single
-import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchRepository(private val busBudApi: BusBudApi) : SearchRepositoryInterface {
@@ -31,7 +31,8 @@ class SearchRepository(private val busBudApi: BusBudApi) : SearchRepositoryInter
         destination: String,
         outboundDate: Date,
         numberOfAdults: Int,
-        currency: String
+        currency: String,
+        index: Int
     ): Single<PollResult> {
 
         return busBudApi.poll(
@@ -39,15 +40,8 @@ class SearchRepository(private val busBudApi: BusBudApi) : SearchRepositoryInter
             destination,
             outboundDate.formatToServer(),
             numberOfAdults,
-            currency
+            currency,
+            index
         )
-    }
-
-    /**
-     * Some questions here if it should include Date or Date and Time.
-     * Decided for the easy path for this - Date (yyyy-MM-dd)
-     */
-    private fun Date.formatToServer(): String {
-        return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(this)
     }
 }

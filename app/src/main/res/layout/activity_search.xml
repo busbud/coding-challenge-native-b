@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/color_on_primary">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarAb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        tools:ignore="UnusedAttribute">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/main.collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/searchTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_on_primary"
+                    android:textSize="16sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/currencyTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/currencyTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textColor="@color/color_on_primary"
+                    android:textSize="16sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/searchTv"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/datePickerTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="start"
+                    android:textColor="@color/color_on_primary"
+                    android:textSize="18sp"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:drawablePadding="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/searchTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/passengersTv"
+                    app:layout_constraintHorizontal_chainStyle="spread" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/passengersTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="end"
+                    android:textColor="@color/color_on_primary"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_person"
+                    android:drawablePadding="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/searchTv"
+                    app:layout_constraintLeft_toRightOf="@id/datePickerTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <ProgressBar
+        android:id="@+id/loadingPb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <include
+        android:id="@+id/noResultsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/empty_view"
+        android:visibility="gone"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

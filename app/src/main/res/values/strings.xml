@@ -4,4 +4,8 @@
     <string name="start_title">Osheaga Festival</string>
     <string name="start_description">This app allows you to find a suitable bus to attend the Festival!</string>
     <string name="start_button">Find Me a Bus</string>
+
+    <string name="search_info">Quebec -> Montreal</string>
+    <string name="search_empty">No results!</string>
+    <string name="search_error">Error performing your search!</string>
 </resources>

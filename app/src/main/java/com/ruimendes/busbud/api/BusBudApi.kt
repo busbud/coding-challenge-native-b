@@ -38,7 +38,8 @@ interface BusBudApi {
         @Path("destination") destination: String,
         @Path("outboundDate") outboundDate: String,
         @Query("adult") numberOfAdults: Int,
-        @Query("currency") currency: String
+        @Query("currency") currency: String,
+        @Query("index") index: Int
     ): Single<PollResult>
 
 
