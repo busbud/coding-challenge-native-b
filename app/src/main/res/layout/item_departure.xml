@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="4dp">
+    android:layout_margin="@dimen/card_default_margin"
+    app:cardCornerRadius="@dimen/card_corner_radius">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp">
+        android:paddingTop="@dimen/default_margin"
+        android:paddingBottom="@dimen/smaller_margin">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logoIv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
+            android:layout_marginEnd="@dimen/smaller_margin"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="@id/departureNameTv"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -91,9 +91,9 @@
             android:id="@+id/priceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/smaller_margin"
+            android:layout_marginTop="@dimen/smaller_margin"
+            android:layout_marginEnd="@dimen/smaller_margin"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintRight_toRightOf="parent"

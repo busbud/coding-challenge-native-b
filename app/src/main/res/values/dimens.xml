@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_margin">16dp</dimen>
+    <dimen name="smaller_margin">8dp</dimen>
+    <dimen name="text_fields_horizontal_margin">8dp</dimen>
+
+    <dimen name="card_default_margin">8dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+
+    <dimen name="logo_size">60dp</dimen>
 </resources>

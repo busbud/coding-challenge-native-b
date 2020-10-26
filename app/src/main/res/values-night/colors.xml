@@ -7,4 +7,5 @@
     <color name="color_secondary_variant">@color/teal_200</color>
     <color name="color_on_secondary">@color/black</color>
 
+    <color name="image_mask">@color/transparent_black</color>
 </resources>

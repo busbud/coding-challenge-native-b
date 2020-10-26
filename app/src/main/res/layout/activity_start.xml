@@ -13,7 +13,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#AA000000"/>
+        android:background="@color/image_mask"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/titleTv"
@@ -50,20 +50,13 @@
     But in this case it doesn't make any difference-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continueBtn"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        style="@style/RoundedButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_button"
-        android:paddingEnd="8dp"
-        android:paddingStart="8dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:layout_margin="@dimen/default_margin"
         android:drawableRight="@drawable/ic_bus"
         android:drawableLeft="@drawable/ic_bus"
-        android:drawablePadding="16dp"
         android:backgroundTint="@color/primary_color"
-        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
