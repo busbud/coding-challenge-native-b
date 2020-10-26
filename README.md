@@ -31,6 +31,8 @@
 ### Other Notes
 - Did not worried too much with Timezones. With more time would do a bit more extensive work around TimeZones to improve the implementation (as they are always tricky..)
 - UI is not amazing, as I decided not to waste too much time on it, for the sake of the challenge. If aiming to deliver to production, I would rethink some of the UI choices.
+- Color structuring are ready to Dark Mode, but I did not validate that the colors would work good in the Dark Mode.
+- Text Appearance should be stylized (so we would have a set of predefined styles), but for this purpose they are defined ad-hoc per screen.
 - For the sake of the challenge, did not considered the language of the device. I am always calling the API without the "lang" query parameter, but could easily adapt to use device language to define that query parameter.
 
 ## Original Challenge Info
