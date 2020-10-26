@@ -50,7 +50,7 @@ class SearchViewModelTest {
 
     private lateinit var viewModel: SearchViewModel
 
-    private val viewStateObserver = mock<Observer<ViewState<List<DepartureUIModel>>>>()
+    private val viewStateObserver = mock<Observer<ViewState<DepartureUIModel>>>()
     private val searchToolbarObserver = mock<Observer<SearchUIModel>>()
     private val datePickerActionObserver = mock<Observer<DateUIModel>>()
 

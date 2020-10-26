@@ -62,7 +62,7 @@ class SearchViewModel @ViewModelInject constructor(
     val datePickerAction = ActionLiveData<DateUIModel>()
 
     val viewState by lazy {
-        savedStateHandle.getLiveData<ViewState<List<DepartureUIModel>>>(
+        savedStateHandle.getLiveData<ViewState<DepartureUIModel>>(
             STATE_LOADING,
             ViewState.Loading
         )

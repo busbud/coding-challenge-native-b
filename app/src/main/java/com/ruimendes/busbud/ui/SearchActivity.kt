@@ -3,12 +3,10 @@ package com.ruimendes.busbud.ui
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ruimendes.busbud.R
 import com.ruimendes.busbud.ui.adapters.SearchAdapter
