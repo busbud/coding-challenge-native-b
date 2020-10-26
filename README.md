@@ -1,4 +1,39 @@
 
+## Challenge Notes
+
+### Architecture
+- Although I feel more comfortable with MVP, decided to use MVVM with the architecture components provided by the Android platform to trial out some of its latest features.
+- Did not implement UseCase/Interactor and directly injected the repository on the ViewModel. If I invested more time and/or added more features, the logic for the caching of the response and the "complete" logic to continue to poll results would probably be wrapped in a UseCase/Interactor. In the end I felt that the ViewModel got a bit more bloated than I would like to.
+- Decided not to use Fragments, as they were not needed for the sake of the challenge. If we were to support tablet with list->detail, I would probably encapsulate the SearchActivity within a Fragment.
+
+### Dependency Injection
+- Decided to try a alpha library, which is [Hilt](https://developer.android.com/training/dependency-injection/hilt-android), and got pretty happy with the choice. Seems to release the developer from some of the work needed for the initial Dagger configuration for a new project.
+- Unfortunately, due to time restrictions ended up not taking advantage of one of the nicest features for me, which is the easier way of uninstalling and installing a module on the dependency graph for the UI/Integration tests.
+
+### Functionality
+- Initial screen is a simple screen with a small information text.
+- Once you click on Find Bus button you will be moved to the Search page with the predefined data from the Challenge
+- Since the API was returning 0 results for 29th July 2021, I have added the capability for the user to switch the dates (by pressing on the TextView, not a beautiful UI experience I know, but the addition of dynamic choosing the dates was a late call)
+- Also provided the ability to change Currency. For that included an existing library (not done by me). If I was building this for my product, I would probably create a specific currency selector, with currencies supported by the API.
+- Error handling is kind of limited. Only sends an error, but does not do any specific parsing. So every error will lead to the same error message.
+
+### Network
+- For network I've used [Retrofit](https://square.github.io/retrofit/)
+- For json serialization I've decided to try out as part of this challenge [Moshi](https://github.com/square/moshi)
+- Only parsed fields that I felt could be relevant for the challenge.
+
+### Asynchronous Tasks
+- Although Google team recently announced that Coroutines are the new recommended way of doing asynchronous work, I've decided to go with [RxJava](https://github.com/ReactiveX/RxJava), as I feel more comfortable with it at this point.
+
+### UI Tests
+- Did only a small example, so you understand how I think about UI tests. Usually I like to use the Robot Pattern for them. With more time I would have covered the SearchActivity also with UI tests.
+
+### Other Notes
+- Did not worried too much with Timezones. With more time would do a bit more extensive work around TimeZones to improve the implementation (as they are always tricky..)
+- UI is not amazing, as I decided not to waste too much time on it, for the sake of the challenge. If aiming to deliver to production, I would rethink some of the UI choices.
+- For the sake of the challenge, did not considered the language of the device. I am always calling the API without the "lang" query parameter, but could easily adapt to use device language to define that query parameter.
+
+## Original Challenge Info
 
 ![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
 
