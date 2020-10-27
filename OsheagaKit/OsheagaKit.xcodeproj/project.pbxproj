@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4927F74A2548BEF70005A6DB /* OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4927F7402548BEF70005A6DB /* OsheagaKit.framework */; };
+		4927F74F2548BEF70005A6DB /* OsheagaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F74E2548BEF70005A6DB /* OsheagaKitTests.swift */; };
+		4927F7512548BEF70005A6DB /* OsheagaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4927F7432548BEF70005A6DB /* OsheagaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4927F76C2548C1E70005A6DB /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F76B2548C1E70005A6DB /* RestClient.swift */; };
+		4927F7702548C24C0005A6DB /* RestClient+DepartureSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F76F2548C24C0005A6DB /* RestClient+DepartureSearching.swift */; };
+		4927F7742548C3040005A6DB /* RestResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7732548C3040005A6DB /* RestResource.swift */; };
+		4927F7782548C36B0005A6DB /* DepartureSearchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7772548C36B0005A6DB /* DepartureSearchResource.swift */; };
+		4927F77C2548C3D90005A6DB /* DepartureSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */; };
+		4927F7812548C4590005A6DB /* DepartureSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7802548C4590005A6DB /* DepartureSearchResult.swift */; };
+		4927F7892548D3B10005A6DB /* OsheagaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7882548D3B10005A6DB /* OsheagaError.swift */; };
+		511AECAD9AE0812047F9CAFC /* Pods_OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A802663C54236761BFB369A9 /* Pods_OsheagaKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4927F74B2548BEF70005A6DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4927F7372548BEF70005A6DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4927F73F2548BEF70005A6DB;
+			remoteInfo = OsheagaKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E9CB5F78582AB190F527090 /* Pods-OsheagaKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.debug.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.debug.xcconfig"; sourceTree = "<group>"; };
+		4927F7402548BEF70005A6DB /* OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4927F7432548BEF70005A6DB /* OsheagaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsheagaKit.h; sourceTree = "<group>"; };
+		4927F7442548BEF70005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4927F7492548BEF70005A6DB /* OsheagaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsheagaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4927F74E2548BEF70005A6DB /* OsheagaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaKitTests.swift; sourceTree = "<group>"; };
+		4927F7502548BEF70005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4927F76B2548C1E70005A6DB /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		4927F76F2548C24C0005A6DB /* RestClient+DepartureSearching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestClient+DepartureSearching.swift"; sourceTree = "<group>"; };
+		4927F7732548C3040005A6DB /* RestResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestResource.swift; sourceTree = "<group>"; };
+		4927F7772548C36B0005A6DB /* DepartureSearchResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResource.swift; sourceTree = "<group>"; };
+		4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResponse.swift; sourceTree = "<group>"; };
+		4927F7802548C4590005A6DB /* DepartureSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResult.swift; sourceTree = "<group>"; };
+		4927F7882548D3B10005A6DB /* OsheagaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaError.swift; sourceTree = "<group>"; };
+		A802663C54236761BFB369A9 /* Pods_OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7AD67B578CB67C00F9B6F3 /* Pods-OsheagaKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.release.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4927F73D2548BEF70005A6DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511AECAD9AE0812047F9CAFC /* Pods_OsheagaKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4927F7462548BEF70005A6DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4927F74A2548BEF70005A6DB /* OsheagaKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4927F7362548BEF70005A6DB = {
+			isa = PBXGroup;
+			children = (
+				4927F7422548BEF70005A6DB /* OsheagaKit */,
+				4927F74D2548BEF70005A6DB /* OsheagaKitTests */,
+				4927F7412548BEF70005A6DB /* Products */,
+				7775D4B8ADDA1FEB8738801E /* Pods */,
+				C95A7EF900DFFAD9527D7CC2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4927F7412548BEF70005A6DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4927F7402548BEF70005A6DB /* OsheagaKit.framework */,
+				4927F7492548BEF70005A6DB /* OsheagaKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4927F7422548BEF70005A6DB /* OsheagaKit */ = {
+			isa = PBXGroup;
+			children = (
+				4927F76A2548C1D40005A6DB /* Client */,
+				4927F7622548BF3A0005A6DB /* Models */,
+				4927F7432548BEF70005A6DB /* OsheagaKit.h */,
+				4927F7442548BEF70005A6DB /* Info.plist */,
+			);
+			path = OsheagaKit;
+			sourceTree = "<group>";
+		};
+		4927F74D2548BEF70005A6DB /* OsheagaKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4927F74E2548BEF70005A6DB /* OsheagaKitTests.swift */,
+				4927F7502548BEF70005A6DB /* Info.plist */,
+			);
+			path = OsheagaKitTests;
+			sourceTree = "<group>";
+		};
+		4927F7622548BF3A0005A6DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4927F7802548C4590005A6DB /* DepartureSearchResult.swift */,
+				4927F7882548D3B10005A6DB /* OsheagaError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4927F76A2548C1D40005A6DB /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				4927F77F2548C40D0005A6DB /* Search */,
+				4927F7732548C3040005A6DB /* RestResource.swift */,
+				4927F76B2548C1E70005A6DB /* RestClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		4927F77F2548C40D0005A6DB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4927F76F2548C24C0005A6DB /* RestClient+DepartureSearching.swift */,
+				4927F7772548C36B0005A6DB /* DepartureSearchResource.swift */,
+				4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7775D4B8ADDA1FEB8738801E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E9CB5F78582AB190F527090 /* Pods-OsheagaKit.debug.xcconfig */,
+				FC7AD67B578CB67C00F9B6F3 /* Pods-OsheagaKit.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		C95A7EF900DFFAD9527D7CC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A802663C54236761BFB369A9 /* Pods_OsheagaKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4927F73B2548BEF70005A6DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4927F7512548BEF70005A6DB /* OsheagaKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4927F73F2548BEF70005A6DB /* OsheagaKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4927F7542548BEF70005A6DB /* Build configuration list for PBXNativeTarget "OsheagaKit" */;
+			buildPhases = (
+				77EA54BE6D0C42692B3D976F /* [CP] Check Pods Manifest.lock */,
+				4927F73B2548BEF70005A6DB /* Headers */,
+				4927F73C2548BEF70005A6DB /* Sources */,
+				4927F73D2548BEF70005A6DB /* Frameworks */,
+				4927F73E2548BEF70005A6DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OsheagaKit;
+			productName = OsheagaKit;
+			productReference = 4927F7402548BEF70005A6DB /* OsheagaKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4927F7482548BEF70005A6DB /* OsheagaKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4927F7572548BEF70005A6DB /* Build configuration list for PBXNativeTarget "OsheagaKitTests" */;
+			buildPhases = (
+				4927F7452548BEF70005A6DB /* Sources */,
+				4927F7462548BEF70005A6DB /* Frameworks */,
+				4927F7472548BEF70005A6DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4927F74C2548BEF70005A6DB /* PBXTargetDependency */,
+			);
+			name = OsheagaKitTests;
+			productName = OsheagaKitTests;
+			productReference = 4927F7492548BEF70005A6DB /* OsheagaKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4927F7372548BEF70005A6DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					4927F73F2548BEF70005A6DB = {
+						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1210;
+					};
+					4927F7482548BEF70005A6DB = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = 4927F73A2548BEF70005A6DB /* Build configuration list for PBXProject "OsheagaKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4927F7362548BEF70005A6DB;
+			productRefGroup = 4927F7412548BEF70005A6DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4927F73F2548BEF70005A6DB /* OsheagaKit */,
+				4927F7482548BEF70005A6DB /* OsheagaKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4927F73E2548BEF70005A6DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4927F7472548BEF70005A6DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77EA54BE6D0C42692B3D976F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OsheagaKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4927F73C2548BEF70005A6DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4927F76C2548C1E70005A6DB /* RestClient.swift in Sources */,
+				4927F77C2548C3D90005A6DB /* DepartureSearchResponse.swift in Sources */,
+				4927F7782548C36B0005A6DB /* DepartureSearchResource.swift in Sources */,
+				4927F7812548C4590005A6DB /* DepartureSearchResult.swift in Sources */,
+				4927F7702548C24C0005A6DB /* RestClient+DepartureSearching.swift in Sources */,
+				4927F7892548D3B10005A6DB /* OsheagaError.swift in Sources */,
+				4927F7742548C3040005A6DB /* RestResource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4927F7452548BEF70005A6DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4927F74F2548BEF70005A6DB /* OsheagaKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4927F74C2548BEF70005A6DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4927F73F2548BEF70005A6DB /* OsheagaKit */;
+			targetProxy = 4927F74B2548BEF70005A6DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4927F7522548BEF70005A6DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4927F7532548BEF70005A6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4927F7552548BEF70005A6DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E9CB5F78582AB190F527090 /* Pods-OsheagaKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OsheagaKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4927F7562548BEF70005A6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC7AD67B578CB67C00F9B6F3 /* Pods-OsheagaKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OsheagaKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4927F7582548BEF70005A6DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OsheagaKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4927F7592548BEF70005A6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OsheagaKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4927F73A2548BEF70005A6DB /* Build configuration list for PBXProject "OsheagaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4927F7522548BEF70005A6DB /* Debug */,
+				4927F7532548BEF70005A6DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4927F7542548BEF70005A6DB /* Build configuration list for PBXNativeTarget "OsheagaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4927F7552548BEF70005A6DB /* Debug */,
+				4927F7562548BEF70005A6DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4927F7572548BEF70005A6DB /* Build configuration list for PBXNativeTarget "OsheagaKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4927F7582548BEF70005A6DB /* Debug */,
+				4927F7592548BEF70005A6DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4927F7372548BEF70005A6DB /* Project object */;
+}
