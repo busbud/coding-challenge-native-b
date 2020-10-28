@@ -17,7 +17,6 @@ end
 
 plugin 'cocoapods-keys',
        project: 'OsheagaKit',
-       target: 'OsheagaKit',
        keys: [
          'BusbudToken'
        ]

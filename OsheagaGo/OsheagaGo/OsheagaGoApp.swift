@@ -1,8 +1,5 @@
 //
-//  OsheagaGoApp.swift
-//  OsheagaGo
-//
-//  Created by Kevin Malkic on 27/10/2020.
+//  Copyright © 2020 OsheagaGo. All rights reserved.
 //
 
 import SwiftUI

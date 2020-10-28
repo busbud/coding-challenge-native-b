@@ -1,9 +1,7 @@
 //
-//  OsheagaKit.h
-//  OsheagaKit
+//  Copyright © 2020 OsheagaGo. All rights reserved.
 //
-//  Created by Kevin Malkic on 27/10/2020.
-//
+
 
 #import <Foundation/Foundation.h>
 

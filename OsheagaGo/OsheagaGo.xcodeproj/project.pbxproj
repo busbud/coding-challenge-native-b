@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3DDE7AFE4A30F6CF18937F12 /* Pods_OsheagaGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99BDF0065D13320180276CA /* Pods_OsheagaGo.framework */; };
+		491E8AD12548F56700F136FD /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8AD02548F56700F136FD /* Publisher+.swift */; };
+		491E8ADE2548F6EB00F136FD /* OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491E8ADA2548F6B700F136FD /* OsheagaKit.framework */; };
+		491E8ADF2548F6EB00F136FD /* OsheagaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 491E8ADA2548F6B700F136FD /* OsheagaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4927F6EC2548B7F80005A6DB /* OsheagaGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */; };
 		4927F6EE2548B7F80005A6DB /* DepartureSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F6ED2548B7F80005A6DB /* DepartureSearchView.swift */; };
 		4927F6F02548B7F90005A6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4927F6EF2548B7F90005A6DB /* Assets.xcassets */; };
-		4927F6F32548B7F90005A6DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4927F6F22548B7F90005A6DB /* Preview Assets.xcassets */; };
 		4927F6FE2548B7F90005A6DB /* OsheagaGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F6FD2548B7F90005A6DB /* OsheagaGoTests.swift */; };
 		4927F7092548B7F90005A6DB /* OsheagaGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7082548B7F90005A6DB /* OsheagaGoUITests.swift */; };
-		4927F75E2548BF1F0005A6DB /* OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4927F75D2548BF1F0005A6DB /* OsheagaKit.framework */; };
-		4927F75F2548BF1F0005A6DB /* OsheagaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4927F75D2548BF1F0005A6DB /* OsheagaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4927F7EC2548DE350005A6DB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7EB2548DE350005A6DB /* DependencyContainer.swift */; };
 		4927F7F22548DEDC0005A6DB /* OsheagaRestClient+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7F12548DEDC0005A6DB /* OsheagaRestClient+.swift */; };
 		4927F7F92548DF580005A6DB /* DepartureSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7F82548DF580005A6DB /* DepartureSearchService.swift */; };
@@ -45,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4927F75F2548BF1F0005A6DB /* OsheagaKit.framework in Embed Frameworks */,
+				491E8ADF2548F6EB00F136FD /* OsheagaKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,11 +54,12 @@
 
 /* Begin PBXFileReference section */
 		24924386720CE9D76FC5B6D0 /* Pods-OsheagaGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaGo.debug.xcconfig"; path = "Target Support Files/Pods-OsheagaGo/Pods-OsheagaGo.debug.xcconfig"; sourceTree = "<group>"; };
+		491E8AD02548F56700F136FD /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
+		491E8ADA2548F6B700F136FD /* OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F6E82548B7F80005A6DB /* OsheagaGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OsheagaGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaGoApp.swift; sourceTree = "<group>"; };
 		4927F6ED2548B7F80005A6DB /* DepartureSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchView.swift; sourceTree = "<group>"; };
 		4927F6EF2548B7F90005A6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4927F6F22548B7F90005A6DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4927F6F42548B7F90005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4927F6F92548B7F90005A6DB /* OsheagaGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsheagaGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F6FD2548B7F90005A6DB /* OsheagaGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaGoTests.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		4927F7042548B7F90005A6DB /* OsheagaGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OsheagaGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F7082548B7F90005A6DB /* OsheagaGoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaGoUITests.swift; sourceTree = "<group>"; };
 		4927F70A2548B7F90005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4927F75D2548BF1F0005A6DB /* OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F7EB2548DE350005A6DB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4927F7F12548DEDC0005A6DB /* OsheagaRestClient+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OsheagaRestClient+.swift"; sourceTree = "<group>"; };
 		4927F7F82548DF580005A6DB /* DepartureSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureSearchService.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4927F75E2548BF1F0005A6DB /* OsheagaKit.framework in Frameworks */,
+				491E8ADE2548F6EB00F136FD /* OsheagaKit.framework in Frameworks */,
 				3DDE7AFE4A30F6CF18937F12 /* Pods_OsheagaGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491E8ACF2548F55600F136FD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				491E8AD02548F56700F136FD /* Publisher+.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		4927F6DF2548B7F80005A6DB = {
 			isa = PBXGroup;
 			children = (
@@ -128,21 +136,13 @@
 			children = (
 				4927F7E82548DE1D0005A6DB /* Services */,
 				4927F7F52548DEE20005A6DB /* System */,
-				4927F6F12548B7F90005A6DB /* Preview Content */,
-				4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */,
-				4927F6ED2548B7F80005A6DB /* DepartureSearchView.swift */,
+				491E8ACF2548F55600F136FD /* Utilities */,
 				4927F6EF2548B7F90005A6DB /* Assets.xcassets */,
+				4927F6ED2548B7F80005A6DB /* DepartureSearchView.swift */,
 				4927F6F42548B7F90005A6DB /* Info.plist */,
+				4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */,
 			);
 			path = OsheagaGo;
-			sourceTree = "<group>";
-		};
-		4927F6F12548B7F90005A6DB /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4927F6F22548B7F90005A6DB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		4927F6FC2548B7F90005A6DB /* OsheagaGoTests */ = {
@@ -166,7 +166,7 @@
 		4927F75C2548BF1F0005A6DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4927F75D2548BF1F0005A6DB /* OsheagaKit.framework */,
+				491E8ADA2548F6B700F136FD /* OsheagaKit.framework */,
 				B99BDF0065D13320180276CA /* Pods_OsheagaGo.framework */,
 			);
 			name = Frameworks;
@@ -211,6 +211,7 @@
 				4927F6E52548B7F80005A6DB /* Frameworks */,
 				4927F6E62548B7F80005A6DB /* Resources */,
 				4927F72A2548BEB30005A6DB /* Embed Frameworks */,
+				202B97B7E27F92DE3DC539E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,7 +305,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4927F6F32548B7F90005A6DB /* Preview Assets.xcassets in Resources */,
 				4927F6F02548B7F90005A6DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +326,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		202B97B7E27F92DE3DC539E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OsheagaGo/Pods-OsheagaGo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OsheagaGo/Pods-OsheagaGo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OsheagaGo/Pods-OsheagaGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		35B893985456FD83103407E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491E8AD12548F56700F136FD /* Publisher+.swift in Sources */,
 				4927F7F92548DF580005A6DB /* DepartureSearchService.swift in Sources */,
 				4927F7F22548DEDC0005A6DB /* OsheagaRestClient+.swift in Sources */,
 				4927F7EC2548DE350005A6DB /* DependencyContainer.swift in Sources */,
@@ -518,7 +536,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"OsheagaGo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OsheagaGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -540,7 +557,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"OsheagaGo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OsheagaGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

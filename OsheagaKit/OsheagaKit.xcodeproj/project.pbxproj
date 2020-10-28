@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491E8AC62548F53000F136FD /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8AC52548F53000F136FD /* Formatters.swift */; };
+		491E8ACA2548F53600F136FD /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8AC92548F53600F136FD /* Date+.swift */; };
+		491E8B2C25498BF500F136FD /* PathParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8B2B25498BF500F136FD /* PathParameter.swift */; };
+		491E8B3025498C3300F136FD /* QueryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8B2F25498C3300F136FD /* QueryParameter.swift */; };
+		491E8B3C25498EFA00F136FD /* DepartureQueryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E8B3B25498EFA00F136FD /* DepartureQueryParameter.swift */; };
 		4927F74A2548BEF70005A6DB /* OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4927F7402548BEF70005A6DB /* OsheagaKit.framework */; };
 		4927F74F2548BEF70005A6DB /* OsheagaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F74E2548BEF70005A6DB /* OsheagaKitTests.swift */; };
 		4927F7512548BEF70005A6DB /* OsheagaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4927F7432548BEF70005A6DB /* OsheagaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,7 +21,13 @@
 		4927F7782548C36B0005A6DB /* DepartureSearchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7772548C36B0005A6DB /* DepartureSearchResource.swift */; };
 		4927F77C2548C3D90005A6DB /* DepartureSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */; };
 		4927F7812548C4590005A6DB /* DepartureSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7802548C4590005A6DB /* DepartureSearchResult.swift */; };
-		4927F7892548D3B10005A6DB /* OsheagaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7882548D3B10005A6DB /* OsheagaError.swift */; };
+		4927F8312548EF650005A6DB /* OsheagaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7882548D3B10005A6DB /* OsheagaError.swift */; };
+		4927F8352548EFE00005A6DB /* DeparturePathParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F8342548EFE00005A6DB /* DeparturePathParameter.swift */; };
+		49698515254A0E940071354F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698514254A0E940071354F /* City.swift */; };
+		49698519254A0EB70071354F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698518254A0EB70071354F /* Location.swift */; };
+		4969851D254A0ED50071354F /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969851C254A0ED50071354F /* Operator.swift */; };
+		49698521254A0EEE0071354F /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698520254A0EEE0071354F /* Departure.swift */; };
+		49698525254A0F0B0071354F /* Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698524254A0F0B0071354F /* Prices.swift */; };
 		511AECAD9AE0812047F9CAFC /* Pods_OsheagaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A802663C54236761BFB369A9 /* Pods_OsheagaKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		3E9CB5F78582AB190F527090 /* Pods-OsheagaKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.debug.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.debug.xcconfig"; sourceTree = "<group>"; };
+		491E8AC52548F53000F136FD /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		491E8AC92548F53600F136FD /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		491E8B2B25498BF500F136FD /* PathParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathParameter.swift; sourceTree = "<group>"; };
+		491E8B2F25498C3300F136FD /* QueryParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameter.swift; sourceTree = "<group>"; };
+		491E8B3B25498EFA00F136FD /* DepartureQueryParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureQueryParameter.swift; sourceTree = "<group>"; };
 		4927F7402548BEF70005A6DB /* OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927F7432548BEF70005A6DB /* OsheagaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsheagaKit.h; sourceTree = "<group>"; };
 		4927F7442548BEF70005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +61,12 @@
 		4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResponse.swift; sourceTree = "<group>"; };
 		4927F7802548C4590005A6DB /* DepartureSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResult.swift; sourceTree = "<group>"; };
 		4927F7882548D3B10005A6DB /* OsheagaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaError.swift; sourceTree = "<group>"; };
+		4927F8342548EFE00005A6DB /* DeparturePathParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturePathParameter.swift; sourceTree = "<group>"; };
+		49698514254A0E940071354F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		49698518254A0EB70071354F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4969851C254A0ED50071354F /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		49698520254A0EEE0071354F /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		49698524254A0F0B0071354F /* Prices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prices.swift; sourceTree = "<group>"; };
 		A802663C54236761BFB369A9 /* Pods_OsheagaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsheagaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7AD67B578CB67C00F9B6F3 /* Pods-OsheagaKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.release.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +116,9 @@
 			children = (
 				4927F76A2548C1D40005A6DB /* Client */,
 				4927F7622548BF3A0005A6DB /* Models */,
-				4927F7432548BEF70005A6DB /* OsheagaKit.h */,
+				4927F8262548EED10005A6DB /* Utilities */,
 				4927F7442548BEF70005A6DB /* Info.plist */,
+				4927F7432548BEF70005A6DB /* OsheagaKit.h */,
 			);
 			path = OsheagaKit;
 			sourceTree = "<group>";
@@ -112,8 +135,13 @@
 		4927F7622548BF3A0005A6DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4927F7802548C4590005A6DB /* DepartureSearchResult.swift */,
+				49698528254A107A0071354F /* Departure */,
+				49698514254A0E940071354F /* City.swift */,
+				49698520254A0EEE0071354F /* Departure.swift */,
+				49698518254A0EB70071354F /* Location.swift */,
+				4969851C254A0ED50071354F /* Operator.swift */,
 				4927F7882548D3B10005A6DB /* OsheagaError.swift */,
+				49698524254A0F0B0071354F /* Prices.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,8 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				4927F77F2548C40D0005A6DB /* Search */,
-				4927F7732548C3040005A6DB /* RestResource.swift */,
+				491E8B2B25498BF500F136FD /* PathParameter.swift */,
+				491E8B2F25498C3300F136FD /* QueryParameter.swift */,
 				4927F76B2548C1E70005A6DB /* RestClient.swift */,
+				4927F7732548C3040005A6DB /* RestResource.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -131,11 +161,38 @@
 		4927F77F2548C40D0005A6DB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				4927F76F2548C24C0005A6DB /* RestClient+DepartureSearching.swift */,
+				4927F8342548EFE00005A6DB /* DeparturePathParameter.swift */,
+				491E8B3B25498EFA00F136FD /* DepartureQueryParameter.swift */,
 				4927F7772548C36B0005A6DB /* DepartureSearchResource.swift */,
-				4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */,
+				4927F76F2548C24C0005A6DB /* RestClient+DepartureSearching.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		4927F8242548EED10005A6DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				491E8AC92548F53600F136FD /* Date+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4927F8262548EED10005A6DB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4927F8242548EED10005A6DB /* Extensions */,
+				491E8AC52548F53000F136FD /* Formatters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		49698528254A107A0071354F /* Departure */ = {
+			isa = PBXGroup;
+			children = (
+				4927F77B2548C3D90005A6DB /* DepartureSearchResponse.swift */,
+				4927F7802548C4590005A6DB /* DepartureSearchResult.swift */,
+			);
+			path = Departure;
 			sourceTree = "<group>";
 		};
 		7775D4B8ADDA1FEB8738801E /* Pods */ = {
@@ -293,11 +350,22 @@
 			files = (
 				4927F76C2548C1E70005A6DB /* RestClient.swift in Sources */,
 				4927F77C2548C3D90005A6DB /* DepartureSearchResponse.swift in Sources */,
+				4927F8352548EFE00005A6DB /* DeparturePathParameter.swift in Sources */,
+				49698521254A0EEE0071354F /* Departure.swift in Sources */,
+				491E8AC62548F53000F136FD /* Formatters.swift in Sources */,
 				4927F7782548C36B0005A6DB /* DepartureSearchResource.swift in Sources */,
+				4969851D254A0ED50071354F /* Operator.swift in Sources */,
 				4927F7812548C4590005A6DB /* DepartureSearchResult.swift in Sources */,
+				49698515254A0E940071354F /* City.swift in Sources */,
+				49698519254A0EB70071354F /* Location.swift in Sources */,
+				491E8B2C25498BF500F136FD /* PathParameter.swift in Sources */,
+				49698525254A0F0B0071354F /* Prices.swift in Sources */,
 				4927F7702548C24C0005A6DB /* RestClient+DepartureSearching.swift in Sources */,
-				4927F7892548D3B10005A6DB /* OsheagaError.swift in Sources */,
+				491E8ACA2548F53600F136FD /* Date+.swift in Sources */,
+				4927F8312548EF650005A6DB /* OsheagaError.swift in Sources */,
+				491E8B3025498C3300F136FD /* QueryParameter.swift in Sources */,
 				4927F7742548C3040005A6DB /* RestResource.swift in Sources */,
+				491E8B3C25498EFA00F136FD /* DepartureQueryParameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
