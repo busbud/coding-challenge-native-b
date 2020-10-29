@@ -17,6 +17,7 @@ public struct DepartureItem: Identifiable {
     public let operatorProvider: Operator?
     public let departure: LocationInfo
     public let arrival: LocationInfo
+    public let duration: TimeInterval
     public let price: String
 
     init?(departure: Departure, response: DepartureSearchResponse) {
@@ -40,11 +41,24 @@ public struct DepartureItem: Identifiable {
 
         self.departure = LocationInfo(time: departureTime, name: origin.name, city: originCity.name)
         self.arrival = LocationInfo(time: arrivalTime, name: destination.name, city: destinationCity.name)
+        self.duration = departure.arrivalTime.timeIntervalSince(departure.departureTime)
 
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = departure.prices.currencyCode
         self.price = formatter.string(from: NSNumber(value: departure.prices.total / 100.0)) ?? "n/a"
+    }
+}
+
+extension TimeInterval{
+
+    public var stringFromTimeInterval: String {
+
+        let time = NSInteger(self)
+        let minutes = (time / 60) % 60
+        let hours = (time / 3600)
+
+        return String(format: "%0.2dh%0.2d",hours,minutes)
     }
 }
 
@@ -65,12 +79,12 @@ extension DepartureSearchResult {
         self.items = []
     }
 
-    public static func make() -> DepartureSearchResult {
-        do {
-            return try DepartureSearchResult(JSONDecoder().decode(DepartureSearchResponse.self, from: Data(JSON.departures.utf8)))
-        } catch {
-            return DepartureSearchResult()
-        }
+    init(_ items: [DepartureItem]) {
+        self.items = items
+    }
+
+    public static func make(_ count: Int = 5) -> DepartureSearchResult {
+        DepartureSearchResult((0..<count).map { _ in DepartureItem() })
     }
 }
 
@@ -78,9 +92,10 @@ extension DepartureItem {
 
     public init() {
         self.operatorProvider = .make()
-        self.departure = LocationInfo(time: "9:00 am", name: "Gare du Palais", city: "Québec")
-        self.arrival = LocationInfo(time: "1:00 pm", name: "Gare du Palais", city: "Montréal")
+        self.departure = LocationInfo(time: "9:00 am", name: "Gare du Palais", city: "Québec City")
+        self.arrival = LocationInfo(time: "1:00 pm", name: "Gare d'autocars", city: "Montréal")
         self.price = "$44.90"
+        self.duration = 3 * 60 * 60
     }
 
     public static func make() -> DepartureItem {

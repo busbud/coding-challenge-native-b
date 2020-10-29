@@ -51,7 +51,7 @@ extension Operator {
     public init() {
         self.id = ""
         self.name = "Orléans Express"
-        self.logoURL = SizedImageURL(string: "https://busbud.imgix.net/operator-logos/logo_orleans-express.png.png?h={height}&w={width}&auto=format&fit=fill&bg=0FFF")
+        self.logoURL = nil //SizedImageURL(string: "https://busbud.imgix.net/operator-logos/logo_orleans-express.png.png?h={height}&w={width}&auto=format&fit=fill&bg=0FFF")
         self.displayName = "Orléans Express"
     }
 
