@@ -4,34 +4,28 @@
 
 import Foundation
 
-enum LocationType: String, Decodable {
-    case airport = "airport"
-    case busStation = "bus_station"
-    case busStop = "bus_stop"
-    case other = "other"
-    case subwayStation = "subway_station"
-    case transitStation = "transit_station"
-}
-
 public struct Location: Decodable {
 
     let id: Int
-    let cityID: CityId
+    let cityId: CityId
     let name: String
     let address: [String]
-    let type: LocationType
-    let latitude: Double?
-    let longitude: Double?
     let geohash: GeoHash?
 
     enum CodingKeys: String, CodingKey {
         case id
-        case cityID = "city_id"
+        case cityId = "city_id"
         case name
         case address
-        case type
-        case latitude = "lat"
-        case longitude = "lon"
         case geohash
+    }
+
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int.self, forKey: .id)
+        cityId = try values.decode(CityId.self, forKey: .cityId)
+        name = try values.decode(String.self, forKey: .name)
+        address = try values.decode([String].self, forKey: .address)
+        geohash = try values.decode(GeoHash?.self, forKey: .geohash)
     }
 }

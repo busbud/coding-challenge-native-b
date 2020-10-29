@@ -9,7 +9,7 @@ struct DepartureResultView {
 
     private let service = DepartureSearchService()
 
-    @State private var result: LoadingState<DepartureSearchResult, OsheagaError> = .pending
+    @State var result: LoadingState<DepartureSearchResult, OsheagaError> = .pending
 
     func search() {
         service.fetch(into: $result)
@@ -20,8 +20,12 @@ extension DepartureResultView: View {
 
     @ViewBuilder
     var body: some View {
-        if let items = result.success?.items, items.count > 0 {
-            Text(items.first!.departureAddress)
+        if let items = result.success?.items {
+            if items.count > 0 {
+                results(items: items)
+            } else {
+                noResults
+            }
         } else if let failure = result.failure {
             Text(failure.localizedDescription)
         } else {
@@ -30,11 +34,21 @@ extension DepartureResultView: View {
                 .onAppear(perform: search)
         }
     }
+
+    private func results(items: [DepartureItem]) -> some View {
+        List(items) {
+            DepartureRowView(item: $0)
+        }
+    }
+
+    private var noResults: some View {
+        Text("No results!")
+    }
 }
 
-struct DepartureSearchView_Previews: PreviewProvider {
+struct DepartureResultView_Previews: PreviewProvider {
 
     static var previews: some View {
-        DepartureResultView()
+        DepartureResultView(result: .success(.make()))
     }
 }

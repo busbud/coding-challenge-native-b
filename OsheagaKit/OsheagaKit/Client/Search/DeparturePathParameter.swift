@@ -21,6 +21,6 @@ public struct DeparturePathParameter: PathParameter {
             .appendingPathComponent("x-departures")
             .appendingPathComponent(origin)
             .appendingPathComponent(destination)
-            .appendingPathComponent(DateFormatter.shortDateFormatter.string(from: outboundDate))
+            .appendingPathComponent(ISO8601DateFormatter.shortDateFormatter.string(from: outboundDate))
     }
 }

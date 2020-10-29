@@ -1,8 +1,19 @@
 PODS:
   - Keys (1.0.1)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
+  - SDWebImageSwiftUI (1.5.0):
+    - SDWebImage (~> 5.7)
 
 DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
+  - SDWebImageSwiftUI
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
+    - SDWebImageSwiftUI
 
 EXTERNAL SOURCES:
   Keys:
@@ -10,7 +21,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
 
-PODFILE CHECKSUM: 8f1c6fb8e29b554ad5190e839d7d851503a51dbf
+PODFILE CHECKSUM: e2e46763fe7ed753ce3921db8c47c080cec3dedc
 
 COCOAPODS: 1.9.3

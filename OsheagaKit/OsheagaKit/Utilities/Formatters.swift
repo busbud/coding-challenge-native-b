@@ -9,25 +9,6 @@ public extension TimeZone {
     static var utc = TimeZone(abbreviation: "UTC")!
 }
 
-public extension ISO8601DateFormatter.Options {
-
-    static var JSONDateFormatterOptions: ISO8601DateFormatter.Options = [
-        .withFullDate,
-        .withFullTime,
-        .withTimeZone,
-        .withDashSeparatorInDate,
-        .withColonSeparatorInTime,
-        .withFractionalSeconds
-    ]
-
-    static var JSONDateOnlyFormatterOptions: ISO8601DateFormatter.Options = [
-        .withYear,
-        .withMonth,
-        .withDay,
-        .withDashSeparatorInDate,
-    ]
-}
-
 private extension ISO8601DateFormatter {
 
     convenience init(timeZone: TimeZone, formatOptions: ISO8601DateFormatter.Options) {
@@ -35,19 +16,42 @@ private extension ISO8601DateFormatter {
         self.timeZone = timeZone
         self.formatOptions = formatOptions
     }
+
+    convenience init(formatOptions: ISO8601DateFormatter.Options) {
+        self.init()
+        self.formatOptions = formatOptions
+    }
 }
 
 public extension ISO8601DateFormatter {
 
-    static var JSONDateFormatter = ISO8601DateFormatter(timeZone: .utc, formatOptions: .JSONDateFormatterOptions)
-    static var JSONDateOnlyFormatter = ISO8601DateFormatter(timeZone: .utc, formatOptions: .JSONDateOnlyFormatterOptions)
-}
+    static var dateFormatter = ISO8601DateFormatter(timeZone: .utc, formatOptions: [.withFullDate,
+                                                                                    .withFullTime,
+                                                                                    .withTimeZone,
+                                                                                    .withDashSeparatorInDate,
+                                                                                    .withColonSeparatorInTime,
+    ])
 
-extension DateFormatter {
+    static let dateNoTimeZoneFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter
+    }()
 
-    public static let shortDateFormatter: DateFormatter = {
+    static let shortDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+}
+
+public extension DateFormatter {
+
+    static func shortTimeFormatter(with timeZoneId: String) -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(identifier: timeZoneId)
+        formatter.timeStyle = .short
+        return formatter
+    }
 }

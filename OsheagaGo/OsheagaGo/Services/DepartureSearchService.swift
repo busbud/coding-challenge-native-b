@@ -32,7 +32,10 @@ final class DepartureSearchService {
 extension DeparturePathParameter {
 
     static func make(calendar: Calendar = .current) -> DeparturePathParameter {
-        let date = DateComponents(calendar: calendar, timeZone: calendar.timeZone, year: 2020, month: 10, day: 29).date ?? Date()
+        let date = DateComponents(calendar: calendar,
+                                  timeZone: calendar.timeZone,
+                                  year: 2020, month: 11, day: 10).date ?? Date()
+        print(date.iso8601String)
         return DeparturePathParameter(origin: "f2m673", destination: "f25dvk", outboundDate: date)
     }
 }
@@ -40,6 +43,6 @@ extension DeparturePathParameter {
 extension DepartureQueryParameter {
 
     static func make() -> DepartureQueryParameter {
-        return DepartureQueryParameter()
+        DepartureQueryParameter()
     }
 }

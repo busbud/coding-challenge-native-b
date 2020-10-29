@@ -6,38 +6,56 @@ import Foundation
 
 public struct Operator: Decodable {
 
-    let id: String
-    let sourceID: Int
-    let profileID: Int
-    let name: String
-    let logoURL: String
-    let displayName: String
-    let sellable: Bool
-    let fuzzyPrices: Bool
-    let referralDeal: Bool
+    public let id: String
+    public let name: String
+    public let logoURL: SizedImageURL?
+    public let displayName: String
 
     enum CodingKeys: String, CodingKey {
         case id
-        case sourceID = "source_id"
-        case profileID = "profile_id"
         case name
         case logoURL = "logo_url"
         case displayName = "display_name"
-        case sellable
-        case fuzzyPrices = "fuzzy_prices"
-        case referralDeal = "referral_deal"
     }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(String.self, forKey: .id)
-        sourceID = try values.decode(Int.self, forKey: .sourceID)
-        profileID = try values.decode(Int.self, forKey: .profileID)
         name = try values.decode(String.self, forKey: .name)
-        logoURL = try values.decode(String.self, forKey: .logoURL)
+        logoURL = try SizedImageURL(string: values.decode(String?.self, forKey: .logoURL))
         displayName = try values.decode(String.self, forKey: .displayName)
-        sellable = try values.decode(Bool.self, forKey: .sellable)
-        fuzzyPrices = try values.decode(Bool.self, forKey: .fuzzyPrices)
-        referralDeal = try values.decode(Bool.self, forKey: .referralDeal)
+    }
+}
+
+public struct SizedImageURL {
+
+    public let stringUrl: String
+
+    public init?(string: String?) {
+        guard let string = string else { return nil }
+        self.stringUrl = string
+    }
+
+    public func url(width: Int, height: Int) -> URL? {
+        let sizedStringUrl = stringUrl
+            .replacingOccurrences(of: "{width}", with: "\(width)")
+            .replacingOccurrences(of: "{height}", with: "\(height)")
+        return URL(string: sizedStringUrl)
+    }
+}
+
+// Stub
+
+extension Operator {
+
+    public init() {
+        self.id = ""
+        self.name = "Orléans Express"
+        self.logoURL = SizedImageURL(string: "https://busbud.imgix.net/operator-logos/logo_orleans-express.png.png?h={height}&w={width}&auto=format&fit=fill&bg=0FFF")
+        self.displayName = "Orléans Express"
+    }
+
+    public static func make() -> Operator {
+        Operator()
     }
 }
