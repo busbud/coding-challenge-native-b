@@ -33,8 +33,14 @@ extension DepartureResultView: View {
                     failureView(error: failure)
                 } else {
                     loading
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                search()
+                            }
+                        }
                 }
             }
+            .padding(.top, 16)
             .comfortableReadingWidth()
         }
     }
@@ -45,12 +51,14 @@ extension DepartureResultView: View {
     }
 
     private var loading: some View {
-        VStack(alignment: .center) {
-            Text("Loading")
-                .onAppear(perform: search)
+        VStack {
+            Text("Searching...\nQuébec city to Montréal")
                 .changaOneRegular(24)
                 .foregroundColor(.white)
-                .padding(.horizontal, 16)
+                .multilineTextAlignment(.center)
+            LottieView(animation: .loading, loopMode: .loop)
+                .frame(maxWidth: .infinity)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 
@@ -76,11 +84,20 @@ extension DepartureResultView: View {
     }
 
     private var noResults: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 100) {
             Text("No results!")
                 .changaOneRegular(24)
                 .foregroundColor(.white)
                 .padding(.horizontal, 16)
+            Button(action: { self.search() }, label: {
+                Text("Try again")
+                    .avenirNextBold(24)
+                    .foregroundColor(.ink_750_0)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 24)
+                    .background(Color.white_0_ink_750)
+                    .cornerRadius(20)
+            })
         }
     }
 }
@@ -89,10 +106,15 @@ struct DepartureResultView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            DepartureResultView(result: .success(.make(10)))
-            DepartureResultView(result: .success(.make(0)))
-            DepartureResultView(result: .pending)
-            DepartureResultView(result: .failure(.noData))
+            ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
+                Group {
+                    DepartureResultView(result: .success(.make(10)))
+                    DepartureResultView(result: .success(.make(0)))
+                    DepartureResultView(result: .pending)
+                    DepartureResultView(result: .failure(.noData))
+                }
+                .environment(\.colorScheme, colorScheme)
+            }
         }
     }
 }

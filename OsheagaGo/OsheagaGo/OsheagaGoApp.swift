@@ -8,7 +8,7 @@ import SwiftUI
 struct OsheagaGoApp: App {
     var body: some Scene {
         WindowGroup {
-            DepartureResultView()
+            OnBoardingView()
         }
     }
 }

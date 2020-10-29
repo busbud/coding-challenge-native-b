@@ -21,6 +21,9 @@
 		4927F7F92548DF580005A6DB /* DepartureSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7F82548DF580005A6DB /* DepartureSearchService.swift */; };
 		495F615C254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F615B254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift */; };
 		495F6162254B35CF00859FAD /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6161254B35CF00859FAD /* OnBoardingView.swift */; };
+		495F6166254B369200859FAD /* UserInterfaceSizeClass+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */; };
+		495F617D254B3DFE00859FAD /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F617C254B3DFE00859FAD /* LottieView.swift */; };
+		495F6184254B3ED600859FAD /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 495F617A254B3D5500859FAD /* loading.json */; };
 		49628AE3254A3BB000CB9911 /* DepartureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49628AE2254A3BB000CB9911 /* DepartureRowView.swift */; };
 		49628B51254ACA3F00CB9911 /* ChangaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49628B4E254ACA3F00CB9911 /* ChangaOne-Regular.ttf */; };
 		49628B5A254ACAEF00CB9911 /* View+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49628B57254ACAEF00CB9911 /* View+CustomFonts.swift */; };
@@ -78,6 +81,9 @@
 		4927F7F82548DF580005A6DB /* DepartureSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureSearchService.swift; sourceTree = "<group>"; };
 		495F615B254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComfortableReadingWidthViewModifier.swift; sourceTree = "<group>"; };
 		495F6161254B35CF00859FAD /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInterfaceSizeClass+Environment.swift"; sourceTree = "<group>"; };
+		495F617A254B3D5500859FAD /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		495F617C254B3DFE00859FAD /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		49628AE2254A3BB000CB9911 /* DepartureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureRowView.swift; sourceTree = "<group>"; };
 		49628B4E254ACA3F00CB9911 /* ChangaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChangaOne-Regular.ttf"; sourceTree = "<group>"; };
 		49628B57254ACAEF00CB9911 /* View+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+CustomFonts.swift"; sourceTree = "<group>"; };
@@ -117,7 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				495F615B254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift */,
+				495F617C254B3DFE00859FAD /* LottieView.swift */,
 				491E8AD02548F56700F136FD /* Publisher+.swift */,
+				495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -202,12 +210,21 @@
 			path = System;
 			sourceTree = "<group>";
 		};
+		495F617B254B3D5500859FAD /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				495F617A254B3D5500859FAD /* loading.json */,
+			);
+			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
 		49628B4A254ACA3F00CB9911 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
 				49628BA8254ADCF500CB9911 /* Colors.swift */,
 				4927F6EF2548B7F90005A6DB /* Assets.xcassets */,
 				49628B4B254ACA3F00CB9911 /* Fonts */,
+				495F617B254B3D5500859FAD /* Lottie Files */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -233,8 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				4927F6ED2548B7F80005A6DB /* DepartureResultView.swift */,
-				495F6161254B35CF00859FAD /* OnBoardingView.swift */,
 				49628AE2254A3BB000CB9911 /* DepartureRowView.swift */,
+				495F6161254B35CF00859FAD /* OnBoardingView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -357,6 +374,7 @@
 			files = (
 				4927F6F02548B7F90005A6DB /* Assets.xcassets in Resources */,
 				49628B51254ACA3F00CB9911 /* ChangaOne-Regular.ttf in Resources */,
+				495F6184254B3ED600859FAD /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495F6166254B369200859FAD /* UserInterfaceSizeClass+Environment.swift in Sources */,
 				495F615C254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift in Sources */,
 				491E8AD12548F56700F136FD /* Publisher+.swift in Sources */,
 				49628BA9254ADCF500CB9911 /* Colors.swift in Sources */,
@@ -430,6 +449,7 @@
 				4927F7F92548DF580005A6DB /* DepartureSearchService.swift in Sources */,
 				495F6162254B35CF00859FAD /* OnBoardingView.swift in Sources */,
 				4927F7F22548DEDC0005A6DB /* OsheagaRestClient+.swift in Sources */,
+				495F617D254B3DFE00859FAD /* LottieView.swift in Sources */,
 				4927F7EC2548DE350005A6DB /* DependencyContainer.swift in Sources */,
 				49628AE3254A3BB000CB9911 /* DepartureRowView.swift in Sources */,
 				4927F6EE2548B7F80005A6DB /* DepartureResultView.swift in Sources */,

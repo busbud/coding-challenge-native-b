@@ -34,6 +34,10 @@ extension ColorPrimitive {
         make(withAssetCatalogName: "ink 750 > 0")
     }
 
+    static var ink_750: Self {
+        make(withAssetCatalogName: "ink 750")
+    }
+
     // MARK: Goldy
 
     static var goldy: Self {

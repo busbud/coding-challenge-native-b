@@ -10,6 +10,7 @@ inhibit_all_warnings!
 target :OsheagaGo do
   project 'OsheagaGo/OsheagaGo.xcodeproj'
   pod 'SDWebImageSwiftUI'
+  pod 'lottie-ios'
 end
 
 target :OsheagaKit do
