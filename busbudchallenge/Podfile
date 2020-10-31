@@ -1,0 +1,10 @@
+platform :ios, '13.0'
+
+use_frameworks!
+target 'busbudchallenge' do
+  pod 'RxSwift', '~> 5'
+  pod 'Alamofire', '~> 5.0'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Hero'
+  pod "Resolver"
+end

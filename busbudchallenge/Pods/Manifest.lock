@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.1.0)
+  - Hero (1.5.0)
+  - Resolver (1.1.4)
+  - RxSwift (5.1.1)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - Hero
+  - Resolver
+  - RxSwift (~> 5)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Hero
+    - Resolver
+    - RxSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: f313d38bc4eacb14d4e534805910062ea0610a22
+
+COCOAPODS: 1.9.1

@@ -13,6 +13,7 @@
 		40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F2254D9A3900064B97 /* Assets.xcassets */; };
 		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
+		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		40DD94E6254D9A3800064B97 /* busbudchallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = busbudchallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD94E9254D9A3800064B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DD94EB254D9A3800064B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		40DD9507254D9A3900064B97 /* busbudchallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeUITests.swift; sourceTree = "<group>"; };
 		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busbudchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.release.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,8 @@
 				40DD94FF254D9A3900064B97 /* busbudchallengeTests */,
 				40DD950A254D9A3900064B97 /* busbudchallengeUITests */,
 				40DD94E7254D9A3800064B97 /* Products */,
+				9075ACE486B4D49C377A3E9F /* Pods */,
+				4DF3E9A58D51204F68E2EED2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +137,24 @@
 			path = "support files";
 			sourceTree = "<group>";
 		};
+		4DF3E9A58D51204F68E2EED2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9075ACE486B4D49C377A3E9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */,
+				E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40DD9510254D9A3900064B97 /* Build configuration list for PBXNativeTarget "busbudchallenge" */;
 			buildPhases = (
+				7E5BBC801FD0BFCC7BDBE981 /* [CP] Check Pods Manifest.lock */,
 				40DD94E2254D9A3800064B97 /* Sources */,
 				40DD94E3254D9A3800064B97 /* Frameworks */,
 				40DD94E4254D9A3800064B97 /* Resources */,
+				7927C4F445FA8BAD26BB1E19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7927C4F445FA8BAD26BB1E19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E5BBC801FD0BFCC7BDBE981 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-busbudchallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40DD94E2254D9A3800064B97 /* Sources */ = {
@@ -414,6 +483,7 @@
 		};
 		40DD9511254D9A3900064B97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,6 +503,7 @@
 		};
 		40DD9512254D9A3900064B97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
