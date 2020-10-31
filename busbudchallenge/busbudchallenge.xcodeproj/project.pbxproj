@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -151,7 +151,6 @@
 				3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */,
 				E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -489,7 +488,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FY8534PFB;
-				INFOPLIST_FILE = busbudchallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/busbudchallenge/support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FY8534PFB;
-				INFOPLIST_FILE = busbudchallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/busbudchallenge/support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
