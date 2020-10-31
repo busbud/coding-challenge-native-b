@@ -57,7 +57,6 @@ extension TimeInterval{
         let time = NSInteger(self)
         let minutes = (time / 60) % 60
         let hours = (time / 3600)
-
         return String(format: "%0.2dh%0.2d",hours,minutes)
     }
 }
@@ -65,9 +64,11 @@ extension TimeInterval{
 public struct DepartureSearchResult {
 
     public let items: [DepartureItem]
+    public let complete: Bool
 
     init(_ response: DepartureSearchResponse) {
         self.items = response.departures.compactMap { DepartureItem(departure: $0, response: response) }
+        self.complete = response.complete
     }
 }
 
@@ -77,10 +78,12 @@ extension DepartureSearchResult {
 
     init() {
         self.items = []
+        self.complete = true
     }
 
     init(_ items: [DepartureItem]) {
         self.items = items
+        self.complete = false
     }
 
     public static func make(_ count: Int = 5) -> DepartureSearchResult {

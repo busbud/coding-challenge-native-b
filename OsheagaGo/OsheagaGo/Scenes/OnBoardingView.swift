@@ -28,8 +28,7 @@ extension OnBoardingView: View {
             }
             if letsGo {
                 DepartureResultView()
-                    .transition(.move(edge: .bottom))
-                    .animation(.easeInOut(duration: 2))
+                    .transition(AnyTransition.move(edge: .bottom).animation(.easeInOut(duration: 2)))
             }
         }
     }

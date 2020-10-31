@@ -24,6 +24,7 @@
 		495F6166254B369200859FAD /* UserInterfaceSizeClass+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */; };
 		495F617D254B3DFE00859FAD /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F617C254B3DFE00859FAD /* LottieView.swift */; };
 		495F6184254B3ED600859FAD /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 495F617A254B3D5500859FAD /* loading.json */; };
+		495F6205254C948100859FAD /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6204254C948100859FAD /* CornerRadiusModifier.swift */; };
 		49628AE3254A3BB000CB9911 /* DepartureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49628AE2254A3BB000CB9911 /* DepartureRowView.swift */; };
 		49628B51254ACA3F00CB9911 /* ChangaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49628B4E254ACA3F00CB9911 /* ChangaOne-Regular.ttf */; };
 		49628B5A254ACAEF00CB9911 /* View+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49628B57254ACAEF00CB9911 /* View+CustomFonts.swift */; };
@@ -84,6 +85,7 @@
 		495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInterfaceSizeClass+Environment.swift"; sourceTree = "<group>"; };
 		495F617A254B3D5500859FAD /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		495F617C254B3DFE00859FAD /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		495F6204254C948100859FAD /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusModifier.swift; sourceTree = "<group>"; };
 		49628AE2254A3BB000CB9911 /* DepartureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureRowView.swift; sourceTree = "<group>"; };
 		49628B4E254ACA3F00CB9911 /* ChangaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChangaOne-Regular.ttf"; sourceTree = "<group>"; };
 		49628B57254ACAEF00CB9911 /* View+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+CustomFonts.swift"; sourceTree = "<group>"; };
@@ -122,10 +124,11 @@
 		491E8ACF2548F55600F136FD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				495F61F6254B82F900859FAD /* Extensions */,
 				495F615B254B33D800859FAD /* ComfortableReadingWidthViewModifier.swift */,
 				495F617C254B3DFE00859FAD /* LottieView.swift */,
-				491E8AD02548F56700F136FD /* Publisher+.swift */,
 				495F6165254B369200859FAD /* UserInterfaceSizeClass+Environment.swift */,
+				495F6204254C948100859FAD /* CornerRadiusModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -216,6 +219,14 @@
 				495F617A254B3D5500859FAD /* loading.json */,
 			);
 			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
+		495F61F6254B82F900859FAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				491E8AD02548F56700F136FD /* Publisher+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		49628B4A254ACA3F00CB9911 /* Design System */ = {
@@ -453,6 +464,7 @@
 				4927F7EC2548DE350005A6DB /* DependencyContainer.swift in Sources */,
 				49628AE3254A3BB000CB9911 /* DepartureRowView.swift in Sources */,
 				4927F6EE2548B7F80005A6DB /* DepartureResultView.swift in Sources */,
+				495F6205254C948100859FAD /* CornerRadiusModifier.swift in Sources */,
 				4927F6EC2548B7F80005A6DB /* OsheagaGoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,7 +623,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HSXYL724J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OsheagaGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -621,6 +635,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -632,7 +647,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HSXYL724J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = OsheagaGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -642,6 +659,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinmalkic.OsheagaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

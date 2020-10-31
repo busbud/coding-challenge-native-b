@@ -26,15 +26,13 @@ public struct DepartureQueryParameter: QueryParameter {
     let passengers: [Passenger]
     let language: String
     let currency: String
+    let index: Int?
 
-    public init(adult: Passenger = Passenger(key: .adult, number: 1),
-                child: Passenger = Passenger(key: .child, number: 0),
-                senior: Passenger = Passenger(key: .senior, number: 0),
-                locale: Locale = .current) {
-
+    public init(adult: Passenger, child: Passenger, senior: Passenger, locale: Locale = .current, index: Int? = nil) {
         self.passengers = [child, adult, senior]
         self.language = locale.languageCode ?? "en"
         self.currency = locale.currencyCode ?? "CAD"
+        self.index = index
     }
 
     public func configurePath(url: URL) -> URL {
@@ -42,6 +40,7 @@ public struct DepartureQueryParameter: QueryParameter {
         var queryItems = passengers.filter { $0.number > 0 }.map { URLQueryItem(name: $0.key.rawValue, value: "\($0.number)") }
         queryItems.append(URLQueryItem(name: "lang", value: language))
         queryItems.append(URLQueryItem(name: "currency", value: currency))
+        index.map { queryItems.append(URLQueryItem(name: "index", value: "\($0)")) }
         urlComponents.queryItems = queryItems
         return urlComponents.url ?? url
     }

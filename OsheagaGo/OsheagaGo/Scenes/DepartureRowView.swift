@@ -11,8 +11,7 @@ struct DepartureRowView {
     let item: DepartureItem
 
     enum Constants {
-        static let logoWidth: CGFloat = 150
-        static let logoHeight: CGFloat = 50
+        static let logoSize: CGSize = CGSize(width: 150, height: 50)
     }
 }
 
@@ -41,13 +40,13 @@ extension DepartureRowView: View {
 
     private func locationsLine(_ duration: TimeInterval) -> some View {
         VStack(alignment: .center, spacing: 8) {
-            HStack(spacing: 2) {
+            HStack(spacing: 3) {
                 Circle()
                     .frame(width: 6, height: 6)
                     .foregroundColor(Color.blush)
 
                 Line()
-                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [3]))
+                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
                     .frame(height: 1)
                     .foregroundColor(.gray_white)
 
@@ -107,11 +106,11 @@ extension DepartureRowView: View {
     private var operatorProvider: some View {
         if let operatorProvider = item.operatorProvider {
             if let logoURL = operatorProvider.logoURL {
-                WebImage(url: logoURL.url(width: Int(Constants.logoWidth), height: Int(Constants.logoHeight))!)
+                WebImage(url: logoURL.url(SizedImageURL.Parameter(width: Int(Constants.logoSize.width), height: Int(Constants.logoSize.height))))
                     .resizable()
                     .transition(.fade(duration: 0.5))
                     .scaledToFill()
-                    .frame(width: Constants.logoWidth, height: Constants.logoHeight, alignment: .center)
+                    .frame(width: Constants.logoSize.width, height: Constants.logoSize.height, alignment: .center)
                     .clipped()
             } else {
                 Text(operatorProvider.displayName)
@@ -146,10 +145,10 @@ struct DepartureRowView_Previews: PreviewProvider {
             ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
                 DepartureRowView(item: .make())
                     .padding()
+                    .background(Color.blush)
                     .environment(\.colorScheme, colorScheme)
             }
         }
-        .background(Color.blush)
         .previewLayout(.sizeThatFits)
     }
 }

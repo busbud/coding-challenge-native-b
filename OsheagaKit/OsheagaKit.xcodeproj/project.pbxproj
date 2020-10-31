@@ -23,6 +23,7 @@
 		4927F7812548C4590005A6DB /* DepartureSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7802548C4590005A6DB /* DepartureSearchResult.swift */; };
 		4927F8312548EF650005A6DB /* OsheagaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F7882548D3B10005A6DB /* OsheagaError.swift */; };
 		4927F8352548EFE00005A6DB /* DeparturePathParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927F8342548EFE00005A6DB /* DeparturePathParameter.swift */; };
+		495F61D7254B5AA800859FAD /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F61D6254B5AA800859FAD /* Publisher+.swift */; };
 		49628AEC254A429200CB9911 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49628AEB254A429200CB9911 /* JSON.swift */; };
 		49698515254A0E940071354F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698514254A0E940071354F /* City.swift */; };
 		49698519254A0EB70071354F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49698518254A0EB70071354F /* Location.swift */; };
@@ -63,6 +64,7 @@
 		4927F7802548C4590005A6DB /* DepartureSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureSearchResult.swift; sourceTree = "<group>"; };
 		4927F7882548D3B10005A6DB /* OsheagaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsheagaError.swift; sourceTree = "<group>"; };
 		4927F8342548EFE00005A6DB /* DeparturePathParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturePathParameter.swift; sourceTree = "<group>"; };
+		495F61D6254B5AA800859FAD /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		49628AEB254A429200CB9911 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		49698514254A0E940071354F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		49698518254A0EB70071354F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				491E8AC92548F53600F136FD /* Date+.swift */,
+				495F61D6254B5AA800859FAD /* Publisher+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495F61D7254B5AA800859FAD /* Publisher+.swift in Sources */,
 				4927F76C2548C1E70005A6DB /* RestClient.swift in Sources */,
 				4927F77C2548C3D90005A6DB /* DepartureSearchResponse.swift in Sources */,
 				4927F8352548EFE00005A6DB /* DeparturePathParameter.swift in Sources */,
@@ -527,8 +531,10 @@
 			baseConfigurationReference = 3E9CB5F78582AB190F527090 /* Pods-OsheagaKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5HSXYL724J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -554,8 +560,10 @@
 			baseConfigurationReference = FC7AD67B578CB67C00F9B6F3 /* Pods-OsheagaKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5HSXYL724J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

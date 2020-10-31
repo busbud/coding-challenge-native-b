@@ -29,18 +29,40 @@ public struct Operator: Decodable {
 
 public struct SizedImageURL {
 
+    public struct Parameter {
+        public let width: Int
+        public let height: Int
+        public let fit: String = "fill"
+        public let auto: String = "format"
+        public let bgColor: String = "0FFF"
+
+        public init(width: Int, height: Int) {
+            self.width = width
+            self.height = height
+        }
+    }
+
     public let stringUrl: String
 
     public init?(string: String?) {
-        guard let string = string else { return nil }
-        self.stringUrl = string
+        guard let string = string?.split(separator: "?").first else { return nil }
+        self.stringUrl = String(string)
     }
 
-    public func url(width: Int, height: Int) -> URL? {
-        let sizedStringUrl = stringUrl
-            .replacingOccurrences(of: "{width}", with: "\(width)")
-            .replacingOccurrences(of: "{height}", with: "\(height)")
-        return URL(string: sizedStringUrl)
+    public func url(_ parameter: Parameter) -> URL? {
+        guard let url = URL(string: stringUrl),
+              var urlComponents = URLComponents(string: url.absoluteString)
+        else { return nil }
+
+        var queryItems = [URLQueryItem]()
+        queryItems.append(URLQueryItem(name: "h", value: "\(parameter.height)"))
+        queryItems.append(URLQueryItem(name: "w", value: "\(parameter.width)"))
+        queryItems.append(URLQueryItem(name: "auto", value: "\(parameter.auto)"))
+        queryItems.append(URLQueryItem(name: "fit", value: "\(parameter.fit)"))
+        queryItems.append(URLQueryItem(name: "bg", value: "\(parameter.bgColor)"))
+        urlComponents.queryItems = queryItems
+        print(urlComponents.url)
+        return urlComponents.url ?? url
     }
 }
 

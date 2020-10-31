@@ -12,6 +12,14 @@ enum LoadingState<Success, Failure: Error> {
 
 extension LoadingState {
 
+    public var isPending: Bool {
+        if case .pending = self {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var success: Success? {
         switch self {
         case let .success(success):

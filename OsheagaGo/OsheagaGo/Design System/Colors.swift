@@ -18,6 +18,10 @@ extension ColorPrimitive {
     static var white_0_ink_750: Self {
         make(withAssetCatalogName: "white 0 > ink 750")
     }
+    static var white_100_ink_550: Self {
+        make(withAssetCatalogName: "white 100 > ink 550")
+    }
+
     static var gray_white: Self {
         make(withAssetCatalogName: "gray > white")
     }
