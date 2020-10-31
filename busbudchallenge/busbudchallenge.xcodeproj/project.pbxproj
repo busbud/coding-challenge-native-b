@@ -13,6 +13,7 @@
 		40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F2254D9A3900064B97 /* Assets.xcassets */; };
 		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
+		40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD953E254DAB2400064B97 /* Launch.storyboard */; };
 		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		40DD9507254D9A3900064B97 /* busbudchallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeUITests.swift; sourceTree = "<group>"; };
 		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40DD953E254DAB2400064B97 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busbudchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.release.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,9 +104,9 @@
 		40DD94E8254D9A3800064B97 /* busbudchallenge */ = {
 			isa = PBXGroup;
 			children = (
-				40DD951F254D9A9A00064B97 /* support files */,
 				40DD94E9254D9A3800064B97 /* AppDelegate.swift */,
 				40DD94EB254D9A3800064B97 /* SceneDelegate.swift */,
+				40DD951F254D9A9A00064B97 /* support files */,
 				40DD94ED254D9A3800064B97 /* ViewController.swift */,
 			);
 			path = busbudchallenge;
@@ -133,6 +135,7 @@
 			children = (
 				40DD94F7254D9A3900064B97 /* Info.plist */,
 				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
+				40DD953E254DAB2400064B97 /* Launch.storyboard */,
 			);
 			path = "support files";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */,
+				40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,7 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
