@@ -10,9 +10,7 @@
 		40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94E9254D9A3800064B97 /* AppDelegate.swift */; };
 		40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94EB254D9A3800064B97 /* SceneDelegate.swift */; };
 		40DD94EE254D9A3800064B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94ED254D9A3800064B97 /* ViewController.swift */; };
-		40DD94F1254D9A3800064B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94EF254D9A3800064B97 /* Main.storyboard */; };
 		40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F2254D9A3900064B97 /* Assets.xcassets */; };
-		40DD94F6254D9A3900064B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F4254D9A3900064B97 /* LaunchScreen.storyboard */; };
 		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
 /* End PBXBuildFile section */
@@ -39,9 +37,7 @@
 		40DD94E9254D9A3800064B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DD94EB254D9A3800064B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		40DD94ED254D9A3800064B97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		40DD94F0254D9A3800064B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40DD94F2254D9A3900064B97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40DD94F5254D9A3900064B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40DD94F7254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD94FC254D9A3900064B97 /* busbudchallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeTests.swift; sourceTree = "<group>"; };
@@ -99,13 +95,10 @@
 		40DD94E8254D9A3800064B97 /* busbudchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				40DD951F254D9A9A00064B97 /* support files */,
 				40DD94E9254D9A3800064B97 /* AppDelegate.swift */,
 				40DD94EB254D9A3800064B97 /* SceneDelegate.swift */,
 				40DD94ED254D9A3800064B97 /* ViewController.swift */,
-				40DD94EF254D9A3800064B97 /* Main.storyboard */,
-				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
-				40DD94F4254D9A3900064B97 /* LaunchScreen.storyboard */,
-				40DD94F7254D9A3900064B97 /* Info.plist */,
 			);
 			path = busbudchallenge;
 			sourceTree = "<group>";
@@ -126,6 +119,15 @@
 				40DD950D254D9A3900064B97 /* Info.plist */,
 			);
 			path = busbudchallengeUITests;
+			sourceTree = "<group>";
+		};
+		40DD951F254D9A9A00064B97 /* support files */ = {
+			isa = PBXGroup;
+			children = (
+				40DD94F7254D9A3900064B97 /* Info.plist */,
+				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
+			);
+			path = "support files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DD94F6254D9A3900064B97 /* LaunchScreen.storyboard in Resources */,
 				40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */,
-				40DD94F1254D9A3800064B97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +294,6 @@
 			targetProxy = 40DD9508254D9A3900064B97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		40DD94EF254D9A3800064B97 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40DD94F0254D9A3800064B97 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		40DD94F4254D9A3900064B97 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40DD94F5254D9A3900064B97 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		40DD950E254D9A3900064B97 /* Debug */ = {
@@ -437,6 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FY8534PFB;
 				INFOPLIST_FILE = busbudchallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FY8534PFB;
 				INFOPLIST_FILE = busbudchallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
