@@ -10,7 +10,7 @@ import Hero
 
 class RootViewController: UIViewController {
     
-    private var isFirstRun = true
+    private var isFirstRun = LocalStorage.shared.getValue(for: .firstRun) ?? true
     private var imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "imFestivalLogo")
@@ -33,7 +33,9 @@ class RootViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showInitialView()
+        delay(durationInSeconds: 1) { [weak self] in
+            self?.showInitialView()
+        }
     }
     
 }
@@ -45,14 +47,15 @@ private extension RootViewController {
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true)
         } else {
-            let controller = BookingViewController()
+            let controller = UINavigationController()
+            controller.viewControllers = [BookingViewController()]
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true)
         }
     }
     
     func setupView() {
-        view.backgroundColor = .corporatePink
+        view.backgroundColor = .white
         view.addSubview(imageView)
         view.addSubview(loadinView)
     }

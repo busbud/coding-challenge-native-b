@@ -8,10 +8,15 @@
 import UIKit
 import Hero
 
-class OnboardingPage: UIView {
+protocol OnboardingViewPageDelegate {
+    func onStartButtonTapped()
+}
+
+class OnboardingViewPage: UIView {
     
-    var item: OnboardingItem?
-    var isLastItem: Bool?
+    private var item: OnboardingItem?
+    private var isLastItem: Bool?
+    var delegate: OnboardingViewPageDelegate?
     
     private var imageView: UIImageView = {
         let iv = UIImageView()
@@ -28,6 +33,8 @@ class OnboardingPage: UIView {
         btn.backgroundColor = .corporatePink
         btn.setTitle("Lets Go!", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        btn.isUserInteractionEnabled = true
+        btn.addTarget(self, action: #selector(onStartButtonDidTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -66,7 +73,7 @@ class OnboardingPage: UIView {
     }
 }
 
-private extension OnboardingPage {
+private extension OnboardingViewPage {
     func setupView() {
         addSubview(imageView)
         addSubview(titleLabel)
@@ -104,4 +111,14 @@ private extension OnboardingPage {
         titleLabel.text = item.title
         descriptionLabel.text = item.description
     }
+    
+    @objc func onStartButtonDidTapped() {
+        onStartButton.spring()
+        guard let delegate = delegate else {
+            print("OnboardingPageDelegate not set yet")
+            return
+        }
+        delegate.onStartButtonTapped()
+    }
+    
 }

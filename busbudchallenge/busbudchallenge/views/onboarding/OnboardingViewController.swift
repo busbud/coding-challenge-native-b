@@ -79,9 +79,11 @@ private extension OnboardingViewController {
         for (i, item) in onboardingItems.enumerated() {
             frame.origin.x = scrollView.frame.size.width * CGFloat(i)
             frame.size = scrollView.frame.size
-            scrollView.addSubview(OnboardingPage(frame: frame,
-                                                 item: item,
-                                                 isLastItem: onboardingItems.last == item))
+            let page = OnboardingViewPage(frame: frame,
+                                          item: item,
+                                          isLastItem: onboardingItems.last == item)
+            page.delegate = self
+            scrollView.addSubview(page)
         }
     }
 }
@@ -90,5 +92,14 @@ extension OnboardingViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         pageControl.currentPage = index
+    }
+}
+
+extension OnboardingViewController: OnboardingViewPageDelegate {
+    func onStartButtonTapped() {
+        LocalStorage.shared.save(false, for: .firstRun)
+        let bookingViewController = BookingViewController()
+        bookingViewController.modalPresentationStyle = .overFullScreen
+        present(bookingViewController, animated: true)
     }
 }
