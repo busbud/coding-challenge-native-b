@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */; };
-		408FC286254F2D5300BBB591 /* SearchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC285254F2D5300BBB591 /* SearchItems.swift */; };
+		408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC285254F2D5300BBB591 /* SearchSection.swift */; };
 		408FC28B254F3B1900BBB591 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC28A254F3B1900BBB591 /* Date.swift */; };
+		408FC293254F615200BBB591 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC292254F615200BBB591 /* Constants.swift */; };
+		408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2A1254F64CB00BBB591 /* Localizable.strings */; };
+		408FC2B6254F72F500BBB591 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2B5254F72F500BBB591 /* Location.swift */; };
+		408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2BD254F739400BBB591 /* SearchSectionItem.swift */; };
+		408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C2254F74CA00BBB591 /* DepartureDate.swift */; };
+		408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C7254F75DB00BBB591 /* Passenger.swift */; };
 		40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFABC254E5B6E00E7713C /* UIColor.swift */; };
 		40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAC7254E650D00E7713C /* UIImage.swift */; };
 		40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAF9254E6D0100E7713C /* UIFont.swift */; };
@@ -55,8 +61,14 @@
 /* Begin PBXFileReference section */
 		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
-		408FC285254F2D5300BBB591 /* SearchItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItems.swift; sourceTree = "<group>"; };
+		408FC285254F2D5300BBB591 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		408FC28A254F3B1900BBB591 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		408FC292254F615200BBB591 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		408FC2A0254F64CB00BBB591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		408FC2B5254F72F500BBB591 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		408FC2BD254F739400BBB591 /* SearchSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionItem.swift; sourceTree = "<group>"; };
+		408FC2C2254F74CA00BBB591 /* DepartureDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDate.swift; sourceTree = "<group>"; };
+		408FC2C7254F75DB00BBB591 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		40CFFABC254E5B6E00E7713C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		40CFFAC7254E650D00E7713C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		40CFFAF9254E6D0100E7713C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -132,7 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				40D0A5B3254E278800245891 /* OnboardingItem.swift */,
-				408FC285254F2D5300BBB591 /* SearchItems.swift */,
+				408FC285254F2D5300BBB591 /* SearchSection.swift */,
+				408FC2BD254F739400BBB591 /* SearchSectionItem.swift */,
+				408FC2B5254F72F500BBB591 /* Location.swift */,
+				408FC2C2254F74CA00BBB591 /* DepartureDate.swift */,
+				408FC2C7254F75DB00BBB591 /* Passenger.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 				40DD94F7254D9A3900064B97 /* Info.plist */,
 				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
 				40DD953E254DAB2400064B97 /* Launch.storyboard */,
+				408FC2A1254F64CB00BBB591 /* Localizable.strings */,
 			);
 			path = "support files";
 			sourceTree = "<group>";
@@ -246,6 +263,7 @@
 				40D0A5A0254E09B200245891 /* extensions */,
 				40DD9583254DC61600064B97 /* Helper.swift */,
 				40CFFB03254E8E2E00E7713C /* LocalStorage.swift */,
+				408FC292254F615200BBB591 /* Constants.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -373,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */,
+				408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */,
 				40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */,
+				408FC293254F615200BBB591 /* Constants.swift in Sources */,
 				40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */,
 				40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */,
 				40DD9584254DC61600064B97 /* Helper.swift in Sources */,
@@ -449,15 +469,19 @@
 				406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */,
 				408FC28B254F3B1900BBB591 /* Date.swift in Sources */,
 				40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */,
+				408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */,
 				40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */,
+				408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */,
 				40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */,
 				40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */,
 				40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */,
+				408FC2B6254F72F500BBB591 /* Location.swift in Sources */,
 				40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */,
 				40CFFB0C254EF94F00E7713C /* BookingView.swift in Sources */,
 				40CFFB04254E8E2E00E7713C /* LocalStorage.swift in Sources */,
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
-				408FC286254F2D5300BBB591 /* SearchItems.swift in Sources */,
+				408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */,
+				408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
 				40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */,
 				40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */,
@@ -495,11 +519,23 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		408FC2A1254F64CB00BBB591 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				408FC2A0254F64CB00BBB591 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		40DD950E254D9A3900064B97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -561,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

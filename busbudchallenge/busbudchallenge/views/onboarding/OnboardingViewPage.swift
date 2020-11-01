@@ -31,7 +31,7 @@ class OnboardingViewPage: UIView {
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
         btn.backgroundColor = .corporatePink
-        btn.setTitle("Lets Go!", for: .normal)
+        btn.setTitle(K.Strings.letsGo, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         btn.isUserInteractionEnabled = true
         btn.addTarget(self, action: #selector(onStartButtonDidTapped), for: .touchUpInside)

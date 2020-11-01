@@ -11,10 +11,13 @@ struct OnboardingItem: Equatable {
     var imageName: String
     var title: String
     var description: String
-    
+}
+
+// Dummie objects, locations should be pulled from API, this is only for testing proposes
+extension OnboardingItem {
     static let collection: [OnboardingItem] = [
-        OnboardingItem(imageName: "imOnboarding1", title: "Osheaga Festival", description: "Come to live by yourself the unbelievable experience of Osheaga Festival"),
-        OnboardingItem(imageName: "imOnboarding2", title: "Discover", description: "Discover your new favorite artists and support national talent"),
-        OnboardingItem(imageName: "imOnboarding3", title: "Feel the Music!", description: "Feel how the music takes over you, this and much more at Osheaga Festival"),
+        OnboardingItem(imageName: K.Identifiers.imOnboarding1, title: K.Strings.titleOnboarding1, description: K.Strings.subtitleOnboarding1),
+        OnboardingItem(imageName: K.Identifiers.imOnboarding2, title: K.Strings.titleOnboarding2, description: K.Strings.subtitleOnboarding2),
+        OnboardingItem(imageName: K.Identifiers.imOnboarding3, title: K.Strings.titleOnboarding3, description: K.Strings.subtitleOnboarding3),
     ]
 }

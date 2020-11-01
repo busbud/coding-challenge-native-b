@@ -13,8 +13,8 @@ class RootViewController: UIViewController {
     private var isFirstRun = LocalStorage.shared.getValue(for: .firstRun) ?? true
     private var imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "imFestivalLogo")
-        iv.heroID = "imFestivalLogo"
+        iv.image = UIImage(named: K.Identifiers.imFestivalLogo)
+        iv.heroID = K.Identifiers.imFestivalLogo
         return iv
     }()
     

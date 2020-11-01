@@ -28,7 +28,7 @@ class BookingView: UIView {
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
         btn.backgroundColor = .corporateYellow
-        btn.setTitle("Search", for: .normal)
+        btn.setTitle(K.Strings.search, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         btn.isUserInteractionEnabled = true

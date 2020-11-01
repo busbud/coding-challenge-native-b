@@ -17,8 +17,8 @@ class BookingViewController: UIViewController {
     
     private var imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "imFestivalLogo")
-        iv.heroID = "imFestivalLogo"
+        iv.image = UIImage(named: K.Identifiers.imFestivalLogo)
+        iv.heroID = K.Identifiers.imFestivalLogo
         iv.heroModifiers = [.useNormalSnapshot]
         return iv
     }()
@@ -27,7 +27,7 @@ class BookingViewController: UIViewController {
         let lbl = UILabel()
         lbl.font = UIFont.helvetica(ofSize: 18)
         lbl.textColor = .systemGray
-        lbl.text = "It will be hot this summer in Montreal with the Osheaga festival! Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!"
+        lbl.text = K.Strings.searchTitle
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
         return lbl
@@ -37,7 +37,7 @@ class BookingViewController: UIViewController {
         let lbl = UILabel()
         lbl.font = UIFont.helveticaBold(ofSize: 22)
         lbl.textColor = .systemGray
-        lbl.text = "Lets book a trip!!!"
+        lbl.text = K.Strings.searchSubtitle
         lbl.textAlignment = .center
         return lbl
     }()
@@ -61,7 +61,7 @@ private extension BookingViewController {
     func setupView() {
         hero.isEnabled = true
         
-        navigationItem.title = "Search Departures"
+        navigationItem.title = K.Strings.searchDepartures
         navigationController?.navigationBar.backgroundColor = .corporateYellow
         
         view.backgroundColor = .systemGroupedBackground
