@@ -4,22 +4,18 @@
 
 import SwiftUI
 
-public struct OnBoardingView: View {
+struct OnBoardingView: View {
 
     @Environment(\.isHorizontallyCompact) var isHorizontallyCompact
     @Environment(\.isLandscape) var isLandscape
 
     @State var letsGo: Bool = false
-
-    public init() {
-
-    }
 }
 
 extension OnBoardingView {
 
     @ViewBuilder
-    public var body: some View {
+    var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             backgroundView
             VStack {
@@ -57,10 +53,10 @@ extension OnBoardingView {
     private var welcome: some View {
         Group {
             VStack {
-                Text("Don't wait any longer!\nbook it now and be there on the ")
+                Text("welcome_title")
                     .changaOneRegular(24)
                     .foregroundColor(.ink_750)
-                Text("29th of July 2021")
+                Text("welcome_date")
                     .changaOneRegular(30)
             }
         }
@@ -76,7 +72,7 @@ extension OnBoardingView {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100, alignment: .center)
-                Text("Let's go")
+                Text("welcome_lets_go")
                     .changaOneRegular(24)
                     .foregroundColor(.white)
             }

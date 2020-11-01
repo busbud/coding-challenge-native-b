@@ -73,7 +73,7 @@ extension DepartureResultView: View {
 
     private var loadingView: some View {
         VStack {
-            Text("Searching...\nQuébec city to Montréal")
+            Text("departure_result_loading")
                 .changaOneRegular(24)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -134,13 +134,13 @@ extension DepartureResultView: View {
 
     private var noResults: some View {
         VStack(alignment: .center, spacing: 100) {
-            Text("No results!")
+            Text("no_results")
                 .changaOneRegular(24)
                 .foregroundColor(.white)
                 .padding(.horizontal, 16)
 
             Button(action: { self.search(1) }, label: {
-                Text("Try again")
+                Text("button_try_again")
                     .avenirNextBold(24)
                     .foregroundColor(.ink_750_0)
                     .padding(.vertical, 8)

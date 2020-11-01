@@ -2,258 +2,54 @@
 
 ![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
 
-Hey! 
+Hello! 
 
-It will be hot this summer in Montreal with the [Osheaga festival](http://www.osheaga.com/)! 
-Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!
-Your challenge is to build a promotional app that allows a traveler from Quebec City to find one-way departure schedules for the festival's opening weekend.
+I have completed this challenge using `SwiftUI` and `Combine`.
+Still a new way of coding and very early technics and patterns around `SwiftUI`, but a very interesting new way of creating apps. Made MVC, MVVM outdated and a bit unrelevant. Very exciting to see where the community will be headed in the next year with it.
 
-### Requirements
+### Installation
 
-Write a native Busbud app that:
+You will need Xcode 12 to be able to compile the project, deployement target is 14.0. The choice was based on wanted to use the conditional statement in building views such as `if let` as it's only available in ios 14. The code can easily be changed to an ios 13.x compatibility.
 
-- Has a simple onboarding screen that will open the search
-- Lists all the departures for a given origin city (**Quebec - geohash: f2m673**) and a given destination city (**Montreal - geohash: f25dvk**) for a given day (**the 29th of July 2021**) for **1** adult. 
-For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
+You will need [cocoapods-keys](https://github.com/orta/cocoapods-keys) and will need to run `gem install cocoapods-keys`.
+I use this so we can store the API key into your own keychain and access it without having to commit in clear the key into github.
 
-### Non-functional requirements
+Running `bundle exec pod install` should install you pods and should prompt you for the `BusbudToken` key to be inserted.
 
-- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)).
-- The repo should include 3 screenshots under the /screenshots folder to show the app usage.
-- Change the README.md to explain your solution, the issues, the way you solved them...
+Would need Ruby and Bundler installed.
 
-### Supporting API
+### Notes
 
-In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
-For all requests, you MUST provide the following HTTP headers:
+- Probably because of uncertainties of next year, but I couldn't use **the 29th of July 2021** as the search date, results were empty, so I picked randomly **the 25th of November 2020**.
+- I have worked on the polling challenge but couldn't find a suitable date that required pagination to test my work.
 
-Header | Value
---- | ---
-Accept | `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
-X-Busbud-Token | The token provided in the challenge invitation email.
+### Challenges
 
-### Init results
+The only challenges was around the polling as I left it for the end and stepped into the reduced amount of information contained into the response.
 
-To get departure results, search is initialized via the following endpoint:
+### Solution
 
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date`
+I should have tackle this problem at the beginning so I could have came out with a better solution. But I manage to fit a solution by passing `cities` and `locations` from the previous response stored into a variable so the new departures set can be treated. Depending on the result wanted we could simply aggregate the new departures to the previous one, to then have a complete list of departures available. I opt for a simple pagination of new content going only forward in the indexes.
+At a bigger scale of actually making a real app, the solution could be better.
 
-PATH PARAMS  
+### Tests
 
-- `origin` : Origin's geohash
-- `destination` : Destination's geohash
-- `outbound_date` : Outbound departure date, ISO 8061 date
+I did few tests around models and data formatting. Wanted to make some tests around the `RestClient` and `DepartureSearchService` but needed much more work on mocking Combine using like [Entwine](https://github.com/tcldr/Entwine), this would have require much more time to achieve properly.
 
-QUERY PARAMS:
+I integrated a pod `SnapshotTesting` that I think is very useful to catch layout issues on various amount of devices and color schemes. But also in my experience manage to test like localisation missing strings or formatting issues. Decided to comment out the code to avoid generating a lot of pngs but mostly to show the result if you want to.
 
-- `adult` : Number of adults
-- `child` : Number of children
-- `senior` : Number of seniors
-- `lang` :  ISO 639-1 (2 letter code) language code (supported values include `en`, `fr`, `es`, and a few others)
-- `currency` : ISO 4217 currency code (supported values include `CAD`, `USD`, `EUR`, and a few others)
+### Project
 
-The response looks like:
-```
-{
-  "origin_city_id": "375dd5879001acbd84a4683dedf9eed1",
-  "destination_city_id": "375dd5879001acbd84a4683ded9c875b",
-  "cities": [
-    { City },
-    { City }
-  ],
-  "locations": [
-    { Location }
-    { Location }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "complete": false,
-  "ttl": 900,
-  "is_valid_route": true
-}
-```
+I went for a separation of the UI, Service into the main app bundle `OsheagaGo` and put everything else like the client, models and utilities into `OsheagaKit`. I take this approach as a good practice and it allows the possibility of creating like white label app in the future.
 
-Where a City is like:
-```
-   {
-      "id": "375dd5879001acbd84a4683deda84183",
-      "locale": "en",
-      "region_id": 6417,
-      "name": "New York",
-      "lat": 40.71427,
-      "lon": -74.00597,
-      "geohash": "dr5reg",
-      "timezone": "America/New_York",
-      "image_url": "/images/promos/city-blocks/new-york.jpg",
-      "legacy_url_form": "NewYork,NewYork,UnitedStates",
-      "full_name": "New York, New York, United States",
-      "region": {
-        "id": 6417,
-        "locale": "en",
-        "country_code2": "US",
-        "name": "New York",
-        "country": {
-          "code2": "US",
-          "locale": "en",
-          "code3": "USA",
-          "name": "United States",
-          "continent": "NA",
-          "default_locale": "en",
-          "default_currency": "USD",
-          "population": 310232863
-        }
-      }
-    }
-```
-Where a Location is like:
-```
-    {
-      "id": 3970,
-      "city_id": "375dd5879001acbd84a4683dedfb933e",
-      "name": "Métro Bonaventure Bus Station",
-      "address": [
-        "997 Rue St-Antoine Ouest",
-        "Montreal, QC H3C 1A6"
-      ],
-      "type": "transit_station",
-      "lat": 45.4988273060484,
-      "lon": -73.5644745826722,
-      "geohash": "f25dvfzcz"
-    }
-```
-Where an Operator is like:
-```
-    {
-      "id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "source_id": 155,
-      "profile_id": 111,
-      "name": "Greyhound",
-      "url": null,
-      "logo_url": "https://busbud-pubweb-assets-staging.global.ssl.fastly.net/images-service/operator-logos/greyhound.png?hash=1{&height,width}",
-      "display_name": "Greyhound",
-      "sellable": true,
-      "fuzzy_prices": false,
-      "sell_tickets_cutoff": {
-        "hours": 1
-      },
-      "amenities": {
-        "classes": {
-          "Normal": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          },
-          "Economy": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          }
-        }
-      },
-      "source": "greyhound_us",
-      "referral_deal": false,
-      "display_url": null,
-      "fraud_check": "iovation",
-      "terms": {
-        "refund": false,
-        "exchange": true,
-        "bag_allowed": true,
-        "piece_of_id": false,
-        "boarding_requirement": "printed_tkt",
-        "extra_bag_policy": true,
-        "use_new_ticket": false,
-        "exchange_cutoff": 24,
-        "nb_checked_bags": 1,
-        "kg_by_bag": 25,
-        "nb_carry_on": 1,
-        "extra_bag_cost": 1500
-      }
-    }
-```
-And an XDeparture is :
-```
-    {
-      "id": "7c5dd26a",
-      "source_id": 155,
-      "checkout_type": "new",
-      "operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "origin_location_id": 1942,
-      "destination_location_id": 1938,
-      "class": "Economy",
-      "class_name": "Economy",
-      "amenities": {
-        "display_name": "Economy",
-        "wifi": true,
-        "toilet": true,
-        "ac": true,
-        "food": false,
-        "refreshment": false,
-        "power_outlets": true,
-        "tv": false,
-        "bus_attendant": false,
-        "leg_room": false
-      },
-      "available_seats": 55,
-      "prices": {
-        "total": 5200,
-        "breakdown": {
-          "base": 5200
-        },
-        "categories": {},
-        "discounted": false
-      },
-      "ticket_types": [
-        "print"
-      ],
-      "departure_timezone": "America/New_York",
-      "arrival_timezone": "America/Montreal",
-      "departure_time": "2016-01-14T00:01:00",
-      "arrival_time": "2016-01-14T07:55:00"
-    }
-```
+### UI
 
-### Poll results
+Didn't want to over do it but still wanted to make it look nice, so I took some inspiration on dribbble.com. For the loading view i downloaded a free lottie animation and changed some colors in it to fit the color scheme.
+I made sure the app was using the light and dark mode into consideration, this is for me a very important part when starting a new app as doing it later brings a heavy refactor.
+And SwiftUI allows an ease of doing such a thing!
 
-**While "complete" is false, you need to call** :
+### Screenshots
 
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date/poll`
-
-With ***all*** the same parameters that the previous endpoint, plus:
-
-`index` : Index from which to return new departures
-
-The response is:
-```
-{
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "complete": true,
-  "ttl": 900
-}
-```
+| Welcome | Loading | Results | Dark |
+| ------- | ------- | ------- | ---- |
+| ![osheaga](screenshots/0_Welcome.png) | ![osheaga](screenshots/1_Loading.png) | ![osheaga](screenshots/2_Results.png) | ![osheaga](screenshots/2_Results_dark.png) |

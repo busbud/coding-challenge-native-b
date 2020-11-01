@@ -57,6 +57,7 @@
 		49BACA06254F2AA400F2F30E /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F6161254B35CF00859FAD /* OnBoardingView.swift */; };
 		49BACA26254F2BF700F2F30E /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BACA25254F2BF700F2F30E /* SnapshotTests.swift */; };
 		49BACA3E254F2C2700F2F30E /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495946A0254EEF7D00A44C2B /* SnapshotTestCase.swift */; };
+		49BACA9E254F72B400F2F30E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49BACAA0254F72B400F2F30E /* Localizable.strings */; };
 		90059655ED699868B4404457 /* Pods_OsheagaKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2E0681E68E06C43EBA65DD /* Pods_OsheagaKitTests.framework */; };
 		CBB34CD96DB73EEAD7AE0899 /* Pods_SnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F873F719F4CDD8E3214CF4C /* Pods_SnapshotTests.framework */; };
 /* End PBXBuildFile section */
@@ -168,6 +169,7 @@
 		49BACA27254F2BF700F2F30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BACA7E254F307800F2F30E /* OsheagaGo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OsheagaGo.xctestplan; sourceTree = "<group>"; };
 		49BACA82254F318300F2F30E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BACA9F254F72B400F2F30E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F2E0681E68E06C43EBA65DD /* Pods_OsheagaKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsheagaKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F873F719F4CDD8E3214CF4C /* Pods_SnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB043E761578A6C6C28122C /* Pods-OsheagaKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.release.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				4927F7E82548DE1D0005A6DB /* Services */,
 				4927F7F52548DEE20005A6DB /* System */,
 				491E8ACF2548F55600F136FD /* Utilities */,
+				49BACAA0254F72B400F2F30E /* Localizable.strings */,
 			);
 			path = OsheagaGo;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				4927F6F02548B7F90005A6DB /* Assets.xcassets in Resources */,
 				49628B51254ACA3F00CB9911 /* ChangaOne-Regular.ttf in Resources */,
 				495F6184254B3ED600859FAD /* loading.json in Resources */,
+				49BACA9E254F72B400F2F30E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +884,17 @@
 			targetProxy = 49BACA28254F2BF700F2F30E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49BACAA0254F72B400F2F30E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49BACA9F254F72B400F2F30E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4927F70B2548B7F90005A6DB /* Debug */ = {
