@@ -23,6 +23,19 @@ public struct DepartureQueryParameter: QueryParameter {
         }
     }
 
+    private var paths: [(String, String)] {
+        var paths = passengers
+            .filter { $0.number > 0 }
+            .reduce(into: [(String, String)]()) { $0.append(($1.key.rawValue, "\($1.number)")) }
+
+        paths.append(("lang", language))
+        paths.append(("currency", currency))
+        if let index = index {
+            paths.append(("index", "\(index)"))
+        }
+        return paths
+    }
+    
     let passengers: [Passenger]
     let language: String
     let currency: String
@@ -43,16 +56,5 @@ public struct DepartureQueryParameter: QueryParameter {
         return urlComponents.url ?? url
     }
 
-    private var paths: [(String, String)] {
-        var paths = passengers
-            .filter { $0.number > 0 }
-            .reduce(into: [(String, String)]()) { $0.append(($1.key.rawValue, "\($1.number)")) }
 
-        paths.append(("lang", language))
-        paths.append(("currency", currency))
-        if let index = index {
-            paths.append(("index", "\(index)"))
-        }
-        return paths
-    }
 }

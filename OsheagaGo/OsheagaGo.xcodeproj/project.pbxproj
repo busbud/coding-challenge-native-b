@@ -58,6 +58,7 @@
 		49BACA26254F2BF700F2F30E /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BACA25254F2BF700F2F30E /* SnapshotTests.swift */; };
 		49BACA3E254F2C2700F2F30E /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495946A0254EEF7D00A44C2B /* SnapshotTestCase.swift */; };
 		49BACA9E254F72B400F2F30E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49BACAA0254F72B400F2F30E /* Localizable.strings */; };
+		49BACAA5254F78F500F2F30E /* SizedImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BACAA4254F78F500F2F30E /* SizedImageURL.swift */; };
 		90059655ED699868B4404457 /* Pods_OsheagaKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2E0681E68E06C43EBA65DD /* Pods_OsheagaKitTests.framework */; };
 		CBB34CD96DB73EEAD7AE0899 /* Pods_SnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F873F719F4CDD8E3214CF4C /* Pods_SnapshotTests.framework */; };
 /* End PBXBuildFile section */
@@ -170,6 +171,7 @@
 		49BACA7E254F307800F2F30E /* OsheagaGo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OsheagaGo.xctestplan; sourceTree = "<group>"; };
 		49BACA82254F318300F2F30E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BACA9F254F72B400F2F30E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49BACAA4254F78F500F2F30E /* SizedImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedImageURL.swift; sourceTree = "<group>"; };
 		4F2E0681E68E06C43EBA65DD /* Pods_OsheagaKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OsheagaKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F873F719F4CDD8E3214CF4C /* Pods_SnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB043E761578A6C6C28122C /* Pods-OsheagaKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsheagaKit.release.xcconfig"; path = "Target Support Files/Pods-OsheagaKit/Pods-OsheagaKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -385,8 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				49594621254EE87900A44C2B /* Extensions */,
-				49594624254EE87900A44C2B /* Stubs.swift */,
 				49594625254EE87900A44C2B /* Formatters.swift */,
+				49BACAA4254F78F500F2F30E /* SizedImageURL.swift */,
+				49594624254EE87900A44C2B /* Stubs.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				49594636254EE87900A44C2B /* PathParameter.swift in Sources */,
 				49594628254EE87900A44C2B /* Location.swift in Sources */,
 				49594633254EE87900A44C2B /* RestClient+DepartureSearching.swift in Sources */,
+				49BACAA5254F78F500F2F30E /* SizedImageURL.swift in Sources */,
 				4959463C254EE87900A44C2B /* JSON.swift in Sources */,
 				4959462B254EE87900A44C2B /* Operator.swift in Sources */,
 				49594635254EE87900A44C2B /* QueryParameter.swift in Sources */,
