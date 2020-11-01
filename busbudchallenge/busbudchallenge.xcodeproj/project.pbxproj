@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406A69F3254E3DC700039A02 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingPage.swift */; };
+		40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFABC254E5B6E00E7713C /* UIColor.swift */; };
+		40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A573254DD08300245891 /* OnboardingViewController.swift */; };
+		40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A578254DD0AD00245891 /* BookingViewController.swift */; };
+		40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A5A1254E09C600245891 /* UICollectionView.swift */; };
+		40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A5B3254E278800245891 /* OnboardingItem.swift */; };
 		40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94E9254D9A3800064B97 /* AppDelegate.swift */; };
 		40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94EB254D9A3800064B97 /* SceneDelegate.swift */; };
-		40DD94EE254D9A3800064B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94ED254D9A3800064B97 /* ViewController.swift */; };
+		40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94ED254D9A3800064B97 /* RootViewController.swift */; };
 		40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F2254D9A3900064B97 /* Assets.xcassets */; };
 		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
 		40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD953E254DAB2400064B97 /* Launch.storyboard */; };
+		40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD956B254DC4D500064B97 /* ApiManager.swift */; };
+		40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9573254DC4EF00064B97 /* ApiErrors.swift */; };
+		40DD957C254DC50D00064B97 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD957B254DC50D00064B97 /* ApiEndpoints.swift */; };
+		40DD9584254DC61600064B97 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9583254DC61600064B97 /* Helper.swift */; };
 		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,10 +46,16 @@
 
 /* Begin PBXFileReference section */
 		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		406A69F2254E3DC700039A02 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		40CFFABC254E5B6E00E7713C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		40D0A573254DD08300245891 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		40D0A578254DD0AD00245891 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		40D0A5A1254E09C600245891 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		40D0A5B3254E278800245891 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		40DD94E6254D9A3800064B97 /* busbudchallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = busbudchallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD94E9254D9A3800064B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DD94EB254D9A3800064B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40DD94ED254D9A3800064B97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40DD94ED254D9A3800064B97 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		40DD94F2254D9A3900064B97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40DD94F7254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD94FC254D9A3900064B97 /* busbudchallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +65,10 @@
 		40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeUITests.swift; sourceTree = "<group>"; };
 		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD953E254DAB2400064B97 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		40DD956B254DC4D500064B97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		40DD9573254DC4EF00064B97 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
+		40DD957B254DC50D00064B97 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
+		40DD9583254DC61600064B97 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busbudchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.release.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40D0A5A0254E09B200245891 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40D0A5A1254E09C600245891 /* UICollectionView.swift */,
+				40CFFABC254E5B6E00E7713C /* UIColor.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		40D0A5B2254E277C00245891 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				40D0A5B3254E278800245891 /* OnboardingItem.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		40DD94DD254D9A3800064B97 = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +141,11 @@
 		40DD94E8254D9A3800064B97 /* busbudchallenge */ = {
 			isa = PBXGroup;
 			children = (
-				40DD94E9254D9A3800064B97 /* AppDelegate.swift */,
-				40DD94EB254D9A3800064B97 /* SceneDelegate.swift */,
+				40D0A5B2254E277C00245891 /* models */,
+				40DD9582254DC60900064B97 /* utils */,
+				40DD9569254DC49600064B97 /* views */,
+				40DD956A254DC4C300064B97 /* api */,
 				40DD951F254D9A9A00064B97 /* support files */,
-				40DD94ED254D9A3800064B97 /* ViewController.swift */,
 			);
 			path = busbudchallenge;
 			sourceTree = "<group>";
@@ -133,11 +171,59 @@
 		40DD951F254D9A9A00064B97 /* support files */ = {
 			isa = PBXGroup;
 			children = (
+				40DD94EB254D9A3800064B97 /* SceneDelegate.swift */,
+				40DD94E9254D9A3800064B97 /* AppDelegate.swift */,
 				40DD94F7254D9A3900064B97 /* Info.plist */,
 				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
 				40DD953E254DAB2400064B97 /* Launch.storyboard */,
 			);
 			path = "support files";
+			sourceTree = "<group>";
+		};
+		40DD9569254DC49600064B97 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				40DD94ED254D9A3800064B97 /* RootViewController.swift */,
+				40DD9580254DC52100064B97 /* onboarding */,
+				40DD9581254DC52B00064B97 /* booking */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		40DD956A254DC4C300064B97 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				40DD956B254DC4D500064B97 /* ApiManager.swift */,
+				40DD9573254DC4EF00064B97 /* ApiErrors.swift */,
+				40DD957B254DC50D00064B97 /* ApiEndpoints.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		40DD9580254DC52100064B97 /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				406A69F2254E3DC700039A02 /* OnboardingPage.swift */,
+				40D0A573254DD08300245891 /* OnboardingViewController.swift */,
+			);
+			path = onboarding;
+			sourceTree = "<group>";
+		};
+		40DD9581254DC52B00064B97 /* booking */ = {
+			isa = PBXGroup;
+			children = (
+				40D0A578254DD0AD00245891 /* BookingViewController.swift */,
+			);
+			path = booking;
+			sourceTree = "<group>";
+		};
+		40DD9582254DC60900064B97 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				40D0A5A0254E09B200245891 /* extensions */,
+				40DD9583254DC61600064B97 /* Helper.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		4DF3E9A58D51204F68E2EED2 /* Frameworks */ = {
@@ -330,9 +416,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DD94EE254D9A3800064B97 /* ViewController.swift in Sources */,
+				40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */,
+				40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */,
+				40DD9584254DC61600064B97 /* Helper.swift in Sources */,
+				40DD957C254DC50D00064B97 /* ApiEndpoints.swift in Sources */,
+				40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */,
+				406A69F3254E3DC700039A02 /* OnboardingPage.swift in Sources */,
+				40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */,
+				40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */,
 				40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */,
+				40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */,
+				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
+				40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -474,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
