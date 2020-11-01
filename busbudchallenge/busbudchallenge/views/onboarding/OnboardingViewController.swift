@@ -6,11 +6,20 @@
 //
 
 import UIKit
+import Hero
 
 class OnboardingViewController: UIViewController {
 
     private let onboardingItems = OnboardingItem.collection
     private var frame = CGRect()
+    
+    private var imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "imFestivalLogo")
+        iv.heroID = "imFestivalLogo"
+        iv.heroModifiers = .some([.useNormalSnapshot])
+        return iv
+    }()
     
     private lazy var scrollView: UIScrollView = {
         let sv = UIScrollView(frame: .zero)
@@ -21,13 +30,14 @@ class OnboardingViewController: UIViewController {
         sv.frame = view.frame
         sv.contentSize = CGSize(width: sv.frame.size.width * CGFloat(onboardingItems.count),
                                 height: sv.frame.size.height)
+        sv.bounces = false
         return sv
     }()
     
     private var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .systemGroupedBackground
-        pc.currentPageIndicatorTintColor = .corporateYellow
+        pc.currentPageIndicatorTintColor = .corporatePink
         pc.isUserInteractionEnabled = false
         return pc
     }()
@@ -42,17 +52,25 @@ class OnboardingViewController: UIViewController {
 
 private extension OnboardingViewController {
     func setupViews() {
+        hero.isEnabled = true
         view.addSubview(scrollView)
         view.addSubview(pageControl)
+        view.addSubview(imageView)
     }
     
     func setupConstraints() {
-        scrollView.snp.makeConstraints { make in
-            make.size.equalTo(view.snp.size)
+        scrollView.snp.makeConstraints {
+            $0.size.equalTo(view.snp.size)
         }
-        pageControl.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.centerX.equalTo(view.snp.centerX)
+        pageControl.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(10)
+            $0.centerX.equalTo(view.snp.centerX)
+        }
+        imageView.snp.makeConstraints {
+            $0.width.equalTo(view.snp.width).inset(20)
+            $0.height.lessThanOrEqualTo(imageView.snp.width).dividedBy(3)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.top.equalTo(view.snp.top).offset(200)
         }
     }
     

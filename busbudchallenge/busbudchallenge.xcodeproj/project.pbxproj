@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		406A69F3254E3DC700039A02 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingPage.swift */; };
 		40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFABC254E5B6E00E7713C /* UIColor.swift */; };
+		40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAC7254E650D00E7713C /* UIImage.swift */; };
+		40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAF9254E6D0100E7713C /* UIFont.swift */; };
 		40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A573254DD08300245891 /* OnboardingViewController.swift */; };
 		40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A578254DD0AD00245891 /* BookingViewController.swift */; };
 		40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A5A1254E09C600245891 /* UICollectionView.swift */; };
@@ -48,6 +50,8 @@
 		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		406A69F2254E3DC700039A02 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		40CFFABC254E5B6E00E7713C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		40CFFAC7254E650D00E7713C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		40CFFAF9254E6D0100E7713C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		40D0A573254DD08300245891 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		40D0A578254DD0AD00245891 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		40D0A5A1254E09C600245891 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			children = (
 				40D0A5A1254E09C600245891 /* UICollectionView.swift */,
 				40CFFABC254E5B6E00E7713C /* UIColor.swift */,
+				40CFFAC7254E650D00E7713C /* UIImage.swift */,
+				40CFFAF9254E6D0100E7713C /* UIFont.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -424,11 +430,13 @@
 				406A69F3254E3DC700039A02 /* OnboardingPage.swift in Sources */,
 				40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */,
 				40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */,
+				40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */,
 				40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */,
 				40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */,
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
 				40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */,
+				40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

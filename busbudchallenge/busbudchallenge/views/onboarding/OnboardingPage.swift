@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class OnboardingPage: UIView {
     
@@ -24,10 +25,9 @@ class OnboardingPage: UIView {
         btn.backgroundColor = .systemGreen
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
-        btn.backgroundColor = .white
+        btn.backgroundColor = .corporatePink
         btn.setTitle("Lets Go!", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        btn.setTitleColor(.corporatePink, for: .normal)
         return btn
     }()
     
@@ -35,16 +35,16 @@ class OnboardingPage: UIView {
         let lbl = UILabel()
         lbl.textAlignment = .center
         lbl.textColor = .white
-        lbl.font = UIFont.boldSystemFont(ofSize: 24)
+        lbl.font = UIFont.helveticaBold(ofSize: 38)
         return lbl
     }()
     
-    private lazy var subtitleLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center
         lbl.textColor = .white
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines = 3
+        lbl.font = UIFont.helvetica(ofSize: 26)
+        lbl.numberOfLines = 0
         return lbl
     }()
     
@@ -70,32 +70,29 @@ private extension OnboardingPage {
     func setupView() {
         addSubview(imageView)
         addSubview(titleLabel)
-        addSubview(subtitleLabel)
+        addSubview(descriptionLabel)
         addSubview(onStartButton)
         backgroundColor = .corporatePink
     }
     
     func setupConstraints() {
-        imageView.snp.makeConstraints { make in
-            make.width.equalTo(snp.width)
-            make.height.equalTo(500)
+        imageView.snp.makeConstraints {
+            $0.width.equalTo(snp.width)
+            $0.height.equalTo(snp.height)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.height.equalTo(40)
-            make.centerX.equalTo(snp.centerX)
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(snp.centerY).offset(50)
+            $0.width.equalTo(safeAreaLayoutGuide).inset(30)
+            $0.centerX.equalTo(snp.centerX)
         }
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.width.equalTo(safeAreaLayoutGuide).inset(30)
-            make.height.equalTo(40)
-            make.centerX.equalTo(snp.centerX)
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.width.equalTo(safeAreaLayoutGuide).inset(30)
+            $0.centerX.equalTo(snp.centerX)
         }
-        onStartButton.snp.makeConstraints { make in
-            make.height.equalTo(60)
-            make.leading
-                .bottom
-                .trailing
+        onStartButton.snp.makeConstraints {
+            $0.height.equalTo(60)
+            $0.leading.bottom.trailing
                 .equalTo(safeAreaLayoutGuide).inset(30)
         }
     }
@@ -103,8 +100,8 @@ private extension OnboardingPage {
     func setupContent() {
         guard let item = item, let isLastItem = isLastItem else { return }
         onStartButton.isHidden = !isLastItem
-        imageView.image = UIImage(named: item.imageName)
+        imageView.image = UIImage(named: item.imageName)?.blur(10.0)
         titleLabel.text = item.title
-        subtitleLabel.text = item.description
+        descriptionLabel.text = item.description
     }
 }

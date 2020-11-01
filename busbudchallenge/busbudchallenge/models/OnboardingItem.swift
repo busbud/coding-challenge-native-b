@@ -13,8 +13,8 @@ struct OnboardingItem: Equatable {
     var description: String
     
     static let collection: [OnboardingItem] = [
-        OnboardingItem(imageName: "imOnboarding1", title: "Osheaga Festival", description: "Come to live the unbelievable experience of Osheaga Festival"),
-        OnboardingItem(imageName: "imOnboarding2", title: "Discover New Artists", description: "Discover your new favorite artists and support national talent"),
+        OnboardingItem(imageName: "imOnboarding1", title: "Osheaga Festival", description: "Come to live by yourself the unbelievable experience of Osheaga Festival"),
+        OnboardingItem(imageName: "imOnboarding2", title: "Discover", description: "Discover your new favorite artists and support national talent"),
         OnboardingItem(imageName: "imOnboarding3", title: "Feel the Music!", description: "Feel how the music takes over you, this and much more at Osheaga Festival"),
     ]
 }
