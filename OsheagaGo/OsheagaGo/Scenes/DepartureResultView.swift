@@ -7,9 +7,15 @@ import OsheagaKit
 
 struct DepartureResultView {
 
+    // 2020-11-25
+    private let searchDate = DateComponents(calendar: .current,
+                                                   timeZone: Calendar.current.timeZone,
+                                                   year: 2020, month: 11, day: 25).date ?? Date()
+
     private let service = DepartureSearchService()
 
-    @State var result: LoadingState<DepartureSearchResult, OsheagaError> = .pending
+    @State var result: DepartureSearchResult = .init()
+    @State var loading: LoadingState<DepartureSearchResponse, OsheagaError> = .pending
     @State private var firstAppear = true
     @State private var index: Int? = nil
 
@@ -21,39 +27,25 @@ struct DepartureResultView {
     }
 
     private func search(_ delay: TimeInterval = 2) {
-        if !result.isPending {
-            result = .pending
+        if !loading.isPending {
+            loading = .pending
         }
-        if let index = index {
-            service.fetch(param: .makePoll(), query: .makePoll(index), into: $result, delay: delay)
-        } else {
-            service.fetch(into: $result, delay: delay)
-        }
+        service.fetch(param: .make(date: searchDate, poll: index != nil),
+                      query: .make(with: index),
+                      into: $result,
+                      with: $loading,
+                      delay: delay)
     }
 }
 
 extension DepartureResultView: View {
 
-    @ViewBuilder
     var body: some View {
         ZStack {
             backgroundView
-            Group {
-                if let result = result.success {
-                    if result.items.count > 0 {
-                        results(result)
-                    } else {
-                        noResults
-                    }
-                } else if let failure = result.failure {
-                    failureView(error: failure)
-                } else {
-                    loading
-                        .onAppear(perform: start)
-                }
-            }
-            .padding(.top, 16)
-            .comfortableReadingWidth()
+            content
+                .padding(.top, 16)
+                .comfortableReadingWidth()
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -63,7 +55,23 @@ extension DepartureResultView: View {
             .edgesIgnoringSafeArea(.all)
     }
 
-    private var loading: some View {
+    @ViewBuilder
+    private var content: some View {
+        if loading.isSuccess {
+            if result.items.count > 0 {
+                results(result)
+            } else {
+                noResults
+            }
+        } else if let failure = loading.failure {
+            failureView(error: failure)
+        } else {
+            loadingView
+                .onAppear(perform: start)
+        }
+    }
+
+    private var loadingView: some View {
         VStack {
             Text("Searching...\nQuébec city to Montréal")
                 .changaOneRegular(24)
@@ -150,10 +158,10 @@ struct DepartureResultView_Previews: PreviewProvider {
         Group {
             ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
                 Group {
-                    DepartureResultView(result: .success(.make(3)))
-                    DepartureResultView(result: .success(.make(0)))
-                    DepartureResultView(result: .pending)
-                    DepartureResultView(result: .failure(.noData))
+                    DepartureResultView(result: .make(3), loading: .success(.make()))
+                    DepartureResultView(result: .make(0), loading: .success(.make()))
+                    DepartureResultView(loading: .pending)
+                    DepartureResultView(loading: .failure(.noData))
                 }
                 .environment(\.colorScheme, colorScheme)
             }

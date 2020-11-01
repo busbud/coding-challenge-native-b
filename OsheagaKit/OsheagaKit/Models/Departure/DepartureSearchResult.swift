@@ -20,13 +20,13 @@ public struct DepartureItem: Identifiable {
     public let duration: TimeInterval
     public let price: String
 
-    init?(departure: Departure, response: DepartureSearchResponse) {
+    init?(departure: Departure, cities: [City]?, locations: [Location]?, operators: [Operator]) {
 
-        guard let origin = response.location(for: departure.originLocationId),
-              let destination = response.location(for: departure.destinationLocationId),
-              let operatorProvider = response.operatorProvider(for: departure.operatorId),
-              let originCity = response.city(for: origin.cityId),
-              let destinationCity = response.city(for: destination.cityId)
+        guard let origin = locations?.first(where: { $0.id == departure.originLocationId }),
+              let destination = locations?.first(where: { $0.id == departure.destinationLocationId }),
+              let operatorProvider = operators.first(where: { $0.id == departure.operatorId }),
+              let originCity = cities?.first(where: { $0.id == origin.cityId }),
+              let destinationCity = cities?.first(where: { $0.id == destination.cityId })
         else { return nil }
 
         self.operatorProvider = operatorProvider
@@ -63,45 +63,40 @@ extension TimeInterval{
 
 public struct DepartureSearchResult {
 
+    public let cities: [City]
+    public let locations: [Location]
+
     public let items: [DepartureItem]
     public let complete: Bool
 
-    init(_ response: DepartureSearchResponse) {
-        self.items = response.departures.compactMap { DepartureItem(departure: $0, response: response) }
+    public init(_ response: DepartureSearchResponse, cities: [City], locations: [Location]) {
+        let aggrCities = cities + (response.cities ?? [])
+        let aggrLocations = locations + (response.locations ?? [])
+        self.items = response.departures.compactMap {
+            DepartureItem(departure: $0,
+                          cities: aggrCities,
+                          locations: aggrLocations,
+                          operators: response.operators)
+        }
+        self.cities = aggrCities
+        self.locations = aggrLocations
         self.complete = response.complete
     }
 }
 
-// Stubs
-
 extension DepartureSearchResult {
 
-    init() {
+    public init() {
         self.items = []
+        self.cities = []
+        self.locations = []
         self.complete = true
     }
 
-    init(_ items: [DepartureItem]) {
+    public init(_ items: [DepartureItem], complete: Bool) {
         self.items = items
-        self.complete = false
-    }
-
-    public static func make(_ count: Int = 5) -> DepartureSearchResult {
-        DepartureSearchResult((0..<count).map { _ in DepartureItem() })
-    }
-}
-
-extension DepartureItem {
-
-    public init() {
-        self.operatorProvider = .make()
-        self.departure = LocationInfo(time: "9:00 am", name: "Gare du Palais", city: "Québec City")
-        self.arrival = LocationInfo(time: "1:00 pm", name: "Gare d'autocars", city: "Montréal")
-        self.price = "$44.90"
-        self.duration = 3 * 60 * 60
-    }
-
-    public static func make() -> DepartureItem {
-        DepartureItem()
+        self.cities = []
+        self.locations = []
+        self.complete = complete
     }
 }

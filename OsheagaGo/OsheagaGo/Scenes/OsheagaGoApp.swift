@@ -9,9 +9,6 @@ struct OsheagaGoApp: App {
     var body: some Scene {
         WindowGroup {
             OnBoardingView()
-                .onAppear(perform: {
-                    UIScrollView.appearance().clipsToBounds = false
-                })
         }
     }
 }

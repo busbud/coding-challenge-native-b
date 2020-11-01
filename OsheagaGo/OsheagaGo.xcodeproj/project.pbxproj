@@ -158,7 +158,6 @@
 		4927F6EA2548B7F80005A6DB /* OsheagaGo */ = {
 			isa = PBXGroup;
 			children = (
-				4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */,
 				4927F6F42548B7F90005A6DB /* Info.plist */,
 				49628B4A254ACA3F00CB9911 /* Design System */,
 				49628BA5254ADC6800CB9911 /* Scenes */,
@@ -260,9 +259,10 @@
 		49628BA5254ADC6800CB9911 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4927F6EB2548B7F80005A6DB /* OsheagaGoApp.swift */,
+				495F6161254B35CF00859FAD /* OnBoardingView.swift */,
 				4927F6ED2548B7F80005A6DB /* DepartureResultView.swift */,
 				49628AE2254A3BB000CB9911 /* DepartureRowView.swift */,
-				495F6161254B35CF00859FAD /* OnBoardingView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

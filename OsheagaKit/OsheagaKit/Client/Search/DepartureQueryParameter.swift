@@ -37,11 +37,20 @@ public struct DepartureQueryParameter: QueryParameter {
 
     public func configurePath(url: URL) -> URL {
         guard var urlComponents = URLComponents(string: url.absoluteString) else { return url }
-        var queryItems = passengers.filter { $0.number > 0 }.map { URLQueryItem(name: $0.key.rawValue, value: "\($0.number)") }
-        queryItems.append(URLQueryItem(name: "lang", value: language))
-        queryItems.append(URLQueryItem(name: "currency", value: currency))
-        index.map { queryItems.append(URLQueryItem(name: "index", value: "\($0)")) }
-        urlComponents.queryItems = queryItems
+        urlComponents.queryItems = paths.map {
+            URLQueryItem(name: $0.key, value: $0.value)
+        }
         return urlComponents.url ?? url
+    }
+
+    private var paths: [String: String] {
+        var paths = passengers
+            .filter { $0.number > 0 }
+            .reduce(into: [String: String]()) { $0[$1.key.rawValue] = "\($1.number)" }
+
+        paths["lang"] = language
+        paths["currency"] = currency
+        index.map { paths["index"] = "\($0)" }
+        return paths
     }
 }

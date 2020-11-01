@@ -36,9 +36,9 @@ public struct SizedImageURL {
         public let auto: String = "format"
         public let bgColor: String = "0FFF"
 
-        public init(width: Int, height: Int) {
-            self.width = width
-            self.height = height
+        public init(w: Int, h: Int) {
+            self.width = w
+            self.height = h
         }
     }
 
@@ -61,23 +61,6 @@ public struct SizedImageURL {
         queryItems.append(URLQueryItem(name: "fit", value: "\(parameter.fit)"))
         queryItems.append(URLQueryItem(name: "bg", value: "\(parameter.bgColor)"))
         urlComponents.queryItems = queryItems
-        print(urlComponents.url)
         return urlComponents.url ?? url
-    }
-}
-
-// Stub
-
-extension Operator {
-
-    public init() {
-        self.id = ""
-        self.name = "Orléans Express"
-        self.logoURL = nil //SizedImageURL(string: "https://busbud.imgix.net/operator-logos/logo_orleans-express.png.png?h={height}&w={width}&auto=format&fit=fill&bg=0FFF")
-        self.displayName = "Orléans Express"
-    }
-
-    public static func make() -> Operator {
-        Operator()
     }
 }

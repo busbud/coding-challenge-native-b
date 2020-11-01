@@ -19,6 +19,14 @@ extension LoadingState {
             return false
         }
     }
+
+    public var isSuccess: Bool {
+        if case .success = self {
+            return true
+        } else {
+            return false
+        }
+    }
     
     var success: Success? {
         switch self {

@@ -6,6 +6,13 @@ import SwiftUI
 import OsheagaKit
 import SDWebImageSwiftUI
 
+extension CGFloat {
+
+    var int: Int {
+        Int(self)
+    }
+}
+
 struct DepartureRowView {
 
     let item: DepartureItem
@@ -106,7 +113,7 @@ extension DepartureRowView: View {
     private var operatorProvider: some View {
         if let operatorProvider = item.operatorProvider {
             if let logoURL = operatorProvider.logoURL {
-                WebImage(url: logoURL.url(SizedImageURL.Parameter(width: Int(Constants.logoSize.width), height: Int(Constants.logoSize.height))))
+                WebImage(url: logoURL.url(.init(w: Constants.logoSize.width.int, h: Constants.logoSize.height.int)))
                     .resizable()
                     .transition(.fade(duration: 0.5))
                     .scaledToFill()

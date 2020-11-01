@@ -6,14 +6,13 @@ import Foundation
 import Combine
 
 public protocol DepartureSearching {
-    func fetch(param: DeparturePathParameter, query: DepartureQueryParameter) -> AnyPublisher<DepartureSearchResult, OsheagaError>
+    func fetch(param: DeparturePathParameter, query: DepartureQueryParameter) -> AnyPublisher<DepartureSearchResponse, OsheagaError>
 }
 
 extension DepartureSearching where Self: RestClient {
 
-    public func fetch(param: DeparturePathParameter, query: DepartureQueryParameter) -> AnyPublisher<DepartureSearchResult, OsheagaError> {
+    public func fetch(param: DeparturePathParameter, query: DepartureQueryParameter) -> AnyPublisher<DepartureSearchResponse, OsheagaError> {
         publisher(for: DepartureSearchResource(pathParam: param, queryParam: query))
-            .tryMap(DepartureSearchResult.init)
             .mapError(OsheagaError.init(other:))
             .eraseToAnyPublisher()
     }
