@@ -9,8 +9,8 @@ public struct DepartureQueryParameter: QueryParameter {
     public struct Passenger {
 
         public enum Key: String {
-            case adult
             case child
+            case adult
             case senior
         }
 
@@ -28,7 +28,7 @@ public struct DepartureQueryParameter: QueryParameter {
     let currency: String
     let index: Int?
 
-    public init(adult: Passenger, child: Passenger, senior: Passenger, locale: Locale = .current, index: Int? = nil) {
+    public init(child: Passenger, adult: Passenger, senior: Passenger, locale: Locale = .current, index: Int? = nil) {
         self.passengers = [child, adult, senior]
         self.language = locale.languageCode ?? "en"
         self.currency = locale.currencyCode ?? "CAD"
@@ -38,19 +38,21 @@ public struct DepartureQueryParameter: QueryParameter {
     public func configurePath(url: URL) -> URL {
         guard var urlComponents = URLComponents(string: url.absoluteString) else { return url }
         urlComponents.queryItems = paths.map {
-            URLQueryItem(name: $0.key, value: $0.value)
+            URLQueryItem(name: $0.0, value: $0.1)
         }
         return urlComponents.url ?? url
     }
 
-    private var paths: [String: String] {
+    private var paths: [(String, String)] {
         var paths = passengers
             .filter { $0.number > 0 }
-            .reduce(into: [String: String]()) { $0[$1.key.rawValue] = "\($1.number)" }
+            .reduce(into: [(String, String)]()) { $0.append(($1.key.rawValue, "\($1.number)")) }
 
-        paths["lang"] = language
-        paths["currency"] = currency
-        index.map { paths["index"] = "\($0)" }
+        paths.append(("lang", language))
+        paths.append(("currency", currency))
+        if let index = index {
+            paths.append(("index", "\(index)"))
+        }
         return paths
     }
 }

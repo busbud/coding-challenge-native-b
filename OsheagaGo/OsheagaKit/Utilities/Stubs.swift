@@ -14,8 +14,8 @@ extension DeparturePathParameter {
 extension DepartureQueryParameter {
 
     public static func make(with index: Int? = nil) -> DepartureQueryParameter {
-        DepartureQueryParameter(adult: Passenger(key: .adult, number: 1),
-                                child: Passenger(key: .child, number: 0),
+        DepartureQueryParameter(child: Passenger(key: .child, number: 0),
+                                adult: Passenger(key: .adult, number: 1),
                                 senior: Passenger(key: .senior, number: 0),
                                 index: index)
     }

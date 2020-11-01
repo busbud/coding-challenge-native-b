@@ -5,9 +5,6 @@
       location = "group:OsheagaGo/OsheagaGo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:OsheagaKit/OsheagaKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -4,18 +4,22 @@
 
 import SwiftUI
 
-struct OnBoardingView {
+public struct OnBoardingView: View {
 
     @Environment(\.isHorizontallyCompact) var isHorizontallyCompact
     @Environment(\.isLandscape) var isLandscape
 
     @State var letsGo: Bool = false
+
+    public init() {
+
+    }
 }
 
-extension OnBoardingView: View {
+extension OnBoardingView {
 
     @ViewBuilder
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             backgroundView
             VStack {

@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "14A6894D-6411-459D-86DE-5014C8BE2CAE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:OsheagaGo.xcodeproj",
+      "identifier" : "4927F6E72548B7F80005A6DB",
+      "name" : "OsheagaGo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:OsheagaGo.xcodeproj",
+        "identifier" : "495945E6254EE80C00A44C2B",
+        "name" : "OsheagaKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:OsheagaGo.xcodeproj",
+        "identifier" : "49BACA22254F2BF700F2F30E",
+        "name" : "SnapshotTests"
+      }
+    }
+  ],
+  "version" : 1
+}

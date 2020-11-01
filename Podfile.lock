@@ -6,17 +6,20 @@ PODS:
   - SDWebImage/Core (5.9.4)
   - SDWebImageSwiftUI (1.5.0):
     - SDWebImage (~> 5.7)
+  - SnapshotTesting (1.8.2)
 
 DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - lottie-ios
   - SDWebImageSwiftUI
+  - SnapshotTesting
 
 SPEC REPOS:
   trunk:
     - lottie-ios
     - SDWebImage
     - SDWebImageSwiftUI
+    - SnapshotTesting
 
 EXTERNAL SOURCES:
   Keys:
@@ -27,7 +30,8 @@ SPEC CHECKSUMS:
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
+  SnapshotTesting: 38947050d13960d57a4a9c166fcf51bca7d56970
 
-PODFILE CHECKSUM: 66248549eec800c2183e0279c285478f908db451
+PODFILE CHECKSUM: f352ee29f6e0354680453555023f5a470abf809a
 
 COCOAPODS: 1.9.3
