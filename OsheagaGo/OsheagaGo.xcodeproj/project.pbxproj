@@ -119,7 +119,6 @@
 		4927F6ED2548B7F80005A6DB /* DepartureResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureResultView.swift; sourceTree = "<group>"; };
 		4927F6EF2548B7F90005A6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4927F6F42548B7F90005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4927F6FF2548B7F90005A6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4927F7EB2548DE350005A6DB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4927F7F12548DEDC0005A6DB /* OsheagaRestClient+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OsheagaRestClient+.swift"; sourceTree = "<group>"; };
 		4927F7F82548DF580005A6DB /* DepartureSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureSearchService.swift; sourceTree = "<group>"; };
@@ -238,7 +237,6 @@
 			children = (
 				49BACA7E254F307800F2F30E /* OsheagaGo.xctestplan */,
 				4927F6EA2548B7F80005A6DB /* OsheagaGo */,
-				4927F6FC2548B7F90005A6DB /* OsheagaGoTests */,
 				495945E0254EE80C00A44C2B /* OsheagaKit */,
 				495945ED254EE80C00A44C2B /* OsheagaKitTests */,
 				49BACA24254F2BF700F2F30E /* SnapshotTests */,
@@ -271,14 +269,6 @@
 				49BACAA0254F72B400F2F30E /* Localizable.strings */,
 			);
 			path = OsheagaGo;
-			sourceTree = "<group>";
-		};
-		4927F6FC2548B7F90005A6DB /* OsheagaGoTests */ = {
-			isa = PBXGroup;
-			children = (
-				4927F6FF2548B7F90005A6DB /* Info.plist */,
-			);
-			path = OsheagaGoTests;
 			sourceTree = "<group>";
 		};
 		4927F75C2548BF1F0005A6DB /* Frameworks */ = {
