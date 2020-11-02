@@ -9,7 +9,18 @@ Still a new way of coding and very early technics and patterns around `SwiftUI`,
 
 ### Installation
 
-You will need Xcode 12 to be able to compile the project, deployement target is 14.0. The choice was based on wanted to use the conditional statement in building views such as `if let` as it's only available in ios 14. The code can easily be changed to an ios 13.x compatibility.
+You will need Xcode 12 to be able to compile the project, deployement target is 14.0. The choice was based on wanted to use:
+```
+struct OsheagaGoApp: App {
+    var body: some Scene {
+        WindowGroup {
+            OnBoardingView()
+        }
+    }
+}
+``` 
+Instead of the AppDelegate + SceneDelegate.
+The code can easily be changed to an ios 13.x compatibility.
 
 You will need [cocoapods-keys](https://github.com/orta/cocoapods-keys) and will need to run `gem install cocoapods-keys`.
 I use this so we can store the API key into your own keychain and access it without having to commit in clear the key into github.
