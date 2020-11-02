@@ -16,6 +16,12 @@
 		408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2BD254F739400BBB591 /* SearchSectionItem.swift */; };
 		408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C2254F74CA00BBB591 /* DepartureDate.swift */; };
 		408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C7254F75DB00BBB591 /* Passenger.swift */; };
+		408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2CD254F794700BBB591 /* ResultsViewController.swift */; };
+		408FC2D5254F79AA00BBB591 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2D4254F79AA00BBB591 /* ResultsViewModel.swift */; };
+		408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */; };
+		408FC2F0254F84C000BBB591 /* bouncingdot.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2EF254F84C000BBB591 /* bouncingdot.json */; };
+		408FC305254F8DF800BBB591 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC304254F8DF800BBB591 /* loading.json */; };
+		408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC30D254F916300BBB591 /* ResultsLoadingView.swift */; };
 		40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFABC254E5B6E00E7713C /* UIColor.swift */; };
 		40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAC7254E650D00E7713C /* UIImage.swift */; };
 		40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAF9254E6D0100E7713C /* UIFont.swift */; };
@@ -69,6 +75,12 @@
 		408FC2BD254F739400BBB591 /* SearchSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionItem.swift; sourceTree = "<group>"; };
 		408FC2C2254F74CA00BBB591 /* DepartureDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDate.swift; sourceTree = "<group>"; };
 		408FC2C7254F75DB00BBB591 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		408FC2CD254F794700BBB591 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		408FC2D4254F79AA00BBB591 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsItemViewCell.swift; sourceTree = "<group>"; };
+		408FC2EF254F84C000BBB591 /* bouncingdot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bouncingdot.json; sourceTree = "<group>"; };
+		408FC304254F8DF800BBB591 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		408FC30D254F916300BBB591 /* ResultsLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsLoadingView.swift; sourceTree = "<group>"; };
 		40CFFABC254E5B6E00E7713C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		40CFFAC7254E650D00E7713C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		40CFFAF9254E6D0100E7713C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -127,6 +139,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		408FC2CC254F792000BBB591 /* results */ = {
+			isa = PBXGroup;
+			children = (
+				408FC2CD254F794700BBB591 /* ResultsViewController.swift */,
+				408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */,
+				408FC30D254F916300BBB591 /* ResultsLoadingView.swift */,
+			);
+			path = results;
+			sourceTree = "<group>";
+		};
+		408FC2D2254F798600BBB591 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				408FC2D3254F799900BBB591 /* results */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		408FC2D3254F799900BBB591 /* results */ = {
+			isa = PBXGroup;
+			children = (
+				408FC2D4254F79AA00BBB591 /* ResultsViewModel.swift */,
+			);
+			path = results;
+			sourceTree = "<group>";
+		};
+		408FC309254F911400BBB591 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
+				408FC2A1254F64CB00BBB591 /* Localizable.strings */,
+				408FC2EF254F84C000BBB591 /* bouncingdot.json */,
+				408FC304254F8DF800BBB591 /* loading.json */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		40D0A5A0254E09B200245891 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +229,7 @@
 			children = (
 				40D0A5B2254E277C00245891 /* models */,
 				40DD9569254DC49600064B97 /* views */,
+				408FC2D2254F798600BBB591 /* viewmodels */,
 				40DD956A254DC4C300064B97 /* api */,
 				40DD9582254DC60900064B97 /* utils */,
 				40DD951F254D9A9A00064B97 /* support files */,
@@ -208,12 +258,11 @@
 		40DD951F254D9A9A00064B97 /* support files */ = {
 			isa = PBXGroup;
 			children = (
+				408FC309254F911400BBB591 /* assets */,
 				40DD94EB254D9A3800064B97 /* SceneDelegate.swift */,
 				40DD94E9254D9A3800064B97 /* AppDelegate.swift */,
 				40DD94F7254D9A3900064B97 /* Info.plist */,
-				40DD94F2254D9A3900064B97 /* Assets.xcassets */,
 				40DD953E254DAB2400064B97 /* Launch.storyboard */,
-				408FC2A1254F64CB00BBB591 /* Localizable.strings */,
 			);
 			path = "support files";
 			sourceTree = "<group>";
@@ -224,6 +273,7 @@
 				40DD94ED254D9A3800064B97 /* RootViewController.swift */,
 				40DD9580254DC52100064B97 /* onboarding */,
 				40DD9581254DC52B00064B97 /* booking */,
+				408FC2CC254F792000BBB591 /* results */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -390,9 +440,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408FC2F0254F84C000BBB591 /* bouncingdot.json in Resources */,
 				40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */,
 				408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */,
 				40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */,
+				408FC305254F8DF800BBB591 /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */,
 				40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */,
 				408FC293254F615200BBB591 /* Constants.swift in Sources */,
 				40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */,
@@ -468,12 +521,14 @@
 				40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */,
 				406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */,
 				408FC28B254F3B1900BBB591 /* Date.swift in Sources */,
+				408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */,
 				40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */,
 				408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */,
 				40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */,
 				408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */,
 				40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */,
 				40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */,
+				408FC2D5254F79AA00BBB591 /* ResultsViewModel.swift in Sources */,
 				40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */,
 				408FC2B6254F72F500BBB591 /* Location.swift in Sources */,
 				40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */,
@@ -482,6 +537,7 @@
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
 				408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */,
 				408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */,
+				408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
 				40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */,
 				40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */,

@@ -52,8 +52,8 @@ class BookingViewController: UIViewController {
 
 extension BookingViewController: BookingViewDelegate {
     func onSearchButtonTapped(_ searchItems: [SearchSection]) {
-        // push results view
-        print("navigate to results page")
+        navigationController?.hero.isEnabled = true
+        navigationController?.pushViewController(ResultsViewController(with: ResultsViewModel()), animated: true)
     }
 }
 
@@ -61,7 +61,7 @@ private extension BookingViewController {
     func setupView() {
         hero.isEnabled = true
         
-        navigationItem.title = K.Strings.searchDepartures
+        navigationItem.title = K.Strings.search
         navigationController?.navigationBar.backgroundColor = .corporateYellow
         
         view.backgroundColor = .systemGroupedBackground

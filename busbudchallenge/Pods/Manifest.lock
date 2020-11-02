@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.3.0)
   - Hero (1.5.0)
+  - lottie-ios (3.1.8)
   - Resolver (1.1.4)
   - RxSwift (5.1.1)
   - SnapKit (5.0.1)
@@ -9,6 +10,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0)
   - Hero
+  - lottie-ios
   - Resolver
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Hero
+    - lottie-ios
     - Resolver
     - RxSwift
     - SnapKit
@@ -26,11 +29,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a49da444f2203adafa39119da9fe4fabb229ba49
+PODFILE CHECKSUM: bd1f9e24540fba88dd9f5bebb8fa498a395f2cdc
 
 COCOAPODS: 1.9.1

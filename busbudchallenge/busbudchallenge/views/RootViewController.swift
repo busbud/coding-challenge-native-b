@@ -49,6 +49,7 @@ private extension RootViewController {
         } else {
             let controller = UINavigationController()
             controller.viewControllers = [BookingViewController()]
+            controller.hero.isEnabled = true
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true)
         }

@@ -32,7 +32,6 @@ public struct K {
         static var passengerCount = "passengerCount".localized
         static var dates = "dates".localized
         static var passengers = "passengers".localized
-        static var searchDepartures = "searchDepartures".localized
         static var search = "search".localized
     }
 }
