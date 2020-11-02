@@ -22,7 +22,7 @@
 "passengerCount" = "Number of passengers";
 "dates" = "Dates";
 "passengers" = "Passengers";
-"adults" = "Adults";
+"adult" = "Adults";
 "children" = "Children";
-"seniors" = "Seniors";
+"senior" = "Seniors";
 "search" = "Search";

@@ -7,28 +7,52 @@
 
 import Foundation
 
-struct Location: SearchItemProtocol {
-    private var name: String
-    private var code: String
+struct Location: Codable {
+    var id: Int
+    var cityId: String
+    var name: String
+    var address: [String]
+    var type: String
+    var lat: Double?
+    var lon: Double?
+    var geohash: String?
     
-    init(name: String, code: String) {
+    init(id: Int = 0,
+         cityId: String = "",
+         name: String = "",
+         address: [String] = [],
+         type: String = "",
+         lat: Double = 0,
+         lon: Double = 0,
+         geohash: String) {
+        self.id = id
+        self.cityId = cityId
         self.name = name
-        self.code = code
+        self.address = address
+        self.type = type
+        self.lat = lat
+        self.lon = lon
+        self.geohash = geohash
     }
     
-    var value: String {
-        get {
-            return name
-        }
+    enum CodingKeys: String, CodingKey {
+        case id
+        case cityId = "city_id"
+        case name
+        case address
+        case type
+        case lat
+        case lon
+        case geohash
     }
-    
-    var geohash: String {
-        return code
-    }
+}
+
+extension Location: SearchItemProtocol {
+    var value: String { return name }
 }
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension Location {
-    static let leavingFrom = Location(name: "Quebec", code: "f2m673")
-    static let goingTo = Location(name: "Montreal", code: "f25dvk")
+    static let leavingFrom = Location(name: "Quebec", geohash: "f2m673")
+    static let goingTo = Location(name: "Montreal", geohash: "f25dvk")
 }

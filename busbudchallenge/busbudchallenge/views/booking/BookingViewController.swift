@@ -51,9 +51,25 @@ class BookingViewController: UIViewController {
 }
 
 extension BookingViewController: BookingViewDelegate {
-    func onSearchButtonTapped(_ searchItems: [SearchSection]) {
+    func onSearchButtonTapped(_ sections: Sections) {
         navigationController?.hero.isEnabled = true
-        navigationController?.pushViewController(ResultsViewController(with: ResultsViewModel()), animated: true)
+        
+        let searchRequest = APIRequest()
+        searchRequest.endpoint = Endpoint.search(from: sections.departureInfo.first!.geohash!,
+                                                 to: sections.departureInfo.last!.geohash!,
+                                                 date: sections.departureDates.first!.isoFormatted ,
+                                                 poll: false)
+
+        searchRequest.parameters = sections.passengersInfo.reduce([String:Int]()) { (dict, value) -> [String: Int] in
+            var params = dict
+            params[value.type.rawValue] = value.count
+            return params
+        }
+        searchRequest.parameters?["lang"] = Locale.current.languageCode
+        searchRequest.parameters?["currency"] = Locale.current.currencyCode ?? "USD"
+        
+        let resultViewModel = ResultsViewModel(apiManager: APIManager(), resultRequest: searchRequest)
+        navigationController?.pushViewController(ResultsViewController(with: resultViewModel), animated: true)
     }
 }
 

@@ -8,14 +8,14 @@
 import Foundation
 
 enum PassengerType: String {
-    case adults
+    case adult
     case children
-    case seniors
+    case senior
 }
 
 struct Passenger: SearchItemProtocol {
-    private var type: PassengerType
-    private var count: Int
+    var type: PassengerType
+    var count: Int
     
     init(type: PassengerType, count: Int) {
         self.type = type
@@ -38,5 +38,5 @@ struct Passenger: SearchItemProtocol {
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension Passenger {
-    static var passengers = Passenger(type: .adults, count: 1)
+    static var passengers = Passenger(type: .adult, count: 1)
 }

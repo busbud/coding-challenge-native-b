@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BookingViewDelegate {
-    func onSearchButtonTapped(_ searchItems: [SearchSection])
+    func onSearchButtonTapped(_ sections: Sections)
 }
 
 class BookingView: UIView {
@@ -39,7 +39,7 @@ class BookingView: UIView {
     }()
     
     var delegate: BookingViewDelegate?
-    var searchItems = SearchSection.sections
+    var searchItems = Sections.items
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,17 +54,17 @@ class BookingView: UIView {
 
 extension BookingView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return searchItems.count
+        return searchItems.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchItems[section].value.count
+        return searchItems.numberOfRows(for: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: BookingItemViewCell.self, forIndexPath: indexPath)
-        cell.titleLabel.text = searchItems[indexPath.section].value[indexPath.row].name
-        cell.descriptionLabel.text = searchItems[indexPath.section].value[indexPath.row].value?.value
+        cell.titleLabel.text = searchItems.getTitle(for: indexPath.row, in: indexPath.section)
+        cell.descriptionLabel.text = searchItems.getDescription(for: indexPath.row, in: indexPath.section)
         return cell
     }
     

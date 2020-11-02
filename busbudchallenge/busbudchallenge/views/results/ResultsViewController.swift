@@ -7,10 +7,17 @@
 
 import UIKit
 import Lottie
+import Combine
 
 class ResultsViewController: UIViewController {
     
     private var viewModel: ResultsViewModel
+    private var searchResult: Response? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    private var subscriber: AnyCancellable?
     
     private lazy var tableView: UITableView = {
         let tv = UITableView()
@@ -35,18 +42,25 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        setupContent()
+        observeViewModel()
+        
+        viewModel.fetchResults()
     }
 
 }
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return -1
+        return searchResult?.departures?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeue(cellClass: ResultsItemViewCell.self, forIndexPath: indexPath)
+        cell.departureTime.text = searchResult?.departureTime(forItemAt: indexPath.row)
+        cell.arrivalTime.text = searchResult?.arrivalTime(forItemAt: indexPath.row)
+        cell.locationName.text = searchResult?.locationName(forItemAt: indexPath.row)
+        cell.price.text = searchResult?.ticketPrice(forItemAt: indexPath.row)
+        return cell
     }
 }
 
@@ -60,9 +74,18 @@ private extension ResultsViewController {
     
     func setupConstraints() {
         loadingView.snp.makeConstraints { $0.margins.equalToSuperview() }
+        tableView.snp.makeConstraints{ $0.margins.equalToSuperview() }
     }
     
-    func setupContent() {
-        
+    func observeViewModel() {
+        subscriber = viewModel.responseSubject.sink { (resultCompletion) in
+            switch resultCompletion {
+            case .failure(let error):
+                print(error)
+            default: break
+            }
+        } receiveValue: { (response) in
+            self.searchResult = response
+        }
     }
 }

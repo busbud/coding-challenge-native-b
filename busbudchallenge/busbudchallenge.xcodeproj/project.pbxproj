@@ -22,6 +22,12 @@
 		408FC2F0254F84C000BBB591 /* bouncingdot.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2EF254F84C000BBB591 /* bouncingdot.json */; };
 		408FC305254F8DF800BBB591 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC304254F8DF800BBB591 /* loading.json */; };
 		408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC30D254F916300BBB591 /* ResultsLoadingView.swift */; };
+		408FC313254F9F3D00BBB591 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC312254F9F3D00BBB591 /* Response.swift */; };
+		408FC318254F9F6E00BBB591 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC317254F9F6E00BBB591 /* Operator.swift */; };
+		408FC31D254F9F8500BBB591 /* XDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC31C254F9F8500BBB591 /* XDeparture.swift */; };
+		408FC322254F9FB000BBB591 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC321254F9FB000BBB591 /* City.swift */; };
+		408FC333254FC0E800BBB591 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC332254FC0E800BBB591 /* APIRequest.swift */; };
+		408FC33B254FC8DF00BBB591 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC33A254FC8DF00BBB591 /* Sections.swift */; };
 		40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFABC254E5B6E00E7713C /* UIColor.swift */; };
 		40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAC7254E650D00E7713C /* UIImage.swift */; };
 		40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAF9254E6D0100E7713C /* UIFont.swift */; };
@@ -40,9 +46,9 @@
 		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
 		40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD953E254DAB2400064B97 /* Launch.storyboard */; };
-		40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD956B254DC4D500064B97 /* ApiManager.swift */; };
-		40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9573254DC4EF00064B97 /* ApiErrors.swift */; };
-		40DD957C254DC50D00064B97 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD957B254DC50D00064B97 /* ApiEndpoints.swift */; };
+		40DD956C254DC4D500064B97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD956B254DC4D500064B97 /* APIManager.swift */; };
+		40DD9574254DC4EF00064B97 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9573254DC4EF00064B97 /* APIErrors.swift */; };
+		40DD957C254DC50D00064B97 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD957B254DC50D00064B97 /* APIEndpoints.swift */; };
 		40DD9584254DC61600064B97 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9583254DC61600064B97 /* Helper.swift */; };
 		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +87,12 @@
 		408FC2EF254F84C000BBB591 /* bouncingdot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bouncingdot.json; sourceTree = "<group>"; };
 		408FC304254F8DF800BBB591 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		408FC30D254F916300BBB591 /* ResultsLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsLoadingView.swift; sourceTree = "<group>"; };
+		408FC312254F9F3D00BBB591 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		408FC317254F9F6E00BBB591 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		408FC31C254F9F8500BBB591 /* XDeparture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDeparture.swift; sourceTree = "<group>"; };
+		408FC321254F9FB000BBB591 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		408FC332254FC0E800BBB591 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		408FC33A254FC8DF00BBB591 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		40CFFABC254E5B6E00E7713C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		40CFFAC7254E650D00E7713C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		40CFFAF9254E6D0100E7713C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -105,9 +117,9 @@
 		40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeUITests.swift; sourceTree = "<group>"; };
 		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD953E254DAB2400064B97 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		40DD956B254DC4D500064B97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		40DD9573254DC4EF00064B97 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
-		40DD957B254DC50D00064B97 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
+		40DD956B254DC4D500064B97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		40DD9573254DC4EF00064B97 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		40DD957B254DC50D00064B97 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		40DD9583254DC61600064B97 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busbudchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E769377D5CFD8141E0D61D42 /* Pods-busbudchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.release.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +210,11 @@
 				408FC2B5254F72F500BBB591 /* Location.swift */,
 				408FC2C2254F74CA00BBB591 /* DepartureDate.swift */,
 				408FC2C7254F75DB00BBB591 /* Passenger.swift */,
+				408FC312254F9F3D00BBB591 /* Response.swift */,
+				408FC317254F9F6E00BBB591 /* Operator.swift */,
+				408FC31C254F9F8500BBB591 /* XDeparture.swift */,
+				408FC321254F9FB000BBB591 /* City.swift */,
+				408FC33A254FC8DF00BBB591 /* Sections.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -281,9 +298,10 @@
 		40DD956A254DC4C300064B97 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				40DD956B254DC4D500064B97 /* ApiManager.swift */,
-				40DD9573254DC4EF00064B97 /* ApiErrors.swift */,
-				40DD957B254DC50D00064B97 /* ApiEndpoints.swift */,
+				40DD956B254DC4D500064B97 /* APIManager.swift */,
+				40DD9573254DC4EF00064B97 /* APIErrors.swift */,
+				40DD957B254DC50D00064B97 /* APIEndpoints.swift */,
+				408FC332254FC0E800BBB591 /* APIRequest.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -514,31 +532,37 @@
 				408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */,
 				40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */,
 				408FC293254F615200BBB591 /* Constants.swift in Sources */,
-				40DD9574254DC4EF00064B97 /* ApiErrors.swift in Sources */,
+				40DD9574254DC4EF00064B97 /* APIErrors.swift in Sources */,
 				40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */,
 				40DD9584254DC61600064B97 /* Helper.swift in Sources */,
-				40DD957C254DC50D00064B97 /* ApiEndpoints.swift in Sources */,
+				40DD957C254DC50D00064B97 /* APIEndpoints.swift in Sources */,
 				40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */,
 				406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */,
 				408FC28B254F3B1900BBB591 /* Date.swift in Sources */,
 				408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */,
 				40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */,
 				408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */,
-				40DD956C254DC4D500064B97 /* ApiManager.swift in Sources */,
+				40DD956C254DC4D500064B97 /* APIManager.swift in Sources */,
 				408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */,
 				40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */,
 				40CFFAFA254E6D0100E7713C /* UIFont.swift in Sources */,
 				408FC2D5254F79AA00BBB591 /* ResultsViewModel.swift in Sources */,
+				408FC31D254F9F8500BBB591 /* XDeparture.swift in Sources */,
 				40DD94EA254D9A3800064B97 /* AppDelegate.swift in Sources */,
 				408FC2B6254F72F500BBB591 /* Location.swift in Sources */,
 				40CFFABD254E5B6E00E7713C /* UIColor.swift in Sources */,
+				408FC318254F9F6E00BBB591 /* Operator.swift in Sources */,
 				40CFFB0C254EF94F00E7713C /* BookingView.swift in Sources */,
 				40CFFB04254E8E2E00E7713C /* LocalStorage.swift in Sources */,
+				408FC33B254FC8DF00BBB591 /* Sections.swift in Sources */,
+				408FC313254F9F3D00BBB591 /* Response.swift in Sources */,
+				408FC322254F9FB000BBB591 /* City.swift in Sources */,
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
 				408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */,
 				408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */,
 				408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
+				408FC333254FC0E800BBB591 /* APIRequest.swift in Sources */,
 				40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */,
 				40CFFAC8254E650D00E7713C /* UIImage.swift in Sources */,
 			);

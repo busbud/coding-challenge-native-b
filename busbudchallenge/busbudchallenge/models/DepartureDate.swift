@@ -19,11 +19,11 @@ struct DepartureDate: SearchItemProtocol {
     }
     
     var isoFormatted: String {
-        return date.toString()
+        return date.toString(with: "yyyy-MM-dd")
     }
 }
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension DepartureDate {
-    static var eventDate = DepartureDate(date: Date.from(string: "2021-07-29"))
+    static var eventDate = DepartureDate(date: Date.from(string: "2020-11-12"))
 }

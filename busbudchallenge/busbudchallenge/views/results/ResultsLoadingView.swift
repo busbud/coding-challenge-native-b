@@ -56,7 +56,7 @@ class ResultsLoadingView: UIView {
             self?.fakeBottonView.isHidden = true
             self?.bottomAnimation.play()
             self?.loadingView.play()
-            self?.labelView.fadeIn()
+            self?.labelView.fadeIn(duration: 0.2)
         }
     }
 }
