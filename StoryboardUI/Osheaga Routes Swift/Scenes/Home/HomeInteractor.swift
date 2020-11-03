@@ -19,7 +19,6 @@ final class HomeInteractor {
 extension HomeInteractor: HomeInteractorInterface {
     
     func getSearchResultsCount() -> Int {
-        print("will return: \(searchResult?.departures?.count ?? 0)")
         return searchResult?.departures?.count ?? 0
     }
     
@@ -53,8 +52,10 @@ extension HomeInteractor: HomeInteractorInterface {
                 return
             }
             
-            self.searchResult = result
-            completion(true, nil)
+            DispatchQueue.main.async {
+                self.searchResult = result
+                completion(true, nil)
+            }
         }
     }
 }
