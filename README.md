@@ -33,8 +33,9 @@ It was given a full week to develop such app. As I know I'd only have the weeken
 
 </p>
 </details>
-<details><summary>SwiftUI && Storyboard? SwiftUI || Storyboard?</summary>
+<details><summary><b>SwiftUI && Storyboard</b>? <b>SwiftUI || Storyboard?</b></summary>
 <p>
+	
 So... I decided to do differently in this step. I'm completely believe and love SwiftUI but I did not think it would be interesting to develop the whole app revolving in that because that wouldn't show how I work with code maintaining, in a certain way. By developing with classic Swift I believe I could share more of my work in details, as also to provide whoever evaluates my challenge a glimpse into how I do in a day-to-day project.
 
 That doesn't mean I wouldn't try it out a little bit! :)
@@ -48,16 +49,19 @@ In the end of the project, there were a little differences between them. I playe
 </details>
 <details><summary>Tests</summary>
 <p>
+	
 Honestly, I feel like I could have given a little bit more of attention for that, there's a few instrumental tests written and running. It is classic, the developer wishing for more time to develop more tests, and welll... that was the case as well, haha.
 </p>
 </details>
 <details><summary>App details</summary>
 <p>
-App has dark mode and support for gestures here and there, animations were work on hard to look as smooth as possible, pretty much based on [this]( https://developer.apple.com/videos/play/wwdc2018/803 ).
+	
+App has dark mode and support for gestures here and there, animations were work on hard to look as smooth as possible, pretty much based on [this](https://developer.apple.com/videos/play/wwdc2018/803).
 </p>
 </details>
 <details><summary>Self critic</summary>
 <p>
+	
 Oh, well. There's a plenty of critic to do.
 
 For starters something that is bothering me a lot in the project is that I didn't make as accessible as I could've. I really didn't have the time to validate the app for visually impaired users nor any other accessibility features that aren't hard at all to support.
@@ -72,6 +76,7 @@ I guess these are the points I do have in mind, perhaps I have forgotten one or 
 </p>
 </details>
 <details><summary>Conclusion</summary>
+	
 Pretty fun. I felt like in a Hackathon, which I haven't attended in years. It was quite a nice feeling but also memories of me going bananas trying to deliver everything with a few hours of code. Anyway, I choose a more relaxed language because I thought it would be nice to talk like I do with my colleagues. Special thanks to Kacey Musgraves and Sufjan Stevens, I couldn't have done this project without listening to theirs songs over and over again.
 
 Thanks for reading it all! =)
