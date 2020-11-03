@@ -33,13 +33,16 @@ jobs:
         uses: actions/checkout@main    
           
         # Let's install the dependecy with our favourite dependecy manager: cocoapods
-        # Building and testing the iOS, finally
-      - name: Install Dependecy, Build and Test
+      - name: Install Dependecy
         run: |
           pod repo update
           pod install
-          xcodebuild clean test -workspace Osheaga\ Routes.xcworkspace -scheme Osheaga\ Routes\ StoryboardUI -destination "platform=iOS Simulator,OS=13.6,name=${{ matrix.destination }}" -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO          
+        shell: bash
+          
+        # Building and testing the iOS, finally
+      - name: Build and test
+        run: |
+          xcodebuild -workspace Osheaga\ Routes.xcworkspace -list
+          xcodebuild clean test -workspace Osheaga\ Routes.xcworkspace -scheme "Osheaga\ Routes\ StoryboardUI" -destination "platform=iOS Simulator,OS=13.6,name=${{ matrix.destination }}" -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         env: 
          destination: ${{ matrix.destination }}
-        shell: bash
-         
