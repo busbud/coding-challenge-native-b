@@ -43,6 +43,6 @@ jobs:
       - name: Build and test
         run: |
           xcodebuild -workspace Osheaga\ Routes.xcworkspace -list
-          xcodebuild clean test -workspace Osheaga\ Routes.xcworkspace -scheme "Osheaga Routes Swift" -destination "platform=iOS Simulator,OS=13.6,name=${{ matrix.destination }}" -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean test -workspace Osheaga\ Routes.xcworkspace -scheme "Osheaga Routes Swift" -destination "platform=iOS Simulator,name=${{ matrix.destination }}" -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         env: 
          destination: ${{ matrix.destination }}
