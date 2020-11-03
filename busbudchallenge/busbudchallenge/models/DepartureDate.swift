@@ -25,5 +25,5 @@ struct DepartureDate: SearchItemProtocol {
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension DepartureDate {
-    static var eventDate = DepartureDate(date: Date.from(string: "2020-11-12"))
+    static var eventDate = DepartureDate(date: Date.from(string: "2020-10-12"))
 }

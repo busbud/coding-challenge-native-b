@@ -53,10 +53,10 @@ class ResultsLoadingView: UIView {
     override func didMoveToWindow() {
         super.didMoveToWindow()
         delay(durationInSeconds: 0.5) { [weak self] in
-            self?.fakeBottonView.isHidden = true
             self?.bottomAnimation.play()
             self?.loadingView.play()
             self?.labelView.fadeIn(duration: 0.2)
+            self?.fakeBottonView.isHidden = true
         }
     }
 }
@@ -64,7 +64,7 @@ class ResultsLoadingView: UIView {
 private extension ResultsLoadingView {
     func setupView() {
         hero.isEnabled = true
-        hero.isEnabledForSubviews = true
+        backgroundColor = .white
         addSubview(loadingView)
         addSubview(labelView)
         addSubview(bottomAnimation)

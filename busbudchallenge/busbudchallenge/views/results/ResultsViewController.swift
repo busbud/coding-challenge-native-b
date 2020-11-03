@@ -14,7 +14,7 @@ class ResultsViewController: UIViewController {
     private var viewModel: ResultsViewModel
     private var searchResult: Response? {
         didSet {
-            self.tableView.reloadData()
+            tableView.reloadData()
         }
     }
     private var subscriber: AnyCancellable?
@@ -25,6 +25,13 @@ class ResultsViewController: UIViewController {
         tv.dataSource = self
         tv.registerNibForCell(ResultsItemViewCell.self)
         return tv
+    }()
+    
+    private lazy var noResultsView: ResultsEmptyView = {
+        let re = ResultsEmptyView()
+        re.delegate = self
+        re.alpha = 0
+        return re
     }()
     
     private var loadingView = ResultsLoadingView()
@@ -64,17 +71,26 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ResultsViewController: ResultsEmptyViewDelegate {
+    func onTryAgainButtonPressed() {
+        viewModel.fetchResults()
+        loadingView.alpha = 1
+        noResultsView.alpha = 0
+    }
+}
+
 private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true
         view.backgroundColor = .systemGroupedBackground
-        view.addSubview(loadingView)
         view.addSubview(tableView)
-        tableView.isHidden = true
+        view.addSubview(loadingView)
+        view.addSubview(noResultsView)
     }
     
     func setupConstraints() {
         loadingView.snp.makeConstraints { $0.margins.equalToSuperview() }
+        noResultsView.snp.makeConstraints { $0.margins.equalToSuperview() }
         tableView.snp.makeConstraints{ make in
             make.top.equalToSuperview().inset(10)
             make.leading.bottom.trailing.equalToSuperview()
@@ -89,11 +105,24 @@ private extension ResultsViewController {
             default: break
             }
         } receiveValue: { (response) in
-            DispatchQueue.main.async {
-                self.loadingView.isHidden = true
-                self.tableView.isHidden = false
-                self.searchResult = response
-            }
+            self.searchResult = response
+            self.animateViews()
+        }
+    }
+    
+    func animateViews() {
+        UIView.animate(withDuration: 0.5, delay: 2) { [weak self] in
+            self?.loadingView.alpha = 0
+        } completion: { [weak self] _ in
+            let needsReload = (self?.searchResult?.departures?.count ?? 0) > 0
+           
+            if needsReload {
+                self?.tableView.reloadData()
+                self?.tableView.isHidden = false
+            } else {
+                self?.tableView.isHidden = true
+                UIView.animate(withDuration: 0.2) { self?.noResultsView.alpha = 1 }
+            }            
         }
     }
 }

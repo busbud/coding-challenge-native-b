@@ -70,6 +70,7 @@ extension BookingViewController: BookingViewDelegate {
         
         let resultViewModel = ResultsViewModel(apiManager: APIManager(), resultRequest: searchRequest)
         navigationController?.pushViewController(ResultsViewController(with: resultViewModel), animated: true)
+        
     }
 }
 
