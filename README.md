@@ -1,5 +1,6 @@
 # Busbud Challenge: _*Osheaga Routes*_
 
+![CI](https://github.com/samsegfault/coding-challenge-native-b/workflows/CI/badge.svg)
 
 ##### Hi, there! This repository hosts the challenge for the Busbud Challenge for iOS Development. 
 ###### _If you happen to cross in here and you're interested in some part of the code or simply curious, let me know and let's chat, I'd love to help you out if that's the case._
@@ -74,6 +75,12 @@ Perhaps I could've used an vibration feedback throughout the user journey, that 
 
 I guess these are the points I do have in mind, perhaps I have forgotten one or two. 
 </p>
+</details>
+<details><summary>Github Actions CI/CD</summary>
+	
+I took the oportunity to implement a basic CI with Github Actions for the project. It basically runs the set of written tests every push or pull request.
+
+<p>
 </details>
 <details><summary>Conclusion</summary>
 	
