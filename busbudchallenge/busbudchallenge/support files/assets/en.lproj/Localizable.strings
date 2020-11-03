@@ -26,3 +26,8 @@
 "children" = "Children";
 "senior" = "Seniors";
 "search" = "Search";
+"searchingBuses" = "Searching for busses...";
+"resultsTitle" = "Results";
+"returnDate" = "Return Date";
+"noDeparturesFound" = "No Departures at This Time";
+"tryAgain" = "Try Again";

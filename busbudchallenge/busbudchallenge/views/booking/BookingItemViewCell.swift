@@ -25,7 +25,7 @@ class BookingItemViewCell: UITableViewCell {
     var iconImage: UIImageView = {
         let iv = UIImageView()
         let ic = UIImage.SymbolConfiguration(pointSize: 13, weight: .medium)
-        iv.image = UIImage(systemName: "chevron.right", withConfiguration: ic)
+        iv.image = UIImage(systemName: K.Identifiers.icRight, withConfiguration: ic)
         iv.tintColor = .lightGray
         iv.contentMode = .scaleAspectFit
         return iv

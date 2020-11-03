@@ -7,11 +7,18 @@
 
 import Foundation
 
+enum DateType {
+    case departure
+    case `return`
+}
+
 struct DepartureDate {
     private var date: Date
+    private var type: DateType
     
-    init(date: Date) {
+    init(date: Date, type: DateType = .departure) {
         self.date = date
+        self.type = type
     }
     
     var usFormatted: String {
@@ -21,9 +28,4 @@ struct DepartureDate {
     var isoFormatted: String {
         return date.toString(with: .iso8061Date)
     }
-}
-
-// Dummie objects, locations should be pulled from API, this is only for testing proposes
-extension DepartureDate {
-    static var eventDate = DepartureDate(date: Date.from(string: "2020-11-12"))
 }

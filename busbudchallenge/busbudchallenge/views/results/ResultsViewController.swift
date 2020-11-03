@@ -102,7 +102,7 @@ extension ResultsViewController: ResultsEmptyViewDelegate {
 private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true
-        navigationItem.title = "Results"
+        navigationItem.title = K.Strings.resultsTitle
         view.backgroundColor = .systemGroupedBackground
         view.addSubview(tableView)
         view.addSubview(loadingView)

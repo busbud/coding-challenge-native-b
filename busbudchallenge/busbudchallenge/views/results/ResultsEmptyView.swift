@@ -15,14 +15,14 @@ protocol ResultsEmptyViewDelegate {
 class ResultsEmptyView: UIView {
     
     private var notFoundAnimation: AnimationView = {
-        let av = AnimationView(name: "not-found")
+        let av = AnimationView(name: K.Identifiers.notFoundAnimation)
         av.loopMode = .loop
         return av
     }()
     
     private var notFoundLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "No Departures at This Time"
+        lbl.text = K.Strings.noDeparturesFound
         lbl.font = UIFont.helveticaBold(ofSize: 26)
         lbl.textColor = .systemGray
         lbl.textAlignment = .center
@@ -36,7 +36,7 @@ class ResultsEmptyView: UIView {
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
         btn.backgroundColor = .corporateYellow
-        btn.setTitle("Try Again", for: .normal)
+        btn.setTitle(K.Strings.tryAgain, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         btn.isUserInteractionEnabled = true

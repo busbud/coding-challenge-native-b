@@ -13,6 +13,12 @@ struct K {
         static var imOnboarding1 = "imOnboarding1"
         static var imOnboarding2 = "imOnboarding2"
         static var imOnboarding3 = "imOnboarding3"
+        static var language = "lang"
+        static var currency = "currency"
+        static var bouncingDot = "bouncingdot"
+        static var icRight = "chevron.right"
+        static var loadingAnimation = "loading"
+        static var notFoundAnimation = "not-found"
     }
     
     struct Strings {
@@ -29,10 +35,15 @@ struct K {
         static var leavingFrom = "leavingFrom".localized
         static var goingTo = "goingTo".localized
         static var outboundDate = "outboundDate".localized
+        static var returnDate = "returnDate".localized
         static var passengerCount = "passengerCount".localized
         static var dates = "dates".localized
         static var passengers = "passengers".localized
         static var search = "search".localized
+        static var resultsTitle = "resultsTitle".localized
+        static var searchingBuses = "searchingBuses".localized
+        static var noDeparturesFound = "noDeparturesFound".localized
+        static var tryAgain = "tryAgain".localized
     }
 }
 

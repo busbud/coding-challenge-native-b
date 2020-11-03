@@ -48,8 +48,8 @@ private extension RootViewController {
             present(controller, animated: true)
         } else {
             let controller = UINavigationController()
-            controller.viewControllers = [BookingViewController()]
             controller.hero.isEnabled = true
+            controller.viewControllers = [BookingViewController()]
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true)
         }
@@ -64,7 +64,7 @@ private extension RootViewController {
     func setupConstraints() {
         imageView.snp.makeConstraints {
             $0.width.equalTo(215)
-            $0.height.lessThanOrEqualTo(65)
+            $0.height.lessThanOrEqualTo(63)
             $0.center.equalTo(view.snp.center)
         }
         loadinView.snp.makeConstraints {

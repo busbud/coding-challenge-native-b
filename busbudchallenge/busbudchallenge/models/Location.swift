@@ -27,20 +27,8 @@ struct Location: Codable {
         case lon
         case geohash
     }
-}
-
-// Dummie objects, locations should be pulled from API, this is only for testing proposes
-extension Location {
-    static var leavingFrom: Location {
-        var loc = Location()
-        loc.name = "Quebec"
-        loc.geohash = "f2m673"
-        return loc
-    }
-    static var goingTo: Location {
-        var loc = Location()
-        loc.name = "Montreal"
-        loc.geohash = "f25dvk"
-        return loc
+    
+    var displayName: String {
+        return name ?? ""
     }
 }

@@ -97,9 +97,11 @@ extension OnboardingViewController: UIScrollViewDelegate {
 
 extension OnboardingViewController: OnboardingViewPageDelegate {
     func onStartButtonTapped() {
-        LocalStorage.shared.save(false, for: .firstRun)
-        let bookingViewController = BookingViewController()
-        bookingViewController.modalPresentationStyle = .overFullScreen
-        present(bookingViewController, animated: true)
+        //LocalStorage.shared.save(false, for: .firstRun)
+        let controller = UINavigationController()
+        controller.hero.isEnabled = true
+        controller.viewControllers = [BookingViewController()]
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
 }

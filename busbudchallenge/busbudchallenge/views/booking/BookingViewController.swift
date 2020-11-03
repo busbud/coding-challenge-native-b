@@ -46,7 +46,6 @@ class BookingViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        setupContent()
     }
 }
 
@@ -60,13 +59,13 @@ extension BookingViewController: BookingViewDelegate {
                                                  date: sections.departureDates.first!.isoFormatted ,
                                                  poll: false)
 
-        searchRequest.parameters = sections.passengersInfo.reduce([String:Int]()) { (dict, value) -> [String: Int] in
+        searchRequest.parameters = sections.passengers.reduce([String:Int]()) { (dict, value) -> [String: Int] in
             var params = dict
             params[value.type.rawValue] = value.count
             return params
         }
-        searchRequest.parameters?["lang"] = Locale.current.languageCode
-        searchRequest.parameters?["currency"] = Locale.current.currencyCode ?? "USD"
+        searchRequest.parameters?[K.Identifiers.language] = Locale.current.languageCode
+        searchRequest.parameters?[K.Identifiers.currency] = Locale.current.currencyCode ?? "USD"
         
         let resultViewModel = ResultsViewModel(apiManager: APIManager(), resultRequest: searchRequest)
         navigationController?.pushViewController(ResultsViewController(with: resultViewModel), animated: true)
@@ -107,9 +106,5 @@ private extension BookingViewController {
             $0.top.equalTo(subtitleLabel.snp.bottom)
             $0.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
-    }
-    
-    func setupContent() {
-        
     }
 }

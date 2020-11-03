@@ -35,8 +35,3 @@ struct Passenger {
         count -= 1
     }
 }
-
-// Dummie objects, locations should be pulled from API, this is only for testing proposes
-extension Passenger {
-    static var passengers = Passenger(type: .adult, count: 1)
-}

@@ -34,6 +34,7 @@ struct XDeparture: Codable {
         case arrivalDateTime = "arrival_time"
     }
     
+    // info needed to construct the result item
     var operators: [Operator]?
     var cities: [City]?
     var locations: [Location]?
@@ -42,6 +43,7 @@ struct XDeparture: Codable {
 extension XDeparture: ResultViewItem {
     var operatorLogo: String {
         operatorInfo.logo?
+            // replace ilegal URL characters for its hex representation
             .replacingOccurrences(of: "{", with: "%7B")
             .replacingOccurrences(of: "}", with: "&7D") ?? ""
     }
@@ -71,6 +73,7 @@ extension XDeparture: ResultViewItem {
     }
     
     var ticketPrice: String {
+        // prices comes in 100 base, so divide them before to return
         return ((prices?.total ?? 0)/100).description
     }
     
@@ -98,9 +101,3 @@ private extension XDeparture {
     
 }
 
-struct Price: Codable {
-    var total: Int?
-    var breakdown: [String: Int]?
-    var discounted: Bool?
-    var currency: String?
-}

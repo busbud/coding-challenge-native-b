@@ -10,12 +10,12 @@ import Foundation
 struct Sections {
     var departureInfo: [Location]
     var departureDates: [DepartureDate]
-    var passengersInfo: [Passenger]
+    var passengers: [Passenger]
 
     var numberOfSections = 3
     
     func numberOfRows() -> Int {
-        return departureInfo.count + departureDates.count + passengersInfo.count
+        return departureInfo.count + departureDates.count + passengers.count
     }
     
     func numberOfRows(for section: Int) -> Int {
@@ -25,7 +25,7 @@ struct Sections {
         case 1:
             return departureDates.count
         case 2:
-            return passengersInfo.count
+            return passengers.count
         default:
             return 0
         }
@@ -36,7 +36,7 @@ struct Sections {
         case 0:
             return row == 0 ? K.Strings.leavingFrom : K.Strings.goingTo
         case 1:
-            return row == 0 ? K.Strings.outboundDate : "return"
+            return row == 0 ? K.Strings.outboundDate : K.Strings.returnDate
         case 2:
             return K.Strings.passengers
         default:
@@ -47,22 +47,13 @@ struct Sections {
     func getDescription(for row: Int, in section: Int) -> String {
         switch section {
         case 0:
-            return departureInfo[row].name ?? ""
+            return departureInfo[row].displayName
         case 1:
             return departureDates[row].usFormatted
         case 2:
-            return passengersInfo[row].info
+            return passengers[row].info
         default:
             return ""
         }
-    }
-}
-
-extension Sections {
-    static var items: Sections {
-        return Sections(departureInfo: [Location.leavingFrom,
-                                        Location.goingTo],
-                        departureDates: [DepartureDate.eventDate],
-                        passengersInfo: [Passenger.passengers])
     }
 }

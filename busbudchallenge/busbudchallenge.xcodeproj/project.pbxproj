@@ -10,6 +10,9 @@
 		40016F162551408200FDCB9F /* ResultsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40016F152551408200FDCB9F /* ResultsEmptyView.swift */; };
 		40016F1B2551413400FDCB9F /* not-found.json in Resources */ = {isa = PBXBuildFile; fileRef = 40016F1A2551413400FDCB9F /* not-found.json */; };
 		406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */; };
+		4071AADE25519C6700796B64 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071AADD25519C6700796B64 /* Price.swift */; };
+		4071AAE325519CC200796B64 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071AAE225519CC200796B64 /* Region.swift */; };
+		4071AAE825519CCA00796B64 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071AAE725519CCA00796B64 /* Country.swift */; };
 		408FC28B254F3B1900BBB591 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC28A254F3B1900BBB591 /* Date.swift */; };
 		408FC293254F615200BBB591 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC292254F615200BBB591 /* Constants.swift */; };
 		408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2A1254F64CB00BBB591 /* Localizable.strings */; };
@@ -47,7 +50,6 @@
 		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
 		40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD953E254DAB2400064B97 /* Launch.storyboard */; };
 		40DD956C254DC4D500064B97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD956B254DC4D500064B97 /* APIManager.swift */; };
-		40DD9574254DC4EF00064B97 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9573254DC4EF00064B97 /* APIErrors.swift */; };
 		40DD957C254DC50D00064B97 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD957B254DC50D00064B97 /* APIEndpoints.swift */; };
 		40DD9584254DC61600064B97 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9583254DC61600064B97 /* Helper.swift */; };
 		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
@@ -75,6 +77,9 @@
 		40016F152551408200FDCB9F /* ResultsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsEmptyView.swift; sourceTree = "<group>"; };
 		40016F1A2551413400FDCB9F /* not-found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "not-found.json"; sourceTree = "<group>"; };
 		406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
+		4071AADD25519C6700796B64 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		4071AAE225519CC200796B64 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		4071AAE725519CCA00796B64 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		408FC28A254F3B1900BBB591 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		408FC292254F615200BBB591 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		408FC2A0254F64CB00BBB591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD953E254DAB2400064B97 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		40DD956B254DC4D500064B97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		40DD9573254DC4EF00064B97 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		40DD957B254DC50D00064B97 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		40DD9583254DC61600064B97 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busbudchallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +226,10 @@
 				408FC2C7254F75DB00BBB591 /* Passenger.swift */,
 				408FC317254F9F6E00BBB591 /* Operator.swift */,
 				408FC31C254F9F8500BBB591 /* XDeparture.swift */,
+				4071AADD25519C6700796B64 /* Price.swift */,
 				408FC321254F9FB000BBB591 /* City.swift */,
+				4071AAE225519CC200796B64 /* Region.swift */,
+				4071AAE725519CCA00796B64 /* Country.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -307,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				40DD956B254DC4D500064B97 /* APIManager.swift */,
-				40DD9573254DC4EF00064B97 /* APIErrors.swift */,
 				40DD957B254DC50D00064B97 /* APIEndpoints.swift */,
 				408FC332254FC0E800BBB591 /* APIRequest.swift */,
 			);
@@ -539,14 +545,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */,
+				4071AAE825519CCA00796B64 /* Country.swift in Sources */,
 				40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */,
 				408FC293254F615200BBB591 /* Constants.swift in Sources */,
-				40DD9574254DC4EF00064B97 /* APIErrors.swift in Sources */,
 				40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */,
 				40DD9584254DC61600064B97 /* Helper.swift in Sources */,
 				40DD957C254DC50D00064B97 /* APIEndpoints.swift in Sources */,
 				40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */,
 				406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */,
+				4071AADE25519C6700796B64 /* Price.swift in Sources */,
 				408FC28B254F3B1900BBB591 /* Date.swift in Sources */,
 				408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */,
 				40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */,
@@ -565,6 +572,7 @@
 				40CFFB04254E8E2E00E7713C /* LocalStorage.swift in Sources */,
 				408FC33B254FC8DF00BBB591 /* Sections.swift in Sources */,
 				408FC313254F9F3D00BBB591 /* Response.swift in Sources */,
+				4071AAE325519CC200796B64 /* Region.swift in Sources */,
 				408FC322254F9FB000BBB591 /* City.swift in Sources */,
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
 				408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */,

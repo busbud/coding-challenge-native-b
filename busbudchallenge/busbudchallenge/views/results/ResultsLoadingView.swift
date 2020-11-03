@@ -11,14 +11,14 @@ import Lottie
 class ResultsLoadingView: UIView {
 
     private var loadingView: AnimationView = {
-        let av = AnimationView(name: "loading")
+        let av = AnimationView(name: K.Identifiers.loadingAnimation)
         av.loopMode = .loop
         return av
     }()
     
     private var labelView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Searching for busses..."
+        lbl.text = K.Strings.searchingBuses
         lbl.font = UIFont.helveticaBold(ofSize: 26)
         lbl.textColor = .systemGray
         lbl.textAlignment = .center
@@ -27,14 +27,14 @@ class ResultsLoadingView: UIView {
     }()
     
     private var bottomAnimation: AnimationView = {
-        let av = AnimationView(name: "bouncingdot")
+        let av = AnimationView(name: K.Identifiers.bouncingDot)
         av.loopMode = .loop
         return av
     }()
     
     private var fakeBottonView: UIView = {
         let v = UIView()
-        v.hero.id = "bouncingdot"
+        v.hero.id = K.Identifiers.bouncingDot
         v.backgroundColor = .corporateYellow
         v.layer.cornerRadius = 30
         return v

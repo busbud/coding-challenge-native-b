@@ -24,6 +24,7 @@ class BookingView: UIView {
     
     private lazy var searchButton: UIButton = {
         let btn = UIButton()
+        btn.hero.id = K.Identifiers.bouncingDot
         btn.backgroundColor = .systemGreen
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
@@ -33,8 +34,6 @@ class BookingView: UIView {
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         btn.isUserInteractionEnabled = true
         btn.addTarget(self, action: #selector(onSearchButtonPressed), for: .touchUpInside)
-        
-        btn.hero.id = "bouncingdot"
         return btn
     }()
     
