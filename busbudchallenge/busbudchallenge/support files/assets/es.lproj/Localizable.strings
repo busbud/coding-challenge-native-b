@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  busbudchallenge
+
+  Created by Felipe Rolvar on 1/11/20.
+  
+*/
+"titleOnboarding1" = "Osheaga Festival";
+"subtitleOnboarding1" = "Ven a vivir por ti mismo, la increible experiencia de Osheaga Festival";
+"titleOnboarding2" = "Descubre";
+"subtitleOnboarding2" = "Descubre a tu nuevo artista favorito y apoya al talento nacional";
+"titleOnboarding3" = "¡Siente la Música!";
+"subtitleOnboarding3" = "Siente cçomo la música toma control de tu cuerpo, esto y mucho mas en Osheaga Festival";
+"letsGo" = "¡Comencemos!";
+"searchTitle" = "¡Este verano hará calor en Montreal con el festival Osheaga! Suponiendo que no estemos atrapados con otra ola de COVID-19, también será un festival de Rock.";
+"searchSubtitle" = "Reservemos un viaje!";
+"searchDepartures" = "Buscar Buses";
+"departure" = "Salida";
+"leavingFrom" = "Saliendo de";
+"goingTo" = "Llegando a";
+"outboundDate" = "Fecha de salida";
+"passengerCount" = "Número de pasajeros";
+"dates" = "Fechas";
+"passengers" = "Pasajeros";
+"adult" = "Adultos";
+"children" = "Niños";
+"senior" = "Personas Mayores";
+"search" = "Buscar";
+"searchingBuses" = "Buscando buses...";
+"resultsTitle" = "Resultados";
+"returnDate" = "Fecha de retorno";
+"noDeparturesFound" = "No se encontraron buses en este momento";
+"tryAgain" = "Reintentar";

@@ -80,6 +80,8 @@
 		4071AADD25519C6700796B64 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		4071AAE225519CC200796B64 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		4071AAE725519CCA00796B64 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4071AAEF2551B7C900796B64 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4071AAF02551B7D100796B64 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		408FC28A254F3B1900BBB591 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		408FC292254F615200BBB591 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		408FC2A0254F64CB00BBB591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -454,6 +456,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
 			);
 			mainGroup = 40DD94DD254D9A3800064B97;
 			productRefGroup = 40DD94E7254D9A3800064B97 /* Products */;
@@ -620,6 +624,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				408FC2A0254F64CB00BBB591 /* en */,
+				4071AAEF2551B7C900796B64 /* es */,
+				4071AAF02551B7D100796B64 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
