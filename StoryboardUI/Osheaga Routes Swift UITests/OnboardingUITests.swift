@@ -32,9 +32,10 @@ class OnboardingUITests: XCTestCase {
         element.swipeLeft()
         element.swipeLeft()
         
+        _ = app.buttons["LET'S GO"].waitForExistence(timeout: 5)
         app.buttons["LET'S GO"].tap()
         
-        XCTAssertFalse(app.buttons["LET'S GO"].exists)
+        XCTAssertFalse(app.buttons["LET'S GO"].waitForExistence(timeout: 5))
         
     }
     
@@ -43,11 +44,14 @@ class OnboardingUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        _ = app.buttons["ic next arrow"].waitForExistence(timeout: 5)
         app.buttons["ic next arrow"].tap()
         app.buttons["ic next arrow"].tap()
+        
+        _ = app.buttons["LET'S GO"].waitForExistence(timeout: 5)
         app.buttons["LET'S GO"].tap()
         
-        XCTAssertFalse(app.buttons["LET'S GO"].exists)
+        XCTAssertFalse(app.buttons["LET'S GO"].waitForExistence(timeout: 5))
         
     }
     
@@ -65,12 +69,14 @@ class OnboardingUITests: XCTestCase {
         element.swipeRight()
         element.swipeRight()
         
+        _ = app.buttons["ic next arrow"].waitForExistence(timeout: 5)
         app.buttons["ic next arrow"].tap()
         app.buttons["ic next arrow"].tap()
         
+        _ = app.buttons["LET'S GO"].waitForExistence(timeout: 5)
         app.buttons["LET'S GO"].tap()
         
-        XCTAssertFalse(app.buttons["LET'S GO"].exists)
+        XCTAssertFalse(app.buttons["LET'S GO"].waitForExistence(timeout: 5))
         
     }
     
@@ -96,12 +102,15 @@ class OnboardingUITests: XCTestCase {
         element.swipeLeft()
         element.swipeRight()
         
+        _ = app.buttons["ic next arrow"].waitForExistence(timeout: 5)
+        
         app.buttons["ic next arrow"].tap()
         app.buttons["ic next arrow"].tap()
         
+        _ = app.buttons["LET'S GO"].waitForExistence(timeout: 5)
         app.buttons["LET'S GO"].tap()
         
-        XCTAssertFalse(app.buttons["LET'S GO"].exists)
+        XCTAssertFalse(app.buttons["LET'S GO"].waitForExistence(timeout: 5))
         
     }
     
@@ -113,7 +122,7 @@ class OnboardingUITests: XCTestCase {
         let element = app.collectionViews.cells.children(matching: .other).element
         element.swipeDown()
         
-        XCTAssertFalse(app.buttons["ic next arrow"].exists)
+        XCTAssertFalse(app.buttons["ic next arrow"].waitForExistence(timeout: 5))
     }
     
     
