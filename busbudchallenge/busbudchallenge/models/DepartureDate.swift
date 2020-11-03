@@ -15,15 +15,15 @@ struct DepartureDate {
     }
     
     var usFormatted: String {
-        return date.toString(with: "MMMM dd',' YYYY")
+        return date.toString(with: .usStyle)
     }
     
     var isoFormatted: String {
-        return date.toString(with: "yyyy-MM-dd")
+        return date.toString(with: .iso8061Date)
     }
 }
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension DepartureDate {
-    static var eventDate = DepartureDate(date: Date.from(string: "2020-10-12"))
+    static var eventDate = DepartureDate(date: Date.from(string: "2020-11-12"))
 }

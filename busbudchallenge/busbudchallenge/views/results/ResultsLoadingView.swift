@@ -90,6 +90,5 @@ private extension ResultsLoadingView {
             $0.bottom.equalTo(safeAreaLayoutGuide)
             $0.centerX.equalTo(snp.centerX)
         }
-        
     }
 }

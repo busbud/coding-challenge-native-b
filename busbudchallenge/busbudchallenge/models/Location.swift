@@ -8,32 +8,14 @@
 import Foundation
 
 struct Location: Codable {
-    var id: Int
-    var cityId: String
-    var name: String
-    var address: [String]
-    var type: String
+    var id: Int?
+    var cityId: String?
+    var name: String?
+    var address: [String]?
+    var type: String?
     var lat: Double?
     var lon: Double?
     var geohash: String?
-    
-    init(id: Int = 0,
-         cityId: String = "",
-         name: String = "",
-         address: [String] = [],
-         type: String = "",
-         lat: Double = 0,
-         lon: Double = 0,
-         geohash: String) {
-        self.id = id
-        self.cityId = cityId
-        self.name = name
-        self.address = address
-        self.type = type
-        self.lat = lat
-        self.lon = lon
-        self.geohash = geohash
-    }
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -49,6 +31,16 @@ struct Location: Codable {
 
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension Location {
-    static let leavingFrom = Location(name: "Quebec", geohash: "f2m673")
-    static let goingTo = Location(name: "Montreal", geohash: "f25dvk")
+    static var leavingFrom: Location {
+        var loc = Location()
+        loc.name = "Quebec"
+        loc.geohash = "f2m673"
+        return loc
+    }
+    static var goingTo: Location {
+        var loc = Location()
+        loc.name = "Montreal"
+        loc.geohash = "f25dvk"
+        return loc
+    }
 }

@@ -25,6 +25,7 @@ class ResultsViewController: UIViewController {
         tv.dataSource = self
         tv.isHidden = true
         tv.registerNibForCell(ResultsItemViewCell.self)
+        tv.tableFooterView = UIView()
         return tv
     }()
     
@@ -70,7 +71,11 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ResultsItemViewCell.self, forIndexPath: indexPath)
-        
+        var departure = searchResult?.departures?[indexPath.row] ?? XDeparture()
+        departure.operators = searchResult?.operators
+        departure.locations = searchResult?.locations
+        departure.cities = searchResult?.cities
+        cell.item = departure
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,6 +94,7 @@ extension ResultsViewController: ResultsEmptyViewDelegate {
 private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true
+        navigationItem.title = "Results"
         view.backgroundColor = .systemGroupedBackground
         view.addSubview(tableView)
         view.addSubview(loadingView)

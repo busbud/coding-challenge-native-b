@@ -47,7 +47,7 @@ struct Sections {
     func getDescription(for row: Int, in section: Int) -> String {
         switch section {
         case 0:
-            return departureInfo[row].name
+            return departureInfo[row].name ?? ""
         case 1:
             return departureDates[row].usFormatted
         case 2:
