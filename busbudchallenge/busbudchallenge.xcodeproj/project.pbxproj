@@ -215,14 +215,14 @@
 			isa = PBXGroup;
 			children = (
 				40D0A5B3254E278800245891 /* OnboardingItem.swift */,
+				408FC33A254FC8DF00BBB591 /* Sections.swift */,
+				408FC312254F9F3D00BBB591 /* Response.swift */,
 				408FC2B5254F72F500BBB591 /* Location.swift */,
 				408FC2C2254F74CA00BBB591 /* DepartureDate.swift */,
 				408FC2C7254F75DB00BBB591 /* Passenger.swift */,
-				408FC312254F9F3D00BBB591 /* Response.swift */,
 				408FC317254F9F6E00BBB591 /* Operator.swift */,
 				408FC31C254F9F8500BBB591 /* XDeparture.swift */,
 				408FC321254F9FB000BBB591 /* City.swift */,
-				408FC33A254FC8DF00BBB591 /* Sections.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";

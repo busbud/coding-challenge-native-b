@@ -10,7 +10,7 @@ import Foundation
 enum DateFormats: String {
     case iso8061 = "yyyy-MM-dd'T'HH:mm:ss"
     case iso8061Date = "yyy-MM-dd"
-    case iso8061Time = "HH:mm:ss"
+    case iso8061Time = "HH:mm a"
     case usStyle = "MMMM dd',' YYYY"
 }
 

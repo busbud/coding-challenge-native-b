@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum UserDefaultsKeys: String {
+enum UserDefaultsKeys: String {
     case firstRun
 }
 

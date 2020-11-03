@@ -9,7 +9,7 @@ import Foundation
 
 fileprivate var baseURL: String { return "https://napi.busbud.com/x-departures/%@/%@/%@%@" }
 
-public enum Endpoint {
+enum Endpoint {
     case search(from: String, to: String, date: String, poll: Bool = false)
     
     var urlString: String {

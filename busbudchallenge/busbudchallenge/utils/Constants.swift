@@ -7,15 +7,15 @@
 
 import Foundation
 
-public struct K {
-    public struct Identifiers {
+struct K {
+    struct Identifiers {
         static var imFestivalLogo = "imFestivalLogo"
         static var imOnboarding1 = "imOnboarding1"
         static var imOnboarding2 = "imOnboarding2"
         static var imOnboarding3 = "imOnboarding3"
     }
     
-    public struct Strings {
+    struct Strings {
         static var titleOnboarding1 = "titleOnboarding1".localized
         static var titleOnboarding2 = "titleOnboarding2".localized
         static var titleOnboarding3 = "titleOnboarding3".localized

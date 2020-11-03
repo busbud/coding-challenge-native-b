@@ -91,6 +91,14 @@ extension ResultsViewController: ResultsEmptyViewDelegate {
     }
 }
 
+// MISSING
+//      BUTTONS ANIMATION MAYBE CREATE A CUSTOM BUTTON?
+//      LOCALIZATION
+//      USER INTERACTION IN SEARCH PAGE!!
+//      READ ALL CODE AND REFACTOR IF NEEDED
+//      UPDATE README
+//      SUBMIT A PR
+
 private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true

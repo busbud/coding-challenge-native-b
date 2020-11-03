@@ -8,11 +8,11 @@
 import UIKit
 
 extension UICollectionView {
-    public func registerNibForCell<T: UICollectionViewCell>(_ cellClass: T.Type) {
+    func registerNibForCell<T: UICollectionViewCell>(_ cellClass: T.Type) {
         register(cellClass.self, forCellWithReuseIdentifier: String(describing: cellClass.self))
     }
     
-    public func dequeue<T: UICollectionViewCell>(cellClass: T.Type, forIndexPath indexPath: IndexPath) -> T {
+    func dequeue<T: UICollectionViewCell>(cellClass: T.Type, forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withReuseIdentifier: String(describing: cellClass.self), for: indexPath) as? T else {
             fatalError("Error: cell with id: \(String(describing: cellClass)) for indexPath: \(indexPath) is not \(T.self)")
         }
@@ -21,11 +21,11 @@ extension UICollectionView {
 }
 
 extension UITableView {
-    public func registerNibForCell<T: UITableViewCell>(_ cellClass: T.Type) {
+    func registerNibForCell<T: UITableViewCell>(_ cellClass: T.Type) {
         register(cellClass.self, forCellReuseIdentifier: String(describing: cellClass.self))
     }
     
-    public func dequeue<T: UITableViewCell>(cellClass: T.Type, forIndexPath indexPath: IndexPath) -> T {
+    func dequeue<T: UITableViewCell>(cellClass: T.Type, forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: String(describing: cellClass.self), for: indexPath) as? T else {
             fatalError("Error: cell with id: \(String(describing: cellClass)) for indexPath: \(indexPath) is not \(T.self)")
         }
