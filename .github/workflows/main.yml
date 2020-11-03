@@ -2,7 +2,12 @@
 
 name: CI
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
   test:
     name: Test
@@ -30,7 +35,6 @@ jobs:
         # Let's install the dependecy with our favourite dependecy manager: cocoapods
       - name: Install Dependecy
         run: |
-          cd coding-challenge-native-b
           pod repo update
           pod install
         shell: bash
@@ -38,7 +42,6 @@ jobs:
         # Building and testing the iOS, finally
       - name: Build and test
         run: |
-          cd zee-now-ios
           xcodebuild clean test -workspace Osheaga Routes.xcworkspace -scheme Osheaga Routes StoryboardUI -destination "platform=iOS Simulator,OS=13.6,name=${{ matrix.destination }}" -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         env: 
          destination: ${{ matrix.destination }}
