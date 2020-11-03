@@ -13,7 +13,7 @@ enum PassengerType: String {
     case senior
 }
 
-struct Passenger: SearchItemProtocol {
+struct Passenger {
     var type: PassengerType
     var count: Int
     
@@ -22,7 +22,7 @@ struct Passenger: SearchItemProtocol {
         self.count = count
     }
     
-    var value: String {
+    var info: String {
         return "\(type.rawValue.localized) \(count)"
     }
     

@@ -47,10 +47,6 @@ struct Location: Codable {
     }
 }
 
-extension Location: SearchItemProtocol {
-    var value: String { return name }
-}
-
 // Dummie objects, locations should be pulled from API, this is only for testing proposes
 extension Location {
     static let leavingFrom = Location(name: "Quebec", geohash: "f2m673")

@@ -63,8 +63,6 @@ class ResultsLoadingView: UIView {
 
 private extension ResultsLoadingView {
     func setupView() {
-        hero.isEnabled = true
-        backgroundColor = .white
         addSubview(loadingView)
         addSubview(labelView)
         addSubview(bottomAnimation)

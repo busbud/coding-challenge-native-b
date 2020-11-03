@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DepartureDate: SearchItemProtocol {
+struct DepartureDate {
     private var date: Date
     
     init(date: Date) {
         self.date = date
     }
     
-    var value: String {
+    var usFormatted: String {
         return date.toString(with: "MMMM dd',' YYYY")
     }
     

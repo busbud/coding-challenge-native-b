@@ -10,12 +10,10 @@
 		40016F162551408200FDCB9F /* ResultsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40016F152551408200FDCB9F /* ResultsEmptyView.swift */; };
 		40016F1B2551413400FDCB9F /* not-found.json in Resources */ = {isa = PBXBuildFile; fileRef = 40016F1A2551413400FDCB9F /* not-found.json */; };
 		406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */; };
-		408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC285254F2D5300BBB591 /* SearchSection.swift */; };
 		408FC28B254F3B1900BBB591 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC28A254F3B1900BBB591 /* Date.swift */; };
 		408FC293254F615200BBB591 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC292254F615200BBB591 /* Constants.swift */; };
 		408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2A1254F64CB00BBB591 /* Localizable.strings */; };
 		408FC2B6254F72F500BBB591 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2B5254F72F500BBB591 /* Location.swift */; };
-		408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2BD254F739400BBB591 /* SearchSectionItem.swift */; };
 		408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C2254F74CA00BBB591 /* DepartureDate.swift */; };
 		408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C7254F75DB00BBB591 /* Passenger.swift */; };
 		408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2CD254F794700BBB591 /* ResultsViewController.swift */; };
@@ -77,12 +75,10 @@
 		40016F152551408200FDCB9F /* ResultsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsEmptyView.swift; sourceTree = "<group>"; };
 		40016F1A2551413400FDCB9F /* not-found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "not-found.json"; sourceTree = "<group>"; };
 		406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
-		408FC285254F2D5300BBB591 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		408FC28A254F3B1900BBB591 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		408FC292254F615200BBB591 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		408FC2A0254F64CB00BBB591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		408FC2B5254F72F500BBB591 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		408FC2BD254F739400BBB591 /* SearchSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionItem.swift; sourceTree = "<group>"; };
 		408FC2C2254F74CA00BBB591 /* DepartureDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDate.swift; sourceTree = "<group>"; };
 		408FC2C7254F75DB00BBB591 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		408FC2CD254F794700BBB591 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -219,8 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				40D0A5B3254E278800245891 /* OnboardingItem.swift */,
-				408FC285254F2D5300BBB591 /* SearchSection.swift */,
-				408FC2BD254F739400BBB591 /* SearchSectionItem.swift */,
 				408FC2B5254F72F500BBB591 /* Location.swift */,
 				408FC2C2254F74CA00BBB591 /* DepartureDate.swift */,
 				408FC2C7254F75DB00BBB591 /* Passenger.swift */,
@@ -573,8 +567,6 @@
 				408FC313254F9F3D00BBB591 /* Response.swift in Sources */,
 				408FC322254F9FB000BBB591 /* City.swift in Sources */,
 				40D0A5B4254E278800245891 /* OnboardingItem.swift in Sources */,
-				408FC286254F2D5300BBB591 /* SearchSection.swift in Sources */,
-				408FC2BE254F739400BBB591 /* SearchSectionItem.swift in Sources */,
 				408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */,
 				40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */,
 				408FC333254FC0E800BBB591 /* APIRequest.swift in Sources */,

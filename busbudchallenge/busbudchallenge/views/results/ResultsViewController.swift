@@ -23,6 +23,7 @@ class ResultsViewController: UIViewController {
         let tv = UITableView()
         tv.delegate = self
         tv.dataSource = self
+        tv.isHidden = true
         tv.registerNibForCell(ResultsItemViewCell.self)
         return tv
     }()
@@ -30,11 +31,17 @@ class ResultsViewController: UIViewController {
     private lazy var noResultsView: ResultsEmptyView = {
         let re = ResultsEmptyView()
         re.delegate = self
+        re.backgroundColor = .systemGroupedBackground
         re.alpha = 0
         return re
     }()
     
-    private var loadingView = ResultsLoadingView()
+    private var loadingView: ResultsLoadingView = {
+        let rlv = ResultsLoadingView()
+        rlv.hero.isEnabled = true
+        rlv.backgroundColor = .systemGroupedBackground
+        return rlv
+    }()
     
     init(with viewModel: ResultsViewModel) {
         self.viewModel = viewModel
