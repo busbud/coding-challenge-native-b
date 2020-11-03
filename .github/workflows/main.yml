@@ -11,14 +11,7 @@ jobs:
         matrix:
           destination: ['iPhone 11']
     
-    steps:
-      
-      # Let's cache flutter
-      - name: Cache Flutter dependencies
-        uses: actions/cache@v1
-        with:
-          path: /opt/hostedtoolcache/flutter
-          key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
+    steps:    
         
       # Let's cache cocoapods
       - uses: actions/cache@v2
@@ -37,7 +30,7 @@ jobs:
         # Let's install the dependecy with our favourite dependecy manager: cocoapods
       - name: Install Dependecy
         run: |
-          cd zee-now-ios
+          cd coding-challenge-native-b
           pod repo update
           pod install
         shell: bash
