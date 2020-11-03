@@ -33,10 +33,17 @@ struct XDeparture: Codable {
         case departureTime = "departure_time"
         case arrivalTime = "arrival_time"
     }
+    
+    var operatorInfo: Operator?
+    var departureCity: City?
+    var departureLocation: Location?
+    var arrivalCity: City?
+    var arrivalLocation: Location?
 }
 
 struct Price: Codable {
     var total: Int?
     var breakdown: [String: Int]?
     var discounted: Bool?
+    var currency: String?
 }

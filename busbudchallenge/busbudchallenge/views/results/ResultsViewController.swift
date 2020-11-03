@@ -56,11 +56,11 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ResultsItemViewCell.self, forIndexPath: indexPath)
-        cell.departureTime.text = searchResult?.departureTime(forItemAt: indexPath.row)
-        cell.arrivalTime.text = searchResult?.arrivalTime(forItemAt: indexPath.row)
-        cell.locationName.text = searchResult?.locationName(forItemAt: indexPath.row)
-        cell.price.text = searchResult?.ticketPrice(forItemAt: indexPath.row)
+        
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
@@ -68,13 +68,17 @@ private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true
         view.backgroundColor = .systemGroupedBackground
-        view.addSubview(tableView)
         view.addSubview(loadingView)
+        view.addSubview(tableView)
+        tableView.isHidden = true
     }
     
     func setupConstraints() {
         loadingView.snp.makeConstraints { $0.margins.equalToSuperview() }
-        tableView.snp.makeConstraints{ $0.margins.equalToSuperview() }
+        tableView.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(10)
+            make.leading.bottom.trailing.equalToSuperview()
+        }
     }
     
     func observeViewModel() {
@@ -85,7 +89,11 @@ private extension ResultsViewController {
             default: break
             }
         } receiveValue: { (response) in
-            self.searchResult = response
+            DispatchQueue.main.async {
+                self.loadingView.isHidden = true
+                self.tableView.isHidden = false
+                self.searchResult = response
+            }
         }
     }
 }

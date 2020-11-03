@@ -30,22 +30,3 @@ struct Response: Codable {
         case isValidRoute = "is_valid_route"
     }
 }
-
-extension Response: ResultViewItem {
-    func departureTime(forItemAt index: Int) -> String {
-        return departures?[index].departureTime ?? ""
-    }
-    
-    func arrivalTime(forItemAt index: Int) -> String {
-        return departures?[index].arrivalTime ?? ""
-    }
-    
-    func locationName(forItemAt index: Int) -> String {
-        let locationId = departures?[index].originLocationID
-        return locations?.filter{ $0.id == locationId }.first?.name ?? ""
-    }
-    
-    func ticketPrice(forItemAt index: Int) -> String {
-        return departures?[index].prices?.total?.description ?? ""
-    }
-}
