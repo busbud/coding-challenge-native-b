@@ -10,6 +10,8 @@ Your challenge is to build a promotional app that allows a traveler from Quebec 
 
 # My solution
 
+![showcase](https://github.com/Rolvar/coding-challenge-native-b/blob/master/screenshots/showcase.gif)
+
 Reading all the specs and restrictions from the challenge doc, I decide to move forward with the app's architecture, although the app is very simple, by experience I know the apps grows and will need additional features like new screens or support another functionalities that weren't have in mind in the first iteration, so that's why I decide to make a project with an structure that can hold future features without modifying too much the existing code.
 
 ## App Architecture
