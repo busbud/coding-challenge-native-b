@@ -9,7 +9,6 @@ import UIKit
 import Lottie
 
 class ResultsLoadingView: UIView {
-
     private var loadingView: AnimationView = {
         let av = AnimationView(name: K.Identifiers.loadingAnimation)
         av.loopMode = .loop

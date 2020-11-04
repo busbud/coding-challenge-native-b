@@ -52,24 +52,7 @@ class BookingViewController: UIViewController {
 extension BookingViewController: BookingViewDelegate {
     func onSearchButtonTapped(_ sections: Sections) {
         navigationController?.hero.isEnabled = true
-        
-        let searchRequest = APIRequest()
-        searchRequest.endpoint = Endpoint.search(from: sections.departureInfo.first!.geohash!,
-                                                 to: sections.departureInfo.last!.geohash!,
-                                                 date: sections.departureDates.first!.isoFormatted ,
-                                                 poll: false)
-
-        searchRequest.parameters = sections.passengers.reduce([String:Int]()) { (dict, value) -> [String: Int] in
-            var params = dict
-            params[value.type.rawValue] = value.count
-            return params
-        }
-        searchRequest.parameters?[K.Identifiers.language] = Locale.current.languageCode
-        searchRequest.parameters?[K.Identifiers.currency] = Locale.current.currencyCode ?? "USD"
-        
-        let resultViewModel = ResultsViewModel(apiManager: APIManager(), resultRequest: searchRequest)
-        navigationController?.pushViewController(ResultsViewController(with: resultViewModel), animated: true)
-        
+        navigationController?.pushViewController(ResultsViewController(with: ResultsViewModel(data: sections)), animated: true)
     }
 }
 
@@ -89,7 +72,7 @@ private extension BookingViewController {
     
     func setupConstraints() {
         imageView.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset(120)
+            $0.top.equalTo(view.snp.top).offset(100)
             $0.width.equalTo(view.snp.width).inset(50)
             $0.height.lessThanOrEqualTo(imageView.snp.width).dividedBy(3)
             $0.centerX.equalTo(view.snp.centerX)

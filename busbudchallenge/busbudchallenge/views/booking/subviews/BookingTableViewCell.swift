@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookingItemViewCell: UITableViewCell {
+class BookingTableViewCell: UITableViewCell {
     var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.helveticaBold(ofSize: 10)
@@ -42,7 +42,7 @@ class BookingItemViewCell: UITableViewCell {
     }
 }
 
-private extension BookingItemViewCell {
+private extension BookingTableViewCell {
     func setupView() {
         addSubview(titleLabel)
         addSubview(descriptionLabel)

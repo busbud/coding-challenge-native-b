@@ -42,7 +42,7 @@ extension Location {
 }
 
 extension DepartureDate {
-    static var eventDate = DepartureDate(date: Date.from(string: "2020-11-12"))
+    static var eventDate = DepartureDate(date: Date.from(string: "2021-07-29"))
 }
 
 extension Passenger {

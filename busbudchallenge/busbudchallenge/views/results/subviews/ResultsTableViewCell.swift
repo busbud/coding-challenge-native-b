@@ -21,7 +21,7 @@ protocol ResultViewItem {
     var currencySymbol: String { get }
 }
 
-class ResultsItemViewCell: UITableViewCell {
+class ResultsTableViewCell: UITableViewCell {
     
     private var logoSize: CGFloat = 60
     
@@ -106,7 +106,7 @@ class ResultsItemViewCell: UITableViewCell {
     
 }
 
-private extension ResultsItemViewCell {
+private extension ResultsTableViewCell {
     func setupView() {
         addSubview(operatorLogo)
         addSubview(operatorName)
@@ -136,7 +136,7 @@ private extension ResultsItemViewCell {
         }
         arrivalTime.snp.makeConstraints { make in
             make.top.equalTo(departureTime.snp.bottom).offset(8)
-            make.leading.equalTo(departureTime.snp.leading)
+            make.centerX.equalTo(departureTime.snp.centerX)
         }
         arrivalLocationName.snp.makeConstraints { make in
             make.top.equalTo(arrivalTime.snp.top)

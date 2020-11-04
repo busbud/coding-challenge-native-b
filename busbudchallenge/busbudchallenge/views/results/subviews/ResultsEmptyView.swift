@@ -13,7 +13,6 @@ protocol ResultsEmptyViewDelegate {
 }
 
 class ResultsEmptyView: UIView {
-    
     private var notFoundAnimation: AnimationView = {
         let av = AnimationView(name: K.Identifiers.notFoundAnimation)
         av.loopMode = .loop
@@ -62,7 +61,6 @@ private extension ResultsEmptyView {
         addSubview(notFoundAnimation)
         addSubview(notFoundLabel)
         addSubview(tryAgainButton)
-        
         notFoundAnimation.play()
     }
     
@@ -76,12 +74,15 @@ private extension ResultsEmptyView {
             make.leading.trailing.equalTo(notFoundAnimation)
         }
         tryAgainButton.snp.makeConstraints {
-            $0.leading.bottom.trailing.equalTo(safeAreaLayoutGuide).inset(10)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(10)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
             $0.height.equalTo(60)
         }
     }
     
     @objc func onTryAgainButtonPressed() {
+        tryAgainButton.spring()
         guard let delegate = delegate else { return }
         delegate.onTryAgainButtonPressed()
     }

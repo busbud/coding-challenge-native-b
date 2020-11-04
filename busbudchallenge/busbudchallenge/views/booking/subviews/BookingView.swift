@@ -17,8 +17,9 @@ class BookingView: UIView {
         tv.delegate = self
         tv.dataSource = self
         tv.bounces = false
-        tv.registerNibForCell(BookingItemViewCell.self)
+        tv.registerNibForCell(BookingTableViewCell.self)
         tv.tableFooterView = UIView()
+        tv.isUserInteractionEnabled = false
         return tv
     }()
     
@@ -61,7 +62,7 @@ extension BookingView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: BookingItemViewCell.self, forIndexPath: indexPath)
+        let cell = tableView.dequeue(cellClass: BookingTableViewCell.self, forIndexPath: indexPath)
         cell.titleLabel.text = searchItems.getTitle(for: indexPath.row, in: indexPath.section)
         cell.descriptionLabel.text = searchItems.getDescription(for: indexPath.row, in: indexPath.section)
         return cell
@@ -76,6 +77,8 @@ extension BookingView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20.0
     }
+    
+    
 }
 
 private extension BookingView {
@@ -96,6 +99,7 @@ private extension BookingView {
     }
     
     @objc func onSearchButtonPressed() {
+        searchButton.spring()
         guard let delegate = delegate else {
             print("BookingViewDelegate not set yet")
             return

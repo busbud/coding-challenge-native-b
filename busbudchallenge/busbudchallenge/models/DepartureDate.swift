@@ -13,8 +13,8 @@ enum DateType {
 }
 
 struct DepartureDate {
-    private var date: Date
-    private var type: DateType
+    var date: Date
+    let type: DateType
     
     init(date: Date, type: DateType = .departure) {
         self.date = date

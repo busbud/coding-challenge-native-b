@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		40016F162551408200FDCB9F /* ResultsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40016F152551408200FDCB9F /* ResultsEmptyView.swift */; };
 		40016F1B2551413400FDCB9F /* not-found.json in Resources */ = {isa = PBXBuildFile; fileRef = 40016F1A2551413400FDCB9F /* not-found.json */; };
+		4042453F255255A800F561D7 /* city-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 4042453E255255A800F561D7 /* city-background.json */; };
+		40424544255257AF00F561D7 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40424543255257AF00F561D7 /* ResultsView.swift */; };
 		406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */; };
 		4071AADE25519C6700796B64 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071AADD25519C6700796B64 /* Price.swift */; };
 		4071AAE325519CC200796B64 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4071AAE225519CC200796B64 /* Region.swift */; };
@@ -21,7 +23,7 @@
 		408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2C7254F75DB00BBB591 /* Passenger.swift */; };
 		408FC2CE254F794800BBB591 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2CD254F794700BBB591 /* ResultsViewController.swift */; };
 		408FC2D5254F79AA00BBB591 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2D4254F79AA00BBB591 /* ResultsViewModel.swift */; };
-		408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */; };
+		408FC2DA254F7FA700BBB591 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC2D9254F7FA700BBB591 /* ResultsTableViewCell.swift */; };
 		408FC2F0254F84C000BBB591 /* bouncingdot.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC2EF254F84C000BBB591 /* bouncingdot.json */; };
 		408FC305254F8DF800BBB591 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 408FC304254F8DF800BBB591 /* loading.json */; };
 		408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FC30D254F916300BBB591 /* ResultsLoadingView.swift */; };
@@ -37,7 +39,7 @@
 		40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFAFE254E8C9800E7713C /* UIView.swift */; };
 		40CFFB04254E8E2E00E7713C /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFB03254E8E2E00E7713C /* LocalStorage.swift */; };
 		40CFFB0C254EF94F00E7713C /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFB0B254EF94E00E7713C /* BookingView.swift */; };
-		40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFB13254EFA2B00E7713C /* BookingItemViewCell.swift */; };
+		40CFFB14254EFA2B00E7713C /* BookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CFFB13254EFA2B00E7713C /* BookingTableViewCell.swift */; };
 		40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A573254DD08300245891 /* OnboardingViewController.swift */; };
 		40D0A579254DD0AD00245891 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A578254DD0AD00245891 /* BookingViewController.swift */; };
 		40D0A5A2254E09C600245891 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0A5A1254E09C600245891 /* UICollectionView.swift */; };
@@ -76,6 +78,8 @@
 		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		40016F152551408200FDCB9F /* ResultsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsEmptyView.swift; sourceTree = "<group>"; };
 		40016F1A2551413400FDCB9F /* not-found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "not-found.json"; sourceTree = "<group>"; };
+		4042453E255255A800F561D7 /* city-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "city-background.json"; sourceTree = "<group>"; };
+		40424543255257AF00F561D7 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
 		4071AADD25519C6700796B64 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		4071AAE225519CC200796B64 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 		408FC2C7254F75DB00BBB591 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		408FC2CD254F794700BBB591 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		408FC2D4254F79AA00BBB591 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
-		408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsItemViewCell.swift; sourceTree = "<group>"; };
+		408FC2D9254F7FA700BBB591 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		408FC2EF254F84C000BBB591 /* bouncingdot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bouncingdot.json; sourceTree = "<group>"; };
 		408FC304254F8DF800BBB591 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		408FC30D254F916300BBB591 /* ResultsLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsLoadingView.swift; sourceTree = "<group>"; };
@@ -106,7 +110,7 @@
 		40CFFAFE254E8C9800E7713C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		40CFFB03254E8E2E00E7713C /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		40CFFB0B254EF94E00E7713C /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
-		40CFFB13254EFA2B00E7713C /* BookingItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingItemViewCell.swift; sourceTree = "<group>"; };
+		40CFFB13254EFA2B00E7713C /* BookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTableViewCell.swift; sourceTree = "<group>"; };
 		40D0A573254DD08300245891 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		40D0A578254DD0AD00245891 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		40D0A5A1254E09C600245891 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		40016F1F2551413900FDCB9F /* lottie */ = {
 			isa = PBXGroup;
 			children = (
+				4042453E255255A800F561D7 /* city-background.json */,
 				408FC2EF254F84C000BBB591 /* bouncingdot.json */,
 				40016F1A2551413400FDCB9F /* not-found.json */,
 				408FC304254F8DF800BBB591 /* loading.json */,
@@ -167,13 +172,39 @@
 			path = lottie;
 			sourceTree = "<group>";
 		};
+		4042454B255258F900F561D7 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				40424543255257AF00F561D7 /* ResultsView.swift */,
+				408FC2D9254F7FA700BBB591 /* ResultsTableViewCell.swift */,
+				408FC30D254F916300BBB591 /* ResultsLoadingView.swift */,
+				40016F152551408200FDCB9F /* ResultsEmptyView.swift */,
+			);
+			path = subviews;
+			sourceTree = "<group>";
+		};
+		404245522552731B00F561D7 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				40CFFB0B254EF94E00E7713C /* BookingView.swift */,
+				40CFFB13254EFA2B00E7713C /* BookingTableViewCell.swift */,
+			);
+			path = subviews;
+			sourceTree = "<group>";
+		};
+		404245562552733D00F561D7 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */,
+			);
+			path = subviews;
+			sourceTree = "<group>";
+		};
 		408FC2CC254F792000BBB591 /* results */ = {
 			isa = PBXGroup;
 			children = (
 				408FC2CD254F794700BBB591 /* ResultsViewController.swift */,
-				408FC2D9254F7FA700BBB591 /* ResultsItemViewCell.swift */,
-				408FC30D254F916300BBB591 /* ResultsLoadingView.swift */,
-				40016F152551408200FDCB9F /* ResultsEmptyView.swift */,
+				4042454B255258F900F561D7 /* subviews */,
 			);
 			path = results;
 			sourceTree = "<group>";
@@ -325,8 +356,8 @@
 		40DD9580254DC52100064B97 /* onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				406A69F2254E3DC700039A02 /* OnboardingViewPage.swift */,
 				40D0A573254DD08300245891 /* OnboardingViewController.swift */,
+				404245562552733D00F561D7 /* subviews */,
 			);
 			path = onboarding;
 			sourceTree = "<group>";
@@ -335,8 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				40D0A578254DD0AD00245891 /* BookingViewController.swift */,
-				40CFFB0B254EF94E00E7713C /* BookingView.swift */,
-				40CFFB13254EFA2B00E7713C /* BookingItemViewCell.swift */,
+				404245522552731B00F561D7 /* subviews */,
 			);
 			path = booking;
 			sourceTree = "<group>";
@@ -479,6 +509,7 @@
 				408FC2F0254F84C000BBB591 /* bouncingdot.json in Resources */,
 				40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */,
 				40016F1B2551413400FDCB9F /* not-found.json in Resources */,
+				4042453F255255A800F561D7 /* city-background.json in Resources */,
 				408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */,
 				40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */,
 				408FC305254F8DF800BBB591 /* loading.json in Resources */,
@@ -548,7 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408FC2DA254F7FA700BBB591 /* ResultsItemViewCell.swift in Sources */,
+				408FC2DA254F7FA700BBB591 /* ResultsTableViewCell.swift in Sources */,
 				4071AAE825519CCA00796B64 /* Country.swift in Sources */,
 				40CFFAFF254E8C9800E7713C /* UIView.swift in Sources */,
 				408FC293254F615200BBB591 /* Constants.swift in Sources */,
@@ -558,9 +589,10 @@
 				40D0A574254DD08300245891 /* OnboardingViewController.swift in Sources */,
 				406A69F3254E3DC700039A02 /* OnboardingViewPage.swift in Sources */,
 				4071AADE25519C6700796B64 /* Price.swift in Sources */,
+				40424544255257AF00F561D7 /* ResultsView.swift in Sources */,
 				408FC28B254F3B1900BBB591 /* Date.swift in Sources */,
 				408FC30E254F916300BBB591 /* ResultsLoadingView.swift in Sources */,
-				40CFFB14254EFA2B00E7713C /* BookingItemViewCell.swift in Sources */,
+				40CFFB14254EFA2B00E7713C /* BookingTableViewCell.swift in Sources */,
 				408FC2C3254F74CA00BBB591 /* DepartureDate.swift in Sources */,
 				40DD956C254DC4D500064B97 /* APIManager.swift in Sources */,
 				408FC2C8254F75DB00BBB591 /* Passenger.swift in Sources */,

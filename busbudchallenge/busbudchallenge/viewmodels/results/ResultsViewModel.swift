@@ -10,14 +10,15 @@ import Combine
 
 class ResultsViewModel {
     
-    private let apiManager: APIManager
-    private let resultRequest: APIRequest
+    private let apiManager = APIManager()
+    private var resultRequest: APIRequest
+    private var data: Sections
     
     var responseSubject = PassthroughSubject<Response, Error>()
     
-    init(apiManager: APIManager, resultRequest: APIRequest) {
-        self.apiManager = apiManager
-        self.resultRequest = resultRequest
+    init(data: Sections) {
+        self.data = data
+        self.resultRequest = APIRequest().createRequest(with: data)
     }
     
     func fetchResults() {
@@ -31,4 +32,14 @@ class ResultsViewModel {
         }
     }
     
+}
+
+extension ResultsViewModel {
+    // this is intended so we can fetch data if there is no answer for the events date
+    // this is just for showcase, NEVER USE IT for a production enviroment
+    func fetchAgain() {
+        data.departureDates[0].date = Date()
+        resultRequest = APIRequest().createRequest(with: data)
+        fetchResults()
+    }
 }

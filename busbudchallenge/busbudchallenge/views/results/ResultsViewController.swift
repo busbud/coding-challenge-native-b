@@ -10,23 +10,11 @@ import Lottie
 import Combine
 
 class ResultsViewController: UIViewController {
-    
-    private var viewModel: ResultsViewModel
-    private var searchResult: Response? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    private var subscriber: AnyCancellable?
-    
-    private lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.delegate = self
-        tv.dataSource = self
-        tv.isHidden = true
-        tv.registerNibForCell(ResultsItemViewCell.self)
-        tv.tableFooterView = UIView()
-        return tv
+
+    private var resultsView: ResultsView = {
+        let rv = ResultsView()
+        rv.isHidden = true
+        return rv
     }()
     
     private lazy var noResultsView: ResultsEmptyView = {
@@ -44,6 +32,9 @@ class ResultsViewController: UIViewController {
         return rlv
     }()
     
+    private var viewModel: ResultsViewModel
+    private var subscriber: AnyCancellable?
+    
     init(with viewModel: ResultsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -58,64 +49,40 @@ class ResultsViewController: UIViewController {
         setupView()
         setupConstraints()
         observeViewModel()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.fetchResults()
     }
 
-}
-
-extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResult?.departures?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: ResultsItemViewCell.self, forIndexPath: indexPath)
-        var departure = searchResult?.departures?[indexPath.row] ?? XDeparture()
-        departure.operators = searchResult?.operators
-        departure.locations = searchResult?.locations
-        departure.cities = searchResult?.cities
-        cell.item = departure
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
 }
 
 extension ResultsViewController: ResultsEmptyViewDelegate {
     func onTryAgainButtonPressed() {
-        viewModel.fetchResults()
+        // the fetch again method is meant to be used as showcase demostration
+        // just in case the events' date doesn't display any results
+        // so we can retry the request with a current date and get results
+        viewModel.fetchAgain()
         loadingView.alpha = 1
         noResultsView.alpha = 0
     }
 }
-
-// MISSING
-//      BUTTONS ANIMATION MAYBE CREATE A CUSTOM BUTTON?
-//      LOCALIZATION
-//      USER INTERACTION IN SEARCH PAGE!!
-//      READ ALL CODE AND REFACTOR IF NEEDED
-//      UPDATE README
-//      SUBMIT A PR
 
 private extension ResultsViewController {
     func setupView() {
         hero.isEnabled = true
         navigationItem.title = K.Strings.resultsTitle
         view.backgroundColor = .systemGroupedBackground
-        view.addSubview(tableView)
+        view.addSubview(resultsView)
         view.addSubview(loadingView)
         view.addSubview(noResultsView)
     }
     
     func setupConstraints() {
-        loadingView.snp.makeConstraints { $0.margins.equalToSuperview() }
-        noResultsView.snp.makeConstraints { $0.margins.equalToSuperview() }
-        tableView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().inset(10)
-            make.leading.bottom.trailing.equalToSuperview()
-        }
+        loadingView.snp.makeConstraints { $0.margins.equalTo(view.safeAreaLayoutGuide) }
+        noResultsView.snp.makeConstraints { $0.margins.equalTo(view.safeAreaLayoutGuide) }
+        resultsView.snp.makeConstraints{ $0.margins.equalTo(view.safeAreaLayoutGuide) }
     }
     
     func observeViewModel() {
@@ -126,24 +93,19 @@ private extension ResultsViewController {
             default: break
             }
         } receiveValue: { (response) in
-            self.searchResult = response
-            self.animateViews()
+            mainQueue {
+                self.resultsView.data = response
+                self.animateViews(empty: response.departures?.isEmpty ?? false)
+            }
         }
     }
     
-    func animateViews() {
+    func animateViews(empty: Bool) {
         UIView.animate(withDuration: 0.5, delay: 2) { [weak self] in
             self?.loadingView.alpha = 0
         } completion: { [weak self] _ in
-            let needsReload = (self?.searchResult?.departures?.count ?? 0) > 0
-           
-            if needsReload {
-                self?.tableView.reloadData()
-                self?.tableView.isHidden = false
-            } else {
-                self?.tableView.isHidden = true
-                UIView.animate(withDuration: 0.2) { self?.noResultsView.alpha = 1 }
-            }            
+            self?.resultsView.isHidden = empty
+            if empty { UIView.animate(withDuration: 0.2) { self?.noResultsView.alpha = 1 } }
         }
     }
 }

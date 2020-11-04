@@ -30,7 +30,7 @@ struct City: Codable {
         case lon
         case geohash
         case timezone
-        case imageUrl = "image_url"
+        case imageUrl = "hero_image_url"
         case legacyUrlForm = "legacy_url_form"
         case fullName = "full_name"
         case region
