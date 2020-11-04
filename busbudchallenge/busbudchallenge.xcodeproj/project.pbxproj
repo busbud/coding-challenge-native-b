@@ -48,31 +48,12 @@
 		40DD94EC254D9A3800064B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94EB254D9A3800064B97 /* SceneDelegate.swift */; };
 		40DD94EE254D9A3800064B97 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD94ED254D9A3800064B97 /* RootViewController.swift */; };
 		40DD94F3254D9A3900064B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DD94F2254D9A3900064B97 /* Assets.xcassets */; };
-		40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */; };
-		40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */; };
 		40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DD953E254DAB2400064B97 /* Launch.storyboard */; };
 		40DD956C254DC4D500064B97 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD956B254DC4D500064B97 /* APIManager.swift */; };
 		40DD957C254DC50D00064B97 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD957B254DC50D00064B97 /* APIEndpoints.swift */; };
 		40DD9584254DC61600064B97 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DD9583254DC61600064B97 /* Helper.swift */; };
 		9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F205EB3ACAA674F3B188B4 /* Pods_busbudchallenge.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		40DD94FD254D9A3900064B97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40DD94DE254D9A3800064B97 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40DD94E5254D9A3800064B97;
-			remoteInfo = busbudchallenge;
-		};
-		40DD9508254D9A3900064B97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40DD94DE254D9A3800064B97 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40DD94E5254D9A3800064B97;
-			remoteInfo = busbudchallenge;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3AD0964172F319027A136187 /* Pods-busbudchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busbudchallenge.debug.xcconfig"; path = "Target Support Files/Pods-busbudchallenge/Pods-busbudchallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,12 +102,6 @@
 		40DD94ED254D9A3800064B97 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		40DD94F2254D9A3900064B97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40DD94F7254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40DD94FC254D9A3900064B97 /* busbudchallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeTests.swift; sourceTree = "<group>"; };
-		40DD9502254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40DD9507254D9A3900064B97 /* busbudchallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = busbudchallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busbudchallengeUITests.swift; sourceTree = "<group>"; };
-		40DD950D254D9A3900064B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DD953E254DAB2400064B97 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		40DD956B254DC4D500064B97 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		40DD957B254DC50D00064B97 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
@@ -141,20 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9158B30C5433D08B6C95091F /* Pods_busbudchallenge.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40DD94F9254D9A3900064B97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40DD9504254D9A3900064B97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				40DD94E8254D9A3800064B97 /* busbudchallenge */,
-				40DD94FF254D9A3900064B97 /* busbudchallengeTests */,
-				40DD950A254D9A3900064B97 /* busbudchallengeUITests */,
 				40DD94E7254D9A3800064B97 /* Products */,
 				9075ACE486B4D49C377A3E9F /* Pods */,
 				4DF3E9A58D51204F68E2EED2 /* Frameworks */,
@@ -283,8 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				40DD94E6254D9A3800064B97 /* busbudchallenge.app */,
-				40DD94FC254D9A3900064B97 /* busbudchallengeTests.xctest */,
-				40DD9507254D9A3900064B97 /* busbudchallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,24 +257,6 @@
 				40DD951F254D9A9A00064B97 /* support files */,
 			);
 			path = busbudchallenge;
-			sourceTree = "<group>";
-		};
-		40DD94FF254D9A3900064B97 /* busbudchallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				40DD9500254D9A3900064B97 /* busbudchallengeTests.swift */,
-				40DD9502254D9A3900064B97 /* Info.plist */,
-			);
-			path = busbudchallengeTests;
-			sourceTree = "<group>";
-		};
-		40DD950A254D9A3900064B97 /* busbudchallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				40DD950B254D9A3900064B97 /* busbudchallengeUITests.swift */,
-				40DD950D254D9A3900064B97 /* Info.plist */,
-			);
-			path = busbudchallengeUITests;
 			sourceTree = "<group>";
 		};
 		40DD951F254D9A9A00064B97 /* support files */ = {
@@ -421,42 +360,6 @@
 			productReference = 40DD94E6254D9A3800064B97 /* busbudchallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		40DD94FB254D9A3900064B97 /* busbudchallengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 40DD9513254D9A3900064B97 /* Build configuration list for PBXNativeTarget "busbudchallengeTests" */;
-			buildPhases = (
-				40DD94F8254D9A3900064B97 /* Sources */,
-				40DD94F9254D9A3900064B97 /* Frameworks */,
-				40DD94FA254D9A3900064B97 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				40DD94FE254D9A3900064B97 /* PBXTargetDependency */,
-			);
-			name = busbudchallengeTests;
-			productName = busbudchallengeTests;
-			productReference = 40DD94FC254D9A3900064B97 /* busbudchallengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		40DD9506254D9A3900064B97 /* busbudchallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 40DD9516254D9A3900064B97 /* Build configuration list for PBXNativeTarget "busbudchallengeUITests" */;
-			buildPhases = (
-				40DD9503254D9A3900064B97 /* Sources */,
-				40DD9504254D9A3900064B97 /* Frameworks */,
-				40DD9505254D9A3900064B97 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				40DD9509254D9A3900064B97 /* PBXTargetDependency */,
-			);
-			name = busbudchallengeUITests;
-			productName = busbudchallengeUITests;
-			productReference = 40DD9507254D9A3900064B97 /* busbudchallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -468,14 +371,6 @@
 				TargetAttributes = {
 					40DD94E5254D9A3800064B97 = {
 						CreatedOnToolsVersion = 12.1;
-					};
-					40DD94FB254D9A3900064B97 = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 40DD94E5254D9A3800064B97;
-					};
-					40DD9506254D9A3900064B97 = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 40DD94E5254D9A3800064B97;
 					};
 				};
 			};
@@ -495,8 +390,6 @@
 			projectRoot = "";
 			targets = (
 				40DD94E5254D9A3800064B97 /* busbudchallenge */,
-				40DD94FB254D9A3900064B97 /* busbudchallengeTests */,
-				40DD9506254D9A3900064B97 /* busbudchallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -513,20 +406,6 @@
 				408FC29F254F64CB00BBB591 /* Localizable.strings in Resources */,
 				40DD953F254DAB2400064B97 /* Launch.storyboard in Resources */,
 				408FC305254F8DF800BBB591 /* loading.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40DD94FA254D9A3900064B97 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40DD9505254D9A3900064B97 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,36 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40DD94F8254D9A3900064B97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40DD9501254D9A3900064B97 /* busbudchallengeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40DD9503254D9A3900064B97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40DD950C254D9A3900064B97 /* busbudchallengeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		40DD94FE254D9A3900064B97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 40DD94E5254D9A3800064B97 /* busbudchallenge */;
-			targetProxy = 40DD94FD254D9A3900064B97 /* PBXContainerItemProxy */;
-		};
-		40DD9509254D9A3900064B97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 40DD94E5254D9A3800064B97 /* busbudchallenge */;
-			targetProxy = 40DD9508254D9A3900064B97 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		408FC2A1254F64CB00BBB591 /* Localizable.strings */ = {
@@ -823,86 +673,6 @@
 			};
 			name = Release;
 		};
-		40DD9514254D9A3900064B97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = busbudchallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/busbudchallenge.app/busbudchallenge";
-			};
-			name = Debug;
-		};
-		40DD9515254D9A3900064B97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = busbudchallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/busbudchallenge.app/busbudchallenge";
-			};
-			name = Release;
-		};
-		40DD9517254D9A3900064B97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = busbudchallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = busbudchallenge;
-			};
-			name = Debug;
-		};
-		40DD9518254D9A3900064B97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = busbudchallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.feliperolvar.busbudchallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = busbudchallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -920,24 +690,6 @@
 			buildConfigurations = (
 				40DD9511254D9A3900064B97 /* Debug */,
 				40DD9512254D9A3900064B97 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		40DD9513254D9A3900064B97 /* Build configuration list for PBXNativeTarget "busbudchallengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40DD9514254D9A3900064B97 /* Debug */,
-				40DD9515254D9A3900064B97 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		40DD9516254D9A3900064B97 /* Build configuration list for PBXNativeTarget "busbudchallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40DD9517254D9A3900064B97 /* Debug */,
-				40DD9518254D9A3900064B97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
