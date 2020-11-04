@@ -2,17 +2,26 @@
 
 ![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
 
-Hey! 
-
-It will be hot this summer in Montreal with the [Osheaga festival](http://www.osheaga.com/)! 
-Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!
-Your challenge is to build a promotional app that allows a traveler from Quebec City to find one-way departure schedules for the festival's opening weekend.
-
 # My solution
 
 ![showcase](https://github.com/Rolvar/coding-challenge-native-b/blob/master/screenshots/showcase.gif)
 
 Reading all the specs and restrictions from the challenge doc, I decide to move forward with the app's architecture, although the app is very simple, by experience I know the apps grows and will need additional features like new screens or support another functionalities that weren't have in mind in the first iteration, so that's why I decide to make a project with an structure that can hold future features without modifying too much the existing code.
+
+## SwiftUI
+
+I this section I'll expose why I haven't use SwiftUI. 
+
+Even tho SwiftUI promises to be a powerful UI manager, right now its too much risky to go for it, specially for mid and big projects, I wouldn't recomment to use it for now, because as we know, everything is new comes with some bugs, this is not only for SwiftUI but everything else in sowftware development, so I would rather than using it as first, expect the tool to engage all its power for at least 1 more year, probably when iOS15 comes to live.
+
+Next I would explain a bit more info from my experience building UIs using SwiftUI:
+* Declarative aspect of SwiftUI is just comming to us as iOS Devs, and there is no clear guide lines of how views are positioned, like UIKit does with AutoLayout
+* There are to many UI components that we have to build on our own, like calendar pickers, MapViews CameraPicker and so on, and that means we have to wrap these ui elements using UIKit, which for me is pointless.
+* The main issue with SwiftUI is that there is no backwards compatibility, which means we have to force all our current users to have iOS13 or more, so if company has a project that runs on devices with a lower version, the project will just simply not run.
+* The way to build views in SwiftUI makes really hard to adapt some design patters (MVVM, VIPER, MVP, MVC), to achieve this we have to add a bunch of items to handle a bit of UI, like stats, bindings, observers, etc, this gets messy very very quick.
+* Navigations and trasitions aren't good either, navigate between 2 screens is a bit messy too, and I'm not talking about going back, in that case the onAppear is not called (this is a huge bug tho).
+
+So, I think just for now is better to not use SwiftUI for mid/big projects, and keep stick to UIKit for a more bit longer, probably the landscape change in the course over the next year and all these issues I've found so far gets fixed and then SwiftUI can be consider the first option to build the UI for our apps.
 
 ## App Architecture
 
@@ -51,5 +60,3 @@ There weren't too much issues found:
 As an extra I added support for three languages in the app, `en`, `fr`and `es`, everything should be translated to the device language and if there is no support for it yet, then is going to display the `en` language by default.
 
 Combine over RxSwift, I decide to use combine over RxSwift because is Apple's built in reactive library, and its in a good stage, even tho is pretty new, I think is ready to use in production apps.
-
-UIKit+SnapKit over SwiftUI, in the other hand, I prefer to use UIKit+SnapKit for the UI, because SwiftUI is still in a kind of early stage and have some bugs, and is not ready for its use in production environments, but still It will a first-option in 1 or 2 years from now, so I'll keep post to it  to migrate to SwiftUI when is more stable.
