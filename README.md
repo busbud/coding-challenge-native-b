@@ -8,7 +8,7 @@ When the app launches it shows an Onboarding Screen with a simple button to show
 
 ![onboarding](screenshots/1.jpg)
 
-The Departures List Screen starts loading then shows the retrieved departures in a list. If there's any kind of error, it will give show an error image and text instead of the list:
+The Departures List Screen starts loading then shows the retrieved departures in a list. If there's any kind of error, it will show an error image and text instead of the list:
 
 ![list](screenshots/2.jpg) | ![error](screenshots/3.jpg)
 
