@@ -1,0 +1,23 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath gradlePlugins.androidGradlePlugin
+        classpath gradlePlugins.kotlin
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+// Load dependencies
+apply from: 'dependencies.gradle'

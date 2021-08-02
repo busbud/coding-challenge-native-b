@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Busbud Challenge</string>
+    <string name="osheaga_description">"OSHEAGA Get Together\nOctober 1–3, 2021\nParc Jean-Drapeau"</string>
+    <string name="find_cheap_bus_tickets">FIND CHEAP BUS TICKETS</string>
+
+    <string name="price">%.2f $</string>
+    <string name="error">There was an error retrieving the departures.</string>
+</resources>

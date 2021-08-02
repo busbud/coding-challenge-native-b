@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="busbud_blue_200">#D3F5FC</color>
+    <color name="busbud_blue">#0795FF</color>
+    <color name="busbud_blue_700">#127CCB</color>
+    <color name="busbud_orange">#FFAB00</color>
+    <color name="busbud_orange_700">#FF6C1A</color>
+    <color name="busbud_blueish_grey">#6D8BA1</color>
+    <color name="error_red">#EE3B51</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black_overlay">#AA000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

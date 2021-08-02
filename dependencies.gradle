@@ -1,0 +1,77 @@
+ext {
+    app = [
+            id         : 'com.filipebrandao.busbudchallenge',
+            name       : 'Busbud Challenge',
+            versionCode: 1,
+            versionName: '1.0',
+            minSdk     : 23,
+            targetSdk  : 30,
+            compileSdk : 30,
+    ]
+
+    versions = [
+            androidGradlePlugin: '7.0.0',
+            kotlin             : '1.5.21',
+            coreKtx            : '1.6.0',
+            appCompat          : '1.3.1',
+            material           : '1.4.0',
+            constraintLayout   : '2.0.4',
+            lifecycleExtensions: '2.3.1',
+            koin               : '3.1.2',
+            retrofit           : '2.9.0',
+            okhttp             : '4.9.1',
+            moshi              : '1.12.0',
+            rxJava             : '3.0.13',
+            rxAndroid          : '3.0.0',
+            coil               : '1.3.1',
+            threeten           : '1.3.0',
+
+
+            // test
+            jUnit              : '4.+',
+            androidJUnit       : '1.1.3',
+            espresso           : '3.4.0',
+            mockk              : '1.10.5',
+            coreArch           : '1.1.1'
+    ]
+
+    gradlePlugins = [
+            androidGradlePlugin: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+            kotlin             : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+    ]
+
+    libraries = [
+            appcompat             : "androidx.appcompat:appcompat:$versions.appCompat",
+            coreKtx               : "androidx.core:core-ktx:$versions.coreKtx",
+            constraintlayout      : "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
+            material              : "com.google.android.material:material:$versions.material",
+            lifecycleViewmodel    : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleExtensions",
+            lifecycleLivedata     : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleExtensions",
+            coil                  : "io.coil-kt:coil:$versions.coil",
+            retrofit              : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            retrofitMoshiConverter: "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+            retrofitRxAdapter     : "com.squareup.retrofit2:adapter-rxjava3:$versions.retrofit",
+            okhttp                : "com.squareup.okhttp3:okhttp:$versions.okhttp",
+            okhttpLogger          : "com.squareup.okhttp3:logging-interceptor:$versions.okhttp",
+            moshi                 : "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+            threeten              : "com.jakewharton.threetenabp:threetenabp:$versions.threeten",
+
+            koinCore              : "io.insert-koin:koin-core:$versions.koin",
+            koinAndroid           : "io.insert-koin:koin-android:$versions.koin",
+
+            rxJava                : "io.reactivex.rxjava3:rxjava:$versions.rxJava",
+            rxAndroid             : "io.reactivex.rxjava3:rxandroid:$versions.rxAndroid",
+    ]
+
+    // Test Libraries dependencies
+    testDependencies = [
+            runner         : "androidx.test:runner:$versions.test",
+            rules          : "androidx.test:rules:$versions.test",
+            androidJUnit   : "androidx.test.ext:junit:$versions.androidJUnit",
+            androidJUnitKtx: "androidx.test.ext:junit-ktx:$versions.androidJUnit",
+            jUnit          : "junit:junit:$versions.jUnit",
+            mockk          : "io.mockk:mockk:$versions.mockk",
+            koinTest       : "io.insert-koin:koin-test:$versions.koin",
+            coreTesting    : "android.arch.core:core-testing:$versions.coreArch",
+    ]
+}

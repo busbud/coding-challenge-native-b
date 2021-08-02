@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_big"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:layout_marginEnd="@dimen/margin_big"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:padding="@dimen/margin_big"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_big">
+
+        <ImageView
+            android:id="@+id/operator_iv"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/busbud_blue_700"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/operator_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            tools:text="12 $" />
+
+        <ImageView
+            android:id="@+id/origin_icon_iv"
+            android:layout_width="@dimen/list_item_icon_size"
+            android:layout_height="@dimen/list_item_icon_size"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_big"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:src="@drawable/ic_origin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/operator_iv" />
+
+        <TextView
+            android:id="@+id/departure_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textColor="@color/busbud_blue_700"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/origin_icon_iv"
+            app:layout_constraintTop_toTopOf="@id/origin_icon_iv"
+            tools:text="02:00" />
+
+        <TextView
+            android:id="@+id/departure_city_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/departure_time_tv"
+            app:layout_constraintTop_toTopOf="@id/departure_time_tv"
+            tools:text="Coimbra" />
+
+        <TextView
+            android:id="@+id/departure_location_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/departure_city_tv"
+            app:layout_constraintTop_toTopOf="@id/departure_city_tv"
+            tools:text="- Estação Origem" />
+
+        <ImageView
+            android:id="@+id/arrival_icon_iv"
+            android:layout_width="@dimen/list_item_icon_size"
+            android:layout_height="@dimen/list_item_icon_size"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:src="@drawable/ic_destination"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/origin_icon_iv" />
+
+        <TextView
+            android:id="@+id/arrival_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textColor="@color/busbud_blueish_grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/arrival_icon_iv"
+            app:layout_constraintTop_toTopOf="@id/arrival_icon_iv"
+            tools:text="02:16" />
+
+        <TextView
+            android:id="@+id/arrival_city_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:textColor="@color/busbud_blueish_grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/arrival_time_tv"
+            app:layout_constraintTop_toTopOf="@id/arrival_time_tv"
+            tools:text="Porto" />
+
+        <TextView
+            android:id="@+id/arrival_location_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/busbud_blueish_grey"
+            android:textSize="14sp"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/arrival_city_tv"
+            app:layout_constraintTop_toTopOf="@id/arrival_city_tv"
+            tools:text="- Estação Destino" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

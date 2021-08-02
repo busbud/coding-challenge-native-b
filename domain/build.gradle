@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion app.compileSdk
+
+    defaultConfig {
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    kotlinOptions {
+        freeCompilerArgs += "-Xopt-in=org.koin.core.component.KoinApiExtension"
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':api')
+    implementation project(':common')
+
+    implementation libraries.coreKtx
+    implementation libraries.threeten
+    implementation libraries.koinCore
+    implementation libraries.rxJava
+
+    testImplementation testDependencies.jUnit
+    androidTestImplementation testDependencies.runner
+}

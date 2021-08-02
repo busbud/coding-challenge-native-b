@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk app.compileSdk
+
+    defaultConfig {
+        applicationId app.id
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += "-Xopt-in=org.koin.core.component.KoinApiExtension"
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':common')
+    implementation project(':api') // ideally only the Domain model would depend on the "api" module but we need it to define the DI environment here
+
+    implementation libraries.coreKtx
+    implementation libraries.appcompat
+    implementation libraries.material
+    implementation libraries.constraintlayout
+    implementation libraries.lifecycleViewmodel
+    implementation libraries.lifecycleLivedata
+    implementation libraries.threeten
+    implementation libraries.coil
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.koinCore
+    implementation libraries.koinAndroid
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.koinTest
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.coreTesting
+    testImplementation libraries.moshi // we mock the network responses with json files
+    testImplementation libraries.retrofit // we need to throw a retrofit HttpException when testing
+    testImplementation libraries.okhttp // we need to build the HttpException when testing
+    androidTestImplementation testDependencies.androidJUnit
+}
