@@ -1,259 +1,113 @@
+## My solution to the Busbud Challenge
 
+Here are described the project's functionalities, challenges, how it is organized and architectured,limitations and possible future improvements if I had more time.
 
-![osheaga](https://cloud.githubusercontent.com/assets/1574577/12971188/13471bd0-d066-11e5-8729-f0ca5375752e.png)
+### Functionalities
 
-Hey! 
+When the app launches it shows an Onboarding Screen with a simple button to show the Departures List Screen:
 
-It will be hot this summer in Montreal with the [Osheaga festival](http://www.osheaga.com/)! 
-Assuming we're not stuck with another wave of COVID-19, it will also be a rocking festival!
-Your challenge is to build a promotional app that allows a traveler from Quebec City to find one-way departure schedules for the festival's opening weekend.
+![onboarding](screenshots/1.jpg)
 
-### Requirements
+The Departures List Screen starts loading then shows the retrieved departures in a list. If there's any kind of error, it will give show an error image and text instead of the list:
 
-Write a native Busbud app that:
+![list](screenshots/2.jpg) | ![error](screenshots/3.jpg)
 
-- Has a simple onboarding screen that will open the search
-- Lists all the departures for a given origin city (**Quebec - geohash: f2m673**) and a given destination city (**Montreal - geohash: f25dvk**) for a given day (**the 28th of August 2021**) for **1** adult. 
-For each item, we want, at least, to see the **departure time**, the **arrival time**, the **location name** and the **price** (use `prices.total` of the `departure`).
+### Challenges
 
-### Non-functional requirements
+- One of the challenges was to make sense of the network responses, there's a lot of data which is not needed for this challenge and I tried to parse only what's needed.
+- Another challenge was to mediate the `search` and `poll` requests but RXJava provided all I need work it out.
+- And of course, the challenge to provide a meaningful demonstration of my work in a small amount of time. Still, I could re-use a lot of code from past projects and I ended up spending around 20
+  hours coding this.
 
-- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)).
-- The repo should include 3 screenshots under the /screenshots folder to show the app usage.
-- Change the README.md to explain your solution, the issues, the way you solved them...
+### Project structure
 
-### Supporting API
+I avoid having a single module per project. Instead I prefer to organize the code in several modules to enforce decoupled code between the layers of the software. It's also relevant to the fact that
+Gradle will parallelize building each module and avoid re-building untouched modules, ending up with a fast build process.
 
-In order to complete this challenge, you will be making requests to `napi.busbud.com`, Busbud's production API.  
-For all requests, you MUST provide the following HTTP headers:
+This project structured into the following modules:
 
-Header | Value
---- | ---
-Accept | `application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/`
-X-Busbud-Token | The token provided in the challenge invitation email.
+- `app` : the project bootstrap module and UI code (presentation layer). Most Android-specific code is here.
+- `domain` : code relate to domain logic (business logic layer)
+- `api` : network code wiring to the remote busbud api (network layer)
+- `common` : code that can be re-used by any other module, such as logging.
 
-### Init results
+All modules are 100% Kotlin code.
 
-To get departure results, search is initialized via the following endpoint:
+### Architecture
 
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date`
+The software architecture used here brings some of the concepts from Uncle Bob's _Clean Architecture_. A lot of it is overkill for such a small project but I care a lot about testable and maintainable
+software architecture and I wanted it to stand out. I had most of the foundation for this already coded from another project thus it was fast to re-use what I needed :)
 
-PATH PARAMS  
+**Presentation Layer**
 
-- `origin` : Origin's geohash
-- `destination` : Destination's geohash
-- `outbound_date` : Outbound departure date, ISO 8061 date
+The presentation layer uses the MVVM pattern with the official Google libs such as ViewModel and LiveData.
 
-QUERY PARAMS:
+**Business Logic Layer**
 
-- `adult` : Number of adults
-- `child` : Number of children
-- `senior` : Number of seniors
-- `lang` :  ISO 639-1 (2 letter code) language code (supported values include `en`, `fr`, `es`, and a few others)
-- `currency` : ISO 4217 currency code (supported values include `CAD`, `USD`, `EUR`, and a few others)
+The business logic layer uses the _Repository_ pattern to abstract data access and _UseCases_ (sometimes referred as _Interactors_) to encapsulate the domain logic.
 
-The response looks like:
+These _Repositories_ expose RX-oriented interfaces and the _UseCases_ were also abstracted around RX functionalities.
+
+**Network Layer**
+
+There's a _Facade_ (`INetworkLayer`) which exposes all the available functionality to other modules.
+
+The code here relies mostly on Retrofit and Moshi libraries and also exposes RX-oriented interfaces.
+
+**Data flow between Layers**
+
+As mentioned, interfaces are highly oriented to RX streams which allowed to have a fully asynchronous data flow applied with the _Unidirectional Data Flow_ pattern:
+
 ```
-{
-  "origin_city_id": "375dd5879001acbd84a4683dedf9eed1",
-  "destination_city_id": "375dd5879001acbd84a4683ded9c875b",
-  "cities": [
-    { City },
-    { City }
-  ],
-  "locations": [
-    { Location }
-    { Location }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "complete": false,
-  "ttl": 900,
-  "is_valid_route": true
-}
+(presentation layer)         | (domain layer)                | (network layer)
+                             |                               |
+Fragment  ->  ViewModel  ->  |  UseCase  ->  Repository  ->  |  NetworkLayer  -> 
+                             |                               |                   BusbudService [network request]
+Fragment  <-  ViewModel <-   |  UseCase  <-  Repository  <-  |  NetworkLayer <-
+                             |                               |
+
+A request for bus departures is made by the UI until a network request is triggered by the BusbudService which flows back the data. 
+
 ```
 
-Where a City is like:
-```
-   {
-      "id": "375dd5879001acbd84a4683deda84183",
-      "locale": "en",
-      "region_id": 6417,
-      "name": "New York",
-      "lat": 40.71427,
-      "lon": -74.00597,
-      "geohash": "dr5reg",
-      "timezone": "America/New_York",
-      "image_url": "/images/promos/city-blocks/new-york.jpg",
-      "legacy_url_form": "NewYork,NewYork,UnitedStates",
-      "full_name": "New York, New York, United States",
-      "region": {
-        "id": 6417,
-        "locale": "en",
-        "country_code2": "US",
-        "name": "New York",
-        "country": {
-          "code2": "US",
-          "locale": "en",
-          "code3": "USA",
-          "name": "United States",
-          "continent": "NA",
-          "default_locale": "en",
-          "default_currency": "USD",
-          "population": 310232863
-        }
-      }
-    }
-```
-Where a Location is like:
-```
-    {
-      "id": 3970,
-      "city_id": "375dd5879001acbd84a4683dedfb933e",
-      "name": "Métro Bonaventure Bus Station",
-      "address": [
-        "997 Rue St-Antoine Ouest",
-        "Montreal, QC H3C 1A6"
-      ],
-      "type": "transit_station",
-      "lat": 45.4988273060484,
-      "lon": -73.5644745826722,
-      "geohash": "f25dvfzcz"
-    }
-```
-Where an Operator is like:
-```
-    {
-      "id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "source_id": 155,
-      "profile_id": 111,
-      "name": "Greyhound",
-      "url": null,
-      "logo_url": "https://busbud-pubweb-assets-staging.global.ssl.fastly.net/images-service/operator-logos/greyhound.png?hash=1{&height,width}",
-      "display_name": "Greyhound",
-      "sellable": true,
-      "fuzzy_prices": false,
-      "sell_tickets_cutoff": {
-        "hours": 1
-      },
-      "amenities": {
-        "classes": {
-          "Normal": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          },
-          "Economy": {
-            "display_name": "Economy",
-            "wifi": true,
-            "toilet": true,
-            "ac": true,
-            "food": false,
-            "refreshment": false,
-            "power_outlets": true,
-            "tv": false,
-            "bus_attendant": false,
-            "leg_room": false
-          }
-        }
-      },
-      "source": "greyhound_us",
-      "referral_deal": false,
-      "display_url": null,
-      "fraud_check": "iovation",
-      "terms": {
-        "refund": false,
-        "exchange": true,
-        "bag_allowed": true,
-        "piece_of_id": false,
-        "boarding_requirement": "printed_tkt",
-        "extra_bag_policy": true,
-        "use_new_ticket": false,
-        "exchange_cutoff": 24,
-        "nb_checked_bags": 1,
-        "kg_by_bag": 25,
-        "nb_carry_on": 1,
-        "extra_bag_cost": 1500
-      }
-    }
-```
-And an XDeparture is :
-```
-    {
-      "id": "7c5dd26a",
-      "source_id": 155,
-      "checkout_type": "new",
-      "operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
-      "origin_location_id": 1942,
-      "destination_location_id": 1938,
-      "class": "Economy",
-      "class_name": "Economy",
-      "amenities": {
-        "display_name": "Economy",
-        "wifi": true,
-        "toilet": true,
-        "ac": true,
-        "food": false,
-        "refreshment": false,
-        "power_outlets": true,
-        "tv": false,
-        "bus_attendant": false,
-        "leg_room": false
-      },
-      "available_seats": 55,
-      "prices": {
-        "total": 5200,
-        "breakdown": {
-          "base": 5200
-        },
-        "categories": {},
-        "discounted": false
-      },
-      "ticket_types": [
-        "print"
-      ],
-      "departure_timezone": "America/New_York",
-      "arrival_timezone": "America/Montreal",
-      "departure_time": "2016-01-14T00:01:00",
-      "arrival_time": "2016-01-14T07:55:00"
-    }
-```
+**Model Mapping**
 
-### Poll results
+Between each layer the data is mapped to different data models, to enforce decoupling and allow for the separate evolution of each layer without concerning to each others' data models. The network _
+DTO_ models are structured differently from the domain models which are structured differently from the UI models. Each one structured in a meaningful way regarding the layer it concerns.
 
-**While "complete" is false, you need to call** :
+**Dependency Injection**
 
-`https://napi.busbud.com/x-departures/:origin/:destination/:outbound_date/poll`
+The Koin library was used for dependency injection to ease providing dependencies to all these entities. Took advantage of that in the unit test environment to replace some entities, such as the
+network-related ones, with mocked ones.
 
-With ***all*** the same parameters that the previous endpoint, plus:
+### Testing
 
-`index` : Index from which to return new departures
+**Manual testing**
 
-The response is:
-```
-{
-  "departures": [
-    { XDeparture },
-    { XDeparture }
-  ],
-  "operators": [
-    { Operator },
-    { Operator }
-  ],
-  "complete": true,
-  "ttl": 900
-}
-```
+I've used only a Samsung Galaxy S20 FE device running Android 11 to smoke test the app.
+
+**Unit testing**
+
+Unit tests were coded with jUnit using Mockk as a mocking library.
+
+Maybe I should call these "integration tests" in the sense that they cover almost the whole integrated architecture from ViewModel to the NetworkLayer. I try to test the most as I can in the "unit
+test" environment which runs in the JVM, I love how fast these are when compared to UI Tests.
+
+The tests focus mainly on mocking the network responses, triggering the ViewModel to fetch the departures (exercising the `search` and `poll` network requests in different ways) and then asserting
+that the ViewModel exposes the expected results and the expected BusbudService methods (`search` and `poll`) were called for the given mocked responses.
+
+### Current limitations and future improvements (if I had more time)
+
+- The UI layout was meant for smartphone only and portrait mode only. Landscape mode and tablet support could also be considered.
+- The current UI is also really simple and not properly pleasing to the eye, for the sake of simplicity. It could definitely be improved by making it look better, adding nice-to-haves such as
+  pull-to-refresh in the departures list and providing more information on the errors.
+- The network requests always consider the same currency and language. Those parameters could be wired with the system configuration.
+- I noticed that the remote api supports e-tag caching and that would be a nice addition too if I had more time.
+- The network requests could also be run immediately when the app opens to provide better UX by having the data (likely) ready when the Departures List Screen is shown.
+- Even more unit tests could be added, given more time, such as to assert that data model mapping is working as expected.
+- No UI tests were considered since I lacked time to do those and I could cover most of what I needed with the unit tests and manual smoke tests. Having more time available I would definitely add them
+  here to assert that the UI shows the expected error/success states and that the data is properly mapped in the UI. Mostly using the Espresso library.
+- I would also test on more physical devices if I had more time, the Android world can be surprising sometimes.
+- The app wasn't checked for memory leaks, adding the LeakCanary library would help identify those easily.
+
+Despite all of these possible improvements, I think that this solution is enough for its goal :)
