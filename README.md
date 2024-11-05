@@ -173,21 +173,7 @@ Where an Operator is like:
       "source": "greyhound_us",
       "referral_deal": false,
       "display_url": null,
-      "fraud_check": "iovation",
-      "terms": {
-        "refund": false,
-        "exchange": true,
-        "bag_allowed": true,
-        "piece_of_id": false,
-        "boarding_requirement": "printed_tkt",
-        "extra_bag_policy": true,
-        "use_new_ticket": false,
-        "exchange_cutoff": 24,
-        "nb_checked_bags": 1,
-        "kg_by_bag": 25,
-        "nb_carry_on": 1,
-        "extra_bag_cost": 1500
-      }
+      "fraud_check": "iovation"
     }
 ```
 And an XDeparture is :
