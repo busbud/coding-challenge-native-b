@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "C4A3CDE5-520C-4586-AF91-960B8B4D74F5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:busbud-coding-challenge.xcodeproj",
+      "identifier" : "14BBD44B2D11E6240047FE7A",
+      "name" : "busbud-coding-challenge"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:busbud-coding-challenge.xcodeproj",
+        "identifier" : "14BBD4612D11E6250047FE7A",
+        "name" : "busbud-coding-challengeTests"
+      }
+    }
+  ],
+  "version" : 1
+}
