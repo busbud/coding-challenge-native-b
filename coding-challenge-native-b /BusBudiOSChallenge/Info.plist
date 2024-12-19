@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict/>
+    </array>
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to show nearby cities.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app uses your location to improve your experience.</string>
+
+    <key>CFBundleLocalizations</key>
+    <array>
+        <string>en</string>
+        <string>pt</string>
+    </array>
+
+    <key>UIUserInterfaceStyle</key>
+    <string>Automatic</string>
+</dict>
+</plist>

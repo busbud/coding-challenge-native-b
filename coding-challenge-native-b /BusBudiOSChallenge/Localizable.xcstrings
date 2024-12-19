@@ -1,0 +1,147 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@, %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@, %3$@"
+          }
+        }
+      }
+    },
+    "cityDetailTitle" : {
+      "comment" : "Title for City Details screen",
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes da Cidade"
+          }
+        }
+      }
+    },
+    "distanceFormat" : {
+      "comment" : "Format for distance display",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f km de distância"
+          }
+        }
+      }
+    },
+    "distanceLabel" : {
+      "comment" : "distance",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distância: %.2f km"
+          }
+        }
+      }
+    },
+    "fetchCitiesFailed" : {
+      "comment" : "Error when city fetch fails",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falha ao carregar cidades. Verifique sua conexão com a internet."
+          }
+        }
+      }
+    },
+    "locationNotAvailable" : {
+      "comment" : "Error when user location is not available",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localização não disponível."
+          }
+        }
+      }
+    },
+    "locationPermissionDeniedMessage" : {
+      "comment" : "Alert message when location is denied"
+    },
+    "locationPermissionDeniedTitle" : {
+      "comment" : "Alert title when location is denied"
+    },
+    "nearbyCitiesTitle" : {
+      "comment" : "Title for Nearby Cities screen",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cidades Próximas"
+          }
+        }
+      }
+    },
+    "noCitiesFound" : {
+      "comment" : "Error when no cities are found nearby",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma cidade encontrada nas proximidades."
+          }
+        }
+      }
+    },
+    "obtainingLocation" : {
+      "comment" : "Message displayed while obtaining location",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtendo localização..."
+          }
+        }
+      }
+    },
+    "openInBusbud" : {
+      "comment" : "Button to open city in Busbud",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir no Busbud"
+          }
+        }
+      }
+    },
+    "openSettingsButton" : {
+      "comment" : "Button title to open settings"
+    },
+    "permissionDeniedMessage" : {
+      "comment" : "Message displayed when location access is denied\n   Message when location access is denied",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permissão negada. Ative o acesso à localização."
+          }
+        }
+      }
+    },
+    "tryAgainButton" : {
+      "comment" : "Text for the try again button",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentar novamente"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
