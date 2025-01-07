@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct DestinationsListView: View {
+    @State var viewModel: DestinationListViewModelDefinition
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List(viewModel.destinations) { destination in
+                NavigationLink {
+                    Text("TBD")
+                } label: {
+                    DestinationsListRowView(title: destination.name, subTitle: "200 km")
+                }
+            }
+            .navigationTitle("Nearby Cities")
+        }
     }
 }
 
 #Preview {
-    DestinationsListView()
+    let destinations = [
+        Destination(id: "asdf", name: "London", region: "", country: "UK", latitude: 10.0, longitude: -10.0, geohash: "hgfdsa"),
+        
+        Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
+    ]
+    let viewModel = DestinationListViewModel(destinations: destinations)
+    DestinationsListView(viewModel: viewModel)
 }

@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct DestinationsListRowView: View {
+    let title: String
+    let subTitle: String
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("London")
+            Text(title)
                 .font(.title2)
-            Text("100 KM")
+            Text(subTitle)
                 .font(.caption)
         }
     }
@@ -21,10 +24,8 @@ struct DestinationsListRowView: View {
 struct DestinationsListRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            DestinationsListRowView()
-            DestinationsListRowView()
-            DestinationsListRowView()
-            DestinationsListRowView()
+            DestinationsListRowView(title: "London", subTitle: "100 KM")
+            DestinationsListRowView(title: "Paris", subTitle: "500 KM")
         }
     }
 }
