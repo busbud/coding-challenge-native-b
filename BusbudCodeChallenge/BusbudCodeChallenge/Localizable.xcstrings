@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Add Item" : {
+
+    },
+    "Bad luck!" : {
+
+    },
+    "destinationList.navigation.title" : {
+      "comment" : "Destination list navigation title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nearby Cities"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cidades Próximas"
+          }
+        }
+      }
+    },
+    "Item at %@" : {
+
+    },
+    "No cities were found around your location." : {
+
+    },
+    "Select an item" : {
+
+    },
+    "TBD" : {
+
+    }
+  },
+  "version" : "1.0"
+}

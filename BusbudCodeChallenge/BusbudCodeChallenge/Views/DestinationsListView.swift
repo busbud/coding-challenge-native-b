@@ -12,14 +12,30 @@ struct DestinationsListView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.destinations) { destination in
-                NavigationLink {
-                    Text("TBD")
-                } label: {
-                    DestinationsListRowView(title: destination.name, subTitle: "200 km")
+            Group {
+                switch viewModel.state {
+                case .idle:
+                    EmptyView()
+                case .loading:
+                    ProgressView()
+                case .loaded:
+                    List(viewModel.destinations) { destination in
+                        NavigationLink {
+                            Text("TBD")
+                        } label: {
+                            DestinationsListRowView(title: destination.name, subTitle: "200 km")
+                        }
+                    }
+                    .navigationTitle("destinationList.navigation.title")
+                case .empty:
+                    EmptyListView()
+                case .error:
+                    ErrorView(title: "Error", message: "There was an error loading destinations.")
                 }
             }
-            .navigationTitle("Nearby Cities")
+        }
+        .onAppear {
+            viewModel.fetchDestinations()
         }
     }
 }
@@ -30,6 +46,6 @@ struct DestinationsListView: View {
         
         Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
     ]
-    let viewModel = DestinationListViewModel(destinations: destinations)
+    let viewModel = DestinationListViewModel(destinations: destinations, state: .loaded)
     DestinationsListView(viewModel: viewModel)
 }
