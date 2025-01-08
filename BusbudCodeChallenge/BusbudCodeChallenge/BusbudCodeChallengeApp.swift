@@ -26,12 +26,7 @@ struct BusbudCodeChallengeApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            let destinations = [
-                Destination(id: "asdf", name: "London", region: "", country: "UK", latitude: 37.3349, longitude: -122.0090, geohash: "hgfdsa"),
-                
-                Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 37.3349, longitude: -122.0090, geohash: "asdfgh")
-            ]
-            let viewModel = DestinationListViewModel(destinations: destinations, state: .loaded)
+            let viewModel = DestinationListViewModel()
             DestinationsListView(viewModel: viewModel)
         }
         .modelContainer(sharedModelContainer)

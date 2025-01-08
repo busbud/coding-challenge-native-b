@@ -17,7 +17,7 @@ struct DestinationDetailsView: View {
             VStack(alignment: .leading) {
                 infoView()
                 mapView()
-                    .frame(maxWidth: 400, maxHeight: 400)
+                    .frame(maxWidth: 400)
                     .cornerRadius(10)
                 Button(action: {
                     viewModel.openURL()

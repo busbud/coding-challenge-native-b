@@ -5,22 +5,21 @@
 
     },
     "Destination Details" : {
-
-    },
-    "destinationList.navigation.title" : {
-      "comment" : "Destination list navigation title",
-      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nearby Cities"
-          }
-        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cidades Próximas"
+            "value" : "Detalhes do Destino"
+          }
+        }
+      }
+    },
+    "Enter a city to see what’s nearby." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informe uma cidade para ver o que há por perto."
           }
         }
       }
@@ -29,16 +28,67 @@
 
     },
     "Lost in the middle of nowhere?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perdido no meio do nada?"
+          }
+        }
+      }
+    },
+    "Nearby Cities" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cidades Próximas"
+          }
+        }
+      }
     },
     "Select an item" : {
 
     },
+    "Use current location" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar localização atual"
+          }
+        }
+      }
+    },
     "View on Busbud" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver no Busbud"
+          }
+        }
+      }
     },
     "We couldn’t find any cities nearby—unless you count tumbleweeds!" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não conseguimos encontrar nenhuma cidade nas proximidades - O mato seco não conta."
+          }
+        }
+      }
+    },
+    "Where would you like to start?" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por onde você gostaria de começar?"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

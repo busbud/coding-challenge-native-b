@@ -9,24 +9,25 @@ import SwiftUI
 
 struct DestinationsListView: View {
     @State var viewModel: DestinationListViewModelDefinition
+    @State var locationManager: LocationManager = LocationManager()
     
     var body: some View {
         NavigationStack {
             Group {
                 switch viewModel.state {
                 case .idle:
-                    EmptyView()
+                    EmptyListView()
                 case .loading:
                     ProgressView()
-                case .loaded:
-                    List(viewModel.destinations) { destination in
+                case .loaded(let destinations):
+                    List(destinations) { destination in
                         NavigationLink {
                             DestinationDetailsView(viewModel: DestinationDetailsViewModel(origin: "Cuppertino", destination: destination))
                         } label: {
                             DestinationsListRowView(title: destination.name, subTitle: "200 km")
                         }
                     }
-                    .navigationTitle("destinationList.navigation.title")
+                    .navigationTitle("Nearby Cities")
                 case .empty:
                     EmptyListView()
                 case .error:
@@ -35,19 +36,26 @@ struct DestinationsListView: View {
             }
         }
         .onAppear {
-            Task {
-                await viewModel.fetchDestinations()
+            let locationPermissionState = locationManager.requestCurrentPermissionState()
+            
+            if locationPermissionState == .authorized {
+                Task {
+                    do {
+                        let currentLocation = try await  locationManager.requestCurrentLocation()
+                        await viewModel.fetchNearbyDestinationsFrom(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+                        
+                    } catch {
+                        
+                    }
+                }
+            } else {
+//                viewModel.state = .idle
             }
         }
     }
 }
 
 #Preview {
-    let destinations = [
-        Destination(id: "asdf", name: "London", region: "Some", country: "UK", latitude: 10.0, longitude: -10.0, geohash: "hgfdsa"),
-        
-        Destination(id: "qwerty", name: "Paris", region: "An", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
-    ]
-    let viewModel = DestinationListViewModel(destinations: destinations, state: .loaded)
+    let viewModel = DestinationListViewModel(state: .idle)
     DestinationsListView(viewModel: viewModel)
 }
