@@ -18,60 +18,47 @@ enum DestinationListViewState {
 protocol DestinationListViewModelDefinition {
     var destinations: [Destination] { get }
     var state: DestinationListViewState { get }
+    var repository: BusbudRepositoryAPIRequesting { get }
     
-    func fetchDestinations()
+    func fetchDestinations() async
 }
 
 
 @Observable
 final class DestinationListViewModel: DestinationListViewModelDefinition {
     
-    let destinations: [Destination]
+    var destinations: [Destination]
     var state: DestinationListViewState
+    let repository: any BusbudRepositoryAPIRequesting
     
-    init(destinations: [Destination],  state: DestinationListViewState = .idle) {
+    init(destinations: [Destination],  state: DestinationListViewState = .idle, repository: BusbudRepositoryAPIRequesting = BusbudRepository()) {
         self.destinations = destinations
         self.state = state
+        self.repository = repository
     }
     
+    @MainActor
     func fetchDestinations() {
         // Start with loading state
         state = .loading
         
         Task {
             do {
-                // Simulate a delay
-                try await Task.sleep(nanoseconds: 1_000_000_000)
-                
-                // Generate a random outcome (1: Error, 2-4: Success, 5: Empty)
-                let outcome = Int.random(in: 1...5)
-                
-                switch outcome {
-                case 1:
-                    // Simulate an error
-                    state = .error
-                    print("Simulating an error response")
-                case 2...4:
-                    // Simulate a successful response
-                    if destinations.isEmpty {
-                        state = .empty
-                        print("Simulating an empty response")
-                    } else {
-                        state = .loaded
-                        print("Simulating a successful response with data")
-                    }
-                case 5:
-                    // Simulate an empty response
+                let destinations = try await repository.fetchNearByDestinations(latitude: 40.7128, longitude: -74.0060, 10, "en")
+                if destinations.count == 0 {
                     state = .empty
-                    print("Simulating an empty response")
-                default:
-                    break
+                } else {
+                    state = .loaded
+                    self.destinations = destinations
+                }
+                for destination in destinations {
+                    print("Name: \(destination.name), Region: \(destination.region), Geohash: \(destination.geohash)")
                 }
             } catch {
-                // Handle any errors
+                print("Error fetching destinations: \(error)")
                 state = .error
-                print("Task failed: \(error)")
             }
         }
+
     }
 }

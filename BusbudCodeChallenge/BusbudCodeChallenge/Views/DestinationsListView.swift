@@ -35,7 +35,9 @@ struct DestinationsListView: View {
             }
         }
         .onAppear {
-            viewModel.fetchDestinations()
+            Task {
+                await viewModel.fetchDestinations()
+            }
         }
     }
 }
