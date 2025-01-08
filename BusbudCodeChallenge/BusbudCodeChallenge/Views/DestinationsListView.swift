@@ -21,7 +21,7 @@ struct DestinationsListView: View {
                 case .loaded:
                     List(viewModel.destinations) { destination in
                         NavigationLink {
-                            Text("TBD")
+                            DestinationDetailsView(viewModel: DestinationDetailsViewModel(origin: "Cuppertino", destination: destination))
                         } label: {
                             DestinationsListRowView(title: destination.name, subTitle: "200 km")
                         }
@@ -42,9 +42,9 @@ struct DestinationsListView: View {
 
 #Preview {
     let destinations = [
-        Destination(id: "asdf", name: "London", region: "", country: "UK", latitude: 10.0, longitude: -10.0, geohash: "hgfdsa"),
+        Destination(id: "asdf", name: "London", region: "Some", country: "UK", latitude: 10.0, longitude: -10.0, geohash: "hgfdsa"),
         
-        Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
+        Destination(id: "qwerty", name: "Paris", region: "An", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
     ]
     let viewModel = DestinationListViewModel(destinations: destinations, state: .loaded)
     DestinationsListView(viewModel: viewModel)

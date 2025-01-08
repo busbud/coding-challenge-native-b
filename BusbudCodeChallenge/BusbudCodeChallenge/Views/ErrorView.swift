@@ -12,15 +12,23 @@ struct ErrorView: View {
     var imageName: String = "exclamationmark.triangle"
     var message: String = "An error occurred"
     
+    @State private var animate = false
+    
     var body: some View {
         VStack {
             Text(title)
                 .font(.largeTitle)
             Image(systemName: imageName)
-                .font(.largeTitle)
-                .fontWeight(.thin)
+                .font(.system(size: 64))
                 .foregroundStyle(.red)
-                .padding()
+                .fontWeight(.thin)
+                .padding(.vertical)
+                .scaleEffect(animate ? 1.0 : 0.5)
+                .opacity(animate ? 1.0 : 0.0)
+                .animation(.spring(response: 0.6, dampingFraction: 0.5, blendDuration: 0.3), value: animate)
+                .onAppear {
+                    animate = true
+                }
             Text(message)
             
         }

@@ -27,9 +27,9 @@ struct BusbudCodeChallengeApp: App {
         WindowGroup {
 //            ContentView()
             let destinations = [
-                Destination(id: "asdf", name: "London", region: "", country: "UK", latitude: 10.0, longitude: -10.0, geohash: "hgfdsa"),
+                Destination(id: "asdf", name: "London", region: "", country: "UK", latitude: 37.3349, longitude: -122.0090, geohash: "hgfdsa"),
                 
-                Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 12.0, longitude: -12.0, geohash: "asdfgh")
+                Destination(id: "qwerty", name: "Paris", region: "", country: "FR", latitude: 37.3349, longitude: -122.0090, geohash: "asdfgh")
             ]
             let viewModel = DestinationListViewModel(destinations: destinations, state: .loaded)
             DestinationsListView(viewModel: viewModel)

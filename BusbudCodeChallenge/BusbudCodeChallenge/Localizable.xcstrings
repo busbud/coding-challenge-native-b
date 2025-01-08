@@ -4,7 +4,7 @@
     "Add Item" : {
 
     },
-    "Bad luck!" : {
+    "Destination Details" : {
 
     },
     "destinationList.navigation.title" : {
@@ -28,13 +28,19 @@
     "Item at %@" : {
 
     },
-    "No cities were found around your location." : {
+    "London" : {
+
+    },
+    "Lost in the middle of nowhere?" : {
 
     },
     "Select an item" : {
 
     },
-    "TBD" : {
+    "View on Busbud" : {
+
+    },
+    "We couldn’t find any cities nearby—unless you count tumbleweeds!" : {
 
     }
   },

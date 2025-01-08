@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct EmptyListView: View {
+    @State private var animate = false
+    
     var body: some View {
         VStack {
-            Text("Bad luck!")
+            Text("Lost in the middle of nowhere?")
                 .font(.title)
-            Image(systemName: "location.slash")
+            Image(systemName: "mappin.slash.circle")
                 .font(.system(size: 64))
+                .foregroundStyle(.gray)
                 .fontWeight(.thin)
                 .padding(.vertical)
-            Text("No cities were found around your location.")
+                .scaleEffect(animate ? 1.0 : 0.5)
+                .opacity(animate ? 1.0 : 0.0)
+                .animation(.spring(response: 0.6, dampingFraction: 0.5, blendDuration: 0.3), value: animate)
+                .onAppear {
+                    animate = true
+                }
+            Text("We couldn’t find any cities nearby—unless you count tumbleweeds!")
         }
         .padding()
     }
