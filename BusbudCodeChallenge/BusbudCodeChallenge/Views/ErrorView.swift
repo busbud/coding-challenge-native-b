@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ErrorView: View {
-    var title: String = "Error"
+    var title: String = "Oops"
     var imageName: String = "exclamationmark.triangle"
     var message: String = "An error occurred"
-    
+    @Binding var shouldRetry: Bool
     @State private var animate = false
     
     var body: some View {
@@ -30,6 +30,20 @@ struct ErrorView: View {
                     animate = true
                 }
             Text(message)
+            Button(action: {
+                shouldRetry = true
+            }, label:
+                    {
+                Text("Try again")
+                    .contentShape(Rectangle())
+                    .frame(maxWidth: .infinity)
+            }
+                   
+            )
+            .padding(.vertical)
+            .background(.pink)
+            .foregroundStyle(.white)
+            .cornerRadius(10)
             
         }
         .padding()
@@ -37,5 +51,5 @@ struct ErrorView: View {
 }
 
 #Preview {
-    ErrorView()
+    ErrorView(shouldRetry: .constant(false))
 }

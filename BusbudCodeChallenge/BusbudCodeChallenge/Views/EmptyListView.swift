@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmptyListView: View {
     @State private var animate = false
+    @Binding var shouldChangeLocation: Bool
     
     var body: some View {
         VStack {
@@ -26,11 +27,25 @@ struct EmptyListView: View {
                     animate = true
                 }
             Text("We couldn’t find any cities nearby—unless you count tumbleweeds!")
+            Button(action: {
+                shouldChangeLocation = true
+            }, label:
+                    {
+                Text("Change Location")
+                    .contentShape(Rectangle())
+                    .frame(maxWidth: .infinity)
+            }
+                   
+            )
+            .padding(.vertical)
+            .background(.pink)
+            .foregroundStyle(.white)
+            .cornerRadius(10)
         }
         .padding()
     }
 }
 
 #Preview {
-    EmptyListView()
+    EmptyListView(shouldChangeLocation: .constant(false))
 }

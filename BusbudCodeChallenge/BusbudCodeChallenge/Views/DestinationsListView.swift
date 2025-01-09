@@ -12,13 +12,16 @@ struct DestinationsListView: View {
     @State var viewModel: DestinationListViewModelDefinition
     @State var locationManager: LocationManager = LocationManager()
     @State var currentLocationName: String = ""
+    @State var shouldRetry = false
+    @State var shouldChangeLocation: Bool = false
+    @State var shouldSearch: Bool = false
     
     var body: some View {
         NavigationStack {
             Group {
                 switch viewModel.state {
                 case .idle:
-                    EmptyListView()
+                    SearchView(shouldSearch: $shouldSearch)
                 case .loading:
                     ProgressView()
                 case .loaded(let destinations):
@@ -31,25 +34,41 @@ struct DestinationsListView: View {
                     }
                     .navigationTitle("Nearby Cities")
                 case .empty:
-                    EmptyListView()
+                    EmptyListView(shouldChangeLocation: $shouldChangeLocation)
                 case .error:
-                    ErrorView(title: "Error", message: "There was an error loading destinations.")
+                    ErrorView(title: "Oops", message: "There was an error loading the nearby cities.", shouldRetry: $shouldRetry)
                 }
             }
         }
         .onAppear {
-            let locationPermissionState = locationManager.requestCurrentPermissionState()
-            
-            if locationPermissionState == .authorized {
-                Task {
-                    do {
-                        let currentLocation = try await  locationManager.requestCurrentLocation()
-                        await viewModel.fetchNearbyDestinationsFrom(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-                        currentLocationName = try await currentLocation.coordinate.getLocationName() ?? ""
-                        
-                    } catch {
-                        
-                    }
+            fetchData()
+        }
+        .onChange(of: shouldRetry) { _, _ in
+            print("performing retry")
+            fetchData()
+        }
+        .onChange(of: shouldChangeLocation) { _, _ in
+            print("change location")
+            viewModel.state = .idle
+        }
+        .onChange(of: shouldSearch) { _, _ in
+            print("fetch data from search")
+            fetchData()
+        }
+    }
+    
+    private func fetchData() {
+        let locationPermissionState = locationManager.requestCurrentPermissionState()
+        
+        if locationPermissionState == .authorized {
+            Task {
+                do {
+                    let currentLocation = try await  locationManager.requestCurrentLocation()
+                    await viewModel.fetchNearbyDestinationsFrom(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+                    currentLocationName = try await currentLocation.coordinate.getLocationName() ?? ""
+                    
+                } catch {
+                    
                 }
             }
         }

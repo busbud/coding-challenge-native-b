@@ -17,7 +17,7 @@ struct DestinationDetailsView: View {
             VStack(alignment: .leading) {
                 infoView()
                 mapView()
-                    .frame(maxWidth: 400)
+                    .frame(height: 300)
                     .cornerRadius(10)
                 Button(action: {
                     viewModel.openURL()
@@ -26,7 +26,14 @@ struct DestinationDetailsView: View {
                         Text("View on Busbud")
                         Image(systemName: "safari")
                     }
-                    })
+                    .contentShape(Rectangle())
+                    .frame(maxWidth: .infinity)
+                })
+                .padding(.vertical)
+                .foregroundStyle(.white)
+                .background(.pink)
+                .cornerRadius(10)
+                
             }
         }
         .sheet(isPresented: $openMap) {

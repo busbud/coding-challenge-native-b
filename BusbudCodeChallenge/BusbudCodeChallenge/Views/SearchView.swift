@@ -14,6 +14,7 @@ struct SearchView: View {
     @State var locationButtonIsActive = true
     @State var authorizationState: LocationAuthorizationState = .notDetermined
     @State var currentLocation: CLLocation?
+    @Binding var shouldSearch: Bool
     
     var body: some View {
         HStack {
@@ -22,7 +23,6 @@ struct SearchView: View {
                     .font(.headline)
                 TextField("Enter a city to see what’s nearby.", text: $searchLocation)
                 Button {
-                    print("Button pressed")
                     switch authorizationState {
                     case .authorized:
                         Task {
@@ -35,6 +35,7 @@ struct SearchView: View {
                                 if let locationName = locationName {
                                     searchLocation = locationName
                                 }
+                                shouldSearch = true
                             } catch {
                                 print("Failed to get location: \(error)")
                             }
@@ -64,8 +65,13 @@ struct SearchView: View {
                         Image(systemName: locationButtonIsActive ? "location" : "location.slash")
                         Text("Use current location")
                     }
-                    .foregroundStyle(locationButtonIsActive ? .blue : .gray)
+                    .contentShape(Rectangle())
+                    .frame(maxWidth: .infinity)
                 }
+                .padding(.vertical)
+                .foregroundStyle(locationButtonIsActive ? .white : .gray)
+                .background(.pink)
+                .cornerRadius(10)
             }
             Spacer()
         }
@@ -78,5 +84,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(locationManager: LocationManager())
+    SearchView(locationManager: LocationManager(), shouldSearch: .constant(false))
 }

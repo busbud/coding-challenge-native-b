@@ -16,7 +16,7 @@ enum DestinationListViewState {
 }
 
 protocol DestinationListViewModelDefinition {
-    var state: DestinationListViewState { get }
+    var state: DestinationListViewState { get set }
     var repository: BusbudRepositoryAPIRequesting { get }
     
     func fetchNearbyDestinationsFrom(latitude: Double, longitude: Double) async
