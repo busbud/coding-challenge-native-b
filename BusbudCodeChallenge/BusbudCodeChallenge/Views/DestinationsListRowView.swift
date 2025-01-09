@@ -24,11 +24,19 @@ struct DestinationsListRowView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        var london = Destination(id: "", name: "London", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
-//        london.distance = 100.00
+        var london:Destination  {
+            var dest = Destination(id: "", name: "London", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
+            dest.distance = Double(723000.4)
+            
+            return dest
+        }
         
-        var paris = Destination(id: "", name: "Paris", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
-//        paris.distance = Double(723.4)
+        var paris:Destination {
+          var dest = Destination(id: "", name: "Paris", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
+            dest.distance = Double(261000.84)
+            
+            return dest
+        }
         
         List {
             DestinationsListRowView(viewModel: DestinationListRowViewModel(destination: london))

@@ -5,7 +5,14 @@
 
     },
     "Change Location" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterar Localização"
+          }
+        }
+      }
     },
     "Destination Details" : {
       "localizations" : {
@@ -17,12 +24,12 @@
         }
       }
     },
-    "Enter a city to see what’s nearby." : {
+    "Enter a city." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Informe uma cidade para ver o que há por perto."
+            "value" : "Informe uma cidade."
           }
         }
       }
@@ -54,14 +61,21 @@
 
     },
     "Try again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentar novamente"
+          }
+        }
+      }
     },
     "Use current location" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar localização atual"
+            "value" : "Usar minha localização"
           }
         }
       }

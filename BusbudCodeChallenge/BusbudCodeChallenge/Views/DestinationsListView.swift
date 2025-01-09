@@ -32,6 +32,9 @@ struct DestinationsListView: View {
                             DestinationsListRowView(viewModel: DestinationListRowViewModel(destination: destination))
                         }
                     }
+                    .refreshable {
+                        fetchData()
+                    }
                     .navigationTitle("Nearby Cities")
                 case .empty:
                     EmptyListView(shouldChangeLocation: $shouldChangeLocation)
@@ -44,15 +47,15 @@ struct DestinationsListView: View {
             fetchData()
         }
         .onChange(of: shouldRetry) { _, _ in
-            print("performing retry")
+            Logger.log("performing retry")
             fetchData()
         }
         .onChange(of: shouldChangeLocation) { _, _ in
-            print("change location")
+            Logger.log("change location")
             viewModel.state = .idle
         }
         .onChange(of: shouldSearch) { _, _ in
-            print("fetch data from search")
+            Logger.log("fetch data from search")
             fetchData()
         }
     }

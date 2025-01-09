@@ -49,7 +49,7 @@ final class DestinationListViewModel: DestinationListViewModelDefinition {
                     state = .loaded(destinations)
                 }
             } catch {
-                print("Error fetching destinations: \(error)")
+                Logger.log("Error fetching destinations: \(error)")
                 state = .error
             }
         }

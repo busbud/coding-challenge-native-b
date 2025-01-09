@@ -13,51 +13,34 @@ struct SearchView: View {
     @State var locationManager: LocationManager = LocationManager()
     @State var locationButtonIsActive = true
     @State var authorizationState: LocationAuthorizationState = .notDetermined
-    @State var currentLocation: CLLocation?
+    @State var origin: Origin?
     @Binding var shouldSearch: Bool
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text("Where would you like to start?")
-                    .font(.headline)
-                TextField("Enter a city to see what’s nearby.", text: $searchLocation)
+                    .font(.title2)
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundStyle(.pink)
+                    TextField("Enter a city.", text: $searchLocation)
+                }
+                .padding(.vertical, 10)
+                .overlay(
+                    Rectangle().frame(height: 2).padding(.top, 35)
+                        .foregroundStyle(.pink)
+                )
+                .padding(.vertical)
+                
                 Button {
                     switch authorizationState {
                     case .authorized:
-                        Task {
-                            do {
-                                currentLocation = try await locationManager.requestCurrentLocation()
-                                locationButtonIsActive = true
-                                print("Current Location: \(currentLocation?.coordinate.latitude ?? 0), \(currentLocation?.coordinate.longitude ?? 0)")
-                                let locationName = try await currentLocation?.coordinate.getLocationName()
-                                print("Location Name: \(locationName ?? "UNKNOWN")")
-                                if let locationName = locationName {
-                                    searchLocation = locationName
-                                }
-                                shouldSearch = true
-                            } catch {
-                                print("Failed to get location: \(error)")
-                            }
-                        }
+                        fetchOrigin(shouldRequestPermission: false)
                     case .notDetermined:
-                        Task {
-                            do {
-                                authorizationState = try await locationManager.requestPermission()
-                                currentLocation = try await locationManager.requestCurrentLocation()
-                                locationButtonIsActive = true
-                                print("Current Location: \(currentLocation?.coordinate.latitude ?? 0), \(currentLocation?.coordinate.longitude ?? 0)")
-                            } catch {
-                                print("Failed to obtain location permission: \(error)")
-                            }
-                        }
+                        fetchOrigin(shouldRequestPermission: true)
                     case .denied:
-                        guard let url = URL(string: "app-settings://privacy/Location") else {
-                            print("Invalid URL")
-                            return
-                        }
-                        UIApplication.shared.open(url)
-                        locationButtonIsActive = false
+                        openSettingsApp()
                     }
                     
                 } label: {
@@ -67,9 +50,9 @@ struct SearchView: View {
                     }
                     .contentShape(Rectangle())
                     .frame(maxWidth: .infinity)
+                    .foregroundStyle(locationButtonIsActive ? .white : Color(red: 0.8, green: 0.8, blue: 0.8))
                 }
                 .padding(.vertical)
-                .foregroundStyle(locationButtonIsActive ? .white : .gray)
                 .background(.pink)
                 .cornerRadius(10)
             }
@@ -80,6 +63,37 @@ struct SearchView: View {
             authorizationState = locationManager.requestCurrentPermissionState()
             locationButtonIsActive = authorizationState == .authorized
         }
+    }
+    
+    private func fetchOrigin(shouldRequestPermission: Bool) {
+        Task {
+            do {
+                if shouldRequestPermission {
+                    authorizationState = try await locationManager.requestPermission()
+                }
+                
+                let currentLocation = try await locationManager.requestCurrentLocation()
+                let locationName = try await currentLocation.coordinate.getLocationName()
+                
+                origin = Origin(name:  locationName ?? "", latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.latitude)
+                
+                locationButtonIsActive = true
+                Logger.log("Current Location: \(origin!.latitude), \(origin!.longitude)")
+                searchLocation = origin?.name ?? ""
+                shouldSearch = true
+            } catch {
+                Logger.log("Failed to get location: \(error)")
+            }
+        }
+    }
+    
+    private func openSettingsApp() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else {
+            Logger.log("Invalid URL")
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        locationButtonIsActive = false
     }
 }
 
