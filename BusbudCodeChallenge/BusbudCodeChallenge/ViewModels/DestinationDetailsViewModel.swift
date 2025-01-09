@@ -38,8 +38,8 @@ final class DestinationDetailsViewModel: DestinationDetailsViewModelDefinition {
         self.country = destination.country
         self.latitude = destination.latitude
         self.longitude = destination.longitude
-        self.geohash = "f25ep0"
-        distance = "100 Km"
+        self.geohash = destination.geohash
+        self.distance = "\(destination.distance ?? 0.0) Km"
     }
     
     func openURL() {

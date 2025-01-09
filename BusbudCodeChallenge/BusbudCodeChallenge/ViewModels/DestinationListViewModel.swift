@@ -39,15 +39,12 @@ final class DestinationListViewModel: DestinationListViewModelDefinition {
         
         Task {
             do {            
-                let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, 10, "en")
+                let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, limit: 10, language: "en", sortByDistance: true)
                 
                 if destinations.count == 0 {
                     state = .empty
                 } else {
                     state = .loaded(destinations)
-                }
-                for destination in destinations {
-                    print("Name: \(destination.name), Region: \(destination.region), Geohash: \(destination.geohash)")
                 }
             } catch {
                 print("Error fetching destinations: \(error)")

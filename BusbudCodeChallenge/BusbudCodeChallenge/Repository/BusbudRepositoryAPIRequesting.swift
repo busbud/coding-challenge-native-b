@@ -6,5 +6,5 @@
 //
 
 protocol BusbudRepositoryAPIRequesting {
-    func fetchNearByDestinations(latitude: Double, longitude: Double, _ limit: Int, _ language: String) async throws -> [Destination]
+    func fetchNearByDestinations(latitude: Double, longitude: Double, limit: Int, language: String, sortByDistance: Bool) async throws -> [Destination]
 }

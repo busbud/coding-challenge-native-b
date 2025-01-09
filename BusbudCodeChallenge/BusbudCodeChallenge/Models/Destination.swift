@@ -15,6 +15,7 @@ protocol DestinationDefinition {
     var latitude: Double { get }
     var longitude: Double { get }
     var geohash: String { get }
+    var distance: Double? { get }
 }
 
 struct Destination: DestinationDefinition, Codable, Identifiable {
@@ -25,6 +26,7 @@ struct Destination: DestinationDefinition, Codable, Identifiable {
     let latitude: Double
     let longitude: Double
     let geohash: String
+    var distance: Double?
     
     enum CodingKeys: String, CodingKey {
         case id = "place_id"
