@@ -25,6 +25,7 @@ struct SearchView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundStyle(.pink)
                     TextField("Enter a city.", text: $searchLocation)
+                        .disabled(true)
                 }
                 .padding(.vertical, 10)
                 .overlay(
