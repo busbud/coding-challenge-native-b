@@ -32,10 +32,12 @@ extension APIEndpointConfigurable {
         }
         requestURL.appendPathComponent(path)
         
-        let queryItems = urlParams.map { key, value in
-            URLQueryItem(name: key, value: String(describing: value))
+        if urlParams.count > 0 {
+            let queryItems = urlParams.map { key, value in
+                URLQueryItem(name: key, value: String(describing: value))
+            }
+            requestURL.append(queryItems: queryItems)
         }
-        requestURL.append(queryItems: queryItems)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = method.rawValue

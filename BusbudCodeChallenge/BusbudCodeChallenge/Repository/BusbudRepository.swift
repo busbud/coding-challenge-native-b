@@ -6,15 +6,15 @@
 //
 import CoreLocation
 
-enum FetchError: Error {
-    case simulatedError
-}
-
 final class BusbudRepository: BusbudRepositoryAPIRequesting {
     let apiClient: APIClientRequesting
+    private let drivableDistanceProvider: (CLLocationCoordinate2D, CLLocationCoordinate2D) async throws -> CLLocationDistance
     
-    init(apiClient: APIClientRequesting = APIClient()) {
+    init(apiClient: APIClientRequesting = APIClient(), drivableDistanceProvider: @escaping (CLLocationCoordinate2D, CLLocationCoordinate2D) async throws -> CLLocationDistance = { start, end in
+        try await start.getDrivableDistance(to: end)
+    }) {
         self.apiClient = apiClient
+        self.drivableDistanceProvider = drivableDistanceProvider
     }
     
     
@@ -23,7 +23,7 @@ final class BusbudRepository: BusbudRepositoryAPIRequesting {
             for destination in destinations {
                 group.addTask {
                     let destinationCoordinate = CLLocationCoordinate2D(latitude: destination.latitude, longitude: destination.longitude)
-                    let distance = try await startCoordinate.getDrivableDistance(to: destinationCoordinate)
+                    let distance = try await self.drivableDistanceProvider(startCoordinate, destinationCoordinate)
                     var destination = destination
                     destination.distance = distance
                     return destination

@@ -9,11 +9,19 @@ import CoreLocation
 import MapKit
 
 extension CLLocationCoordinate2D {
-    func getLocationName() async throws -> String? {
+    func getLocationName(geocoder: CLGeocoder = CLGeocoder()) async throws -> String? {
         let location = CLLocation(latitude: self.latitude, longitude: self.longitude)
-        let geocoder = CLGeocoder()
         
-        let placemarks = try await geocoder.reverseGeocodeLocation(location)
+        let placemarks: [CLPlacemark] = try await withCheckedThrowingContinuation { continuation in
+            geocoder.reverseGeocodeLocation(location) { placemarks, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume(returning: placemarks ?? [])
+                }
+            }
+        }
+        
         return placemarks.first?.locality
     }
     

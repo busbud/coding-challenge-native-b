@@ -92,7 +92,7 @@ struct DestinationDetailsView: View {
         MapView(
             geoLocation: CLLocationCoordinate2D(latitude: viewModel.latitude, longitude: viewModel.longitude),
             destinationName: viewModel.destination,
-            openMap: $openMap  // Pass the binding for modal presentation
+            openMap: $openMap
         )
     }
 }

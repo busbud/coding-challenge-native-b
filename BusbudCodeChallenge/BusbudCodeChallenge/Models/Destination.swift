@@ -18,7 +18,7 @@ protocol DestinationDefinition {
     var distance: Double? { get set }
 }
 
-struct Destination: DestinationDefinition, Codable, Identifiable {
+struct Destination: DestinationDefinition, Codable, Identifiable, Equatable {
     let id: String
     let name: String
     let region: String
@@ -37,6 +37,17 @@ struct Destination: DestinationDefinition, Codable, Identifiable {
         case longitude = "lon"
         case geohash
     }
+    
+    static func == (lhs: Destination, rhs: Destination) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.region == rhs.region &&
+        lhs.country == rhs.country &&
+        lhs.latitude == rhs.latitude &&
+        lhs.longitude == rhs.longitude &&
+        lhs.geohash == rhs.geohash &&
+        lhs.distance == rhs.distance
+    }
 }
 
 struct Destinations: Codable {
@@ -46,3 +57,4 @@ struct Destinations: Codable {
         case destinations = "suggestions"
     }
 }
+

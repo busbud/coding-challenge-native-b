@@ -7,12 +7,26 @@
 
 import Foundation
 
-enum DestinationListViewState {
+enum DestinationListViewState: Equatable {
     case idle
     case loading
     case loaded([Destination])
     case empty
     case error
+    
+    static func == (lhs: DestinationListViewState, rhs: DestinationListViewState) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle),
+            (.loading, .loading),
+            (.empty, .empty),
+            (.error, .error):
+            return true
+        case (.loaded(let lhsDestinations), .loaded(let rhsDestinations)):
+            return lhsDestinations == rhsDestinations
+        default:
+            return false
+        }
+    }
 }
 
 protocol DestinationListViewModelDefinition {
@@ -38,21 +52,17 @@ final class DestinationListViewModel: DestinationListViewModelDefinition {
     @MainActor
     func fetchNearbyDestinationsFrom(latitude: Double, longitude: Double) async {
         state = .loading
-        
-        Task {
-            do {            
-                let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, limit: 10, language: languageService.currentLanguage.rawValue, sortByDistance: true)
-                
-                if destinations.count == 0 {
-                    state = .empty
-                } else {
-                    state = .loaded(destinations)
-                }
-            } catch {
-                Logger.log("Error fetching destinations: \(error)")
-                state = .error
+        do {
+            let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, limit: 10, language: languageService.currentLanguage.rawValue, sortByDistance: true)
+            
+            if destinations.count == 0 {
+                state = .empty
+            } else {
+                state = .loaded(destinations)
             }
+        } catch {
+            Logger.log("Error fetching destinations: \(error)")
+            state = .error
         }
-
     }
 }

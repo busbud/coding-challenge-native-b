@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Add Item" : {
-
-    },
     "Change Location" : {
       "localizations" : {
         "pt-BR" : {
@@ -44,9 +41,6 @@
         }
       }
     },
-    "Item at %@" : {
-
-    },
     "Lost in the middle of nowhere?" : {
       "localizations" : {
         "pt-BR" : {
@@ -66,9 +60,6 @@
           }
         }
       }
-    },
-    "Select an item" : {
-
     },
     "Try again" : {
       "localizations" : {

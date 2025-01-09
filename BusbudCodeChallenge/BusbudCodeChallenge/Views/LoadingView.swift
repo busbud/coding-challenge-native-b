@@ -12,12 +12,11 @@ struct LoadingView: View {
     var body: some View {
         VStack {
             ZStack {
-                // Pulsating Circles (Energy Wave)
                 Circle()
                     .strokeBorder(Color.pink.opacity(0.3), lineWidth: 3)
                     .frame(width: 120, height: 120)
-                    .scaleEffect(pulseAnimation ? 1.5 : 1.0)  // Expands outward
-                    .opacity(pulseAnimation ? 0.0 : 1.0)  // Fades as it expands
+                    .scaleEffect(pulseAnimation ? 1.5 : 1.0)
+                    .opacity(pulseAnimation ? 0.0 : 1.0)
                     .animation(.easeOut(duration: 2).repeatForever(autoreverses: false), value: pulseAnimation)
                 
                 Circle()
@@ -27,12 +26,11 @@ struct LoadingView: View {
                     .opacity(pulseAnimation ? 0.0 : 0.5)
                     .animation(.easeOut(duration: 2.5).repeatForever(autoreverses: false), value: pulseAnimation)
                 
-                // Location Image
                 Image(systemName: "location.north.fill")
                     .resizable()
                     .frame(width: 80, height: 80)
                     .foregroundColor(.pink)
-                    .scaleEffect(pulseAnimation ? 1.05 : 1.0)  // Subtle bounce effect
+                    .scaleEffect(pulseAnimation ? 1.05 : 1.0)
                     .shadow(color: .pink.opacity(0.5), radius: 10, x: 0, y: 0)
                     .animation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true), value: pulseAnimation)
             }
@@ -41,7 +39,7 @@ struct LoadingView: View {
                 .padding(.top)
         }
         .onAppear {
-            pulseAnimation = true  // Start the animations when the view appears
+            pulseAnimation = true
         }
         .padding()
     }

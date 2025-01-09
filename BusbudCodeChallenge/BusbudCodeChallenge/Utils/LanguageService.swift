@@ -24,10 +24,15 @@ enum SupportedLanguage: String {
     }
 }
 
-class LanguageService: LanguageServiceProvider {
+final class LanguageService: LanguageServiceProvider {
+    private let locale: Locale
+
+    init(locale: Locale = .current) {
+        self.locale = locale
+    }
     
     var currentLanguage: SupportedLanguage {
-        let languageCode = Locale.current.language.languageCode?.identifier ?? "en"
+        let languageCode = locale.language.languageCode?.identifier ?? "en"
         return SupportedLanguage(localeIdentifier: languageCode)
     }
 }

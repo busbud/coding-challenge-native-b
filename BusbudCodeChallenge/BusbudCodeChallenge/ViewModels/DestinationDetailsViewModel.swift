@@ -31,7 +31,9 @@ final class DestinationDetailsViewModel: DestinationDetailsViewModelDefinition {
     let distance: String
     let geohash: String
     
-    init(origin: String, destination: Destination) {
+    private let urlOpener: (URL) -> Void
+    
+    init(origin: String, destination: Destination, urlOpener: @escaping (URL) -> Void = { UIApplication.shared.open($0) }) {
         self.origin = origin
         self.destination = destination.name
         self.region = destination.region
@@ -42,6 +44,7 @@ final class DestinationDetailsViewModel: DestinationDetailsViewModelDefinition {
         let distance = destination.distance ?? 0.0
         let formattedDistance = DistanceFormatter.format(meters: distance)
         self.distance = formattedDistance
+        self.urlOpener = urlOpener
     }
     
     func openURL() {
@@ -49,8 +52,7 @@ final class DestinationDetailsViewModel: DestinationDetailsViewModelDefinition {
         let path = "en/c/\(geohash)"
         url.appendPathComponent(path)
         
-        // Open the URL
-        UIApplication.shared.open(url)
+        urlOpener(url)
     }
     
 }

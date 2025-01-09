@@ -7,11 +7,6 @@
 
 import Foundation
 
-private enum Constants {
-    static let baseURL = ""
-    static let contentTypeHeader = "Content-Type"
-}
-
 enum APIEndpoint { }
 
 extension APIEndpoint: APIEndpointConfigurable {
@@ -20,7 +15,7 @@ extension APIEndpoint: APIEndpointConfigurable {
     }
     
     var baseURL: String {
-        return Constants.baseURL
+        return ""
     }
     
     var method: HTTPMethod {

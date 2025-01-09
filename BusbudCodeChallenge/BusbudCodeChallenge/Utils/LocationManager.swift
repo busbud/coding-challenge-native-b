@@ -31,7 +31,8 @@ class LocationManager: NSObject {
     private var currentLocationContinuation: CheckedContinuation<CLLocation, Error>?
     private var locationPermissionContinuation: CheckedContinuation<LocationAuthorizationState, Error>?
     
-    override init() {
+    init(locationManager: CLLocationManager = CLLocationManager()) {
+        self.locationManager = locationManager
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
