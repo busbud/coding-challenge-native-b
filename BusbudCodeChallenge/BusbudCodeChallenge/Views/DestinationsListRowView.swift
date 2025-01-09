@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct DestinationsListRowView: View {
-    let title: String
-    let subTitle: String
+    let viewModel: DestinationListRowViewModelDefinition
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
+            Text(viewModel.title)
                 .font(.title2)
-            Text(subTitle)
+            Text(viewModel.subtitle)
                 .font(.caption)
         }
     }
 }
 
 struct DestinationsListRowView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
+        var london = Destination(id: "", name: "London", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
+//        london.distance = 100.00
+        
+        var paris = Destination(id: "", name: "Paris", region: "", country: "UK", latitude: 0.0, longitude: 0.0, geohash: "")
+//        paris.distance = Double(723.4)
+        
         List {
-            DestinationsListRowView(title: "London", subTitle: "100 KM")
-            DestinationsListRowView(title: "Paris", subTitle: "500 KM")
+            DestinationsListRowView(viewModel: DestinationListRowViewModel(destination: london))
+            DestinationsListRowView(viewModel: DestinationListRowViewModel(destination: paris))
         }
     }
 }

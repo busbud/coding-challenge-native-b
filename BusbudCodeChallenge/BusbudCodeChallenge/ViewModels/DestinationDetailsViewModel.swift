@@ -39,7 +39,9 @@ final class DestinationDetailsViewModel: DestinationDetailsViewModelDefinition {
         self.latitude = destination.latitude
         self.longitude = destination.longitude
         self.geohash = destination.geohash
-        self.distance = "\(destination.distance ?? 0.0) Km"
+        let distance = destination.distance ?? 0.0
+        let formattedDistance = DistanceFormatter.format(meters: distance)
+        self.distance = formattedDistance
     }
     
     func openURL() {

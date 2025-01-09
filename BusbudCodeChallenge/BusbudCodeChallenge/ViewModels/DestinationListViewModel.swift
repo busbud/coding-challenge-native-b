@@ -27,10 +27,12 @@ protocol DestinationListViewModelDefinition {
 final class DestinationListViewModel: DestinationListViewModelDefinition {
     var state: DestinationListViewState
     let repository: any BusbudRepositoryAPIRequesting
+    let languageService: LanguageService
     
-    init(state: DestinationListViewState = .idle, repository: BusbudRepositoryAPIRequesting = BusbudRepository()) {
+    init(state: DestinationListViewState = .idle, repository: BusbudRepositoryAPIRequesting = BusbudRepository(), languageService: LanguageService = LanguageService()) {
         self.state = state
         self.repository = repository
+        self.languageService = languageService
     }
     
     @MainActor
@@ -39,7 +41,7 @@ final class DestinationListViewModel: DestinationListViewModelDefinition {
         
         Task {
             do {            
-                let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, limit: 10, language: "en", sortByDistance: true)
+                let destinations = try await repository.fetchNearByDestinations(latitude: latitude, longitude: longitude, limit: 10, language: languageService.currentLanguage.rawValue, sortByDistance: true)
                 
                 if destinations.count == 0 {
                     state = .empty

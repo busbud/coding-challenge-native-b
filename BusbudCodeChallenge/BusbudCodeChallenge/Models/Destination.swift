@@ -15,7 +15,7 @@ protocol DestinationDefinition {
     var latitude: Double { get }
     var longitude: Double { get }
     var geohash: String { get }
-    var distance: Double? { get }
+    var distance: Double? { get set }
 }
 
 struct Destination: DestinationDefinition, Codable, Identifiable {

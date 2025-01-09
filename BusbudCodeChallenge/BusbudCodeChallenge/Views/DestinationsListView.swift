@@ -26,7 +26,7 @@ struct DestinationsListView: View {
                         NavigationLink {
                             DestinationDetailsView(viewModel: DestinationDetailsViewModel(origin: currentLocationName, destination: destination))
                         } label: {
-                            DestinationsListRowView(title: destination.name, subTitle: "\(destination.distance ?? 0.0) km")
+                            DestinationsListRowView(viewModel: DestinationListRowViewModel(destination: destination))
                         }
                     }
                     .navigationTitle("Nearby Cities")
