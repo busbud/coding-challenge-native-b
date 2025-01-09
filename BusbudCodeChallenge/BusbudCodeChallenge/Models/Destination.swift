@@ -17,7 +17,7 @@ protocol DestinationDefinition {
     var geohash: String { get }
 }
 
-struct Destination: DestinationDefinition, Decodable, Identifiable {
+struct Destination: DestinationDefinition, Codable, Identifiable {
     let id: String
     let name: String
     let region: String
@@ -34,5 +34,13 @@ struct Destination: DestinationDefinition, Decodable, Identifiable {
         case latitude = "lat"
         case longitude = "lon"
         case geohash
+    }
+}
+
+struct Destinations: Codable {
+    let destinations: [Destination]
+    
+    enum CodingKeys: String, CodingKey {
+        case destinations = "suggestions"
     }
 }
