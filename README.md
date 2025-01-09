@@ -53,7 +53,10 @@ This app follows the **MVVM (Model-View-ViewModel)** architecture pattern and us
   - The list is sorted by the shortest drivable distance first.
 
 **Screenshots:**  
-*Add screenshots for the loading, success, and detail views.*
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 19 36](https://github.com/user-attachments/assets/0a4c436b-b942-4335-83be-68bf3b0f89f9)
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 19 40](https://github.com/user-attachments/assets/66df63df-e950-448c-930a-9e6ef29f37af)
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 20 16](https://github.com/user-attachments/assets/9a84a7f6-3d37-4f93-b6b9-05726b8d4e47)
+
 
 **Error Cases:**
 - **Location Permission Denied:**
@@ -72,7 +75,8 @@ This app follows the **MVVM (Model-View-ViewModel)** architecture pattern and us
   - The user sees a view with a fun placeholder message and no cities listed.
   
 **Screenshots:**  
-*Add a screenshot of the empty state view.*
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 20 55](https://github.com/user-attachments/assets/58ddf2e3-fef9-43c9-8ab4-ad3c628001cc)
+
 
 ---
 
@@ -90,7 +94,8 @@ This app follows the **MVVM (Model-View-ViewModel)** architecture pattern and us
 If the geohash or URL is invalid, the app safely handles this and prevents a crash.
 
 **Screenshots:**  
-*Add screenshots showing the detailed city view and Safari opening the link.*
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 20 16](https://github.com/user-attachments/assets/9a84a7f6-3d37-4f93-b6b9-05726b8d4e47)
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 20 29](https://github.com/user-attachments/assets/61ec3ddb-1d77-4b66-b779-7e4b2be926e9)
 
 ---
 
@@ -101,6 +106,10 @@ The app is localized in:
 - **Portuguese (pt)**
 
 All labels and messages adapt to the device's language settings.
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 11 26](https://github.com/user-attachments/assets/a4416105-1d7b-44ca-a0f9-97637cbad1d1)
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 19 36](https://github.com/user-attachments/assets/686901cc-5503-4f0e-b21b-a1fd83aaa76a)
+<img width="1462" alt="Screenshot 2025-01-09 at 7 19 34 PM" src="https://github.com/user-attachments/assets/877fb046-e41a-4325-88bc-a66115838c2d" />
+
 
 ---
 
@@ -109,7 +118,8 @@ All labels and messages adapt to the device's language settings.
 The app supports **Dark Mode** and automatically adapts its UI for both light and dark appearances.
 
 **Screenshots:**  
-*Add light mode and dark mode screenshots to demonstrate compatibility.*
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 19 12 01](https://github.com/user-attachments/assets/b31a3846-09a6-4c6d-b36a-e0c37f49cc0e)
+![Simulator Screenshot - iPhone 16 Pro - 2025-01-09 at 15 20 16](https://github.com/user-attachments/assets/d13af74c-99dd-454f-8c4b-3bb745be70a2)
 
 ---
 
@@ -175,22 +185,3 @@ The `LocationManager` class:
    ```
 2. Select a simulator or device in Xcode.
 3. Press **Cmd + R** to run the app.
-
----
-
-## **Screenshots**
-
-*Upload screenshots of the main screens: loading view, empty state, list view, detailed view in both light and dark modes.*
-
----
-
-## **Pull Request Description**
-
-- The app follows the **MVVM + Repository** architecture for clear separation of concerns.
-- Implemented detailed state management with loading, empty, and error states.
-- The app is fully localized in **English** and **Portuguese**.
-- Extensive unit tests are included to ensure reliability.
-- The UI is compatible with **Dark Mode**.
-- Screenshots of all views are provided to illustrate the user experience.
-
----
