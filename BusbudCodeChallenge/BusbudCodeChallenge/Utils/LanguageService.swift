@@ -15,7 +15,6 @@ enum SupportedLanguage: String {
     case english = "en"
     case portuguese = "pt"
     
-    // Helper to create from Locale identifier
     init(localeIdentifier: String) {
         switch localeIdentifier.prefix(2) {
         case "pt": self = .portuguese

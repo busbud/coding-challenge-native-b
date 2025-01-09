@@ -23,7 +23,7 @@ struct DestinationsListView: View {
                 case .idle:
                     SearchView(shouldSearch: $shouldSearch)
                 case .loading:
-                    ProgressView()
+                    LoadingView()
                 case .loaded(let destinations):
                     List(destinations) { destination in
                         NavigationLink {

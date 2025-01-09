@@ -34,6 +34,16 @@
         }
       }
     },
+    "Finding nearby cities..." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscando cidades próximas…"
+          }
+        }
+      }
+    },
     "Item at %@" : {
 
     },
